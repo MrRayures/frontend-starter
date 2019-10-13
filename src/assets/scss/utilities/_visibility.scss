@@ -1,0 +1,59 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:visibility]
+-------------------------------------------------------------------------------------------------------*/
+
+/*
+* Visibility
+*/
+.u-block { display: block}
+.u-none {display: none}
+.u-inline {display: inline}
+.u-inline-block {display: inline-block;vertical-align: top}
+.u-visible {visibility: visible;}
+.u-hidden {visibility: hidden;}
+
+@each $size , $bp in  (lg , $large),
+                      (md , $medium),
+                      (sm , $large) {
+  @include mq($bp) {
+    .u-block/@#{$size} { display: block}
+    .u-none/@#{$size} {display: none}
+    .u-inline/@#{$size} {display: inline}
+    .u-inline-block/@#{$size} {display: inline-block;vertical-align: top;}
+    .u-visible/@#{$size} {visibility: visible;}
+    .u-hidden/@#{$size} {visibility: hidden;}
+  }
+}
+
+
+/*
+* Accessibility
+*/
+// Visible for screen reader
+.u-sr-only {
+  clip: rect(0 0 0 0);
+  clip: path(inset 100%);
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+//Show only on focus
+.u-show-on-focus {
+  position: absolute;
+  top: -100%;
+  z-index: 1000;
+  &:focus {
+    top: 0;
+    background-color: #222;
+    color: #FFF;
+  }
+}
+
+
+
+
+
+

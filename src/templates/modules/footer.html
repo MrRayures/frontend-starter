@@ -1,0 +1,58 @@
+
+	<footer class="m-footer" role="contentinfo">
+		<div class="l-container">
+		  <div class="m-footer__content">
+				<div class="m-footer__col">
+					<p class="m-footer__title">Recevez toutes les news et les conseils du World CleanUp Day :</p>
+					<form action="">
+						<div class="m-form__field m-form__field--newsletter">
+							<label class="m-form__label u-sr-only" for="newsletter_email">Mon adresse email</label>
+							<input id="newsletter_email" class="m-form__input" type="text" placeholder="Mon adresse email">
+							<button type="submit" class="m-form__submit c-btn c-btn--primary c-btn--sm">M'inscrire</button>
+						</div>
+					</form>
+				</div><!-- //END Footer COL -->
+				<div class="m-footer__col">
+					<p class="m-footer__title">Suivez-nous !</p>
+					<ul class="m-list m-list--social">
+						<li class="m-list__item">
+							<a class="m-list__link" href="#" target="_blank">
+								{% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-facebook", title:"Facebook", class:""} %}
+						  	{% include "components/sprite-svg.html" %}
+							</a>
+						</li>
+						<li class="m-list__item">
+							<a class="m-list__link" href="#" target="_blank">
+								{% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-twitter", title:"Twitter", class:""} %}
+						  	{% include "components/sprite-svg.html" %}
+							</a>
+						</li>
+						<li class="m-list__item">
+							<a class="m-list__link" href="#" target="_blank">
+								{% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-instagram", title:"Instagram", class:""} %}
+						  	{% include "components/sprite-svg.html" %}
+							</a>
+						</li>
+						<li class="m-list__item">
+							<a class="m-list__link" href="#" target="_blank">
+								{% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-youtube", title:"Youtube", class:""} %}
+						  	{% include "components/sprite-svg.html" %}
+							</a>
+						</li>
+					</ul>
+				</div><!-- //END Footer COL -->
+		  </div>
+	  </div>
+	</footer><!-- //END Footer -->
+
+	<nav class="m-nav m-nav--footer" role="navigation">
+		<div class="l-container">
+		  <ul class="m-nav__list">
+				<li class="m-nav__item"><a class="m-nav__link" href="#">Faire un don</a></li>
+				<li class="m-nav__item"><a class="m-nav__link" href="#">Galerie photos</a></li>
+				<li class="m-nav__item"><a class="m-nav__link" href="#">Contact et recrutement</a></li>
+				<li class="m-nav__item"><a class="m-nav__link" href="#">Mentions Légales</a></li>
+				<li class="m-nav__item"><a class="m-nav__link" href="#">RGPD</a></li>
+			</ul>
+	  </div>
+	</nav><!-- //END Footer navigation -->

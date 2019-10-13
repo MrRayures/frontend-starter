@@ -1,0 +1,56 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:icon]
+-------------------------------------------------------------------------------------------------------*/
+/*
+* Icon size
+* Default $icon-size : 0.8rem;
+* Edit : Change global '$icon-size' in settings/_global
+*/
+@each $size , $size_value in  (xs , $icon-size/2),
+                              (sm , $icon-size),
+                              (md , $icon-size*2),
+                              (lg , $icon-size*3),
+                              (xlg, $icon-size*4),
+                              (xxlg, $icon-size*5),
+                              (xxxlg, $icon-size*6) {
+  .u-icon-#{$size} { font-size: $size_value!important; }
+}
+
+@include mq($large) {
+  @each $size , $size_value in  (xs , $icon-size/2),
+                              (sm , $icon-size),
+                              (md , $icon-size*2),
+                              (lg , $icon-size*3),
+                              (xlg, $icon-size*4),
+                              (xxlg, $icon-size*5),
+                              (xxxlg, $icon-size*6) {
+    .u-icon-#{$size}\@lg { font-size: $size_value; }
+  }
+}
+
+@include mq($medium) {
+  @each $size , $size_value in  (xs , $icon-size/2),
+                              (sm , $icon-size),
+                              (md , $icon-size*2),
+                              (lg , $icon-size*3),
+                              (xlg, $icon-size*4),
+                              (xxlg, $icon-size*5),
+                              (xxxlg, $icon-size*6) {
+    .u-icon-#{$size}\@md { font-size: $size_value; }
+  }
+}
+
+@include mq($small) {
+  @each $size , $size_value in  (xs , $icon-size/2),
+                              (sm , $icon-size),
+                              (md , $icon-size*2),
+                              (lg , $icon-size*3),
+                              (xlg, $icon-size*4),
+                              (xxlg, $icon-size*5),
+                              (xxxlg, $icon-size*6) {
+    .u-icon-#{$size}\@sm{ font-size: $size_value; }
+  }
+}
+
+
+

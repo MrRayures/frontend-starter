@@ -1,0 +1,66 @@
+/*-----------------------------------------------------------------------------------------------------
+    [Buttons]
+-------------------------------------------------------------------------------------------------------*/
+
+.c-btn {
+	background: none;
+	border: 1px solid transparent;
+	font-size: 1.8rem;
+	padding: 1.5em 2em;
+	border-radius: $radius;
+	font-family: $secondary-font;
+	transition: $timing;
+	&:not(disabled) {
+  	cursor: pointer;
+  }
+}
+
+/*
+* Primary
+*/
+.c-btn--primary {
+	background-color: $primary;
+	color: #FFF;
+	&:hover {}
+	&:active {}
+}
+
+/*
+* Secondary
+*/
+.c-btn--secondary {
+	background-color: $secondary;
+	color: #FFF;
+	&:hover {}
+	&:active {}
+}
+
+
+/*
+* Tertiary
+*/
+.c-btn--tertiary {
+	background-color: $tertiary;
+	color: #000;
+	&:hover {}
+	&:active {}
+}
+
+
+/*
+* Size
+*
+*/
+.c-btn--sm {
+	font-size:  1.6rem;
+	padding: 1.2em 1.5em;
+}
+.c-btn--lg {
+	font-size:  2rem;
+	padding: 1.8em 3em;
+}
+
+
+
+
+

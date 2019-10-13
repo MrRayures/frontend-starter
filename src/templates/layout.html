@@ -1,0 +1,42 @@
+<!doctype html> 
+<html lang="fr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8"> 
+  <title>{{ page_title }}</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	<!-- Load CSS -->
+	{% if css_page %}
+		<link rel="stylesheet" type="text/css" href="assets/css/{{ css_page }}{% if css_min %}.min{% endif %}.css?v=1">
+	{% endif %}
+
+
+
+</head>
+
+<body class="{{ body_class }}">
+	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	<!--
+	{% include "modules/header.html" %}
+	 //END Header -->
+
+	{% block page_content %}{% endblock %}
+
+	{% include "modules/footer.html" %}
+	<!-- //END Footer -->
+	
+
+	{% if js_base %}
+		<script type="text/javascript" src="assets/js/app.js?v=1"></script>
+		<script type="text/javascript" src="assets/js/vendor.js?v=1"></script>
+	{% endif %}
+
+	{% if js_page %}
+		<script type="text/javascript" src="assets/js/{{ js_page }}{% if js_min %}.min{% endif %}.js?v=1"></script>
+	{% endif %}
+
+	
+</body>
+</html>

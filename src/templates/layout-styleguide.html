@@ -1,0 +1,28 @@
+<!-- layout-styleguide.html -->
+<!doctype html> 
+<html lang="fr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8"> 
+  <title>{{ page_title }}</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Load CSS -->
+	{% if css_base %}
+		<link rel="stylesheet" type="text/css" href="assets/css/{{ css_base }}.css?v=1">
+	{% endif %}
+
+
+</head>
+
+<body class="{{ body_class }}">
+	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+
+	{% block page_content %}{% endblock %}
+	
+	
+	<script type="text/javascript" src="assets/js/app.js?v=1"></script>
+	<script type="text/javascript" src="assets/js/vendor.js?v=1"></script>
+	
+</body>
+</html>

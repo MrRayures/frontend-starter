@@ -1,0 +1,98 @@
+{% extends "layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Styleguide" %}
+{% set body_class = "sg-body" %}
+{% set css_base = "styleguide" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+
+
+	<section class="sg-sidebar">
+		<header class="sg-header">
+			<a href="index.html" class="sg-h1" title="Go to index">App<br><small>Styleguide</small></a>
+		</header>
+		<a class="sg-btn-nav" href="#sg-nav">
+			{% set svg = { id:"menu", name:"menu", title:"Menu mobile", class:""} %}
+    	{% include "components/sprite-svg.html" %}
+		</a>
+		<nav class="sg-nav" id="sg-nav" role="navigation">
+			<ul>
+				<li>
+					<a href="#brand">Brand</a>
+					<ul>
+						<li>Application colors</li>
+						<li>Typography colors</li>
+						<li>Other colors</li>
+						<li>Typography</li>
+					</ul>
+				</li>
+				<li><a href="#icons">Icons</a></li>
+				<li><a href="#buttons">Buttons</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#components">Components</a></li>
+				<li><a href="#blocks">Block</a></li>
+				<li>
+					<a href="#modules">Modules</a>
+					<ul>
+						<li>Header</li>
+						<li>Footer</li>
+					</ul>
+				</li>
+				<li><a href="#utilities">Utilities</a></li>
+			</ul>
+		</nav><!-- //END Navigation -->
+	</section>
+	<!-- //END Sidebar -->
+
+	<div id="content" class="sg-main" role="main">
+
+		<section id="brand" class="sg-content">
+			<h2 class="sg-h2">Brand</h2>
+			{% include "styleguide/brand.html"  %}
+		</section><!-- //END Charte -->
+
+		<section id="icons" class="sg-content">
+			<h2 class="sg-h2">Icons</h2>
+			{% include "styleguide/icons.html"  %}
+		</section><!-- //END Icons -->
+
+		<section id="buttons" class="sg-content">
+			<h2 class="sg-h2">Buttons</h2>
+			{% include "styleguide/buttons.html"  %}
+		</section><!-- //END Buttons -->
+
+		<section id="forms" class="sg-content">
+			<h2 class="sg-h2">Forms</h2>
+			{% include "styleguide/forms.html"  %}
+		</section><!-- //END Forms -->
+
+		<section id="components" class="sg-content">
+			<h2 class="sg-h2">Components</h2>
+			{% include "styleguide/components.html"  %}
+		</section><!-- //END Components -->
+
+		<section id="blocks" class="sg-content">
+			<h2 class="sg-h2">Blocks</h2>
+			{% include "styleguide/blocks.html"  %}
+		</section><!-- //END Components -->
+
+		<section id="modules" class="sg-content">
+			<h2 class="sg-h2">Modules</h2>
+			{% include "styleguide/modules.html"  %}
+		</section><!-- //END Components -->
+
+		<section id="utilities" class="sg-content">
+			<h2 class="sg-h2">Utilities</h2>
+			{% include "styleguide/Utilities.html"  %}
+		</section><!-- //END Components -->
+
+	</div><!-- //END Main -->
+
+
+
+{% endblock %}
+<!-- //END page Content -->

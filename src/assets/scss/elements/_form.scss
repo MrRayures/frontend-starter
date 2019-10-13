@@ -1,0 +1,81 @@
+/*-----------------------------------------------------------------------------------------------------
+    [form]
+-------------------------------------------------------------------------------------------------------*/
+button {
+  appearance: none;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+input, button, select, textarea {
+  font-family: $primary-font;
+}
+
+
+/*
+* Input style
+*/
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"] {
+  border: 2px solid $border-color;
+  color: $text-color;
+  display: block;
+  margin: 0;
+  padding: 8px 15px;
+  border-radius: $radius;
+  box-shadow: none;
+  height: 56px;
+  width: 100%;
+  max-width: 480px;
+  background-color: #FFF;
+  font-size: 1.6rem;
+  transition: $timing;
+  @include placeholder() {
+    color: $text-color-light;
+  }
+  &:focus {
+    border-color: $primary;
+    //box-shadow: 0 0 0px 1px $primary;
+  }
+}
+
+
+
+
+/*
+* Input reset
+* uncomment if needed
+*/
+/* 
+input[type="password"]::-ms-clear, 
+input[type="password"]::-ms-reveal {
+    display: none;
+} 
+*/
+/*
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+*/
+
+
+
+
+
+
+
+
+

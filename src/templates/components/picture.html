@@ -1,0 +1,25 @@
+{% set img_width = 
+  {
+    "xsmall"  : '',
+    "small"   : "800",
+    "medium"  : "",
+    "large"   : "1600",
+    "xlarge"  : ""
+  }
+%}
+
+<picture class="img-responsive">
+  {% if picture.webp %}
+  <source
+    srcset="{{picture.default}}"
+    data-srcset="{% for bp, width in img_width %}{% if width|length %}{{picture.path}}{{picture.name}}-{{ width }}.webp {{width}}w,{% endif %}{% endfor %}" 
+    sizes="(min-width: 800px) 25vw, 100vw"
+    type="image/webp">
+  {% endif %}
+  <source 
+    srcset="img-default-800.jpg"
+    data-srcset="{% for bp, width in img_width %}{% if width|length %}{{picture.path}}{{picture.name}}-{{ width }}{{picture.extension}} {{width}}w,{% endif %}{% endfor %}" 
+    sizes="(min-width: 800px) 25vw, 100vw"
+    type="image/{{picture.type}}">
+  <img class="lazyload" src="{{picture.path}}{{picture.name}}{{picture.extension}}" alt="{{picture.alt}}">
+</picture>

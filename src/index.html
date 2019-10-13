@@ -1,0 +1,51 @@
+<!-- index.html -->
+{% extends "layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Index" %}
+{% set body_class = "sg-body" %}
+{% set css_base = "styleguide" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+
+  <header class="sg-header">
+    <p class="sg-h1">Template index</p>
+  </header>
+
+	<div class="sg-wrapper sg-md" id="content">
+  	<div class="sg-main" role="main">
+
+      <div id="icons" class="sg-content">
+        <h1 class="sg-h1">WCUD - World Clean Up Day</h1>
+        <ul class="sg-list sg-list--link sg-list--sm">
+        	<li><h3 class="sg-h3">Charte</h3></li>
+        	<li><a href="styleguide.html" target="_blank">Styleguide</a></li>
+        </ul>
+      
+        <!-- <ul class="sg-list sg-list--link sg-list--sm">
+          <li><h3 class="sg-h3">#0 Interface</h3></li>
+          <li><a href="homepage.html" target="_blank">Homepage</a></li>
+        </ul> -->
+
+        <!--
+        <ul class="sg-list sg-list--link sg-list--sm">
+          <li><h3 class="sg-h3">#1 Présentation</h3></li>
+          <li><a href="#" target="_blank">Missions et histoire</a></li>
+          <li><a href="#" target="_blank">Faq</a></li>
+          <li><a href="#" target="_blank">Edition 2018</a></li>
+          <li><a href="#" target="_blank">Presse</a></li>
+        </ul>
+      -->
+
+        
+      </div><!--//END content -->
+
+    </div><!--//END main -->
+  </div><!--//END Wrapper -->
+	
+
+{% endblock %}
+<!-- //END page Content -->

@@ -1,0 +1,31 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:text]
+-------------------------------------------------------------------------------------------------------*/
+
+.u-text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+.u-text-left { 
+  text-align: left; 
+}
+
+.u-text-right { 
+  text-align: right; 
+}
+
+.u-text-center { 
+  text-align: center; 
+}
+
+.u-primary-font {
+  font-family: $primary-font;
+}
+
+.u-secondary-font {
+  font-family: $secondary-font;
+}
+
+
+

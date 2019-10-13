@@ -1,0 +1,64 @@
+/*-----------------------------------------------------------------------------------------------------
+  [Master Stylesheet]
+	by : Francois Leproust
+  Version : 1.0
+
+  Projet : 
+
+  CSS structure : ITCSS
+  - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+
+	Global namespace : BEMIT
+    - Guideline : https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+    Other ressources :
+    - http://bradfrost.com/blog/post/css-architecture-for-design-systems/
+    - http://getbem.com/naming/
+		- https://seesparkbox.com/foundry/bem_by_example
+
+  Accessibility
+  	- Tips : https://webaccessibility.guide/
+  	- Checklist : https://a11yproject.com/checklist
+  	- Tools : https://benrobertson.io/accessibility/tools-for-website-audits
+-------------------------------------------------------------------------------------------------------*/
+
+// Settings
+@import 'settings/_breackpoints';
+@import 'settings/_colors';
+@import 'settings/_fonts';
+@import 'settings/_global';
+
+
+// Tools
+@import 'tools/_mixins';
+
+
+// Generic
+@import 'generic/_accessibility';
+//@import 'generic/_normalize';
+@import 'generic/_reset';
+
+
+// elements
+@import 'elements/_fonts';
+@import 'elements/_form';
+@import 'elements/_page';
+
+
+// Objects
+//@import 'objects/_grid';
+
+
+// Components
+@import 'components/_buttons';
+@import 'components/_container';
+@import 'components/_footer';
+@import 'components/_form-basic';
+@import 'components/_form';
+@import 'components/_header';
+@import 'components/_icons';
+
+
+// Utilities
+@import 'utilities/_all';
+
+

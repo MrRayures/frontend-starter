@@ -1,0 +1,61 @@
+  <p class="sg-text">Accessible SVG Icons with Inline Sprites.</p>
+  <div class="sg-list sg-list-svg">
+    <div class="sg-columns sg-columns--bordered">
+      {% set svg = { path: "assets/icons/sprite/icons.svg", id:"menu", title:"Menu", class:"c-icons"} %}
+      {% include "components/sprite-svg.html" %}
+    </div>
+    <code class="sg-code">
+      &lt;svg role=&quot;img&quot; class=&quot;c-icons&quot; focusable=&quot;false&quot; aria-hidden=&quot;true&quot;&gt; <br>
+      &nbsp;&nbsp;&lt;title id=&quot;icon-add&quot; class=&quot;u-sr-only&quot;&gt;Menu&lt;/title&gt; <br>
+      &nbsp;&nbsp;&lt;use xlink:href=&quot;assets/icons/sprite/icons.svg#Menu&quot;&gt;&lt;/use&gt; <br>
+      &lt;/svg&gt;
+    </code>
+  </div>
+  <p class="sg-text">Preview : <symbol> sprite preview : <a target="blank" href="assets/icons/sprite/sprite.symbol.html"><u>SVG <symbol> sprite preview </u></a></p>
+  <div class="sg-columns sg-columns--bordered">
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"menu", title:"Menu", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"ambassador", title:"Ambassadeur", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+    
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"organizer", title:"Organisateur", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"thumb", title:"Thumb up", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"contributor", title:"Contributeur", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"ambassador", title:"Frmer", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-facebook", title:"Facebook", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-twitter", title:"Twitter", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-instagram", title:"Instagram", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+
+    {% set svg = { path: "assets/icons/sprite/icons.svg", id:"social-youtube", title:"Youtube", class:"c-icons"} %}
+    {% include "components/sprite-svg.html" %}
+  </div>
+
+  <!-- ICONS FONT list
+	<ul class="sg-list sg-list-icon">
+    <li><i class="icon-add"></i></li>
+    <li><i class="icon-arrow-down"></i></li>
+    <li><i class="icon-arrow-left"></i></li>
+    <li><i class="icon-arrow-right"></i></li>
+    <li><i class="icon-arrow-up"></i></li>
+    <li><i class="icon-check"></i></li>
+    <li><i class="icon-cross"></i></li>
+  	<li><i class="icon-menu"></i></li>
+  </ul>
+  -->
