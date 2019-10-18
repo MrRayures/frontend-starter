@@ -15,3 +15,21 @@
    height: 0;
    clear: both;
 }
+
+@each $size , $bp in  (lg, $large),
+                      (md, $medium),
+                      (sm, $small) {
+  @include mq(#{$bp}) {
+  	.u-clear\@#{$size} {
+		  clear: both;
+		}
+
+		.u-clearfix\@#{$size}:after {
+		   content: " ";
+		   visibility: hidden;
+		   display: block;
+		   height: 0;
+		   clear: both;
+		}
+  }
+}

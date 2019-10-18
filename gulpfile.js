@@ -88,7 +88,8 @@ function css_minify() {
 var cbString = new Date().getTime();
 
 function html() {
-  return src([source + '/*.html'])
+
+  var app = src([source + '/*.html'])
     .pipe(nunjucksRender({
       path: [source + '/templates'],
       data: {
@@ -102,6 +103,23 @@ function html() {
     }))
     .pipe(replace(/v=\d+/g, 'v=' + cbString))
     .pipe(dest(prod))
+
+  var styleguide = src([source + '/templates/styleguide/*.html'])
+    .pipe(nunjucksRender({
+      path: [source + '/templates'],
+      data: {
+        img_path:  'assets/img/'
+      }
+    }))
+    .pipe(htmlbeautify({
+      indent_size: 2,
+      indent_with_tabs: true,
+      preserve_newlines: false
+    }))
+    .pipe(replace(/v=\d+/g, 'v=' + cbString))
+    .pipe(dest(prod+ '/styleguide/'))
+
+    return merge(app, styleguide);
 };
 
 
@@ -220,6 +238,12 @@ function icons() {
     .pipe(dest(prod + '/assets/icons'));
 };
 
+function icons_min() {
+  return src(source +'/assets/icons/*')
+    .pipe(svgmin())
+    .pipe(dest(source + '/assets/icons/'));
+}
+
 
 /*
 * Embed SVG
@@ -282,22 +306,16 @@ function icons_css(){
 */
 function copy_assets() {
 
-  var favicon = src([source + '/apple-touch-icon.png', source + '/favicon.ico'])
+  var root_assets = src([source + '/*'])
     .pipe(dest([prod]));
 
-  var pwa_icons = src([source + '/assets/icons/*'])
-    .pipe(dest([prod + '/assets/icons']));
-
-  var pwa_manifest = src([source + '/manifest.json'])
-    .pipe(dest([prod]));
-
-  var service_workers = src([source + '/sw.js'])
-    .pipe(dest([prod]));
+  var favicons = src([source + '/assets/favicons/*'])
+    .pipe(dest([prod + '/assets/favicons']));
 
   var fonts = src([source + '/assets/fonts/*'])
     .pipe(dest([prod + '/assets/fonts']));
 
-  return merge(favicon, fonts, pwa_manifest, pwa_icons, service_workers);
+  return merge(root_assets, fonts, favicons);
 };
 
 
@@ -350,12 +368,12 @@ function service_worker() {
 * Build the projet
 * 
 */
-const build = series(clean, css, copy, img, html, js);
+const build = series(clean, css, copy_assets, img, html, js);
 
 /*
 * Define complex tasks
 */
-const deploy = series(clean, css, css_minify, img, webp, copy, html, js, js_minify, service_worker);
+const deploy = series(clean, css, css_minify, img, webp, copy_assets, html, js, js_minify, service_worker);
 
 
 /*
@@ -386,9 +404,10 @@ exports.img_responsive = series(img_responsive, img_placeholder);
 exports.css = series(css, css_minify);
 exports.js = series(js, js_minify);
 exports.html = html;
-exports.icons = icons;
+exports.icons = series(icons_min, icons);
+exports.icons_min = icons_min;
 exports.icons_css = icons_css;
-exports.copy = copy;
+exports.copy = copy_assets;
 exports.clean = clean;
 exports.sw = service_worker;
 exports.build = build;

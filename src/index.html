@@ -1,9 +1,9 @@
 <!-- index.html -->
-{% extends "layout-styleguide.html" %}
+{% extends "layout-index.html" %}
 
 <!-- //START page variables -->
 {% set page_title = "Index" %}
-{% set body_class = "sg-body" %}
+{% set body_class = "sg-body sg-index" %}
 {% set css_base = "styleguide" %}
 <!-- //END page variables -->
 
@@ -12,39 +12,25 @@
 {% block page_content %}
 
   <header class="sg-header">
-    <p class="sg-h1">Template index</p>
+    <p class="sg-header__title">Poject name <span>Template index</span></p>
   </header>
 
-	<div class="sg-wrapper sg-md" id="content">
-  	<div class="sg-main" role="main">
+  <div class="sg-content sg-content--centered ">
+    <h1 class="sg-h1">Project name</h1>
 
-      <div id="icons" class="sg-content">
-        <h1 class="sg-h1">WCUD - World Clean Up Day</h1>
-        <ul class="sg-list sg-list--link sg-list--sm">
-        	<li><h3 class="sg-h3">Charte</h3></li>
-        	<li><a href="styleguide.html" target="_blank">Styleguide</a></li>
-        </ul>
-      
-        <!-- <ul class="sg-list sg-list--link sg-list--sm">
-          <li><h3 class="sg-h3">#0 Interface</h3></li>
-          <li><a href="homepage.html" target="_blank">Homepage</a></li>
-        </ul> -->
+    <ul class="sg-list sg-list--link sg-list--sm">
+    	<li><h3 class="sg-h3">Charte</h3></li>
+    	<li><a href="styleguide.html" target="_blank">Styleguide</a></li>
+    </ul>
 
-        <!--
-        <ul class="sg-list sg-list--link sg-list--sm">
-          <li><h3 class="sg-h3">#1 Présentation</h3></li>
-          <li><a href="#" target="_blank">Missions et histoire</a></li>
-          <li><a href="#" target="_blank">Faq</a></li>
-          <li><a href="#" target="_blank">Edition 2018</a></li>
-          <li><a href="#" target="_blank">Presse</a></li>
-        </ul>
-      -->
+    <ul class="sg-list sg-list--link sg-list--sm">
+      <li><h3 class="sg-h3">#0 Homepage</h3></li>
+      <li><a href="homepage.html" target="_blank">Homepage</a></li>
+    </ul>
+  
+  </div><!--//END content -->
 
-        
-      </div><!--//END content -->
 
-    </div><!--//END main -->
-  </div><!--//END Wrapper -->
 	
 
 {% endblock %}

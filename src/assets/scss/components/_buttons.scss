@@ -5,8 +5,9 @@
 .c-btn {
 	background: none;
 	border: 1px solid transparent;
-	font-size: 1.8rem;
-	padding: 1.5em 2em;
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding: $spacing $spacing*2;
 	border-radius: $radius;
 	font-family: $secondary-font;
 	transition: $timing;
@@ -21,7 +22,9 @@
 .c-btn--primary {
 	background-color: $primary;
 	color: #FFF;
-	&:hover {}
+	&:hover {
+		background-color: darken($primary, 20%)
+	}
 	&:active {}
 }
 
@@ -31,7 +34,9 @@
 .c-btn--secondary {
 	background-color: $secondary;
 	color: #FFF;
-	&:hover {}
+	&:hover {
+		background-color: darken($secondary, 20%)
+	}
 	&:active {}
 }
 
@@ -42,7 +47,9 @@
 .c-btn--tertiary {
 	background-color: $tertiary;
 	color: #000;
-	&:hover {}
+	&:hover {
+		background-color: darken($tertiary, 20%)
+	}
 	&:active {}
 }
 
@@ -52,12 +59,16 @@
 *
 */
 .c-btn--sm {
+	font-size:  1.2rem;
+	padding: $spacing/2 $spacing;
+}
+.c-btn--md {
 	font-size:  1.6rem;
-	padding: 1.2em 1.5em;
+	padding: $spacing $spacing*2;
 }
 .c-btn--lg {
 	font-size:  2rem;
-	padding: 1.8em 3em;
+	padding: $spacing*2 $spacing*4;
 }
 
 

@@ -16,7 +16,6 @@ body {
   font-family: $primary-font;
   color: $text-color;
   background: $bg-color;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -56,7 +55,7 @@ ol {
 
 /* img */
 img {
-  display: block;
+  display: inline-block;
   max-width: 100%;
   font-style: italic;
 }

@@ -10,10 +10,10 @@
 @each $size , $size_value in  (xs , $spacing/2),
                               (sm , $spacing),
                               (md , $spacing*2),
-                              (lg , $spacing*3),
-                              (xlg, $spacing*4),
-                              (xxlg, $spacing*5),
-                              (xxxlg, $spacing*6),
+                              (lg , $spacing*4),
+                              (xlg, $spacing*8),
+                              (xxlg, $spacing*12),
+                              (xxxlg, $spacing*16),
                               (auto, auto),
                               (none, 0) {
   .u-mt-#{$size} { margin-top: $size_value; }
@@ -28,70 +28,37 @@
   .u-p-#{$size} { padding: $size_value; }
 }
 
-@include mq($large) {
-  @each $size , $size_value in  (xs , $spacing/2),
-                                (sm , $spacing),
-                                (md , $spacing*2),
-                                (lg , $spacing*3),
-                                (xlg, $spacing*4),
-                                (xxlg, $spacing*5),
-                                (xxxlg, $spacing*6),
-                                (auto, auto),
-                                (none, 0) {
-    .u-mt-#{$size}\@lg  { margin-top: $size_value; }
-    .u-mr-#{$size}\@lg  { margin-right: $size_value; }
-    .u-mb-#{$size}\@lg  { margin-bottom: $size_value; }
-    .u-ml-#{$size}\@lg  { margin-left: $size_value; }
-    .u-m-#{$size}\@lg  { margin: $size_value; }
-    .u-pt-#{$size}\@lg  { padding-top: $size_value; }
-    .u-pr-#{$size}\@lg  { padding-right: $size_value; }
-    .u-pb-#{$size}\@lg  { padding-bottom: $size_value; }
-    .u-pl-#{$size}\@lg  { padding-left: $size_value; }
-    .u-p-#{$size}\@lg { padding: $size_value; }
+
+
+@each $size , $bp in  (lg, $large),
+                      (md, $medium),
+                      (sm, $small) {
+  @include mq(#{$bp}) {
+    @each $size , $size_value in  (xs , $spacing/2),
+                                  (sm , $spacing),
+                                  (md , $spacing*2),
+                                  (lg , $spacing*3),
+                                  (xlg, $spacing*4),
+                                  (xxlg, $spacing*5),
+                                  (xxxlg, $spacing*6),
+                                  (auto, auto),
+                                  (none, 0) {
+      .u-mt-#{$size}\@#{$size} { margin-top: $size_value; }
+      .u-mr-#{$size}\@#{$size} { margin-right: $size_value; }
+      .u-mb-#{$size}\@#{$size} { margin-bottom: $size_value; }
+      .u-ml-#{$size}\@#{$size} { margin-left: $size_value; }
+      .u-m-#{$size}\@#{$size} { margin: $size_value; }
+      .u-pt-#{$size}\@#{$size} { padding-top: $size_value; }
+      .u-pr-#{$size}\@#{$size} { padding-right: $size_value; }
+      .u-pb-#{$size}\@#{$size} { padding-bottom: $size_value; }
+      .u-pl-#{$size}\@#{$size} { padding-left: $size_value; }
+      .u-p-#{$size}\@#{$size} { padding: $size_value; }
+    }
   }
 }
-@include mq($medium) {
-  @each $size , $size_value in  (xs , $spacing/2),
-                                (sm , $spacing),
-                                (md , $spacing*2),
-                                (lg , $spacing*3),
-                                (xlg, $spacing*4),
-                                (xxlg, $spacing*5),
-                                (xxxlg, $spacing*6),
-                                (auto, auto),
-                                (none, 0) {
-    .u-mt-#{$size}\@md { margin-top: $size_value; }
-    .u-mr-#{$size}\@md { margin-right: $size_value; }
-    .u-mb-#{$size}\@md { margin-bottom: $size_value; }
-    .u-ml-#{$size}\@md { margin-left: $size_value; }
-    .u-m-#{$size}\@md { margin: $size_value; }
-    .u-pt-#{$size}\@md { padding-top: $size_value; }
-    .u-pr-#{$size}\@md { padding-right: $size_value; }
-    .u-pb-#{$size}\@md { padding-bottom: $size_value; }
-    .u-pl-#{$size}\@md { padding-left: $size_value; }
-    .u-p-#{$size}\@md { padding: $size_value; }
-  }
-}
-@include mq($small) {
-  @each $size , $size_value in  (xs , $spacing/2),
-                                (sm , $spacing),
-                                (md , $spacing*2),
-                                (lg , $spacing*3),
-                                (xlg, $spacing*4),
-                                (xxlg, $spacing*5),
-                                (xxxlg, $spacing*6),
-                                (auto, auto),
-                                (none, 0) {
-    .u-mt-#{$size}\@sm { margin-top: $size_value; }
-    .u-mr-#{$size}\@sm { margin-right: $size_value; }
-    .u-mb-#{$size}\@sm { margin-bottom: $size_value; }
-    .u-ml-#{$size}\@sm { margin-left: $size_value; }
-    .u-m-#{$size}\@sm { margin: $size_value; }
-    .u-pt-#{$size}\@sm { padding-top: $size_value; }
-    .u-pr-#{$size}\@sm { padding-right: $size_value; }
-    .u-pb-#{$size}\@sm { padding-bottom: $size_value; }
-    .u-pl-#{$size}\@sm { padding-left: $size_value; }
-    .u-p-#{$size}\@sm { padding: $size_value; }
-  }
-}
+
+
+
+
+
 

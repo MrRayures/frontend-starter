@@ -5,9 +5,10 @@
 * Sprite icons
 */
 .c-icons {
-	width: $icon-size;
-	height: $icon-size;
+	width: $icon-size*4;
+	height: $icon-size*4;
 	transition: $timing;
+	fill: #000;
 }
 
 

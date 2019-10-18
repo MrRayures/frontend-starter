@@ -1,0 +1,146 @@
+{% extends "layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Objects" %}
+{% set body_class = "sg-body" %}
+{% set css_base = "styleguide" %}
+{% set css_sub_folder = true %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+
+	<section id="utilities" class="sg-content">
+		<h1 class="sg-h1">Objects</h1>
+		
+
+		<h2 id="grid" class="sg-h2">Grid</h2>
+		<p class="sg-text">Edit grid varible in <code>assets/scss/objects/_grid.scss</code></p>
+		<p class="sg-text">Exemple of grid column division on grid level.</p>
+		<div class="sg-grid sg-columns--bordered">
+			<div class="o-grid o-grid--2">
+				<div class="o-grid__col"><span>1</span></div>
+				<div class="o-grid__col"><span>2</span></div>
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;o-grid o-grid--2&quot;&gt; <br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt; <br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt; <br>
+			&lt;/div&gt;
+		</code>
+		
+		<p class="sg-text">Exemple <code>o-grid--12</code> on large and <code>o-grid--6@sm</code> on small device.</p>
+		<p class="sg-text">Breackpoint available : <code>@lg</code>, <code>@md</code> & <code>@sm</code></p>
+		<div class="sg-grid sg-columns--bordered">
+			<div class="o-grid o-grid--12 o-grid--6@sm">
+				{% for i in range(1, 13) -%}
+					<div class="o-grid__col"><span>{{ i }}</span></div>
+				{%- endfor %}
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;o-grid o-grid--12 o-grid--6@sm&quot;&gt;
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;5&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;7&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;9&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;10&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;11&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;12&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;
+		</code>
+
+
+		<p class="sg-text">Exemple of grid column division on column level.</p>
+		<p class="sg-text"><code>o-grid__col--4 & o-grid__col--8</code> on large</p>
+		<p class="sg-text"><code>o-grid__col--12@sm & o-grid__col--12@sm</code> on small</p>
+		<div class="sg-grid sg-columns--bordered">
+			<div class="o-grid">
+				<div class="o-grid__col o-grid__col--4 o-grid__col--12@sm"><span>4 | 12@sm</span></div>
+				<div class="o-grid__col o-grid__col--8 o-grid__col--12@sm"><span>8 | 12@sm</span></div>
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;o-grid&quot;&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--4 o-grid__col--12@sm&quot;&gt;&lt;span&gt;2 | 12@sm&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--8 o-grid__col--12@sm&quot;&gt;&lt;span&gt;8 | 12@sm&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;
+		</code>
+		
+		<h3 id="grid" class="sg-h3">Grid offset</h3>
+		<p class="sg-text">Set offest with <code>o-grid__col--offset-2</code> based on column number</p>
+		<div class="sg-grid sg-columns--bordered">
+			<div class="o-grid">
+				<div class="o-grid__col o-grid__col--offset-4 o-grid__col--offset-2@sm o-grid__col--8"><span>8</span></div>
+			</div>
+			<div class="o-grid">
+				<div class="o-grid__col o-grid__col--offset-2 o-grid__col--offset-1@sm o-grid__col--4 o-grid__col--5@sm"><span>4 | 5@sm</span></div>
+				<div class="o-grid__col o-grid__col--offset-2 o-grid__col--offset-0@sm o-grid__col--2 o-grid__col--5@sm"><span>2 | 5@sm</span></div>
+			</div>
+			<div class="o-grid">
+				<div class="o-grid__col o-grid__col--offset-2 o-grid__col--offset-0@sm o-grid__col--8 o-grid__col--12@sm"><span>8 | 12@sm</span></div>
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;o-grid&quot;&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--offset-4 o-grid__col--offset-2@sm o-grid__col--8&quot;&gt;&lt;span&gt;8&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;<br>
+			&lt;div class=&quot;o-grid&quot;&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--offset-2 o-grid__col--offset-1@sm o-grid__col--4 o-grid__col--5@sm&quot;&gt;&lt;span&gt;4 | 5@sm&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--offset-2 o-grid__col--offset-0@sm o-grid__col--2 o-grid__col--5@sm&quot;&gt;&lt;span&gt;2 | 5@sm&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;<br>
+			&lt;div class=&quot;o-grid&quot;&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--offset-2 o-grid__col--offset-0@sm o-grid__col--8 o-grid__col--12@sm&quot;&gt;&lt;span&gt;8 | 12@sm&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;
+		</code>
+
+
+		<h3 id="grid" class="sg-h3">Grid Gutter</h3>
+		<p class="sg-text">Set gutter with <code>o-grid__gutter--sm</code> with <code>none, sm, md & lg</code></p>
+		<div class="sg-grid sg-columns--bordered">
+			<div class="o-grid o-grid--3 o-grid__gutter--lg@lg o-grid__gutter--md@md o-grid__gutter--sm@sm">
+				<div class="o-grid__col"><span>4</span></div>
+				<div class="o-grid__col"><span>4</span></div>
+				<div class="o-grid__col"><span>4</span></div>
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;o-grid o-grid--3 o-grid__gutter--lg@lg o-grid__gutter--md@md o-grid__gutter--sm@sm&quot;&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col&quot;&gt;&lt;span&gt;4&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;
+		</code>
+		
+		<p class="sg-text">Works also with column width level</p>
+		<div class="sg-grid sg-columns--bordered">
+			<div class="o-grid o-grid__gutter--none">
+				<div class="o-grid__col o-grid__col--6"><span>6</span></div>
+				<div class="o-grid__col o-grid__col--6"><span>6</span></div>
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;o-grid o-grid__gutter--none&quot;&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--6&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;<br>
+				&nbsp;&lt;div class=&quot;o-grid__col o-grid__col--6&quot;&gt;&lt;span&gt;6&lt;/span&gt;&lt;/div&gt;<br>
+			&lt;/div&gt;
+		</code>
+
+
+	</section><!-- //END Utilities -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+	
+
+	
+
+	

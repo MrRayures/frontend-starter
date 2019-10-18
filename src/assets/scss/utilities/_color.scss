@@ -17,7 +17,29 @@
                                     (success , $success),
                                     (info , $info) {
   .u-text-#{$color_name} {
-    color: #{$color_value}
+    color: #{$color_value};
+  }
+}
+@each $size , $bp in  (lg, $large),
+                      (md, $medium),
+                      (sm, $small) {
+  @include mq(#{$bp}) {
+    @each $color_name , $color_value in (primary , $primary),
+                                    (secondary , $secondary),
+                                    (tertiary , $tertiary),
+                                    (color , $text-color),
+                                    (color-light , $text-color-light),
+                                    (grey , $grey),
+                                    (grey-light , $grey-light),
+                                    (grey-dark , $grey-dark),
+                                    (alert , $alert),
+                                    (warning , $warning),
+                                    (success , $success),
+                                    (info , $info) {
+      .u-text-#{$color_name}\@#{$size}  {
+        color: #{$color_value};
+      }
+    }
   }
 }
 
@@ -36,6 +58,28 @@
                                     (info , $info) {
   .u-bg-#{$color_name} {
     background-color: #{$color_value}
+  }
+}
+
+
+@each $size , $bp in  (lg, $large),
+                      (md, $medium),
+                      (sm, $small) {
+  @include mq(#{$bp}) {
+    @each $color_name , $color_value in (primary , $primary),
+                                    (secondary , $secondary),
+                                    (tertiary , $tertiary),
+                                    (grey , $grey),
+                                    (grey-light , $grey-light),
+                                    (grey-dark , $grey-dark),
+                                    (alert , $alert),
+                                    (warning , $warning),
+                                    (success , $success),
+                                    (info , $info) {
+      .u-bg-#{$color_name}\@#{$size}  {
+        background-color: #{$color_value}
+      }
+    }
   }
 }
 

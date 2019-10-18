@@ -33,12 +33,22 @@ dd {
   margin: 0;
 }
 
+/* 
+* Font scaling to use REM
+* 1.6rem = 16px
+*/
+html {
+  font-size: 62.5%;
+}
+
+
 /* Set core body defaults */
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 1.6rem;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */

@@ -5,6 +5,7 @@
 	<meta charset="utf-8"> 
   <title>{{ page_title }}</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{{ page_desc }}">
 	
 	
 	<!-- Load CSS -->
@@ -18,19 +19,20 @@
 
 <body class="{{ body_class }}">
 	<a class="u-show-on-focus" href="#content">Skip to Content</a>
-	<!--
-	{% include "modules/header.html" %}
-	 //END Header -->
+	
+	{% include "components/header.html" %}
+	<!-- //END Header -->
 
 	{% block page_content %}{% endblock %}
+	
 
-	{% include "modules/footer.html" %}
+	{% include "components/footer.html" %}
 	<!-- //END Footer -->
 	
 
 	{% if js_base %}
-		<script type="text/javascript" src="assets/js/app.js?v=1"></script>
-		<script type="text/javascript" src="assets/js/vendor.js?v=1"></script>
+		<script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js?v=1"></script>
+		<script type="text/javascript" src="assets/js/vendor{% if js_min %}.min{% endif %}.js?v=1"></script>
 	{% endif %}
 
 	{% if js_page %}

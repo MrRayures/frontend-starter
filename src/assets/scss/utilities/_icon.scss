@@ -8,49 +8,30 @@
 */
 @each $size , $size_value in  (xs , $icon-size/2),
                               (sm , $icon-size),
-                              (md , $icon-size*2),
-                              (lg , $icon-size*3),
-                              (xlg, $icon-size*4),
-                              (xxlg, $icon-size*5),
-                              (xxxlg, $icon-size*6) {
-  .u-icon-#{$size} { font-size: $size_value!important; }
+                              (md , $icon-size*4),
+                              (lg , $icon-size*8),
+                              (xlg, $icon-size*12),
+                              (xxlg, $icon-size*16),
+                              (xxxlg, $icon-size*20) {
+  .u-icon-#{$size} { width: $size_value!important; height: $size_value!important; }
 }
 
-@include mq($large) {
-  @each $size , $size_value in  (xs , $icon-size/2),
-                              (sm , $icon-size),
-                              (md , $icon-size*2),
-                              (lg , $icon-size*3),
-                              (xlg, $icon-size*4),
-                              (xxlg, $icon-size*5),
-                              (xxxlg, $icon-size*6) {
-    .u-icon-#{$size}\@lg { font-size: $size_value; }
+@each $size , $bp in  (lg, $large),
+                      (md, $medium),
+                      (sm, $small) {
+  @include mq(#{$bp}) {
+    @each $size , $size_value in  (xs , $icon-size/2),
+                                  (sm , $icon-size),
+                                  (md , $icon-size*4),
+                                  (lg , $icon-size*8),
+                                  (xlg, $icon-size*12),
+                                  (xxlg, $icon-size*16),
+                                  (xxxlg, $icon-size*20) {
+      .u-icon-#{$size}\@#{$size} { width: $size_value!important; height: $size_value!important; }
+    }
   }
 }
 
-@include mq($medium) {
-  @each $size , $size_value in  (xs , $icon-size/2),
-                              (sm , $icon-size),
-                              (md , $icon-size*2),
-                              (lg , $icon-size*3),
-                              (xlg, $icon-size*4),
-                              (xxlg, $icon-size*5),
-                              (xxxlg, $icon-size*6) {
-    .u-icon-#{$size}\@md { font-size: $size_value; }
-  }
-}
-
-@include mq($small) {
-  @each $size , $size_value in  (xs , $icon-size/2),
-                              (sm , $icon-size),
-                              (md , $icon-size*2),
-                              (lg , $icon-size*3),
-                              (xlg, $icon-size*4),
-                              (xxlg, $icon-size*5),
-                              (xxxlg, $icon-size*6) {
-    .u-icon-#{$size}\@sm{ font-size: $size_value; }
-  }
-}
 
 
 

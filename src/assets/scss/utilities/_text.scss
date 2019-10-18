@@ -2,30 +2,24 @@
     [utilities:text]
 -------------------------------------------------------------------------------------------------------*/
 
-.u-text-ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  white-space: nowrap;
-}
-.u-text-left { 
-  text-align: left; 
-}
+.u-text-ellipsis {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } 
+.u-text-left {text-align: left; } 
+.u-text-right {text-align: right; } 
+.u-text-center {text-align: center; } 
+.u-primary-font {font-family: $primary-font; } 
+.u-secondary-font {font-family: $secondary-font; }
 
-.u-text-right { 
-  text-align: right; 
+@each $size , $bp in  (lg, $large),
+                      (md, $medium),
+                      (sm, $small) {
+  @include mq(#{$bp}) {
+  	.u-text-ellipsis\@#{$size}  {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } 
+		.u-text-left\@#{$size}  {text-align: left; } 
+		.u-text-right\@#{$size}  {text-align: right; } 
+		.u-text-center\@#{$size}  {text-align: center; } 
+		.u-primary-font\@#{$size}  {font-family: $primary-font; } 
+		.u-secondary-font\@#{$size}  {font-family: $secondary-font; }
+  }
 }
-
-.u-text-center { 
-  text-align: center; 
-}
-
-.u-primary-font {
-  font-family: $primary-font;
-}
-
-.u-secondary-font {
-  font-family: $secondary-font;
-}
-
 
 

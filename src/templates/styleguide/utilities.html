@@ -1,109 +1,293 @@
-	<h3 class="sg-h3">Breackpoints</h3>
-	<p class="sg-text">
-		<code class="sg-mq--xsmall">$xsmall: </code>, 
-		<code class="sg-mq--small">$small: </code>, 
-		<code class="sg-mq--medium">$medium: </code>, 
-		<code class="sg-mq--large">$large: </code>, 
-		<code class="sg-mq--xlarge">$xlarge: </code>
-	</p>
+{% extends "layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Brand" %}
+{% set body_class = "sg-body" %}
+{% set css_base = "styleguide" %}
+{% set css_sub_folder = true %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+
+	<section id="utilities" class="sg-content">
+		<h1 class="sg-h1">Utilities</h1>
+		<p class="sg-text">Breackpoint available : <code>@lg</code>, <code>@md</code> & <code>@sm</code></p>
 	
-	<h3 class="sg-h3">Visibility</h3>
-	<p class="sg-text">
-		Text alignement :
-		<code>.u-show</code>,
-		<code>.u-hide</code>,
-		<code>.u-hidden</code>,
-		<code>.u-sr-only</code>
-		<code>.u-show-on-focus</code>
-	</p>
+		<h2 id="accessibility" class="sg-h2">Accessibility</h2>
+		<p class="sg-text">
+			<code>.u-sr-only</code>
+			<code>.u-show-on-focus</code>
+		</p>
 
-	<h3 class="sg-h3">Text</h3>
-	<p class="sg-text">
-		Text alignement :
-		<code>.u-text-ellipsis</code>,
-		<code>.u-text-left</code>,
-		<code>.u-text-right</code>,
-		<code>.u-text-center</code>
-	</p>
-	<p class="sg-text">
-		Text color :
-		<code>.u-text-color</code>
-		<code>.u-text-color-light</code>
-		<code>.u-text-primary</code>
-		<code>.u-text-secondary</code>
-		<code>.u-text-tertiary</code>
-		<code>.u-text-grey-light</code>
-		<code>.u-text-grey</code>
-		<code>.u-text-grey-dark</code>
-		<code>.u-text-alert</code>
-		<code>.u-text-info</code>
-		<code>.u-text-warning</code>
-		<code>.u-text-success</code>
-	</p>
-	<div class="sg-columns sg-columns--bordered">
-		<p class="u-text-color">Text color</p>
-		<p class="u-text-color-light">Text color light</p>
-		<p class="u-text-primary">Primary</p>
-		<p class="u-text-secondary">Secondary</p>
-		<p class="u-text-tertiary">Tertiary</p>
-		<p class="u-text-grey-light">Grey light</p>
-		<p class="u-text-grey">Grey</p>
-		<p class="u-text-grey-dark">Grey dark</p>
-		<p class="u-text-alert">Alert</p>
-		<p class="u-text-info">Infos</p>
-		<p class="u-text-warning">Warning</p>
-		<p class="u-text-success">Success</p>
-	</div>
+		<h2 id="breackpoints" class="sg-h2">Breackpoints</h2>
+		<p class="sg-text">
+			<code class="sg-mq--xsmall">$xsmall: </code>, 
+			<code class="sg-mq--small">$small: </code>, 
+			<code class="sg-mq--medium">$medium: </code>, 
+			<code class="sg-mq--large">$large: </code>, 
+			<code class="sg-mq--xlarge">$xlarge: </code>
+		</p>
+
+		<h2 id="clear" class="sg-h2">Clear</h2>
+		<p class="sg-text">
+			<code>.clear</code>,
+			<code>.clearfix</code>
+		</p>
 
 
-	<h3 class="sg-h3">Fonts</h3>
-	<p class="sg-text">
-		<code>.u-primary-font</code>,
-		<code>.u-secondary-font</code>,
-	</p>
-	<div class="sg-columns sg-columns--bordered">
-		<p class="u-primary-font">Lorem ispum</p>
-		<p class="u-secondary-font">Lorem ispum</p>
-	</div>
 
-	<h3 class="sg-h3">Background</h3>
-	<p class="sg-text">
-		Background color :
-		<code>.u-bg-primary</code>
-		<code>.u-bg-secondary</code>
-		<code>.u-bg-tertiary</code>
-		<code>.u-bg-grey-light</code>
-		<code>.u-bg-grey</code>
-		<code>.u-bg-grey-dark</code>
-		<code>.u-bg-alert</code>
-		<code>.u-bg-info</code>
-		<code>.u-bg-warning</code>
-		<code>.u-bg-success</code>
-	</p>
-	<div class="sg-columns sg-columns--bordered">
-		<div class="sg-bg u-bg-primary"></div>
-		<div class="sg-bg u-bg-secondary"></div>
-		<div class="sg-bg u-bg-tertiary"></div>
-		<div class="sg-bg u-bg-grey-light"></div>
-		<div class="sg-bg u-bg-grey"></div>
-		<div class="sg-bg u-bg-grey-dark"></div>
-		<div class="sg-bg u-bg-alert"></div>
-		<div class="sg-bg u-bg-info"></div>
-		<div class="sg-bg u-bg-warning"></div>
-		<div class="sg-bg u-bg-success"></div>
-	</div>
+		<h2 id="color" class="sg-h2">Color</h2>
+		<p class="sg-text">
+			Text color :
+			<code>.u-text-color</code>
+			<code>.u-text-color-light</code>
+			<code>.u-text-primary</code>
+			<code>.u-text-secondary</code>
+			<code>.u-text-tertiary</code>
+			<code>.u-text-grey-light</code>
+			<code>.u-text-grey</code>
+			<code>.u-text-grey-dark</code>
+			<code>.u-text-alert</code>
+			<code>.u-text-info</code>
+			<code>.u-text-warning</code>
+			<code>.u-text-success</code>
+		</p>
+		<div class="sg-columns sg-columns--bordered">
+			<p class="u-text-color">Text color</p>
+			<p class="u-text-color-light">Text color light</p>
+			<p class="u-text-primary">Primary</p>
+			<p class="u-text-secondary">Secondary</p>
+			<p class="u-text-tertiary">Tertiary</p>
+			<p class="u-text-grey-light">Grey light</p>
+			<p class="u-text-grey">Grey</p>
+			<p class="u-text-grey-dark">Grey dark</p>
+			<p class="u-text-alert">Alert</p>
+			<p class="u-text-info">Infos</p>
+			<p class="u-text-warning">Warning</p>
+			<p class="u-text-success">Success</p>
+		</div>
+
+		<h3 class="sg-h3">Background</h3>
+		<p class="sg-text">
+			Background color :
+			<code>.u-bg-primary</code>
+			<code>.u-bg-secondary</code>
+			<code>.u-bg-tertiary</code>
+			<code>.u-bg-grey-light</code>
+			<code>.u-bg-grey</code>
+			<code>.u-bg-grey-dark</code>
+			<code>.u-bg-alert</code>
+			<code>.u-bg-info</code>
+			<code>.u-bg-warning</code>
+			<code>.u-bg-success</code>
+		</p>
+		<div class="sg-columns sg-columns--bordered">
+			<div class="sg-bg u-bg-primary"></div>
+			<div class="sg-bg u-bg-secondary"></div>
+			<div class="sg-bg u-bg-tertiary"></div>
+			<div class="sg-bg u-bg-grey-light"></div>
+			<div class="sg-bg u-bg-grey"></div>
+			<div class="sg-bg u-bg-grey-dark"></div>
+			<div class="sg-bg u-bg-alert"></div>
+			<div class="sg-bg u-bg-info"></div>
+			<div class="sg-bg u-bg-warning"></div>
+			<div class="sg-bg u-bg-success"></div>
+		</div>
+
+		<h2 id="debug" class="sg-h2">Debug</h2>
+		<p class="sg-text">TODO</p>
+		<div class="sg-columns sg-columns--bordered">
+		
+		</div>
+		<code class="sg-code">
+		</code>
+		
+		<h2 id="flexbox" class="sg-h2">Flexbox</h2>
+		<p class="sg-text">Flexbox utilities class exemple & list.</p>
+		<div class="sg-columns sg-columns--bordered u-block">
+			<div class="u-flex u-flex-justify-around">
+				<p>1</p>
+				<p>2</p>
+				<p>3</p>
+			</div>
+		</div>
+		<code class="sg-code">
+			&lt;div class=&quot;u-flex u-flex-justify-around&quot;&gt; <br>
+				&nbsp;&lt;p&gt;1&lt;/p&gt;<br>
+				&nbsp;&lt;p&gt;2&lt;/p&gt;<br>
+				&nbsp;&lt;p&gt;3&lt;/p&gt;<br>
+			&lt;/div&gt;<br><br>
+			.u-flex {display: flex;} <br>
+			.u-inline-flex {display: inline-flex } <br>
+			.u-flex-nowrap {flex-wrap: nowrap } <br>
+			.u-flex-wrap {flex-wrap: wrap } <br>
+			.u-flex-wrap-reverse {flex-wrap: wrap-reverse } <br>
+			.u-flex-row {flex-direction: row } <br>
+			.u-flex-row-reverse {flex-direction: row-reverse } <br>
+			.u-flex-column {flex-direction: column } <br>
+			.u-flex-column-reverse {flex-direction: column-reverse } <br>
+			.u-flex-justify-start {justify-content: flex-start } <br>
+			.u-flex-justify-end {justify-content: flex-end } <br>
+			.u-flex-justify-center {justify-content: center } <br>
+			.u-flex-justify-between {justify-content: space-between } <br>
+			.u-flex-justify-around {justify-content: space-around } <br>
+			.u-flex-align-start {align-items: flex-start } <br>
+			.u-flex-align-end {align-items: flex-end } <br>
+			.u-flex-align-center {align-items: center } <br>
+			.u-flex-align-baseline {align-items: baseline } <br>
+			.u-flex-align-stretch {align-items: stretch } <br>
+			.u-flex-self-start {align-self: flex-start } <br>
+			.u-flex-self-end {align-self: flex-end } <br>
+			.u-flex-self-center {align-self: center } <br>
+			.u-flex-self-baseline {align-self: baseline } <br>
+			.u-flex-self-stretch {align-self: stretch } <br>
+			.u-flex-item-fluid {flex: 1 } <br>
+			.u-flex-item-auto {flex: auto } <br>
+			.u-flex-item-initial {flex: initial } <br>
+			.u-flex-item-none {flex: none } <br>
+			.u-flex-item-first {order: -1 } <br>
+			.u-flex-item-medium {order: 0 } <br>
+			.u-flex-item-last order: 1 
+		</code>
+
+		
+
+		<h2 id="icon" class="sg-h2">Icon</h2>
+		<p class="sg-text">
+			<code>.u-icon-xs</code>,
+			<code>.u-icon-sm</code>,
+			<code>.u-icon-md</code>,
+			<code>.u-icon-lg</code>,
+			<code>.u-icon-xlg</code>,
+			<code>.u-icon-xxlg</code>,
+			<code>.u-icon-xxxlg</code>
+		</p>
+		<div class="sg-columns sg-columns--bordered sg-columns--v-centered">
+			{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-xs"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-sm"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-md"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-lg"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-xlg"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-xxlg"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-xxlg"} %}
+    	{% include "components/sprite-svg.html" %}
+
+    	{% set svg = { path: "assets/icons/sprite/icons.svg", id:"cross", title:"Fermer", class:"u-icon-xxxlg"} %}
+    	{% include "components/sprite-svg.html" %}
+		</div>
+		<code class="sg-code"></code>
 
 
-	<h3 class="sg-h3">Icons</h3>
-	<p class="sg-text">TODO</p>
-	<div class="sg-columns sg-columns--bordered">
-	
-	</div>
-	
-	<h3 class="sg-h3">Spacing</h3>
-	<p class="sg-text">TODO</p>
+		<h2 id="spacing" class="sg-h2">Spacing</h2>
+		<p class="sg-text">Pattern for spacing utility class : u-{property}{sides}-{size}</p>
+		<p class="sg-text">
+			<code>{property}</code> : <br>
+			<code>p</code> is for padding <br>
+			<code>m</code> is for margin <br>
+		</p>
+		<p class="sg-text">
+			<code>{sides}</code> : <br>
+			<code>t</code> is for top<br>
+			<code>r</code> is for right <br>
+			<code>b</code> is for bottom <br>
+			<code>l</code> is for left <br>
+		</p>
+		<p class="sg-text">
+			<code>{size}</code> : <br>
+			<code>xs</code>,
+			<code>sm</code>,
+			<code>md</code>,
+			<code>lg</code>,
+			<code>xlg</code>,
+			<code>xxlg</code>,
+			<code>xxxlg</code>
+			<code>auto</code>
+			<code>none</code>
+		</p>
+		<p class="sg-text">
+			Exemple with margin-top : <br>
+			<code>.u-mt-xs</code>,
+			<code>.u-mt-sm</code>,
+			<code>.u-mt-md</code>,
+			<code>.u-mt-lg</code>,
+			<code>.u-mt-xlg</code>,
+			<code>.u-mt-xxlg</code>,
+			<code>.u-mt-xxxlg</code>
+			<code>.u-mt-auto</code>
+			<code>.u-mt-none</code>
+		</p>
+		<div class="sg-columns sg-columns--bordered">
+			<div class="sg-space u-space-xs"></div>
+			<div class="sg-space u-space-sm"></div>
+			<div class="sg-space u-space-md"></div>
+			<div class="sg-space u-space-lg"></div>
+			<div class="sg-space u-space-xlg"></div>
+			<div class="sg-space u-space-xxlg"></div>
+			<div class="sg-space u-space-xxxlg"></div>
+		</div>
+		<code class="sg-code"></code>
+
+		<h2 id="text" class="sg-h2">Text</h2>
+		<p class="sg-text">
+			Text alignement :
+			<code>.u-text-ellipsis</code>,
+			<code>.u-text-left</code>,
+			<code>.u-text-center</code>,
+			<code>.u-text-right</code>
+		</p>
+		<div class="sg-columns sg-columns--bordered u-block">
+			<p class="u-text-ellipsis" style="max-width:150px;">You really think you can fly that thing?</p>
+			<br>
+			<p class="u-text-left">Did he just throw my cat out of the window?</p>
+			<br>
+			<p class="u-text-center">Did he just throw my cat out of the window?</p>
+			<br>
+			<p class="u-text-right">Did he just throw my cat out of the window?</p>
+		</div>
+
+		<h3 class="sg-h3">Fonts</h3>
+		<p class="sg-text">
+			<code>.u-primary-font</code>,
+			<code>.u-secondary-font</code>,
+		</p>
+		<div class="sg-columns sg-columns--bordered">
+			<p class="u-primary-font">So you two dig up, dig up dinosaurs?</p>
+			<p class="u-secondary-font">he Pirates of the Caribbean breaks down</p>
+		</div>
 
 
+		<h2 id="visibility" class="sg-h2">Visibility</h2>
+		<p class="sg-text">
+			<code>.u-block</code>,
+			<code>.u-none</code>,
+			<code>.u-inline</code>
+			<code>.u-inline-block</code>
+			<code>.u-visible</code>
+			<code>.u-hidden</code>
+		</p>
+
+
+
+
+
+	</section><!-- //END Utilities -->
+
+{% endblock %}
+<!-- //END page Content -->
 
 	
 

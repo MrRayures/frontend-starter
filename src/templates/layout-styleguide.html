@@ -4,12 +4,12 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8"> 
-  <title>{{ page_title }}</title> 
+  <title>{{ page_title }} - Styleguide</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Load CSS -->
 	{% if css_base %}
-		<link rel="stylesheet" type="text/css" href="assets/css/{{ css_base }}.css?v=1">
+		<link rel="stylesheet" type="text/css" href="{% if css_sub_folder %}../{% endif %}assets/css/{{ css_base }}.css?v=1">
 	{% endif %}
 
 
@@ -17,12 +17,86 @@
 
 <body class="{{ body_class }}">
 	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	
+	<section class="sg-sidebar">
+		<header class="sg-header">
+			<a href="index.html" class="sg-header__title" title="Go to index">Project name<span>Styleguide</span></a>
+			<button id="nav_open" class="sg-nav__btn sg-nav__btn--open">
+				{% set svg = { id:"menu", name:"menu", title:"Ouvrir la navigation", class:""} %}
+	    	{% include "components/sprite-svg.html" %}
+			</button>
+		</header>
+		<nav class="sg-nav" id="nav" role="navigation">
+			<button id="nav_close" class="sg-nav__btn sg-nav__btn--close">
+				{% set svg = { id:"cross", name:"menu", title:"Fermer la navigation", class:""} %}
+	    	{% include "components/sprite-svg.html" %}
+			</button>
+			<ul class="sg-menu">
+				<li>
+					<a class="sg-menu__link" href="/styleguide/brand.html">Brand</a>
+					<ul>
+						<li><a class="sg-menu__link" href="/styleguide/brand.html#color">Colors</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/brand.html#typography">Typography</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="sg-menu__link" href="/styleguide/components.html">Components</a>
+					<ul>
+						<li><a class="sg-menu__link" href="/styleguide/components.html#icons">Icons</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/components.html#buttons">Buttons</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/components.html#forms">Forms</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="sg-menu__link" href="/styleguide/objects.html">Objects</a>
+					<ul>
+						<li><a class="sg-menu__link" href="/styleguide/objects.html#grid">Grid</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="sg-menu__link" href="/styleguide/utilities.html">Utilities</a>
+					<ul>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#clear">Clear</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#color">Color</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#debug">Debug</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#flexbox">Flexbox</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#icon">Icon</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#spacing">Spacing</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#text">Text</a></li>
+						<li><a class="sg-menu__link" href="/styleguide/utilities.html#visibility">Visibility</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav><!-- //END Navigation -->
+	</section>
+	<!-- //END Sidebar -->
+	
+	<div id="content" class="sg-main" role="main">
+		{% block page_content %}{% endblock %}
+	</div><!-- //END Main -->
+	
+	
+	<script>
+		let nav = document.getElementById('nav'); 
+		let nav_open = document.getElementById('nav_open'); 
+		let nav_link = document.getElementsByClassName('sg-menu__link'); 
+		let nav_close = document.getElementById('nav_close'); 
 
-	{% block page_content %}{% endblock %}
-	
-	
-	<script type="text/javascript" src="assets/js/app.js?v=1"></script>
-	<script type="text/javascript" src="assets/js/vendor.js?v=1"></script>
+		nav_open.addEventListener("click", function( event ) {
+			nav.classList.add('sg-nav--open');
+		});
+
+		for (var i = 1; i < nav_link.length; i++) {
+			nav_link[i].addEventListener("click", function( event ) {
+				nav.classList.remove('sg-nav--open');
+			});
+		}
+
+		nav_close.addEventListener("click", function( event ) {
+			nav.classList.remove('sg-nav--open');
+		});
+
+	</script>
 	
 </body>
 </html>
