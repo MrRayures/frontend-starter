@@ -57,13 +57,23 @@ var prod = 'dist'; //Final folder
 * SASS + autoprefixer + sourcemaps
 */
 function css() {
-  return src([source + '/assets/scss/**/*.scss'], { sourcemaps: true })
+  var app = src([source + '/assets/scss/**/*.scss'], { sourcemaps: true })
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(sass({
       outputStyle: 'expanded'
     }))
     .pipe(autoprefixer())
     .pipe(dest([prod + '/assets/css/'], {sourcemaps: '.'}));
+
+  var vendor = src([source + '/assets/css/vendor/*.css'], { sourcemaps: true })
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }))
+    .pipe(autoprefixer())
+    .pipe(dest([prod + '/assets/css/vendor.css'], {sourcemaps: '.'}));
+
+    return merge(app, vendor);
 };
 
 

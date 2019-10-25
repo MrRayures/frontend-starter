@@ -486,15 +486,46 @@ a.sg-header__title {
 * Code
 */
 .sg-code {
-	border-radius: 0 0 $radius $radius;
+	border-radius: $radius;
 	border: 1px solid $border-color;
-	border-top: none;
+	//border-top: none;
 	background: #f5f5f5;
 	padding: $spacing*2;
 	margin-bottom: $spacing*4;
 	display: block;
 	font-size: 1.4rem;
 	line-height: 160%;
+	.sg-columns + & {
+		border-radius: 0 0 $radius $radius;
+		margin-top: -1px;
+	}
+}
+
+.sg-code--do {
+	background-color: #f6faf3;
+	border-color: #4d9f0c;
+	position: relative;
+	&:after {
+		content: ":)";
+		display: block;
+		color: #4d9f0c;
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
+}
+.sg-code--dont {
+	background-color: #fef7f7;
+	border-color: #e66465;
+	position: relative;
+	&:after {
+		content: ":(";
+		display: block;
+		color: #e66465;
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
 }
 
 

@@ -23,6 +23,7 @@
 	background-color: $primary;
 	color: #FFF;
 	&:hover {
+		color: #FFF;
 		background-color: darken($primary, 20%)
 	}
 	&:active {}
@@ -35,6 +36,7 @@
 	background-color: $secondary;
 	color: #FFF;
 	&:hover {
+		color: #FFF;
 		background-color: darken($secondary, 20%)
 	}
 	&:active {}
@@ -48,6 +50,7 @@
 	background-color: $tertiary;
 	color: #000;
 	&:hover {
+		color: #000;
 		background-color: darken($tertiary, 20%)
 	}
 	&:active {}

@@ -321,15 +321,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* link */
 a {
-  text-decoration: none;
   color: #000000;
-  -webkit-transition: 100ms;
-  transition: 100ms;
 }
 
 a:hover {
   color: #48466d;
   text-decoration: underline;
+}
+
+a[class] {
+  text-decoration: none;
 }
 
 /* list */
@@ -1211,6 +1212,7 @@ table td {
 }
 
 .c-btn--primary:hover {
+  color: #FFF;
   background-color: #1f1e2f;
 }
 
@@ -1223,6 +1225,7 @@ table td {
 }
 
 .c-btn--secondary:hover {
+  color: #FFF;
   background-color: #22495d;
 }
 
@@ -1235,6 +1238,7 @@ table td {
 }
 
 .c-btn--tertiary:hover {
+  color: #000;
   background-color: #57dbb1;
 }
 
@@ -4997,15 +5001,49 @@ a.sg-header__title:hover {
 * Code
 */
 .sg-code {
-  border-radius: 0 0 0.4rem 0.4rem;
+  border-radius: 0.4rem;
   border: 1px solid #dddddd;
-  border-top: none;
   background: #f5f5f5;
   padding: 1.6rem;
   margin-bottom: 3.2rem;
   display: block;
   font-size: 1.4rem;
   line-height: 160%;
+}
+
+.sg-columns + .sg-code {
+  border-radius: 0 0 0.4rem 0.4rem;
+  margin-top: -1px;
+}
+
+.sg-code--do {
+  background-color: #f6faf3;
+  border-color: #4d9f0c;
+  position: relative;
+}
+
+.sg-code--do:after {
+  content: ":)";
+  display: block;
+  color: #4d9f0c;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.sg-code--dont {
+  background-color: #fef7f7;
+  border-color: #e66465;
+  position: relative;
+}
+
+.sg-code--dont:after {
+  content: ":(";
+  display: block;
+  color: #e66465;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 /*
