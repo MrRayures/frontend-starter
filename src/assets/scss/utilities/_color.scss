@@ -20,23 +20,26 @@
     color: #{$color_value};
   }
 }
-@each $size , $bp in  (lg, $large),
-                      (md, $medium),
-                      (sm, $small) {
-  @include mq(#{$bp}) {
+
+@each $bp , $bp_value in  (xlg, $xlarge),
+                          (lg, $large),
+                          (md, $medium),
+                          (sm, $small),
+                          (xs, $xsmall) {
+  @include mq(#{$bp_value}) {
     @each $color_name , $color_value in (primary , $primary),
-                                    (secondary , $secondary),
-                                    (tertiary , $tertiary),
-                                    (color , $text-color),
-                                    (color-light , $text-color-light),
-                                    (grey , $grey),
-                                    (grey-light , $grey-light),
-                                    (grey-dark , $grey-dark),
-                                    (alert , $alert),
-                                    (warning , $warning),
-                                    (success , $success),
-                                    (info , $info) {
-      .u-text-#{$color_name}\@#{$size}  {
+                                        (secondary , $secondary),
+                                        (tertiary , $tertiary),
+                                        (color , $text-color),
+                                        (color-light , $text-color-light),
+                                        (grey , $grey),
+                                        (grey-light , $grey-light),
+                                        (grey-dark , $grey-dark),
+                                        (alert , $alert),
+                                        (warning , $warning),
+                                        (success , $success),
+                                        (info , $info) {
+      .u-text-#{$color_name}\@#{$bp}  {
         color: #{$color_value};
       }
     }

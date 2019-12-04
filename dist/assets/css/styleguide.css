@@ -209,62 +209,12 @@ input, button, select, textarea {
   font-family: Arial, sans-serif;
 }
 
-/*
-* Input style
-*/
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="date"] {
-  border: 2px solid #dddddd;
   color: #000000;
-  display: block;
-  margin: 0;
-  padding: 8px 15px;
-  border-radius: 0.4rem;
-  box-shadow: none;
-  height: 56px;
-  width: 100%;
-  max-width: 480px;
-  background-color: #FFF;
-  font-size: 1.6rem;
-  -webkit-transition: 100ms;
-  transition: 100ms;
-}
-
-input[type="text"] ::-webkit-input-placeholder,
-input[type="password"] ::-webkit-input-placeholder,
-input[type="email"] ::-webkit-input-placeholder,
-input[type="date"] ::-webkit-input-placeholder {
-  color: #333333;
-}
-
-input[type="text"] :-moz-placeholder,
-input[type="password"] :-moz-placeholder,
-input[type="email"] :-moz-placeholder,
-input[type="date"] :-moz-placeholder {
-  color: #333333;
-}
-
-input[type="text"] ::-moz-placeholder,
-input[type="password"] ::-moz-placeholder,
-input[type="email"] ::-moz-placeholder,
-input[type="date"] ::-moz-placeholder {
-  color: #333333;
-}
-
-input[type="text"] :-ms-input-placeholder,
-input[type="password"] :-ms-input-placeholder,
-input[type="email"] :-ms-input-placeholder,
-input[type="date"] :-ms-input-placeholder {
-  color: #333333;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus {
-  border-color: #48466d;
+  font-family: Arial, sans-serif;
 }
 
 /*

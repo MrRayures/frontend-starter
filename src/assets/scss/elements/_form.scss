@@ -12,34 +12,12 @@ input, button, select, textarea {
   font-family: $primary-font;
 }
 
-
-/*
-* Input style
-*/
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="date"] {
-  border: 2px solid $border-color;
   color: $text-color;
-  display: block;
-  margin: 0;
-  padding: 8px 15px;
-  border-radius: $radius;
-  box-shadow: none;
-  height: 56px;
-  width: 100%;
-  max-width: 480px;
-  background-color: #FFF;
-  font-size: 1.6rem;
-  transition: $timing;
-  @include placeholder() {
-    color: $text-color-light;
-  }
-  &:focus {
-    border-color: $primary;
-    //box-shadow: 0 0 0px 1px $primary;
-  }
+  font-family: $primary-font;
 }
 
 

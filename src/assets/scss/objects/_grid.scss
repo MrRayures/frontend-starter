@@ -14,14 +14,9 @@ $gutter-x : 2.4rem;
   margin-left: calc(#{$gutter-x} * -1);
 }
 
-.o-grid--custom {
-  margin-bottom: calc(#{$gutter-y} * -1);
-  margin-left: calc(#{$gutter-x} * -1);
-}
-
 .o-grid__col {
-  padding-bottom: 2.4rem;
-  padding-left: 2.4rem;
+  padding-bottom: $gutter-y;
+  padding-left: $gutter-x;
 }
 
 
@@ -29,7 +24,6 @@ $gutter-x : 2.4rem;
 	.o-grid--#{$i} > .o-grid__col {
 		width: calc(100% / #{$i});
 	}
-
 	.o-grid__col--#{$i} {
 		width: calc((100% / #{$grid_col}) * #{$i});
 	}
@@ -42,33 +36,31 @@ $gutter-x : 2.4rem;
 /*
 * m-grid__col level
 */
-
 @for $i from 0 through $grid_col  {
+	@each $bp , $bp_value in  (xlg, $xlarge),
+                            (lg, $large),
+                            (md, $medium),
+                            (sm, $small),
+                            (xs, $xsmall) {
+	  @include mq(#{$bp_value}) {
 
-	@each $size , $bp in  (lg, $large),
-                      (md, $medium),
-                      (sm, $small) {
-	  @include mq(#{$bp}) {
-
-			.o-grid--#{$i}\@#{$size} > .m-grid__col {
+			.o-grid--#{$i}\@#{$bp} > .m-grid__col {
 				width: calc(100% / #{$i});
 			}
-			.o-grid__col--#{$i}\@#{$size} {
+			.o-grid__col--#{$i}\@#{$bp} {
 				width: calc((100% / #{$grid_col}) * #{$i});
 			}
-			.o-grid__col--offset-#{$i}\@#{$size} {
+			.o-grid__col--offset-#{$i}\@#{$bp} {
 				margin-left: calc((100% / #{$grid_col}) * #{$i});
 			}
 		}
 	}
-
 }
 
 
 /*
 * m-grid__col--gutter
 */
-
 .o-grid__gutter--sm {
 	margin-bottom: calc(#{$gutter-y} / -2);
   margin-left: calc(#{$gutter-x} / -2);
@@ -103,11 +95,13 @@ $gutter-x : 2.4rem;
 }
 
 
-@each $size , $bp in  (lg, $large),
-                      (md, $medium),
-                      (sm, $small) {
-	@include mq(#{$bp}) {
-		.o-grid__gutter--sm\@#{$size} {
+@each $bp , $bp_value in  (xlg, $xlarge),
+                          (lg, $large),
+                          (md, $medium),
+                          (sm, $small),
+                          (xs, $xsmall) {
+	@include mq(#{$bp_value}) {
+		.o-grid__gutter--sm\@#{$bp} {
 			margin-bottom: calc(#{$gutter-y} / -2);
 		  margin-left: calc(#{$gutter-x} / -2);
 		  .o-grid__col {
@@ -115,7 +109,7 @@ $gutter-x : 2.4rem;
 			  padding-left: calc(#{$gutter-x} /2);		
 			}
 		}
-		.o-grid__gutter--md\@#{$size} {
+		.o-grid__gutter--md\@#{$bp} {
 			margin-bottom: calc(#{$gutter-y} * -1);
 		  margin-left: calc(#{$gutter-x} * -1);
 		  .o-grid__col {
@@ -123,7 +117,7 @@ $gutter-x : 2.4rem;
 			  padding-left: calc(#{$gutter-x});		
 			}
 		}
-		.o-grid__gutter--lg\@#{$size} {
+		.o-grid__gutter--lg\@#{$bp} {
 			margin-bottom: calc(#{$gutter-y} * -4);
 		  margin-left: calc(#{$gutter-x} * -4);
 		  .o-grid__col {
@@ -131,7 +125,7 @@ $gutter-x : 2.4rem;
 			  padding-left: calc(#{$gutter-x} * 4);		
 			}
 		}
-		.o-grid__gutter--none\@#{$size} {
+		.o-grid__gutter--none\@#{$bp} {
 			margin-bottom: 0;
 		  margin-left: 0;
 		  .o-grid__col {

@@ -34,11 +34,10 @@
 
 // Generic
 @import 'generic/_accessibility';
-//@import 'generic/_normalize';
 @import 'generic/_reset';
 
 
-// elements
+// Elements
 @import 'elements/_fonts';
 @import 'elements/_form';
 @import 'elements/_page';
@@ -46,6 +45,11 @@
 
 // Objects
 @import 'objects/_grid';
+
+
+// Helpers
+@import 'helpers/_sass-inline-svg.scss';
+@import 'helpers/_sass-inline-svg-data.scss';
 
 
 // Components

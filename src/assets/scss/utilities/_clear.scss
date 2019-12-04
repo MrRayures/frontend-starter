@@ -16,20 +16,13 @@
    clear: both;
 }
 
-@each $size , $bp in  (lg, $large),
-                      (md, $medium),
-                      (sm, $small) {
-  @include mq(#{$bp}) {
-  	.u-clear\@#{$size} {
-		  clear: both;
-		}
-
-		.u-clearfix\@#{$size}:after {
-		   content: " ";
-		   visibility: hidden;
-		   display: block;
-		   height: 0;
-		   clear: both;
-		}
+@each $bp , $bp_value in  (xlg, $xlarge),
+                          (lg, $large),
+                          (md, $medium),
+                          (sm, $small),
+                          (xs, $xsmall) {
+  @include mq(#{$bp_value}) {
+  	.u-clear\@#{$bp} {clear: both;}
+		.u-clearfix\@#{$bp}:after {content: " ";visibility: hidden;display: block;height: 0;clear: both;}
   }
 }
