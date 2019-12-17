@@ -6,13 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Grid update
+- Grid update 
 - Rework abstracts & utilities generation with sass-maps
 - Add task convert to webp
 - remove task img-responsive
 - Build and import utilities (not rebuild on watch)
 - remove base style (exemple button)
 - Update readme with task description
+- Change scss folder name to fit ITCSS order
 
 
 ## [0.0.1] - 2019-10-13

@@ -286,11 +286,11 @@ function icons_css(){
   return src(source +'/assets/icons/*') 
     .pipe(svgmin()) // Recommend using svg min to optimize svg files first
     .pipe(sassInlineSvg({
-      destDir: source + '/assets/scss/helpers'
+      destDir: source + '/assets/scss/05-objects'
     }))
-    .pipe(src(source + '/assets/scss/helpers/_sass-inline-svg.scss'))
+    .pipe(src(source + '/assets/scss/05-objects/_sass-inline-svg.scss'))
     .pipe(replace('call($functionname', 'call(get-function($functionname)'))
-    .pipe(dest(source + '/assets/scss/helpers'));
+    .pipe(dest(source + '/assets/scss/05-objects'));
 };
 
 
@@ -387,7 +387,7 @@ function service_worker() {
 const build = series(clean, css, copy_assets, img, html, js);
 
 /*
-* Define complex tasks
+* Deploy the project
 */
 const deploy = series(clean, css, css_minify, img, webp, copy_assets, html, js, js_minify, service_worker);
 

@@ -22,47 +22,47 @@
 -------------------------------------------------------------------------------------------------------*/
 
 // Settings
-@import 'settings/_breackpoints';
-@import 'settings/_colors';
-@import 'settings/_fonts';
-@import 'settings/_global';
+@import '01-settings/_breackpoints';
+@import '01-settings/_colors';
+@import '01-settings/_fonts';
+@import '01-settings/_global';
 
 
 // Tools
-@import 'tools/_mixins';
+@import '02-tools/_mixins';
 
 
 // Generic
-@import 'generic/_accessibility';
-@import 'generic/_reset';
+@import '03-generic/_accessibility';
+@import '03-generic/_reset';
 
 
 // Elements
-@import 'elements/_fonts';
-@import 'elements/_form';
-@import 'elements/_page';
+@import '04-elements/_fonts';
+@import '04-elements/_form';
+@import '04-elements/_page';
 
 
 // Objects
-@import 'objects/_grid';
-
+@import '05-objects/_grid';
+@import '05-objects/_sass-inline-svg.scss';
+@import '05-objects/_sass-inline-svg-data.scss';
 
 // Helpers
-@import 'helpers/_sass-inline-svg.scss';
-@import 'helpers/_sass-inline-svg-data.scss';
+
 
 
 // Components
-@import 'components/_buttons';
-@import 'components/_container';
-@import 'components/_footer';
-@import 'components/_form-basic';
-@import 'components/_form';
-@import 'components/_header';
-@import 'components/_icons';
+@import '06-components/_buttons';
+@import '06-components/_container';
+@import '06-components/_footer';
+@import '06-components/_form-basic';
+@import '06-components/_form';
+@import '06-components/_header';
+@import '06-components/_icons';
 
 
 // Utilities
-@import 'utilities/_utilities';
+@import '99-utilities/_utilities';
 
 
