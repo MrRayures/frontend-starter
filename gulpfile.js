@@ -52,6 +52,8 @@ var prod = 'dist'; //Final folder
 
 
 
+
+
 /*
 * CSS task
 * SASS + autoprefixer + sourcemaps
@@ -98,12 +100,15 @@ function css_minify() {
 var cbString = new Date().getTime();
 
 function html() {
+  var assets =  'assets/img';
+  var styleguide = ' styleguide';
 
   var app = src([source + '/*.html'])
     .pipe(nunjucksRender({
       path: [source + '/templates'],
       data: {
-        img_path:  'assets/img/'
+        asset_path:  assets,
+        styleguide_path: styleguide
       }
     }))
     .pipe(htmlbeautify({
@@ -118,7 +123,8 @@ function html() {
     .pipe(nunjucksRender({
       path: [source + '/templates'],
       data: {
-        img_path:  'assets/img/'
+        asset_path: assets,
+        styleguide_path: styleguide
       }
     }))
     .pipe(htmlbeautify({
