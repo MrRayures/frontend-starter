@@ -12,16 +12,18 @@
 .u-visible {visibility: visible!important;}
 .u-hidden {visibility: hidden!important;}
 
-@each $size , $bp in  (lg, $large),
-                      (md, $medium),
-                      (sm, $small) {
-  @include mq(#{$bp}) {
-    .u-block\@#{$size} { display: block!important;}
-    .u-none\@#{$size} {display: none!important;}
-    .u-inline\@#{$size} {display: inline!important;}
-    .u-inline-block\@#{$size} {display: inline-block!important;vertical-align: top!important;}
-    .u-visible\@#{$size} {visibility: visible!important;}
-    .u-hidden\@#{$size} {visibility: hidden!important;}
+@each $bp , $bp_value in  (xlg, $xlarge),
+                          (lg, $large),
+                          (md, $medium),
+                          (sm, $small),
+                          (xs, $xsmall) {
+  @include mq(#{$bp_value}) {
+    .u-block\@#{$bp} { display: block!important;}
+    .u-none\@#{$bp} {display: none!important;}
+    .u-inline\@#{$bp} {display: inline!important;}
+    .u-inline-block\@#{$bp} {display: inline-block!important;vertical-align: top!important;}
+    .u-visible\@#{$bp} {visibility: visible!important;}
+    .u-hidden\@#{$bp} {visibility: hidden!important;}
   }
 }
 

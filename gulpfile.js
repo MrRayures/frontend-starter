@@ -398,7 +398,6 @@ function watch_files() {
   watch([source + '/assets/scss/*.scss', source + '/assets/scss/**/*'], series(css, reload))
   watch([source + '/assets/js/*.js'], series(js, reload))
   watch([source + '/assets/img/*.{png,jpg,jpeg,gif,svg}', source + '/assets/img/**/*.{png,jpg,jpeg,gif,svg}'], series(img, reload))
-  watch([source + '/assets/icons/*.svg', source + '/assets/icons/**/*.svg'], series(icons, icons_css, reload))
   watch([source + '/*.html', source + '/templates/**/*.html'], series(html, reload))
 }
 
