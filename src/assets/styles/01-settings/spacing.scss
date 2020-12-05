@@ -1,0 +1,26 @@
+// Variables liées aux espacements (paddings, margins...)
+
+$spacing: (
+  "xs"     : 0.8rem,
+  "sm"     : 1.6rem,
+  "md"     : 2.8rem,
+  "lg"     : 3.2rem,
+  "xlg"    : 6.4rem,
+  "0"      : 0,
+  "auto"   : auto
+);
+
+
+@function spacing($key) {
+  @if map-has-key($spacing, $key) {
+    @return map-get($spacing, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $spacing.";
+  @return null;
+}
+
+
+// Récupération de ces variables pour les exploiter dans le styleguide
+// https://www.npmjs.com/package/node-sass-export
+$v: export('src/styleguide/data/spacing.json', $spacing);

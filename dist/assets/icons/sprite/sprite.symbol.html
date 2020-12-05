@@ -19,8 +19,13 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style type="text/css">
-	.svg-cross-dims { width: 48px; height: 48px; }
-	.svg-menu-dims { width: 48px; height: 48px; }
+	.svg-arrow-down-dims { width: 24px; height: 24px; }
+	.svg-arrow-left-dims { width: 24px; height: 24px; }
+	.svg-arrow-right-dims { width: 24px; height: 24px; }
+	.svg-arrow-up-dims { width: 24px; height: 24px; }
+	.svg-checkmark-dims { width: 24px; height: 24px; }
+	.svg-cross-dims { width: 24px; height: 24px; }
+	.svg-menu-dims { width: 24px; height: 24px; }
 </style>
 <!--
 ====================================================================================================
@@ -43,8 +48,13 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
-		<symbol viewBox="0 0 48 48" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" id="cross" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h48v48H0z"/><path d="M45 38.329L30.449 23.963 44.799 9.47 38.329 3 23.958 17.556 9.415 3.201 3 9.617l14.562 14.42L3.201 38.585 9.617 45l14.415-14.557L38.53 44.799l6.47-6.47z" fill-rule="nonzero"/></symbol>
-		<symbol viewBox="0 0 48 48" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" id="menu" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h48v48H0z"/><path d="M45 13.5H3v-7h42v7zm0 7H3v7h42v-7zm0 14H3v7h42v-7z" fill-rule="nonzero"/></symbol>
+		<symbol viewBox="0 0 24 24" id="arrow-down" xmlns="http://www.w3.org/2000/svg"><path d="M0 7.33L2.829 4.5l9.175 9.339L21.171 4.5 24 7.33 12.004 19.5z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167L16.67 24 4.5 12.004z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l3.057-3L20 12 8.057 24 5 21l9-9z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="arrow-up" xmlns="http://www.w3.org/2000/svg"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339L24 16.67 12.004 4.5z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="checkmark" xmlns="http://www.w3.org/2000/svg"><path d="M9 22L-1 11.402l2.798-2.859 7.149 7.473L22.091 2 25 4.806z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="cross" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174L21.03-.046l-9.09 9.179L2.764.045l-2.81 2.81L9.14 11.96.045 21.144l2.81 2.81 9.112-9.192 9.18 9.1z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="menu" xmlns="http://www.w3.org/2000/svg"><path d="M24 6H0V2h24v4zm0 4H0v4h24v-4zm0 8H0v4h24v-4z"/></symbol>
 </svg>
 
 <!--
@@ -74,6 +84,61 @@ embedded above. They may be styled via CSS.
 			<h3>A) Inline SVG with embedded sprite</h3>
 			<ul>
 
+				<li title="arrow-down">
+					<div class="icon-box">
+						
+						<!-- arrow-down -->
+						<svg class="svg-arrow-down-dims">
+							<use xlink:href="#arrow-down"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-down</h2>
+				</li>
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<svg class="svg-arrow-left-dims">
+							<use xlink:href="#arrow-left"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<svg class="svg-arrow-right-dims">
+							<use xlink:href="#arrow-right"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="arrow-up">
+					<div class="icon-box">
+						
+						<!-- arrow-up -->
+						<svg class="svg-arrow-up-dims">
+							<use xlink:href="#arrow-up"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-up</h2>
+				</li>
+				<li title="checkmark">
+					<div class="icon-box">
+						
+						<!-- checkmark -->
+						<svg class="svg-checkmark-dims">
+							<use xlink:href="#checkmark"></use>
+						</svg>
+						
+					</div>
+					<h2>checkmark</h2>
+				</li>
 				<li title="cross">
 					<div class="icon-box">
 						
@@ -117,6 +182,61 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
 			<ul>
 				
+				<li title="arrow-down">
+					<div class="icon-box">
+						
+						<!-- arrow-down -->
+						<svg class="svg-arrow-down-dims">
+							<use xlink:href="icons.svg#arrow-down"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-down</h2>
+				</li>
+				<li title="arrow-left">
+					<div class="icon-box">
+						
+						<!-- arrow-left -->
+						<svg class="svg-arrow-left-dims">
+							<use xlink:href="icons.svg#arrow-left"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-left</h2>
+				</li>
+				<li title="arrow-right">
+					<div class="icon-box">
+						
+						<!-- arrow-right -->
+						<svg class="svg-arrow-right-dims">
+							<use xlink:href="icons.svg#arrow-right"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-right</h2>
+				</li>
+				<li title="arrow-up">
+					<div class="icon-box">
+						
+						<!-- arrow-up -->
+						<svg class="svg-arrow-up-dims">
+							<use xlink:href="icons.svg#arrow-up"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-up</h2>
+				</li>
+				<li title="checkmark">
+					<div class="icon-box">
+						
+						<!-- checkmark -->
+						<svg class="svg-checkmark-dims">
+							<use xlink:href="icons.svg#checkmark"></use>
+						</svg>
+						
+					</div>
+					<h2>checkmark</h2>
+				</li>
 				<li title="cross">
 					<div class="icon-box">
 						
@@ -147,7 +267,7 @@ SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
 
 		</section>
 		<footer>
-			<p>Generated at Tue, 17 Dec 2019 15:49:41 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+			<p>Generated at Fri, 03 Jul 2020 17:25:26 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
 		</footer>
 	</body>
 </html>

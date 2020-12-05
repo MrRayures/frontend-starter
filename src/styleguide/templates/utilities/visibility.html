@@ -1,0 +1,64 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : display / visibility" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "visibility" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="visibility" class="sg-content">
+	<h1 class="sg-h1">Display / Visibility</h1>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+        .u-block {
+          display: block!important;
+        }
+
+        .u-none {
+          display: none!important;
+        }
+
+        .u-inline {
+          display: inline!important;
+        }
+
+        .u-inline-block {
+          display: inline-block!important;
+          vertical-align: top!important;
+        }
+
+        .u-flex {
+          display: flex!important;
+        }
+
+        .u-inline-flex {
+          display: inline-flex!important;
+        }
+
+        .u-visible {
+          visibility: visible!important;
+        }
+
+        .u-hidden {
+          visibility: hidden!important;
+        }
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

@@ -1,0 +1,22 @@
+// Variables liées aux layout.
+
+
+// 85rem = 1360px / 16
+// 16 is the base font scaling defined in "02-tools/_reset.scss"
+$layout: (
+  "max-width" : 85rem
+);
+
+
+@function layout($key) {
+  @if map-has-key($layout, $key) {
+    @return map-get($layout, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $layout.";
+  @return null;
+}
+
+// Récupération de ces variables pour les exploiter dans le styleguide
+// https://www.npmjs.com/package/node-sass-export
+$v: export('src/styleguide/data/layout.json', $layout);

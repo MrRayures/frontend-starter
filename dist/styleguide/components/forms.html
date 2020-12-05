@@ -1,0 +1,202 @@
+<!-- layout-styleguide.html -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>Composants : formulaires - Styleguide</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styleguide/assets/css/styleguide.min.css?v=1593796564037">
+	<link rel="stylesheet" type="text/css" href="/styleguide/assets/css/vendor.min.css?v=1593796564037">
+</head>
+
+<body class="sg-body">
+	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	<section class="sg-sidebar">
+		<header class="sg-header">
+			<a href="/index.html" class="sg-header__title" title="Aller à l'index">Nom du projet<span>Styleguide</span></a>
+			<button id="nav_open" class="sg-nav__btn sg-nav__btn--open" aria-label="Ouvrir le menu">
+				<svg role="img" class="c-icon" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M24 6H0V2h24v4zm0 4H0v4h24v-4zm0 8H0v4h24v-4z" />
+				</svg>
+			</button>
+		</header>
+		<nav class="sg-nav" id="nav" role="navigation">
+			<button id="nav_close" class="sg-nav__btn sg-nav__btn--close" aria-label="Fermer le menu">
+				<svg role="img" class="c-icon" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M23.954 21.03l-9.184-9.095 9.092-9.174L21.03-.046l-9.09 9.179L2.764.045l-2.81 2.81L9.14 11.96.045 21.144l2.81 2.81 9.112-9.192 9.18 9.1z" />
+				</svg>
+			</button>
+			<ul class="sg-menu">
+				<li class="sg-menu__item"><a class="sg-menu__link" href="/styleguide/index.html">Bonne pratique</a></li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button " aria-expanded="false"><span class="sg-menu__button-text">Design</span> <span class="sg-menu__button-icon">+</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/brand/colors.html">Couleurs</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/brand/typography.html">Typographie</a></li>
+					</ul>
+				</li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button sg-menu__button--active" aria-expanded="true"><span class="sg-menu__button-text">Composants</span> <span class="sg-menu__button-icon">-</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/components/buttons.html">Buttons</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link sg-submenu__link--active" href="/styleguide/components/forms.html">Forms</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/components/icons.html">Icônes</a></li>
+					</ul>
+				</li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button " aria-expanded="false"><span class="sg-menu__button-text">Objets</span> <span class="sg-menu__button-icon">+</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/objects/grid.html">Grid</a></li>
+					</ul>
+				</li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button " aria-expanded="false"><span class="sg-menu__button-text">Utilitaires</span> <span class="sg-menu__button-icon">+</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/accessibility.html">Accessibility</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/box-shadow.html">Box-shadow</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/breakpoints.html">Breakpoints</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/clear.html">Clear</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/color.html">Color</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/debug.html">Debug</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/flexbox.html">Flexbox</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/font.html">Font</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/icon.html">Icônes</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/layout.html">Layout</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/mixins.html">Mixins</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/radius.html">Radius</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/spacing.html">Spacing</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/text.html">Text</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/visibility.html">Display / Visibility</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/z-index.html">Z-index</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav><!-- //END Navigation -->
+	</section>
+	<!-- //END Sidebar -->
+	<div id="content" class="sg-main" role="main">
+		<section id="forms" class="sg-content">
+			<h1 class="sg-h1">Formulaires</h1>
+			<h3 class="sg-h3">label</h3>
+			<div class="sg-columns sg-columns--bordered">
+				<label for="" class="c-form-label">Label</label>
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">  &lt;label for=&quot;&quot; class=&quot;c-form-label&quot;&gt;Label&lt;/label&gt;</code></pre>
+			</div>
+			<h3 class="sg-h3">Input</h3>
+			<div class="sg-columns sg-columns--bordered">
+				<input id="" class="c-form-input" type="text" placeholder="placeholder">
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">&lt;input id=&quot;&quot; class=&quot;c-form-input&quot; type=&quot;text&quot; placeholder=&quot;placeholder&quot;&gt;</code></pre>
+			</div>
+			<h3 class="sg-h3">Textarea</h3>
+			<div class="sg-columns sg-columns--bordered">
+				<textarea class="c-form-textarea" name="" id=""></textarea>
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">&lt;textarea class=&quot;c-form-textarea&quot; name=&quot;&quot; id=&quot;&quot;&gt;&lt;/textarea&gt;</code></pre>
+			</div>
+			<h3 class="sg-h3">Select</h3>
+			<div class="sg-columns sg-columns--bordered">
+				<select class="c-form-select" name="" id="">
+					<option value="">Option 01</option>
+					<option value="">Option 02</option>
+					<option value="">Option 03</option>
+					<option value="">Option 04</option>
+				</select>
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">&lt;select class=&quot;c-form-select&quot; name=&quot;&quot; id=&quot;&quot;&gt;
+  &lt;option value=&quot;&quot;&gt;Option 01&lt;/option&gt;
+  &lt;option value=&quot;&quot;&gt;Option 02&lt;/option&gt;
+  &lt;option value=&quot;&quot;&gt;Option 03&lt;/option&gt;
+  &lt;option value=&quot;&quot;&gt;Option 04&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+			</div>
+			<h3 class="sg-h3">Radio</h3>
+			<p class="sg-text">in progress</p>
+			<div class="sg-columns sg-columns--bordered">
+				<div class="c-form-radio">
+					<input name="radio" class="c-form-radio__input" type="radio" id="radio_1">
+					<label class="c-form-radio__label" for="radio_1">Radio label</label>
+				</div>
+				<div class="c-form-radio">
+					<input name="radio" class="c-form-radio__input" type="radio" id="radio_2">
+					<label class="c-form-radio__label" for="radio_2">Radio label</label>
+				</div>
+				<div class="c-form-radio">
+					<input name="radio" class="c-form-radio__input" type="radio" id="radio_3" disabled="disabled">
+					<label class="c-form-radio__label" for="radio_3">Radio label disabled</label>
+				</div>
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">&lt;div class=&quot;c-form-radio&quot;&gt;
+  &lt;input name=&quot;radio&quot; class=&quot;c-form-radio__input&quot; type=&quot;radio&quot; id=&quot;radio_1&quot;&gt;
+  &lt;label class=&quot;c-form-radio__label&quot; for=&quot;radio_1&quot;&gt;Radio label&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-form-radio&quot;&gt;
+  &lt;input name=&quot;radio&quot; class=&quot;c-form-radio__input&quot; type=&quot;radio&quot; id=&quot;radio_2&quot;&gt;
+  &lt;label class=&quot;c-form-radio__label&quot; for=&quot;radio_2&quot;&gt;Radio label&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-form-radio&quot;&gt;
+  &lt;input name=&quot;radio&quot; class=&quot;c-form-radio__input&quot; type=&quot;radio&quot; id=&quot;radio_3&quot; disabled=&quot;disabled&quot;&gt;
+  &lt;label class=&quot;c-form-radio__label&quot; for=&quot;radio_3&quot;&gt;Radio label disabled&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+			<h3 class="sg-h3">Checkbox</h3>
+			<div class="sg-columns sg-columns--bordered">
+				<div class="c-form-checkbox">
+					<input class="c-form-checkbox__input" type="checkbox" id="checkbox_1">
+					<label class="c-form-checkbox__label" for="checkbox_1">Checkbox label</label>
+				</div>
+				<div class="c-form-checkbox">
+					<input class="c-form-checkbox__input" type="checkbox" id="checkbox_2">
+					<label class="c-form-checkbox__label" for="checkbox_2">Checkbox label</label>
+				</div>
+				<div class="c-form-checkbox">
+					<input class="c-form-checkbox__input" type="checkbox" id="checkbox_3" disabled>
+					<label class="c-form-checkbox__label" for="checkbox_3">Checkbox label</label>
+				</div>
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">&lt;div class=&quot;c-form-checkbox&quot;&gt;
+  &lt;input class=&quot;c-form-checkbox__input&quot; type=&quot;checkbox&quot; id=&quot;checkbox_1&quot;&gt;
+  &lt;label class=&quot;c-form-checkbox__label&quot; for=&quot;checkbox_1&quot;&gt;Checkbox label&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-form-checkbox&quot;&gt;
+  &lt;input class=&quot;c-form-checkbox__input&quot; type=&quot;checkbox&quot; id=&quot;checkbox_2&quot;&gt;
+  &lt;label class=&quot;c-form-checkbox__label&quot; for=&quot;checkbox_2&quot;&gt;Checkbox label&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-form-checkbox&quot;&gt;
+  &lt;input class=&quot;c-form-checkbox__input&quot; type=&quot;checkbox&quot; id=&quot;checkbox_3&quot; disabled&gt;
+  &lt;label class=&quot;c-form-checkbox__label&quot; for=&quot;checkbox_3&quot;&gt;Checkbox label&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+			</div>
+			<h3 class="sg-h3">Form field</h3>
+			<div class="sg-columns sg-columns--bordered">
+				<form class="c-form">
+					<div class="c-form__field c-form__field--required">
+						<label for="email" class="c-form-label">Email <small class="c-required">requis</small></label>
+						<input id="email" class="c-form-input" type="email" placeholder="Exemple : duke@nukem.com">
+					</div>
+				</form>
+			</div>
+			<div class="sg-code">
+				<pre><code class="language-html">&lt;form class=&quot;c-form&quot;&gt;
+  &lt;div class=&quot;c-form__field c-form__field--required&quot;&gt;
+    &lt;label for=&quot;email&quot; class=&quot;c-form-label&quot;&gt;Email &lt;small class=&quot;c-required&quot;&gt;requis&lt;/small&gt;&lt;/label&gt;
+    &lt;input id=&quot;email&quot; class=&quot;c-form-input&quot; type=&quot;email&quot; placeholder=&quot;Exemple : duke@nukem.com&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+			</div>
+		</section><!-- //END Charte -->
+	</div><!-- //END Main -->
+	<script type="text/javascript" src="/styleguide/assets/js/vendor.min.js?v=1593796564037"></script>
+	<script type="text/javascript" src="/styleguide/assets/js/app.min.js?v=1593796564037"></script>
+</body>
+
+</html>

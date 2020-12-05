@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:icon]
+-------------------------------------------------------------------------------------------------------*/
+
+@each $size , $size_value in $icon-size {
+  .u-icon-#{$size} { width: $size_value!important; height: $size_value!important; }
+}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+    @each $size , $size_value in $icon-size {
+      .u-icon-#{$size}\@#{$bp} { width: $size_value!important; height: $size_value!important; }
+    }
+  }
+}
+
+
+
+

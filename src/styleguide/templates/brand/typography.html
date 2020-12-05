@@ -1,0 +1,49 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Design : typographie" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "brand" %}
+{% set current_page = "typography" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="typography" class="sg-content">
+	<h1 class="sg-h1">Typographie</h1>
+
+  {% for font_name, font_val in css_font_families %}
+    <h2 class="sg-h2">{{ font_val}}</h2>
+
+		<div class="sg-columns centered">
+			<p style="font-family: {{ font_val}};">A  À  B  C  Ç  D  E  É  È  Ë  F  G  H  I  J  K  L  M  N  O  Ô  Ö  P  Q  R  S  T  U  V  W  X  Y  Z <br>
+			a  à  b  c  ç  d  e  é  è  ê  ë  f  g  h  i  j  k  l  m  n  o  ô  ö  p  q  r  s  t  u  ù  v  w  x  y  z <br>
+			0 1 2 3 4 5 6 7 8 9 .  ;  :  !  ?  ‘  “  &  (  [  {  -  _  #  }  ]  )  %  £  €  $  < -  +  /  *  =  ></p>
+		</div>
+    <h4 class="sg-h3">Paragraph</h4>
+    <div class="sg-columns">
+		<p class="sg-text" style="font-family: {{ font_val}};">You really think you can fly that thing? Remind me to thank John for a lovely weekend. God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. Remind me to thank John for a lovely weekend. God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.</p>
+		<p class="sg-text" style="font-family: {{ font_val}};">Did he just throw my cat out of the window? God help us, we're in the hands of engineers. I was part of something special. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists. So you two dig up, dig up dinosaurs?</p>
+    <h4 class="sg-h3">Hn</h4>
+    <div class="sg-columns sg-columns--v-centered">
+      <h1 style="font-family: {{ font_val}};">H1 Lorem ispum dolor</h1>
+      <h2 style="font-family: {{ font_val}};">H2 Lorem ispum dolor</h2>
+      <h3 style="font-family: {{ font_val}};">H3 Lorem ispum dolor</h3>
+      <h4 style="font-family: {{ font_val}};">H4 Lorem ispum dolor</h4>
+      <h5 style="font-family: {{ font_val}};">H5 Lorem ispum dolor</h5>
+    </div>
+  </div>
+	{% endfor %}
+
+
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

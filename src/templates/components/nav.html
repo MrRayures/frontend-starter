@@ -1,9 +1,26 @@
+<nav class="c-nav c-nav--header" role="navigation" aria-label="Navigation primaire">
+	<ul class="c-nav__list">
+		{% set nav_link = [
+			[
+				"Menu item", "#"
+			],
+			[
+				"Menu item", "#"
+			],
+			[
+				"Menu item", "#"
+			],
+			[
+				"Menu item", "#"
+			]
+		] %}
+		{% for nav_name, nav_url in nav_link %}
+			<li class="m-nav__item">
+				<a class="m-nav__link" href="{{nav_url}}">{{nav_name}}
+					{{i}}</a>
+			</li>
+		{% endfor %}
 
-	<nav class="c-nav c-nav--header" role="navigation" aria-label="Navigation primaire">
-		<ul class="c-nav__list">
-			<li class="m-nav__item"><a class="m-nav__link" href="#">Menu item</a></li>
-			<li class="m-nav__item"><a class="m-nav__link" href="#">Menu item</a></li>
-			<li class="m-nav__item"><a class="m-nav__link" href="#">Menu item</a></li>
-			<li class="m-nav__item"><a class="m-nav__link" href="#">Menu item</a></li>
-		</ul>
-	</nav><!-- //END Header navigation -->
+	</ul>
+</nav>
+<!-- //END Header navigation -->

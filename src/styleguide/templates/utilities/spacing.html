@@ -1,0 +1,98 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : spacing" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "spacing" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="spacing" class="sg-content">
+	<h1 class="sg-h1">Spacing</h1>
+
+  <p class="sg-text">Pour ajouter unespace à un élement il suffit d'y ajouter la classe suivante : <code>u-{property}{direction}-{size}</code>.</p>
+
+	<h3 class="sg-h3">Margin ou padding</h3>
+	<p class="sg-text">Remplacer <code>{property}</code> par les valeurs suivantes : </p>
+	<ul class="sg-list">
+		<li><code>p</code> pour padding </li>
+		<li><code>m</code> pour margin </li>
+	</ul>
+
+	<h3 class="sg-h3">Top, right, bottom ou left</h3>
+	<p class="sg-text">
+		Si <code>{direction}</code> n'est pas définie l'espace s'appliquera dans toutes les directions.<br>
+		Remplacer <code>{direction}</code> par les valeurs suivantes :
+	</p>
+	<ul class="sg-list sg-list--border">
+		<li><code>t</code> pour top</li>
+		<li><code>r</code> pour right</li>
+		<li><code>b</code> pour bottom</li>
+		<li><code>l</code> pour left</li>
+		<li><code>x</code> pour left & right</li>
+		<li><code>y</code> pour top & bottom</li>
+	</ul>
+
+	<h3 class="sg-h3">Tailles disponibles :</h3>
+	<p class="sg-text">Remplacer <code>{size}</code> par les valeurs suivantes : </p>
+	<ul class="sg-text sg-list--border">
+    {% for spacing_name, spacing_val in css_spacing %}
+      <li><code>{{ spacing_name}}</code> : {{ spacing_val}}</li>
+    {% endfor %}
+	</ul>
+	<div class="sg-columns sg-columns--flex sg-columns--bordered">
+    {% for spacing_name, spacing_val in css_spacing %}
+      {% if spacing_name != "auto" and spacing_name != "0" %}
+        <div class="sg-space u-space-{{spacing_name}}"><code>{{ spacing_val}}</code></div>
+      {% endif %}
+    {% endfor %}
+	</div>
+  <div class="sg-code">
+    {% markdown %}
+      ```html
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 class="sg-h3">Exemples avec padding : </h3>
+	<div class="sg-columns sg-columns--bordered">
+    {% for spacing_name, spacing_val in css_spacing %}
+      {% if spacing_name != "auto" and spacing_name != "0" %}
+        <div class="u-mb-md u-p-{{spacing_name}} u-bgcolor-bg">Hello World ({{spacing_val}} )</div>
+      {% endif %}
+    {% endfor %}
+	</div>
+  <div class="sg-code">
+    {% markdown %}
+      ```html
+        {% for spacing_name, spacing_val in css_spacing %}{% if spacing_name != "auto" and spacing_name != "0" %}<div class="u-mb-md u-p-{{spacing_name}} u-bgcolor-bg">Hello World ({{spacing_val}} )</div>
+        {% endif %}{% endfor %}
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h2 class="sg-h2">Utilisation en scss :</h2>
+	<p class="sg-text">Pour ajouter un espace à un élement en <code>scss</code> il suffit d'utiliser la fonction suivante : <code>spacing({size})</code>.</p>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .component {
+        padding-top: spacing(md);
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+</section>
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

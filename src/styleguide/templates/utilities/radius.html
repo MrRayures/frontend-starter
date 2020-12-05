@@ -1,0 +1,63 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : radius" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "radius" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="radius" class="sg-content">
+	<h1 class="sg-h1">Radius</h1>
+
+  <p class="sg-text">Pour ajouter un radius à un élement il suffit d'y ajouter la classe suivante : <code>u-radius-{size}</code>.</p>
+
+	<h3 class="sg-h3">Tailles disponibles :</h3>
+	<p class="sg-text">Remplacer <code>{size}</code> par les valeurs suivantes : </p>
+	<ul class="sg-list sg-list--border">
+    {% for radius_name, radius_val in css_radius %}
+      <li><code>{{ radius_name}}</code> : {{ radius_val}}</li>
+    {% endfor %}
+	</ul>
+
+	<h3 class="sg-h3">Exemple :</h3>
+	<div class="sg-columns sg-columns--bordered">
+    {% for radius_name, radius_val in css_radius %}
+      <div class="u-p-sm u-bgcolor-bg u-radius-{{ radius_name}} u-mb-sm">Hello World ({{ radius_val}})</div>
+    {% endfor %}
+	</div>
+  <div class="sg-code">
+    {% markdown %}
+      ```html
+      {% for radius_name, radius_val in css_radius %}<div class="u-p-sm u-bgcolor-bg u-radius-{{ radius_name}}">Hello World ({{ radius_val}})</div>
+      {% endfor %}
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+	<h2 class="sg-h2">Utilisation en scss :</h2>
+	<p class="sg-text">Pour ajouter un radius à un élement en <code>scss</code> il suffit d'utiliser la fonction suivante : <code>radius({size})</code>.</p>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .component {
+        border-radius: radius(md);
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

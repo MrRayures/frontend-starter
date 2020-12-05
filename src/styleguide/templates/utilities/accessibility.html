@@ -1,0 +1,59 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : accessibilité" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "accessibility" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="accessibility" class="sg-content">
+	<h1 class="sg-h1">Accessibilité</h1>
+
+	<p class="sg-text">Classes disponibles :</p>
+	<div class="sg-code">
+    {% markdown %}
+    ```css
+    // Visible for screen reader
+    .u-sr-only {
+        clip: rect(0 0 0 0);
+        clip: path(inset 100%);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+    }
+
+    //Show only on focus
+    .u-show-on-focus {
+        position: absolute;
+        top: -100%;
+        z-index: 1000;
+        &:focus {
+          top: 0;
+          background-color: #222;
+          color: #FFF;
+        }
+    }
+
+    .u-visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        white-space: nowrap;
+    }
+    ```
+    {% endmarkdown %}
+  </div>
+
+</section>
+
+{% endblock %}
+<!-- //END page Content -->

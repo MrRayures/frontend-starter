@@ -1,0 +1,65 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : box-shadow" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "box-shadow" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="box-shadow" class="sg-content">
+	<h1 class="sg-h1">Box-shadow</h1>
+
+  <p class="sg-text">Pour ajouter une box-shadow à un élement il suffit d'y ajouter la classe suivante : <code>u-box-shadow-{size}</code>.</p>
+
+	<h3 class="sg-h3">Tailles disponibles :</h3>
+	<p class="sg-text">Remplacer <code>{size}</code> par les tailles suivantes : </p>
+	<ul class="sg-list sg-list--border">
+		{% for box_shadow_name in css_box_shadow %}
+			<li><code>{{box_shadow_name}}</code></li>
+		{% endfor %}
+	</ul>
+	<ul class="sg-list sg-list--border">
+		{% for box_shadow_name, box_shadow_val in css_box_shadow %}
+			<li><code>{{ box_shadow_name }}</code></li>
+		{% endfor %}
+	</ul>
+	<div class="sg-columns sg-columns--flex sg-columns--bordered">
+    {% for box_shadow_name, box_shadow_val in css_box_shadow %}
+      <div class="u-p-sm u-box-shadow-{{ box_shadow_name }}">u-box-shadow-{{ box_shadow_name }}</div>
+		{% endfor %}
+	</div>
+	<div class="sg-code">
+    {% markdown %}
+      ```html
+      {% for box_shadow_name, box_shadow_val in css_box_shadow %}
+        <div class="u-p-sm u-box-shadow-{{ box_shadow_name }}">u-box-shadow-{{ box_shadow_name }}</div>
+      {% endfor %}
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h2 class="sg-h2">Utilisation en scss :</h2>
+	<p class="sg-text">Pour ajouter une box-shadow à un élement en <code>scss</code> il suffit d'utiliser la fonction suivante : <code>shadow({size})</code>.</p>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+			.component {
+          box-shadow: shadow(sm);
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+</section>
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

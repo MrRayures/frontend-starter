@@ -1,0 +1,53 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : clear" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "clear" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="clear" class="sg-content">
+	<h1 class="sg-h1">Clear</h1>
+
+  <p class="sg-text">A utiliser pour gérer les débordement avec <code>float</code>.</p>
+
+	<h3 class="sg-h3">u-clear</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .u-clear {
+        clear: both;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 class="sg-h3">u-clearfix</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .u-clearfix:after {
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+</section>
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+
+

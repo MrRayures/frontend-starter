@@ -1,0 +1,581 @@
+/*-----------------------------------------------------------------------------------------------------
+    [Styleguide Stylesheet]
+		by : mr-rayures.com
+    Version : 1.0
+-------------------------------------------------------------------------------------------------------*/
+
+
+/*
+* Let's import ALL stuff
+*/
+@import "../../../assets/styles/app";
+@import "../../../assets/css/utilities.css";
+
+
+/*
+* Specific styleguide CSS
+*/
+$sidebar_width: 30rem;
+
+
+// Body
+.sg-body {
+  overflow: visible;
+  height: auto;
+  background-color: #FFF;
+  @include mq(bp(lg)) {
+    padding-top: 5rem;
+  }
+  .sg-h1 {
+    color: color(primary);
+    font-size: 4.8rem;
+    font-weight: 400;
+    font-family: font(primary);
+    margin-bottom: 2rem;
+  }
+  .sg-h2 {
+    color: color(primary);
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    font-family: font(primary);
+    ~.sg-h2 {
+      margin-top: 8rem;
+    }
+  }
+  .sg-h3 {
+    color: #222222;
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    font-family: font(primary);
+    ~.sg-h3 {
+      margin-top: 4rem;
+    }
+  }
+  .sg-h4 {
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    color: color(primary);
+  }
+  .sg-text {
+    color: color(text)-light;
+    margin-bottom: 2rem;
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.5rem;
+      display: inline-block;
+      color: color(text);
+      border-radius: radius(md);
+      font-size: 1.4rem;
+    }
+  }
+  a:not([class]) {
+    text-decoration: underline;
+    color: #000;
+    &:hover {
+      color: #FFF;
+      background-color: #000;
+    }
+  }
+  // Header
+  .sg-header {
+    background: #efefef;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+  .sg-header__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    span {
+      display: block;
+      color: color(text-light);
+      font-size: 1.4rem;
+      font-weight: 400;
+      @include mq(bp(lg)) {
+        margin-left: 2rem;
+      }
+    }
+  }
+  a.sg-header__title {
+    &:hover {
+      text-decoration: none;
+      color: #FFF;
+      span {
+        color: #FFF;
+      }
+    }
+  }
+  // Main
+  .sg-main {
+    //margin-left: $sidebar_width;
+    @include mq(bp(sm)) {
+      margin-left: 0;
+    }
+  }
+  // Sidebar
+  .sg-sidebar {
+    @include mq(0, bp(lg)) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: $sidebar_width;
+      border-right: 2px solid color(border);
+      background: #FFF;
+      display: flex;
+      flex-direction: column;
+    }
+    // header in sidebar
+    .sg-header {
+      background: none;
+      @include mq(bp(lg)) {
+        position: fixed;
+        z-index: 99;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 5rem;
+        background: #FFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+        padding: 0 1rem;
+        a {
+          font-size: 1.6rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          small {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+    // Add margin left when there is a sidebar
+    +.sg-main {
+      margin-left: $sidebar_width;
+      @include mq(bp(lg)) {
+        margin-left: 0;
+      }
+    }
+  }
+  .sg-nav {
+    padding: 2rem 0;
+    overflow-y: scroll;
+    height: 100%;
+    @include mq(bp(lg)) {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #FFF;
+      z-index: 120;
+      padding: 5rem 0 2rem 0;
+    }
+  }
+
+  .sg-menu {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .sg-menu__item {}
+
+  .sg-menu__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  .sg-menu__link {
+    display: block;
+    font-size: 1.6rem;
+    color: #333;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    &:hover,
+    &.sg-menu__button--active {
+      color: #000;
+      background-color: #cccccc;
+      .sg-menu__button-text {
+        text-decoration: underline;
+      }
+    }
+    &:focus {
+      background-color: #cccccc;
+      .sg-menu__button-text {
+        text-decoration: underline;
+      }
+    }
+    &:active {
+      background-color: #999999;
+    }
+	}
+
+	.sg-menu__button {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+	}
+	.sg-menu__button--active {
+		+ .sg-submenu {
+			display: block;
+		}
+	}
+
+  .sg-submenu {
+    list-style: none;
+    padding: 0;
+		margin-bottom: 2rem;
+		display: none;
+  }
+  .sg-submenu__item {
+    color: #333;
+    font-size: 1.6rem;
+  }
+  .sg-submenu__link {
+    display: block;
+    font-size: 1.6rem;
+    color: #333;
+    padding: 0.5rem 3rem;
+    text-decoration: none;
+    &:hover,
+    &.sg-submenu__link--active {
+      color: #000;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    &:focus {
+      background-color: #cccccc;
+      text-decoration: underline;
+    }
+    &:active {
+      background-color: #999999;
+    }
+  }
+
+
+  .sg-nav--open {
+    display: block;
+  }
+
+  .sg-nav__btn {
+    display: none;
+    @include mq(bp(lg)) {
+      width: 5rem;
+      height: 5rem;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 100;
+    }
+  }
+
+  .sg-nav__btn--open {
+    @include mq(bp(lg)) {
+      top: 50%;
+      right: 2rem;
+      transform: translateY(-50%);
+    }
+  }
+
+  .sg-nav__btn--close {
+    @include mq(bp(lg)) {
+      z-index: 110;
+      top: 0;
+      right: 2rem;
+    }
+  }
+
+
+  /*
+	* Content
+	*/
+  .sg-content {
+    padding: 2rem 6rem;
+    margin-bottom: 6rem;
+    max-width: 120rem;
+    border-bottom: 2px solid color(border);
+    &:last-child {
+      border: none;
+    }
+    @include mq(bp(sm)) {
+      padding: 2rem;
+    }
+  }
+  .sg-content--centered {
+    margin: 0 auto;
+  }
+
+
+  /*
+	* Components
+	*/
+  .sg-prop {
+    margin-bottom: 2rem;
+  }
+  .sg-prop__square {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+  }
+  .sg-prop__name {
+    display: block;
+    font-size: 1.6rem;
+    color: color(text);
+  }
+  .sg-prop__val {
+    display: block;
+    font-size: 1rem;
+    color: color(text-light);
+  }
+  .sg-prop--font {
+    .sg-prop__name {
+      font-size: 4rem;
+    }
+    .sg-prop__val {
+      font-size: 2rem;
+    }
+  }
+  .sg-prop--spacing {
+    .sg-prop__square {
+      background-color: color(alert);
+      border: 1px solid darken(color(alert), 20%);
+      opacity: 0.4;
+    }
+  }
+
+
+  /*
+	* list
+	*/
+  .sg-list {
+    list-style: none;
+    margin-bottom: 3rem;
+    padding: 0;
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.5rem;
+      display: inline-block;
+      color: color(text);
+      border-radius: radius(xs);
+      font-size: 1.4rem;
+    }
+  }
+
+  .sg-list--border {
+    padding-left: 1rem;
+    border-left: 4px solid #E9E9E9;
+    margin-bottom: 3rem;
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .sg-list--link {
+    a {
+      background: #eeeeee;
+      border-radius: radius(xs);
+      color: #333333;
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      padding: 1rem 2rem;
+      position: relative;
+      text-decoration: none;
+      transition: 200ms;
+      &:hover {
+        background: #cfcfcf;
+        color: #333333;
+        text-decoration: underline;
+      }
+    }
+    &.sg-list--sm {
+      a {
+        padding: 0.6rem 2rem;
+      }
+    }
+  }
+
+
+  /*
+	* Columns
+	*/
+  .sg-columns {
+    /*display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    >*:not(.sg-column) {
+      margin-right: 4rem;
+      //margin-bottom: 20px;
+    }*/
+  }
+  .sg-columns--bordered {
+    border: 1px solid color(border);
+    border-radius: 0.4rem 0.4rem 0 0;
+    padding: 2rem;
+    margin-bottom: 0px;
+  }
+  .sg-columns--flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    >*:not(.sg-column) {
+      margin-right: 4rem;
+    }
+  }
+  .sg-columns--flex-v-centered {
+    align-items: center;
+    [class*="sg-h"] {
+      margin-top: 0;
+    }
+  }
+  /*
+	* Utilities
+	*/
+  .sg-bg {
+    width: 10rem;
+    height: 10rem;
+    span {
+      background-color: #fff;
+    }
+  }
+  /*
+	* Code
+	*/
+  .sg-code {
+    border-radius: radius(xs);
+    border: 1px solid color(border);
+    //border-top: none;
+    background: #f5f5f5;
+    margin-bottom: 4rem;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 160%;
+  }
+  .sg-columns--bordered+.sg-code {
+    border-radius: 0 0 radius(xs) radius(xs);
+    margin-top: -1px;
+  }
+  .sg-code--do {
+    background-color: #f6faf3;
+    border-color: #4d9f0c;
+    position: relative;
+    padding: spacing(sm);
+    &:after {
+      content: ":)";
+      display: block;
+      color: #4d9f0c;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+  .sg-code--dont {
+    background-color: #fef7f7;
+    border-color: #e66465;
+    position: relative;
+    padding: spacing(sm);
+    &:after {
+      content: ":(";
+      display: block;
+      color: #e66465;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+
+
+  /*
+	* Grid
+	*/
+  .sg-grid {
+    .o-row {
+      margin-bottom: 1rem *2;
+    }
+    .o-col {
+      span {
+        background-color: color(grey-light);
+        border: 1px solid color(grey-base);
+        display: block;
+        padding: 1rem;
+      }
+    }
+  }
+
+
+  /*
+	* Icons
+	*/
+  .sg-icon-list {
+    .sg-icon {
+      text-align: center;
+      min-width: 16rem;
+      margin: 0 2rem 2rem 2rem;
+      border: 1px solid color(border);
+      padding: 1rem;
+      border-radius: 0.4rem;
+      span {
+        text-align: center;
+        display: block;
+        font-size: 1.4rem;
+        color: color(text);
+      }
+    }
+    .c-icon {
+      margin: 0 auto;
+      background-color: #f2f2f2;
+      width: 6.4rem;
+      height: 6.4rem;
+    }
+  }
+}
+
+
+/*
+* Space
+*/
+.sg-space {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+	color: color(text);
+	code {
+		text-align: center;
+		display: block;
+		font-size: 1.4rem;
+	}
+	&:before {
+		content: "";
+		margin: 0 auto;
+		display: block;
+		width: 10rem;
+    background-color: color(alert);
+    border: 1px solid darken(color(alert), 20%);
+    opacity: 0.4;
+	}
+	&:after {
+		display: block;
+		font-size: 1.4rem;
+		text-align: center;
+	}
+
+	@each $size , $size_value in  $spacing {
+    &.u-space-#{$size} {
+      &:before {
+        height: #{$size_value};
+        width: #{$size_value};
+      }
+
+    }
+  }
+}

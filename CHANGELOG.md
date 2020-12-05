@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Grid update 
 - Rework abstracts & utilities generation with sass-maps
+- Changed all variables with equivalent sass-map function
 - Add task convert to webp
 - remove task img-responsive
 - Build and import utilities (not rebuild on watch)

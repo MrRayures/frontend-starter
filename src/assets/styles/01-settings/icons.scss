@@ -1,0 +1,20 @@
+// Variables liées aux icones.
+$icon-size: (
+  "sm"   : 1.2rem,
+  "md"   : 1.6rem,
+  "lg"   : 2rem,
+);
+
+
+@function iconSize($key) {
+  @if map-has-key($icon-size, $key) {
+    @return map-get($icon-size, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $icon-size.";
+  @return null;
+}
+
+// Récupération de ces variables pour les exploiter dans le styleguide
+// https://www.npmjs.com/package/node-sass-export
+$v: export('src/styleguide/data/icons-size.json', $icon-size);

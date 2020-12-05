@@ -1,13 +1,13 @@
 /*
 * Javascript base variables & functions
 * Auteur : MrRayures - www.mr-rayures.com		
-* Copyright (C) 2018
+* Copyright (C) 2020
 */
 
 
 /*  
 * Breackpoint 
-* Based on CSS breackpoint (scss/settings/breckpoints)
+* Based on CSS breackpoint (styles/01-settings/breckpoints)
 * Use : if (window.innerWidth <= xsmall ) {}
 */
 var xsmall  = "450";

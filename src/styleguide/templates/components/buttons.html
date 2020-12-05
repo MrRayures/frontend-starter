@@ -1,0 +1,87 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Composants : boutons" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "components" %}
+{% set current_page = "buttons" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="buttons" class="sg-content">
+	<h1 class="sg-h1">Boutons</h1>
+
+
+	<div class="sg-columns sg-columns--bordered">
+		<button class="c-button">Button</button>
+		<button class="c-button c-button--primary">Primary</button>
+		<a href="#" class="c-button c-button--secondary">Secondary</a>
+	</div>
+  <div class="sg-code">
+    {% markdown %}
+      ```html
+      <button class="c-button">Button</button>
+      <button class="c-button c-button--primary">Primary</button>
+      <a href="#" class="c-button c-button--secondary">Secondary</a>
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+	<h3 class="sg-h3">Boutons avec icône</h3>
+	<div class="sg-columns sg-columns--bordered">
+		<button class="c-btn c-btn--primary c-btn--icon">
+			{% set svg = { id:"menu", class:""} %}
+    	{% include "templates/components/sprite-svg.html" %}
+			<span class="c-btn__text">Primary action</span>
+		</button>
+		<a href="#" class="c-btn c-btn--secondary c-btn--icon">
+			<span class="c-btn__text">Secondary action</span>
+			{% set svg = { id:"menu", class:""} %}
+    	{% include "templates/components/sprite-svg.html" %}
+		</a>
+	</div>
+  <div class="sg-code">
+    {% markdown %}
+      ```html
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+
+	<h3 class="sg-h3">Buttons with icon only</h3>
+
+	<div class="sg-columns sg-columns--bordered">
+		<button class="c-btn c-btn--primary c-btn--icon-only" aria-label="Open menu" title="Open menu">
+			{% set svg = { id:"menu", class:""} %}
+    	{% include "templates/components/sprite-svg.html" %}
+		</button>
+	</div>
+	<div class="sg-code">
+    {% markdown %}
+      ```html
+      ```
+    {% endmarkdown %}
+  </div>
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

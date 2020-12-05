@@ -1,0 +1,31 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Design : couleurs" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "brand" %}
+{% set current_page = "colors" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="colors" class="sg-content">
+	<h1 class="sg-h1">Couleurs</h1>
+
+	<h2 class="sg-h2">Couleurs principales</h2>
+  <div class="sg-columns sg-columns--flex">
+		{% for color_name, color_val in css_colors %}
+			<div class="sg-prop sg-prop--color">
+				<span class="sg-prop__square" style="background-color:  {{ color_val }};"></span>
+				<span class="sg-prop__name">{{ color_name }}</span>
+				<span class="sg-prop__val">{{ color_val }}</span>
+			</div>
+		{% endfor %}
+	</div>
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+

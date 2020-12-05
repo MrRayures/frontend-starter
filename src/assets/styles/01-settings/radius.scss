@@ -1,0 +1,27 @@
+// Variables radius.
+
+$radius: (
+  "xs"    : 0.4rem,
+  "sm"    : 0.8rem,
+  "md"    : 1.6rem,
+  "lg"    : 3.2rem,
+  "xlg"   : 6.4rem,
+  "full"  : 100rem,
+)!default;
+
+// Récupération de ces variables pour les exploiter dans le styleguide
+// https://www.npmjs.com/package/node-sass-export
+$v: export('src/styleguide/data/radius.json', $radius);
+
+
+@function radius($key) {
+  @if map-has-key($radius, $key) {
+    @return map-get($radius, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $radius.";
+  @return null;
+}
+
+
+

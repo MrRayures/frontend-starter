@@ -1,0 +1,42 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:color]
+-------------------------------------------------------------------------------------------------------*/
+/*
+* Color
+*/
+@each $color_name , $color_value in $colors {
+  .u-color-#{$color_name} {
+    color: #{$color_value};
+  }
+}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+    @each $color_name , $color_value in $colors {
+      .u-color-#{$color_name}\@#{$bp}  {
+        color: #{$color_value};
+      }
+    }
+  }
+}
+
+/*
+* Background
+*/
+@each $color_name , $color_value in $colors {
+  .u-bgcolor-#{$color_name} {
+    background-color: #{$color_value}
+  }
+}
+
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp}) {
+    @each $color_name , $color_value in $colors {
+      .u-bgcolor-#{$color_name}\@#{$bp}  {
+        background-color: #{$color_value}
+      }
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------------------------
+    [generic:accessibility]
+-------------------------------------------------------------------------------------------------------*/
+/*
+* Focus style for accessibility
+*/
+a, 
+button,
+select,
+input,
+textarea {
+  &:focus {
+    outline: 2px dotted #000;
+    //outline-offset: 2px;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}

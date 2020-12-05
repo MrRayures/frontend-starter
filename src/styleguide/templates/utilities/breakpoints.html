@@ -1,0 +1,69 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : breakpoints" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "breakpoints" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="breakpoints" class="sg-content">
+	<h1 class="sg-h1">Breakpoints</h1>
+
+  <p class="sg-text">Pour ajouter un breakpoint à une classe utilitaire il suffit d'y ajouter le suffix suivant <code>@{bp}</code> ce qui nous donne : <code>u-ma-classe-utilitaire@{bp}</code>.</p>
+
+	<h3 class="sg-h3">Breakpoints disponible :</h3>
+	<p class="sg-text">Remplacer <code>{bp}</code> par les breakpoints suivants : </p>
+	<ul class="sg-list sg-list--border">
+		{% for bp_name, bp_value in css_breakpoints %}
+			<li><code>{{bp_name}}</code> : {{bp_value}} ({{(bp_value | int)*16}}px)</li>
+		{% endfor %}
+	</ul>
+
+	<h3 class="sg-h3">Exemple avec box-shadow :</h3>
+	<div class="sg-columns sg-columns--bordered">
+		<div class="u-p-sm u-box-shadow-lg u-box-shadow-md@md u-box-shadow-sm@sm">u-box-shadow-lg <br> u-box-shadow-md@md <br> u-box-shadow-sm@sm</div>
+	</div>
+	<div class="sg-code">
+    {% markdown %}
+      ```html
+        <div class="u-p-sm u-box-shadow-lg u-box-shadow-md@md u-box-shadow-sm@sm">u-box-shadow-lg <br> u-box-shadow-md@md <br> u-box-shadow-sm@sm</div>
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h2 class="sg-h2">Utilisation en scss :</h2>
+	<p class="sg-text">
+		Pour utiliser les breakpoints en <code>scss</code> il suffit d'utiliser la fonction suivante : <code>bp({bp})</code> avec le mixins <code>mq()</code>.
+		<br>
+		En savoir plus sur <a href="/styleguide/utilities/mixins.html">les mixins</a>.
+	</p>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .component {
+        border-color: color(primary);
+        @include mq(bp(md)){
+          border-color: color(secondary);
+        }
+        @include mq(bp(sm)){<br>
+          border-color: color(success);
+        }
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+</section>
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

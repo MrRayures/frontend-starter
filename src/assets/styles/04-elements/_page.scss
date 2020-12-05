@@ -1,0 +1,106 @@
+/*-----------------------------------------------------------------------------------------------------
+  [elements:page]
+-------------------------------------------------------------------------------------------------------*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: font(primary);
+  color: color(text);
+  background: color(bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+  font-family: font(secondary);
+  color: color(title);
+}
+
+
+/* link */
+a {
+  color: color(text);
+  //transition: $timing;
+  &:hover {
+    color: color(primary);
+    text-decoration: underline;
+  }
+  &:active {}
+  &:focus {}
+  &:visited {}
+}
+
+/* list */
+ul,
+ol {
+  margin: 0;
+  li {
+    margin: 0;
+  }
+}
+
+
+/* img */
+img {
+  display: inline-block;
+  max-width: 100%;
+  font-style: italic;
+}
+
+
+/* blockquote */
+blockquote {
+  color: color(text);
+  font-style: italic;
+  font-family: $georgia;
+  font-size: 18px;
+  line-height: 170%;
+  p {
+    &:before {
+      content: " “ ";
+      color: color(grey-base);
+    }
+    &:after {
+      content: " ” ";
+      color: color(primary);
+    }
+  }
+}
+
+
+/* hr */
+hr {
+  background: color(border);
+  border: none;
+  height: 1px;
+}
+
+
+/* table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  th {
+    border: 1px solid gray;
+    padding: 0.2em;
+    text-align: left;
+  }
+  td {
+    border: 1px solid gray;
+    padding: 0.2em;
+  }
+}
+
+
+
+
+
+
+
+
+

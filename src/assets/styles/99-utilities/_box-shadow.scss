@@ -1,0 +1,24 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:box-shadow]
+-------------------------------------------------------------------------------------------------------*/
+
+@each $shadow_name , $shadow_value in $box-shadow {
+  .u-box-shadow-#{$shadow_name} {
+    box-shadow: #{$shadow_value};
+  }
+}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+    @each $shadow_name , $shadow_value in $box-shadow {
+      .u-box-shadow-#{$shadow_name}\@#{$bp}  {
+        box-shadow: #{$shadow_value};
+      }
+    }
+  }
+}
+
+
+
+
+

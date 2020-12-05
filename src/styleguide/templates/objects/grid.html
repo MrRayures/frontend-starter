@@ -1,0 +1,113 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Objets : grille" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "objects" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="grid" class="sg-content">
+	<h1 class="sg-h1">Grille</h1>
+
+  <p class="sg-text">Par défaut, les colonnes occupent tout l'espace disponible avec une largeur égale.</p>
+	<div class="sg-grid sg-columns--bordered">
+		<div class="o-row">
+			<div class="o-col"><span>1</span></div>
+			<div class="o-col"><span>2</span></div>
+		</div>
+	</div>
+  <div class="sg-code">
+    {% markdown %}
+      ```html
+      <div class="o-row">
+          <div class="o-col"><span>1</span></div>
+          <div class="o-col"><span>2</span></div>
+      </div>
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+
+
+	<p class="sg-text">Si vous devez définir une largeur, vous pouvez utiliser des modificateurs o-col basés sur les numéros de colonne.<br>
+	Exemple : <code>o-col--8</code> & <code>o-col--4</code></p>
+	<div class="sg-grid sg-columns--bordered">
+		<div class="o-row">
+			<div class="o-col o-col--8"><span>8</span></div>
+			<div class="o-col o-col--4"><span>4</span></div>
+		</div>
+	</div>
+	<div class="sg-code">
+    {% markdown %}
+      ```html
+      <div class="o-row">
+          <div class="o-col o-col--8"><span>8</span></div>
+          <div class="o-col o-col--4"><span>4</span></div>
+      </div>
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 id="grid" class="sg-h3">Breakpoints</h3>
+	<p class="sg-text">Plus d'infos sur les <a href="/styleguide/utilities/breakpoints.html">breakpoints</a>.</p>
+	<div class="sg-grid sg-columns--bordered">
+		<div class="o-row">
+			<div class="o-col o-col--8 o-col--12@sm"><span class="u-none@sm">8</span><span class="u-none u-block@sm">12</span></div>
+			<div class="o-col o-col--4 o-col--12@sm"><span class="u-none@sm">4</span><span class="u-none u-block@sm">12</span></div>
+		</div>
+	</div>
+	<div class="sg-code">
+    {% markdown %}
+      ```html
+      <div class="o-row">
+          <div class="o-col o-col--8 o-col--12@sm"><span class="u-none@sm">8</span><span class="u-none u-block@sm">12</span></div>
+          <div class="o-col o-col--4 o-col--12@sm"><span class="u-none@sm">4</span><span class="u-none u-block@sm">12</span></div>
+      </div>
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 id="grid" class="sg-h3">Grid offset</h3>
+	<p class="sg-text">Paramétrage des offset avec <code>o-col--offset-{X}</code> où <code>{X}</code> est le nombre de colonne.<br> Exemple :</p>
+	<div class="sg-grid sg-columns--bordered">
+		<div class="o-row">
+			<div class="o-col o-col--offset-4 o-col--offset-2@sm o-col--8"><span>8</span></div>
+		</div>
+		<div class="o-row">
+			<div class="o-col o-col--offset-2 o-col--offset-1@sm o-col--4 o-col--5@sm"><span class="u-none@sm">4</span><span class="u-none u-block@sm">5</span></div>
+			<div class="o-col o-col--offset-2 o-col--offset-0@sm o-col--2 o-col--5@sm"><span class="u-none@sm">2</span><span class="u-none u-block@sm">5</span></div>
+		</div>
+		<div class="o-row">
+			<div class="o-col o-col--offset-2 o-col--offset-0@sm o-col--8 o-col--12@sm"><span class="u-none@sm">8</span><span class="u-none u-block@sm">12</span></div>
+		</div>
+	</div>
+	<div class="sg-code">
+    {% markdown %}
+      ```html
+      <div class="o-row">
+          <div class="o-col o-col--offset-4 o-col--offset-2@sm o-col--8"><span>8</span></div>
+      </div>
+      <div class="o-row">
+          <div class="o-col o-col--offset-2 o-col--offset-1@sm o-col--4 o-col--5@sm"><span class="u-none@sm">4</span><span class="u-none u-block@sm">5</span></div>
+          <div class="o-col o-col--offset-2 o-col--offset-0@sm o-col--2 o-col--5@sm"><span class="u-none@sm">2</span><span class="u-none u-block@sm">5</span></div>
+      </div>
+      <div class="o-row">
+          <div class="o-col o-col--offset-2 o-col--offset-0@sm o-col--8 o-col--12@sm"><span class="u-none@sm">8</span><span class="u-none u-block@sm">12</span></div>
+      </div>
+      ```
+    {% endmarkdown %}
+  </div>
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

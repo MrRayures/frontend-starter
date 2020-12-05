@@ -1,0 +1,87 @@
+{% extends "styleguide/templates/layout-styleguide.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "Utilitaires : layout" %}
+{% set body_class = "sg-body" %}
+{% set current_section = "utilities" %}
+{% set current_page = "layout" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+<section id="layout" class="sg-content">
+	<h1 class="sg-h1">Layout</h1>
+
+  <p class="sg-text">Classes utlitaires pour le layout global.</p>
+
+	<h3 class="sg-h3">u-full-height</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .u-full-height {
+        height: 100%;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 class="sg-h3">u-full-width</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .u-full-width {
+        width: 100%;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 class="sg-h3">u-viewport-height</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .u-viewport-height {
+        height: 100vh;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 class="sg-h3">u-viewport-width</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .u-viewport-width {
+        width: 100vw;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+	<h3 class="sg-h3">no-scroll</h3>
+  <div class="sg-code">
+    {% markdown %}
+      ```css
+      .no-scroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      ```
+    {% endmarkdown %}
+  </div>
+
+
+</section><!-- //END Charte -->
+
+{% endblock %}
+<!-- //END page Content -->
+
+
+
+
+

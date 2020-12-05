@@ -1,0 +1,107 @@
+<!-- layout-styleguide.html -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>Utilitaires : z-index - Styleguide</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/styleguide/assets/css/styleguide.min.css?v=1593796564037">
+	<link rel="stylesheet" type="text/css" href="/styleguide/assets/css/vendor.min.css?v=1593796564037">
+</head>
+
+<body class="sg-body">
+	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	<section class="sg-sidebar">
+		<header class="sg-header">
+			<a href="/index.html" class="sg-header__title" title="Aller à l'index">Nom du projet<span>Styleguide</span></a>
+			<button id="nav_open" class="sg-nav__btn sg-nav__btn--open" aria-label="Ouvrir le menu">
+				<svg role="img" class="c-icon" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M24 6H0V2h24v4zm0 4H0v4h24v-4zm0 8H0v4h24v-4z" />
+				</svg>
+			</button>
+		</header>
+		<nav class="sg-nav" id="nav" role="navigation">
+			<button id="nav_close" class="sg-nav__btn sg-nav__btn--close" aria-label="Fermer le menu">
+				<svg role="img" class="c-icon" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M23.954 21.03l-9.184-9.095 9.092-9.174L21.03-.046l-9.09 9.179L2.764.045l-2.81 2.81L9.14 11.96.045 21.144l2.81 2.81 9.112-9.192 9.18 9.1z" />
+				</svg>
+			</button>
+			<ul class="sg-menu">
+				<li class="sg-menu__item"><a class="sg-menu__link" href="/styleguide/index.html">Bonne pratique</a></li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button " aria-expanded="false"><span class="sg-menu__button-text">Design</span> <span class="sg-menu__button-icon">+</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/brand/colors.html">Couleurs</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/brand/typography.html">Typographie</a></li>
+					</ul>
+				</li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button " aria-expanded="false"><span class="sg-menu__button-text">Composants</span> <span class="sg-menu__button-icon">+</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/components/buttons.html">Buttons</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/components/forms.html">Forms</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/components/icons.html">Icônes</a></li>
+					</ul>
+				</li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button " aria-expanded="false"><span class="sg-menu__button-text">Objets</span> <span class="sg-menu__button-icon">+</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/objects/grid.html">Grid</a></li>
+					</ul>
+				</li>
+				<li class="sg-menu__item">
+					<button type="button" class="sg-menu__link sg-menu__button sg-menu__button--active" aria-expanded="true"><span class="sg-menu__button-text">Utilitaires</span> <span class="sg-menu__button-icon">-</span></button>
+					<ul class="sg-submenu">
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/accessibility.html">Accessibility</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/box-shadow.html">Box-shadow</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/breakpoints.html">Breakpoints</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/clear.html">Clear</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/color.html">Color</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/debug.html">Debug</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/flexbox.html">Flexbox</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/font.html">Font</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/icon.html">Icônes</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/layout.html">Layout</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/mixins.html">Mixins</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/radius.html">Radius</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/spacing.html">Spacing</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/text.html">Text</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link " href="/styleguide/utilities/visibility.html">Display / Visibility</a></li>
+						<li class="sg-submenu__item"><a class="sg-submenu__link sg-submenu__link--active" href="/styleguide/utilities/z-index.html">Z-index</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav><!-- //END Navigation -->
+	</section>
+	<!-- //END Sidebar -->
+	<div id="content" class="sg-main" role="main">
+		<section id="z-index" class="sg-content">
+			<h1 class="sg-h1">Z-index</h1>
+			<h3 class="sg-h3">Z-index disponible :</h3>
+			<ul class="sg-list">
+				<li><code>below</code> : -1</li>
+				<li><code>default</code> : auto</li>
+				<li><code>above</code> : 1</li>
+				<li><code>absolute</code> : 10</li>
+				<li><code>fixed</code> : 100</li>
+				<li><code>overlay</code> : 5000</li>
+				<li><code>popin</code> : 6000</li>
+				<li><code>skyrocket</code> : 9999</li>
+			</ul>
+			<h2 class="sg-h2">Utilisation en scss :</h2>
+			<p class="sg-text"> Pour ajouter un z-index à un élement en <code>scss</code> il suffit d'utiliser la fonction suivante : <code>zIndex({index})</code>. <br> Remplacer <code>{index}</code> par les valeurs disponible ci-dessus. </p>
+			<h3 class="sg-h3">Exemple :</h3>
+			<div class="sg-code">
+				<pre><code class="language-css">.component {
+  z-index: zIndex(overlay);
+}</code></pre>
+			</div>
+		</section><!-- //END Charte -->
+	</div><!-- //END Main -->
+	<script type="text/javascript" src="/styleguide/assets/js/vendor.min.js?v=1593796564037"></script>
+	<script type="text/javascript" src="/styleguide/assets/js/app.min.js?v=1593796564037"></script>
+</body>
+
+</html>
