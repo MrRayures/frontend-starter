@@ -1,6 +1,3 @@
-<img alt="npm" src="https://img.shields.io/npm/v/npm?style=flat-square">
-<a href="https://badge.fury.io/js/npm"><img src="https://badge.fury.io/js/npm.svg" alt="npm version" height="18"></a>
-
 # :doughnut: Frontend starter
 
 ## Features
