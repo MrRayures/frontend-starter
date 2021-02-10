@@ -1,4 +1,5 @@
 <img alt="npm" src="https://img.shields.io/npm/v/npm?style=flat-square">
+[![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)
 
 # :doughnut: Frontend starter
 
