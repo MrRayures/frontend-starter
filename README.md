@@ -1,3 +1,5 @@
+<img alt="npm" src="https://img.shields.io/npm/v/npm?style=flat-square">
+
 # :doughnut: Frontend starter
 
 ## Features
