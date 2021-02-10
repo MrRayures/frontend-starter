@@ -73,7 +73,7 @@ function css() {
     .pipe(autoprefixer())
     .pipe(dest([prod + '/assets/css/vendor.css'], {sourcemaps: '.'}));
 
-    return merge(app, vendor);
+  return merge(app, vendor);
 };
 
 
