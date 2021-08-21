@@ -4,6 +4,7 @@
 */
 
 // Set this variable according to your needs
+const project_name = 'Starter;
 const use_styleguide = true;
 const use_utilities = true;
 
@@ -97,18 +98,21 @@ function css() {
 		], { sourcemaps: true })
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(sass({
-      outputStyle: 'expanded'
+      outputStyle: 'expanded',
+      includePaths: ['node_modules/']
     }))
     .pipe(autoprefixer())
     .pipe(dest([prod + '/assets/css/'], {sourcemaps: '/map'}));
 
-  var vendor = src([source + '/assets/_vendor/*.css'])
+    return merge(app);
+};
+
+function css_vendor() {
+  return src([source + '/assets/styles/_vendor/*.css'])
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(csso())
     .pipe(concat('vendor.css'))
-    .pipe(dest([prod + '/assets/css/vendor.css']));
-
-    return merge(app, vendor);
+    .pipe(dest([prod + '/assets/css/']));
 };
 
 
@@ -134,10 +138,16 @@ function css_minify() {
 * Bonus add cache bust tricks on CSS & JS : ?v=xxx
 */
 var cbString = new Date().getTime();
-
+var data = {
+  project_name : project_name,
+  use_styleguide : use_styleguide,
+  use_utilities : use_utilities
+}
 function html() {
-  return src([source + '/*.html'])
-    .pipe(gulpnunjucks.compile({},{env: env}))
+  return src([
+    source + '/*.html',
+    ])
+    .pipe(gulpnunjucks.compile(data))
 		.pipe(htmlbeautify(param_htmlbeautify))
     .pipe(replace(/v=\d+/g, 'v=' + cbString))
     .pipe(dest(prod))
@@ -170,12 +180,14 @@ function js() {
     .pipe(concat('app.js'))
     .pipe(dest(prod + '/assets/js/'))
 
-  var vendor = src([source + '/assets/js/vendor/*.js'])
+    return merge(app);
+};
+
+function js_vendor() {
+  return src([source + '/assets/js/vendor/*.js'])
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(concat('vendor.js'))
     .pipe(dest(prod + '/assets/js/'))
-
-    return merge(app, vendor);
 };
 
 
@@ -200,9 +212,12 @@ function js_minify() {
 * minify images
 */
 function img() {
-  return src([source + '/assets/images/**/*.{png,jpg,jpeg,gif,svg}'], {since: lastRun(img)})
+  return src([
+    source + '/assets/images/*.{png,jpg,jpeg,gif,svg}',
+    source + '/assets/images/**/*.{png,jpg,jpeg,gif,svg}'
+  ], {since: lastRun(img)})
     .pipe(imagemin())
-    .pipe(dest([prod + '/assets/images']));
+    .pipe(dest([prod + '/assets/images/']));
 };
 
 
@@ -249,13 +264,10 @@ function icons_min() {
       plugins: [
         {
           removeViewBox: false,
-        },
-        {
-          removeDimensions: true,
         }
       ]
     }))
-    .pipe(dest(source + '/assets/icons/'));
+    .pipe(dest(prod + '/assets/icons/'));
 }
 
 /*
@@ -377,6 +389,10 @@ function html_styleguide() {
   var css_zindex = JSON.parse(fs.readFileSync('./src/styleguide/data/z-index.json'));
 
   var data = {
+    img_path : "../../",
+    project_name : project_name,
+    use_styleguide : use_styleguide,
+    use_utilities : use_utilities,
     css_animation: css_animation,
     css_box_shadow: css_box_shadow,
     css_breakpoints: css_breakpoints,
@@ -395,7 +411,7 @@ function html_styleguide() {
     source + '/styleguide/templates/layout-styleguide.html',
     source + '/styleguide/index.html'
   ])
-    .pipe(gulpnunjucks.compile({},{env: env}))
+    .pipe(gulpnunjucks.compile(data,{env: env}))
     .pipe(htmlbeautify(param_htmlbeautify))
     .pipe(replace(/v=\d+/g, 'v=' + cbString))
     .pipe(dest(prod + '/styleguide'))
@@ -489,7 +505,6 @@ function extract_settings() {
     .on('error', function (e) {
       console.log(e);
     })
-    .pipe(dest(source))
 };
 
 
@@ -554,7 +569,7 @@ function watch_files() {
     source + '/assets/styles/**/*.scss',
     '!'+ source + '/assets/styles/01-settings/*.scss',
     '!'+ source + '/assets/styles/99-utilities/*.scss'
-  ], series(css, use_styleguide ? styleguide : reload, reload))
+  ], series(css, use_utilities ? concat_css_utilities : reload, use_styleguide ? styleguide : reload, reload))
 
   // CSS settings
   watch([
@@ -578,8 +593,8 @@ function watch_files() {
   // HTML
   watch([
     source + '/*.html',
-    source + '/templates/**/*.html',
-    '!'+ source + '/styleguide/*',
+    source + '/templates/*.html',
+    source + '/templates/**/*.html'
 	], series(html, reload))
 
 
@@ -628,6 +643,7 @@ exports.webp = img_webp;
 exports.embed_svg = embed_svg;
 exports.css = css;
 exports.js = js;
+exports.vendor = series(js_vendor, css_vendor);
 exports.html = html;
 exports.html_prod = html_prod;
 exports.icons = series(icons_min, icons, icons_css);
@@ -668,8 +684,9 @@ exports.watch = parallel(watch_files, serve);
 /*
 * Production
 * > Go to prodution task
+* /!\ Not ready yet
 */
-exports.prod = series(clean, css, css_minify, img, webp, html_prod, js, js_minify, service_worker);
+exports.prod = series(clean, use_utilities ? utilities : css, use_styleguide ? styleguide : html_prod, css, css_minify, img, html_prod, js, js_minify, service_worker);
 
 
 

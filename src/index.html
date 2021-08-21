@@ -11,19 +11,19 @@
 {% block page_content %}
 
   <header class="sg-header">
-    <p class="sg-header__title">{{ globals.project_title }} <span>Template index</span></p>
+    <p class="sg-header__title">{{ project_name}} <span>Template index</span></p>
   </header>
 
   <div class="sg-content sg-content--centered">
-    <h1 class="sg-h1">{{ globals.project_title }}</h1>
+    <h1 class="sg-h1">{{ project_name }}</h1>
     
-    {% if globals.styleguide %}
+    {% if use_utilities %}
       <ul class="sg-list sg-list--link sg-list--sm">
-      	<li><h3 class="sg-h3">Charte & Styleguide</h3></li>
-        <li><a href="styleguide/index.html">Styleguide</a></li>
+        <li><h3 class="sg-h3">Charte & Styleguide</h3></li>
+        <li><a href="styleguide/index.html" target="_blank">Styleguide</a></li>
       </ul>
     {% endif %}
-
+    
     <ul class="sg-list sg-list--link sg-list--sm">
       <li><h3 class="sg-h3">#0 Homepage</h3></li>
       <li><a href="homepage.html">Homepage</a></li>

@@ -595,7 +595,7 @@
   background-color: #000000;
 }
 
-@media (max-width: lg) {
+@media (max-width: 75rem) {
   .u-bgcolor-primary\@lg {
     background-color: #000000;
   }
@@ -640,7 +640,7 @@
   }
 }
 
-@media (max-width: md) {
+@media (max-width: 60rem) {
   .u-bgcolor-primary\@md {
     background-color: #000000;
   }
@@ -685,7 +685,7 @@
   }
 }
 
-@media (max-width: sm) {
+@media (max-width: 48rem) {
   .u-bgcolor-primary\@sm {
     background-color: #000000;
   }
@@ -730,7 +730,7 @@
   }
 }
 
-@media (max-width: xs) {
+@media (max-width: 25rem) {
   .u-bgcolor-primary\@xs {
     background-color: #000000;
   }
@@ -2057,6 +2057,242 @@
   .u-icon-lg\@xs {
     width: 2rem !important;
     height: 2rem !important;
+  }
+}
+
+.u-icon-primary {
+  fill: #000000;
+}
+
+.u-icon-secondary {
+  fill: #666666;
+}
+
+.u-icon-bg {
+  fill: #F6F6F6;
+}
+
+.u-icon-border {
+  fill: #dddddd;
+}
+
+.u-icon-text {
+  fill: #000000;
+}
+
+.u-icon-text-light {
+  fill: #676767;
+}
+
+.u-icon-title {
+  fill: #000000;
+}
+
+.u-icon-grey-light {
+  fill: #efefef;
+}
+
+.u-icon-grey-base {
+  fill: #cccccc;
+}
+
+.u-icon-grey-dark {
+  fill: #333333;
+}
+
+.u-icon-alert {
+  fill: #D90000;
+}
+
+.u-icon-success {
+  fill: #04AA04;
+}
+
+.u-icon-white {
+  fill: #ffffff;
+}
+
+.u-icon-black {
+  fill: #000000;
+}
+
+@media (max-width: 75rem) {
+  .u-icon-primary\@lg {
+    fill: #000000;
+  }
+  .u-icon-secondary\@lg {
+    fill: #666666;
+  }
+  .u-icon-bg\@lg {
+    fill: #F6F6F6;
+  }
+  .u-icon-border\@lg {
+    fill: #dddddd;
+  }
+  .u-icon-text\@lg {
+    fill: #000000;
+  }
+  .u-icon-text-light\@lg {
+    fill: #676767;
+  }
+  .u-icon-title\@lg {
+    fill: #000000;
+  }
+  .u-icon-grey-light\@lg {
+    fill: #efefef;
+  }
+  .u-icon-grey-base\@lg {
+    fill: #cccccc;
+  }
+  .u-icon-grey-dark\@lg {
+    fill: #333333;
+  }
+  .u-icon-alert\@lg {
+    fill: #D90000;
+  }
+  .u-icon-success\@lg {
+    fill: #04AA04;
+  }
+  .u-icon-white\@lg {
+    fill: #ffffff;
+  }
+  .u-icon-black\@lg {
+    fill: #000000;
+  }
+}
+
+@media (max-width: 60rem) {
+  .u-icon-primary\@md {
+    fill: #000000;
+  }
+  .u-icon-secondary\@md {
+    fill: #666666;
+  }
+  .u-icon-bg\@md {
+    fill: #F6F6F6;
+  }
+  .u-icon-border\@md {
+    fill: #dddddd;
+  }
+  .u-icon-text\@md {
+    fill: #000000;
+  }
+  .u-icon-text-light\@md {
+    fill: #676767;
+  }
+  .u-icon-title\@md {
+    fill: #000000;
+  }
+  .u-icon-grey-light\@md {
+    fill: #efefef;
+  }
+  .u-icon-grey-base\@md {
+    fill: #cccccc;
+  }
+  .u-icon-grey-dark\@md {
+    fill: #333333;
+  }
+  .u-icon-alert\@md {
+    fill: #D90000;
+  }
+  .u-icon-success\@md {
+    fill: #04AA04;
+  }
+  .u-icon-white\@md {
+    fill: #ffffff;
+  }
+  .u-icon-black\@md {
+    fill: #000000;
+  }
+}
+
+@media (max-width: 48rem) {
+  .u-icon-primary\@sm {
+    fill: #000000;
+  }
+  .u-icon-secondary\@sm {
+    fill: #666666;
+  }
+  .u-icon-bg\@sm {
+    fill: #F6F6F6;
+  }
+  .u-icon-border\@sm {
+    fill: #dddddd;
+  }
+  .u-icon-text\@sm {
+    fill: #000000;
+  }
+  .u-icon-text-light\@sm {
+    fill: #676767;
+  }
+  .u-icon-title\@sm {
+    fill: #000000;
+  }
+  .u-icon-grey-light\@sm {
+    fill: #efefef;
+  }
+  .u-icon-grey-base\@sm {
+    fill: #cccccc;
+  }
+  .u-icon-grey-dark\@sm {
+    fill: #333333;
+  }
+  .u-icon-alert\@sm {
+    fill: #D90000;
+  }
+  .u-icon-success\@sm {
+    fill: #04AA04;
+  }
+  .u-icon-white\@sm {
+    fill: #ffffff;
+  }
+  .u-icon-black\@sm {
+    fill: #000000;
+  }
+}
+
+@media (max-width: 25rem) {
+  .u-icon-primary\@xs {
+    fill: #000000;
+  }
+  .u-icon-secondary\@xs {
+    fill: #666666;
+  }
+  .u-icon-bg\@xs {
+    fill: #F6F6F6;
+  }
+  .u-icon-border\@xs {
+    fill: #dddddd;
+  }
+  .u-icon-text\@xs {
+    fill: #000000;
+  }
+  .u-icon-text-light\@xs {
+    fill: #676767;
+  }
+  .u-icon-title\@xs {
+    fill: #000000;
+  }
+  .u-icon-grey-light\@xs {
+    fill: #efefef;
+  }
+  .u-icon-grey-base\@xs {
+    fill: #cccccc;
+  }
+  .u-icon-grey-dark\@xs {
+    fill: #333333;
+  }
+  .u-icon-alert\@xs {
+    fill: #D90000;
+  }
+  .u-icon-success\@xs {
+    fill: #04AA04;
+  }
+  .u-icon-white\@xs {
+    fill: #ffffff;
+  }
+  .u-icon-black\@xs {
+    fill: #000000;
   }
 }
 
@@ -4243,6 +4479,14 @@
   text-align: center;
 }
 
+.u-text-uppercase {
+  text-transform: uppercase;
+}
+
+.u-text-decoration-none {
+  text-decoration: none;
+}
+
 @media (max-width: 75rem) {
   .u-text-ellipsis\@lg {
     overflow: hidden;
@@ -4257,6 +4501,12 @@
   }
   .u-text-center\@lg {
     text-align: center;
+  }
+  .u-text-uppercase\@lg {
+    text-transform: uppercase;
+  }
+  .u-text-decoration-none\@lg {
+    text-decoration: none;
   }
 }
 
@@ -4275,6 +4525,12 @@
   .u-text-center\@md {
     text-align: center;
   }
+  .u-text-uppercase\@md {
+    text-transform: uppercase;
+  }
+  .u-text-decoration-none\@md {
+    text-decoration: none;
+  }
 }
 
 @media (max-width: 48rem) {
@@ -4292,6 +4548,12 @@
   .u-text-center\@sm {
     text-align: center;
   }
+  .u-text-uppercase\@sm {
+    text-transform: uppercase;
+  }
+  .u-text-decoration-none\@sm {
+    text-decoration: none;
+  }
 }
 
 @media (max-width: 25rem) {
@@ -4308,6 +4570,12 @@
   }
   .u-text-center\@xs {
     text-align: center;
+  }
+  .u-text-uppercase\@xs {
+    text-transform: uppercase;
+  }
+  .u-text-decoration-none\@xs {
+    text-decoration: none;
   }
 }
 

@@ -31,7 +31,7 @@
 
 
 @each $bp , $bp_value in $breakpoints {
-  @include mq(#{$bp}) {
+  @include mq(#{$bp_value}) {
     @each $color_name , $color_value in $colors {
       .u-bgcolor-#{$color_name}\@#{$bp}  {
         background-color: #{$color_value}

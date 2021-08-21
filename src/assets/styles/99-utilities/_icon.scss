@@ -15,5 +15,18 @@
 }
 
 
+@each $color_name , $color_value in $colors {
+  .u-icon-#{$color_name} { fill: $color_value; }
+}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+    @each $color_name , $color_value in $colors {
+      .u-icon-#{$color_name}\@#{$bp} { fill: $color_value; }
+    }
+  }
+}
+
+
 
 

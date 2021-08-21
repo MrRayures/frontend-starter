@@ -6,6 +6,8 @@
 .u-text-left {text-align: left; } 
 .u-text-right {text-align: right; } 
 .u-text-center {text-align: center; } 
+.u-text-uppercase {text-transform: uppercase; } 
+.u-text-decoration-none { text-decoration: none;}
 
 @each $bp , $bp_value in $breakpoints {
   @include mq(#{$bp_value}) {
@@ -13,5 +15,7 @@
 		.u-text-left\@#{$bp}  {text-align: left; } 
 		.u-text-right\@#{$bp}  {text-align: right; } 
 		.u-text-center\@#{$bp}  {text-align: center; } 
+    .u-text-uppercase\@#{$bp} {text-transform: uppercase; } 
+		.u-text-decoration-none\@#{$bp} { text-decoration: none; }
   }
 }
