@@ -1,4 +1,3 @@
-console.log('hello world')
 /*
 * Javascript base variables & functions
 * Auteur : MrRayures - www.mr-rayures.com		

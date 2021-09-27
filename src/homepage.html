@@ -1,8 +1,9 @@
 <!-- index.html -->
-{% extends "layout.html" %}
+{% extends "templates/layout.html" %}
 
 <!-- //START page variables -->
 {% set page_title = "Accueil" %}
+{% set page_desc = "" %}
 {% set body_class = "" %}
 {% set css_page = "app" %}
 {% set css_min = false %}
@@ -16,7 +17,9 @@
 
 	<div id="content" class="" role="main">
 		
-		<p class="test">test</p>
+		<p class="test">Hello world</p>
+    <p>Data : {{ img_path }}</p>
+    <img src="assets/img/test/design_system_mario.jpg" alt="">
 
   </div><!--//END main -->
 	

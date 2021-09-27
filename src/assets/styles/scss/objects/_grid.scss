@@ -1,0 +1,137 @@
+/*-----------------------------------------------------------------------------------------------------
+    [grid]
+-------------------------------------------------------------------------------------------------------*/
+
+
+$grid_col : 12;
+$gutter-y : 2.4rem;
+$gutter-x : 2.4rem;
+
+.o-grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: calc(#{$gutter-y} * -1);
+  margin-left: calc(#{$gutter-x} * -1);
+}
+
+.o-grid__col {
+  padding-bottom: $gutter-y;
+  padding-left: $gutter-x;
+}
+
+
+@for $i from 1 through $grid_col  {
+	.o-grid--#{$i} > .o-grid__col {
+		width: calc(100% / #{$i});
+	}
+	.o-grid__col--#{$i} {
+		width: calc((100% / #{$grid_col}) * #{$i});
+	}
+	.o-grid__col--offset-#{$i} {
+		margin-left: calc((100% / #{$grid_col}) * #{$i});
+	}
+}
+
+
+/*
+* m-grid__col level
+*/
+@for $i from 0 through $grid_col  {
+	@each $bp , $bp_value in  (xlg, $xlarge),
+                            (lg, $large),
+                            (md, $medium),
+                            (sm, $small),
+                            (xs, $xsmall) {
+	  @include mq(#{$bp_value}) {
+
+			.o-grid--#{$i}\@#{$bp} > .m-grid__col {
+				width: calc(100% / #{$i});
+			}
+			.o-grid__col--#{$i}\@#{$bp} {
+				width: calc((100% / #{$grid_col}) * #{$i});
+			}
+			.o-grid__col--offset-#{$i}\@#{$bp} {
+				margin-left: calc((100% / #{$grid_col}) * #{$i});
+			}
+		}
+	}
+}
+
+
+/*
+* m-grid__col--gutter
+*/
+.o-grid__gutter--sm {
+	margin-bottom: calc(#{$gutter-y} / -2);
+  margin-left: calc(#{$gutter-x} / -2);
+  .o-grid__col {
+	  padding-bottom: calc(#{$gutter-y} / 2);
+	  padding-left: calc(#{$gutter-x} / 2);		
+	}
+}
+.o-grid__gutter--md {
+	margin-bottom: calc(#{$gutter-y} * -1);
+  margin-left: calc(#{$gutter-x} * -1);
+  .o-grid__col {
+	  padding-bottom: calc(#{$gutter-y});
+	  padding-left: calc(#{$gutter-x});		
+	}
+}
+.o-grid__gutter--lg {
+	margin-bottom: calc(#{$gutter-y} * -4);
+  margin-left: calc(#{$gutter-x} * -4);
+  .o-grid__col {
+	  padding-bottom: calc(#{$gutter-y} * 4);
+	  padding-left: calc(#{$gutter-x} * 4);		
+	}
+}
+.o-grid__gutter--none {
+	margin-bottom: 0;
+  margin-left: 0;
+  .o-grid__col {
+	  padding-bottom: 0;
+	  padding-left: 0;		
+	}
+}
+
+
+@each $bp , $bp_value in  (xlg, $xlarge),
+                          (lg, $large),
+                          (md, $medium),
+                          (sm, $small),
+                          (xs, $xsmall) {
+	@include mq(#{$bp_value}) {
+		.o-grid__gutter--sm\@#{$bp} {
+			margin-bottom: calc(#{$gutter-y} / -2);
+		  margin-left: calc(#{$gutter-x} / -2);
+		  .o-grid__col {
+			  padding-bottom: calc(#{$gutter-y} /2);
+			  padding-left: calc(#{$gutter-x} /2);		
+			}
+		}
+		.o-grid__gutter--md\@#{$bp} {
+			margin-bottom: calc(#{$gutter-y} * -1);
+		  margin-left: calc(#{$gutter-x} * -1);
+		  .o-grid__col {
+			  padding-bottom: calc(#{$gutter-y});
+			  padding-left: calc(#{$gutter-x});		
+			}
+		}
+		.o-grid__gutter--lg\@#{$bp} {
+			margin-bottom: calc(#{$gutter-y} * -4);
+		  margin-left: calc(#{$gutter-x} * -4);
+		  .o-grid__col {
+			  padding-bottom: calc(#{$gutter-y} * 4);
+			  padding-left: calc(#{$gutter-x} * 4);		
+			}
+		}
+		.o-grid__gutter--none\@#{$bp} {
+			margin-bottom: 0;
+		  margin-left: 0;
+		  .o-grid__col {
+			  padding-bottom: 0;
+			  padding-left: 0;		
+			}
+		}
+	}
+}
