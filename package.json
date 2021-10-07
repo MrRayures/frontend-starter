@@ -13,7 +13,7 @@
   },
   "scripts": {
     "clean": "recursive-delete dist",
-    "copy": "mkdirp -p dist && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
+    "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
     "scss": "node sass.config.js",
     "img": "node img.config.js",
     "html": "nunjucks-to-html src/*.{njk,html} --dest dist/ --flatten true",
@@ -31,7 +31,7 @@
     "serve": "browser-sync start --server dist/ --files dist/assets/css/*.css, dist/assets/img/**/*.{jpg,jpeg,png,svg}, dist/assets/js/*.js, dist/*.html",
     "build": "npm-run-all --parallel clean copy build:*",
     "watch": "npm-run-all --parallel serve watch:*",
-    "postinstall": "npm run build:all"
+    "postinstall": "npm run build"
   },
   "devDependencies": {
     "browser-sync": "^2.27.5",
