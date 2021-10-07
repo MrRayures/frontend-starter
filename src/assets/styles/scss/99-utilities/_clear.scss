@@ -1,0 +1,21 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:clear]
+-------------------------------------------------------------------------------------------------------*/
+.u-clear {
+  clear: both;
+}
+
+.u-clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+  	.u-clear\@#{$bp} {clear: both;}
+		.u-clearfix\@#{$bp}:after {content: " ";visibility: hidden;display: block;height: 0;clear: both;}
+  }
+}

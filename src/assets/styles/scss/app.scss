@@ -3,66 +3,42 @@
 	by : Francois Leproust
   Version : 1.0
 
-  Projet : 
-
-  CSS structure : ITCSS
-  - https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
-
-	Global namespace : BEMIT
-    - Guideline : https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
-    Other ressources :
-    - http://bradfrost.com/blog/post/css-architecture-for-design-systems/
-    - http://getbem.com/naming/
-		- https://seesparkbox.com/foundry/bem_by_example
-
-  Accessibility
-  	- Tips : https://webaccessibility.guide/
-  	- Checklist : https://a11yproject.com/checklist
-  	- Tools : https://benrobertson.io/accessibility/tools-for-website-audits
+  Projet : Front End starter
 -------------------------------------------------------------------------------------------------------*/
 
 // Settings
-@import 'settings/_breackpoints';
-@import 'settings/_colors';
-@import 'settings/_fonts';
-@import 'settings/_global';
-
+@import '01-settings/_settings';
 
 // Tools
-@import 'tools/_mixins';
+@import '02-tools/_tools';
 
 
 // Generic
-@import 'generic/_accessibility';
-@import 'generic/_reset';
+@import '03-generic/_accessibility';
+@import '03-generic/_reset';
 
 
 // Elements
-@import 'elements/_fonts';
-@import 'elements/_form';
-@import 'elements/_page';
+@import '04-elements/_fonts';
+@import '04-elements/_form';
+@import '04-elements/_page';
 
 
 // Objects
-@import 'objects/_grid';
-
-
-// Helpers
-@import 'helpers/_sass-inline-svg.scss';
-@import 'helpers/_sass-inline-svg-data.scss';
+@import '05-objects/_grid';
 
 
 // Components
-@import 'components/_buttons';
-@import 'components/_container';
-@import 'components/_footer';
-@import 'components/_form-basic';
-@import 'components/_form';
-@import 'components/_header';
-@import 'components/_icons';
+@import '06-components/_buttons';
+@import '06-components/_container';
+@import '06-components/_footer';
+@import '06-components/_form-checkbox';
+@import '06-components/_form-radio';
+@import '06-components/_form-select';
+@import '06-components/_form';
+@import '06-components/_header';
+//@import '06-components/_icons';
 
 
-// Utilities
-@import 'utilities/_utilities';
 
 

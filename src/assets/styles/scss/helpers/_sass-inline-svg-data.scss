@@ -1,5 +1,0 @@
-@function cross($fillcolor, $strokecolor){ @return "data:image/svg+xml, %3Csvg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2' fill='#{$fillcolor}'%3E%3Cpath fill='none' d='M0 0h48v48H0z'/%3E%3Cpath d='M45 38.329L30.449 23.963 44.799 9.47 38.329 3 23.958 17.556 9.415 3.201 3 9.617l14.562 14.42L3.201 38.585 9.617 45l14.415-14.557L38.53 44.799l6.47-6.47z' fill-rule='nonzero'/%3E%3C/svg%3E";}
-@function menu($fillcolor, $strokecolor){ @return "data:image/svg+xml, %3Csvg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2' fill='#{$fillcolor}'%3E%3Cpath fill='none' d='M0 0h48v48H0z'/%3E%3Cpath d='M45 13.5H3v-7h42v7zm0 7H3v7h42v-7zm0 14H3v7h42v-7z' fill-rule='nonzero'/%3E%3C/svg%3E";}
-
-
-$svg-map: ('cross': ('name': 'cross', 'folder': 'icons'),'menu': ('name': 'menu', 'folder': 'icons'),);
