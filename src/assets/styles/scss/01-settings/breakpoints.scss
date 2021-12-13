@@ -1,12 +1,10 @@
 // Variables liées aux breakpoints.
 
-// mode de calcul : 48rem = 768px / 16
-// 16 est la base defini dans "02-tools/_reset.scss"
 $breakpoints: (
-  "lg"        : 75rem, // 1200px
-  "md"        : 60rem, // 960px
-  "sm"        : 48rem, // 768px
-  "xs"        : 25rem, // 400px
+  "lg"        : 1200px,
+  "md"        : 960px,
+  "sm"        : 768px,
+  "xs"        : 400px, 
 );
 
 
