@@ -1,4 +1,14 @@
-// Mixins
+/*-----------------------------------------------------------------------------------------------------
+  [tools:mixin]
+-------------------------------------------------------------------------------------------------------*/
+
+/*
+* Accessibility outline
+*/
+@mixin accessible_outline {
+  outline: 2px dotted color(primary);
+  outline-offset: 0.2rem;
+}
 
 
 // Media queries 

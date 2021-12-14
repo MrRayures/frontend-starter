@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------------------------------------------
-   [component:form-checkox]
-   Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
+  [component:form-checkox]
+  Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
 -------------------------------------------------------------------------------------------------------*/
 
 .c-form-checkbox {
@@ -39,10 +39,10 @@
 
 
 .c-form-checkbox__label:after {
-  background-image: inline-svg("checkmark", color(primary));
+  background-image: url('../img/checkbox-check.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: (checkboxSize(md) - 0.5);
+  background-size: 70% auto;
   height: checkboxSize(md);
   width: checkboxSize(md);
   left: 0;
@@ -65,11 +65,6 @@
   border-color: color(primary);
 }
 
-.c-form-checkbox__input:focus + .c-form-checkbox__label::before {
-  outline: 3px dotted color(primary);
-  outline-offset: 2px;
-}
-
 
 /*
 * Disabled
@@ -78,3 +73,9 @@
   opacity: 0.6;
 }
 
+/*
+* Focus
+*/
+.c-form-checkbox__input:focus + .c-form-checkbox__label::before {
+  @include accessible_outline;
+}

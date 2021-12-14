@@ -3,7 +3,7 @@
 -------------------------------------------------------------------------------------------------------*/
 
 html {
-  //scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -14,8 +14,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-/* heading */
 h1, h2, h3, h4, h5, h6 {
   font-family: font(secondary);
   color: color(title);
@@ -25,10 +23,8 @@ p {
   line-height: 1.3;
 }
 
-/* link */
 a {
   color: color(text);
-  //transition: $timing;
   &:hover {
     color: color(primary);
     text-decoration: underline;
@@ -38,7 +34,6 @@ a {
   &:visited {}
 }
 
-/* list */
 ul,
 ol {
   margin: 0;
@@ -47,16 +42,12 @@ ol {
   }
 }
 
-
-/* img */
 img {
   display: inline-block;
   max-width: 100%;
   font-style: italic;
 }
 
-
-/* blockquote */
 blockquote {
   color: color(text-light);
   font-style: italic;
@@ -123,16 +114,12 @@ blockquote {
   }
 }
 
-
-/* hr */
 hr {
   background: color(border);
   border: none;
   height: 1px;
 }
 
-
-/* table */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -146,9 +133,6 @@ table {
     padding: 0.2em;
   }
 }
-
-
-
 
 
 

@@ -9,16 +9,15 @@
 	
 	
 	<!-- Load CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/app.min.css?v=1">
-  
-<!-- C'est ici que ça ce passe le pour le JS custom-->
-
+	
+		<link rel="stylesheet" type="text/css" href="assets/css/app.css?v=1">
+	
 
 
 
 </head>
 
-<body class="">
+<body class="js-inlinesvg">
 	<a class="u-show-on-focus" href="#content">Skip to Content</a>
 	
 	
@@ -45,10 +44,24 @@
 	
 
 	<div id="content" class="" role="main">
+		
+		<p class="test">Hello world</p>
+    <p>Data : assets/img/</p>
+    <img src="assets/img/test/design_system_mario.jpg" alt="" width="500">
 
+    <svg class="c-icon">
+      <use xlink:href="assets/icons/sprite/icons.svg#cross" />
+    </svg>
+    <svg class="c-icon">
+      <use xlink:href="assets/icons/sprite/icons.svg#menu" />
+    </svg>
 
-    <h1 class="test-bp">Hello World</h1>
     
+    <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" ><path fill="none" d="M0 0h48v48H0z"/><path d="M45 38.329L30.449 23.963 44.799 9.47 38.329 3 23.958 17.556 9.415 3.201 3 9.617l14.562 14.42L3.201 38.585 9.617 45l14.415-14.557L38.53 44.799l6.47-6.47z"/></svg>
+
+    
+
+
 
   </div><!--//END main -->
 	
@@ -65,13 +78,12 @@
 	<!-- //END Footer -->
 	
 
-  
-  <script type="text/javascript" src="assets/js/vendor.js?v=1"></script>
-  <script type="text/javascript" src="assets/js/app.js?v=1"></script>
+	
+    <script type="text/javascript" src="assets/js/vendor.js?v=1"></script>
+		<script type="text/javascript" src="assets/js/app.js?v=1"></script>
+	
 
-  
-<!-- C'est ici que ça ce passe le pour le JS custom-->
-
+	
 
 	
 </body>

@@ -22,7 +22,7 @@
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: #fff;
-  background-image: inline-svg("arrow-down", color(grey-base));
+  background-image: url('../img/select-arrow.svg');
   background-position: right .7em top 50%;
   background-repeat: no-repeat;
   background-size: 1rem auto;
@@ -34,12 +34,10 @@
 /* Hover style */
 .c-form-select:hover {
   border-color: color(primary);
-  background-image: inline-svg("arrow-down", color(primary));
 }
 /* Focus style */
 .c-form-select:focus {
   border-color: color(primary);
-  background-image: inline-svg("arrow-down", color(primary));
 	/* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
 	color: color(primary);
 }

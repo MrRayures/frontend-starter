@@ -1,10 +1,8 @@
 // Variables liées aux layout.
 
-
-// 85rem = 1360px / 16
-// 16 is the base font scaling defined in "02-tools/_reset.scss"
 $layout: (
-  "max-width" : 85rem
+  "md" : 80rem,
+  "lg" : 120rem
 );
 
 

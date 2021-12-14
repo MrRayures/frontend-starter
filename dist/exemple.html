@@ -1,0 +1,148 @@
+<!doctype html> 
+<html lang="fr">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8"> 
+  <title>Exemple</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	
+	
+	<!-- Load CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/app.min.css?v=1">
+  
+	
+
+
+
+</head>
+
+<body class="u-bgcolor-bg">
+	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	
+	<header class="c-header" role="banner">
+  <div class="c-container">
+    <div class="c-header__content">
+      <a href="#" class="c-header__logo" aria-label="Retour à l'accueil">
+        <img class="" src="assets/img//logo.svg" alt="Texte alternatif">
+      </a>
+      <nav class="c-nav c-nav--header" role="navigation" aria-label="Navigation primaire">
+  <ul class="c-nav__list">
+    <li class="c-nav__item"><a class="m-nav__link" href="#">Menu item</a></li>
+  </ul>
+</nav><!-- //END Header navigation -->
+    </div>
+  </div>
+</header><!-- //END Header  -->
+	<!-- //END Header -->
+
+	
+
+	<div id="content" class="" role="main">
+		
+    <div class="c-container c-container--md u-bgcolor-white u-p-md u-my-lg">
+
+      <h2>Icônes</h2>
+
+      <br><br>
+      <h3>Sprite SVG</h3>
+      <svg class="c-icon">
+        <use xlink:href="assets/icons/sprite/icons.svg#cross" />
+      </svg>
+      <svg class="c-icon">
+        <use xlink:href="assets/icons/sprite/icons.svg#menu" />
+      </svg>
+
+      
+      <br><br>
+      <h3>Include SVG</h3>
+      
+      <svg aria-hidden="true" focusable="false" width="50" height="50" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" ><path fill="none" d="M0 0h48v48H0z"/><path d="M45 38.329L30.449 23.963 44.799 9.47 38.329 3 23.958 17.556 9.415 3.201 3 9.617l14.562 14.42L3.201 38.585 9.617 45l14.415-14.557L38.53 44.799l6.47-6.47z"/></svg>
+
+      <br><br><br>
+      <h2>Nunjucks</h2>
+      <p>Documentation : <a href="https://mozilla.github.io/nunjucks/fr/templating.html">https://mozilla.github.io/nunjucks/fr/templating.html</a></p>
+      
+      <br><br>
+      <h3>Boucle for simple</h3>
+      <p><code>for i in range(0, 5)</code></p>
+      0,1,2,3,4,
+
+      <br><br>
+      <h3>Boucle for avec data</h3>
+      
+      <ul>
+      
+        <li>Tomate - 1,20€</li>
+      
+        <li>Potiron - 2,50€</li>
+      
+        <li>Carotte - 0,60€</li>
+      
+        <li>Pomme de terre - 1,80€</li>
+      
+      </ul>
+
+      <br><br>
+      <h3>Boucle for avec data et include</h3>
+      
+      <ul>
+      
+        <!-- DEmo item > voir exemple.html -->
+<li class="">
+  Tomate - 1,20€
+</li>
+      
+        <!-- DEmo item > voir exemple.html -->
+<li class="">
+  Potiron - 2,50€
+</li>
+      
+        <!-- DEmo item > voir exemple.html -->
+<li class="">
+  [NEW] Carotte - 0,60€
+</li>
+      
+        <!-- DEmo item > voir exemple.html -->
+<li class="">
+  Pomme de terre - 1,80€
+</li>
+      
+      </ul>
+
+      <br><br>
+      <h3>Data</h3>
+      <p>Il est possible d'utiliser des variables réutilisables dans tous les templates. <br>
+      Ces datas sont à renseigner dans <code>config.nunjucks.js</code></p>
+      <p>Exemple : <br>
+      <code>{{ project_name }} = Hello world</code><br>
+      <code>{{ img_path }} = assets/img/</code> 
+      </p>
+    </div>
+
+  
+
+  </div><!--//END main -->
+	
+
+	
+
+	<footer class="c-footer" role="contentinfo">
+  <div class="c-container">
+    <div class="c-footer__content">Footer</div>
+  </div>
+</footer><!-- //END Footer -->
+
+	<!-- //END Footer -->
+	
+
+  
+  <script type="text/javascript" src="assets/js/vendor.min.js?v=1"></script>
+  <script type="text/javascript" src="assets/js/app.min.js?v=1"></script>
+
+  
+	
+
+	
+</body>
+</html>

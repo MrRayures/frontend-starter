@@ -3,8 +3,6 @@
   Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
 -------------------------------------------------------------------------------------------------------*/
 
-
-
 .c-form-radio {
 	position: relative;
 }
@@ -77,6 +75,13 @@
 */
 .c-form-radio__input:disabled + .c-form-radio__label {
   opacity: 0.6;
+}
+
+/*
+* Focus
+*/
+.c-form-radio__input:focus-visible + .c-form-radio__label:before {
+  @include accessible_outline;
 }
 
 

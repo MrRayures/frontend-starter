@@ -33,6 +33,7 @@ module.exports = {
      * If you decide to use "options.data" too, this property will be assigned to it.
      */
     "context": {
+      project_name:  'Hello world',
       img_path:  'assets/img/'
     },
     "callback": () => {} // Not modificable.

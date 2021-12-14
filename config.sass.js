@@ -5,13 +5,13 @@ var pkg = require('./package.json');
 // Configs
 var configs = {
 	name: 'Sass',
-	files: ['app.scss'],
+	files: ['app.scss'], // Pour mettre à jour styleguide.css il faut changer ['app.scss'] par ['app.scss', 'styleguide.scss']
 	pathIn: 'src/assets/styles/scss',
 	pathOut: 'dist/assets/css',
 	indentType: 'space',
 	indentWidth: 2,
-  //outputStyle:'compressed',
-	minify: false,
+  outputStyle:'expanded',
+	minify: true,
 	sourceMap: false
 };
 
@@ -25,7 +25,7 @@ var getOptions = function (file, filename, minify) {
 		sourceMap: configs.sourceMap, sourceMapContents: configs.sourceMap,
 		indentType: configs.indentType,
 		indentWidth: configs.indentWidth,
-		outputStyle: configs.minify ? 'compressed' : 'expanded'
+		outputStyle: minify ? 'compressed' : 'expanded'
 	};
 };
 

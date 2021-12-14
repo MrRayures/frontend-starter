@@ -14,9 +14,11 @@
   "scripts": {
     "clean": "recursive-delete dist",
     "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
-    "scss": "node sass.config.js",
-    "img": "node img.config.js",
-    "html": "nunjucks-to-html src/*.{njk,html} --dest dist/ --flatten true",
+    "scss": "node config.sass.js",
+    "img": "node config.img.js",
+    "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
+    "sprite": "svg-sprite --symbol --symbol-sprite=sprite/icons.svg --symbol-dest=dist/assets/icons/ src/assets/icons/*.svg",
+    "sassInlineSvg": "node config.svgsprite.js",
     "js": "mkdirp -p dist/assets/js && concat-glob-cli -f src/assets/js/*.js -o dist/assets/js/app.js",
     "js_min": "uglifyjs dist/assets/js/app.js -o dist/assets/js/app.min.js",
     "vendor": "mkdirp -p dist/assets/js && mkdirp -p dist/assets/css && concat-glob-cli -f src/assets/js/vendor/*.js -o dist/assets/js/vendor.js && concat-glob-cli -f src/assets/styles/vendor/*.css -o dist/assets/css/vendor.css",
@@ -53,6 +55,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.26.5",
     "svgo": "^1.3.2",
-    "uglify-js": "^3.14.2"
+    "uglify-js": "^3.14.2",
+    "svg-sprite": "^1.5.3"
   }
 }
