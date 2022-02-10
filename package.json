@@ -21,7 +21,7 @@
     "sassInlineSvg": "node config.svgsprite.js",
     "js": "mkdirp -p dist/assets/js && concat-glob-cli -f src/assets/js/*.js -o dist/assets/js/app.js",
     "js_min": "uglifyjs dist/assets/js/app.js -o dist/assets/js/app.min.js",
-    "vendor": "mkdirp -p dist/assets/js && mkdirp -p dist/assets/css && concat-glob-cli -f src/assets/js/vendor/*.js -o dist/assets/js/vendor.js && concat-glob-cli -f src/assets/styles/vendor/*.css -o dist/assets/css/vendor.css",
+    "vendor": "mkdirp -p dist/assets/js && mkdirp -p dist/assets/css && recursive-copy src/assets/js/vendor/ dist/assets/js/vendor/ && recursive-copy src/assets/styles/vendor/ dist/assets/css/vendor/",
     "build:css": "npm run scss",
     "build:img": "npm run img",
     "build:js": "npm run js && npm run js_min",
@@ -32,7 +32,7 @@
     "watch:js": "onchange src/assets/js/*.js -- npm run build:js",
     "watch:html": "onchange src/*.html src/templates/**/*.html -- npm run build:html",
     "serve": "browser-sync start --server dist/ --files dist/assets/css/*.css, dist/assets/img/**/*.{jpg,jpeg,png,svg}, dist/assets/js/*.js, dist/*.html",
-    "build": "npm-run-all clean copy build:*",
+    "build": "npm-run-all clean copy build:* && npm run vendor",
     "watch": "npm-run-all --parallel serve watch:*",
     "postinstall": "npm run build"
   },
