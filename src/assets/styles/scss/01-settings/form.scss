@@ -1,0 +1,29 @@
+// Variables formulaires
+
+$checkboxSize: (
+  "md"    : 2rem
+);
+
+@function checkboxSize($key) {
+  @if map-has-key($checkboxSize, $key) {
+    @return map-get($checkboxSize, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $checkboxSize.";
+  @return null;
+}
+
+
+
+$radioSize: (
+  "md"    : 2rem
+);
+
+@function radioSize($key) {
+  @if map-has-key($radioSize, $key) {
+    @return map-get($radioSize, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $radioSize.";
+  @return null;
+}

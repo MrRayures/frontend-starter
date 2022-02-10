@@ -16,6 +16,8 @@ var medium  = "960";
 var large   = "1200";
 var xlarge  = "1600";
 
+console.log('hello')
+
 
 /*
 * Resize event

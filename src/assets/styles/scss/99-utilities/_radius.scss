@@ -1,0 +1,19 @@
+/*-----------------------------------------------------------------------------------------------------
+    [utilities:radius]
+-------------------------------------------------------------------------------------------------------*/
+
+@each $radius_name , $radius_value in $radius {
+  .u-radius-#{$radius_name} {
+    border-radius: #{$radius_value};
+  }
+}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+    @each $radius_name , $radius_value in $radius {
+      .u-radius-#{$radius_name}\@#{$bp}  {
+        border-radius: #{$radius_value};
+      }
+    }
+  }
+}

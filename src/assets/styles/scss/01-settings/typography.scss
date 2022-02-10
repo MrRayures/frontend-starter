@@ -1,0 +1,42 @@
+// Variables liées aux font.
+
+$arial                : Arial, sans-serif;
+$verdana              : Verdana, Geneva, sans-serif;
+$georgia              : Georgia, "Times New Roman", serif;
+
+$font-families: (
+  "primary"   : $arial,
+  "secondary" : $verdana
+);
+
+@function font($key) {
+  @if map-has-key($font-families, $key) {
+    @return map-get($font-families, $key);
+  }
+  @warn "Unknown `#{$key}` in $font-families.";
+  @return null;
+}
+
+
+$font-sizes: (
+  "12"   : 1.2rem,
+  "14"   : 1.4rem,
+  "18"   : 1.8rem,
+  "24"   : 2.4rem
+);
+
+@function fontSize($key) {
+  @if map-has-key($font-sizes, $key) {
+    @return map-get($font-sizes, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $font-size.";
+  @return null;
+}
+
+
+$font-weight: (
+  "400"  : 400,
+  "700"  : 700
+);
+

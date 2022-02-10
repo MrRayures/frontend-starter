@@ -1,0 +1,21 @@
+// Variables liées aux z-index afin de garder ça propre.
+
+$z-index: (
+  "below"           : -1,
+  "default"         : auto,
+  "above"           : 1,
+  "absolute"        : 10,
+  "fixed"           : 100,
+  "overlay"         : 5000,
+  "popin"           : 6000,
+  "skyrocket"       : 9999
+);
+
+@function zIndex($key) {
+  @if map-has-key($z-index, $key) {
+    @return map-get($z-index, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-index.";
+  @return null;
+}

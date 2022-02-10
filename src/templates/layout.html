@@ -9,9 +9,9 @@
 	
 	
 	<!-- Load CSS -->
-	{% if css_page %}
-		<link rel="stylesheet" type="text/css" href="assets/css/{{ css_page }}{% if css_min %}.min{% endif %}.css?v=1">
-	{% endif %}
+  <link rel="stylesheet" type="text/css" href="assets/css/app{% if css_min %}.min{% endif %}.css?v=1">
+  {% block custom_css %}
+	{% endblock %}
 
 
 
@@ -20,24 +20,22 @@
 <body class="{{ body_class }}">
 	<a class="u-show-on-focus" href="#content">Skip to Content</a>
 	
-	{% include "components/header.html" %}
+	{% include "templates/components/header.html" %}
 	<!-- //END Header -->
 
 	{% block page_content %}{% endblock %}
 	
 
-	{% include "components/footer.html" %}
+	{% include "templates/components/footer.html" %}
 	<!-- //END Footer -->
 	
 
-	{% if js_base %}
-		<script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js?v=1"></script>
-		<script type="text/javascript" src="assets/js/vendor{% if js_min %}.min{% endif %}.js?v=1"></script>
-	{% endif %}
+  
+  <script type="text/javascript" src="assets/js/vendor{% if js_min %}.min{% endif %}.js?v=1"></script>
+  <script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js?v=1"></script>
 
-	{% if js_page %}
-		<script type="text/javascript" src="assets/js/{{ js_page }}{% if js_min %}.min{% endif %}.js?v=1"></script>
-	{% endif %}
+  {% block custom_js %}
+	{% endblock %}
 
 	
 </body>
