@@ -1,0 +1,22 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:color]
+-------------------------------------------------------------------------------------------------------*/
+/*
+* Color
+*/
+@each $color_name , $color_value in $colors {
+  .u-color-#{$color_name} {
+    color: #{$color_value};
+  }
+}
+
+
+/*
+* Background
+*/
+@each $color_name , $color_value in $colors {
+  .u-bgcolor-#{$color_name} {
+    background-color: #{$color_value}
+  }
+}
+

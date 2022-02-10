@@ -1,0 +1,17 @@
+// Variables liées aux espacements (paddings, margins...)
+
+$spacing: (
+  "md"     : 2rem,
+  "0"      : 0,
+  "auto"   : auto
+);
+
+
+@function spacing($key) {
+  @if map-has-key($spacing, $key) {
+    @return map-get($spacing, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $spacing.";
+  @return null;
+}

@@ -1,13 +1,13 @@
 /*
 * Javascript base variables & functions
 * Auteur : MrRayures - www.mr-rayures.com		
-* Copyright (C) 2020
+* Copyright (C) 2018
 */
 
 
 /*  
 * Breackpoint 
-* Based on CSS breackpoint (styles/01-settings/breckpoints)
+* Based on CSS breackpoint (scss/settings/breckpoints)
 * Use : if (window.innerWidth <= xsmall ) {}
 */
 var xsmall  = "450";
@@ -15,6 +15,8 @@ var small   = "768";
 var medium  = "960";
 var large   = "1200";
 var xlarge  = "1600";
+
+console.log('hello')
 
 
 /*
@@ -88,16 +90,6 @@ var lazy = function lazy() {
   });
 }
 lazy();
-
-
-/*
-* SVG polyfill for IE 9-11
-* Doc : https://github.com/jonathantneal/svg4everybody
-*/
-svg4everybody(); // run it now or whenever you are ready
-
-
-
 
 
 

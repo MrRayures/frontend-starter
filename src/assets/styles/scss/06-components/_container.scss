@@ -1,0 +1,15 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:container]
+-------------------------------------------------------------------------------------------------------*/
+.c-container {
+  padding: 0 1rem;
+  max-width: layout(lg);
+  margin: 0 auto;
+}
+
+@each $layout_name , $layout_value in $layout {
+  .c-container--#{$layout_name} {
+    max-width: #{$layout_value};
+  }
+}
+

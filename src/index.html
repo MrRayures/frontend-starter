@@ -2,7 +2,7 @@
 {% extends "templates/layout-index.html" %}
 
 <!-- //START page variables -->
-{% set page_title = "Index" %}
+{% set page_title = "Templates index" %}
 {% set body_class = "sg-body sg-index" %}
 <!-- //END page variables -->
 
@@ -11,28 +11,26 @@
 {% block page_content %}
 
   <header class="sg-header">
-    <p class="sg-header__title">{{ project_name}} <span>Template index</span></p>
+    <p class="sg-header__title">{{project_name}} <span>Template index</span></p>
   </header>
 
   <div class="sg-content sg-content--centered">
-    <h1 class="sg-h1">{{ project_name }}</h1>
-    
-    {% if use_utilities %}
-      <ul class="sg-list sg-list--link sg-list--sm">
-        <li><h3 class="sg-h3">Charte & Styleguide</h3></li>
-        <li><a href="styleguide/index.html" target="_blank">Styleguide</a></li>
-      </ul>
-    {% endif %}
-    
+    <h1 class="sg-h1">{{project_name}}</h1>
+
     <ul class="sg-list sg-list--link sg-list--sm">
-      <li><h3 class="sg-h3">#0 Homepage</h3></li>
-      <li><a href="homepage.html">Homepage</a></li>
+    	<li><h3 class="sg-h3">Charte</h3></li>
+    	<li><a href="styleguide.html">Styleguide</a></li>
     </ul>
 
+    <ul class="sg-list sg-list--link sg-list--sm">
+      <li><h3 class="sg-h3">#0 Templates</h3></li>
+      <li><a href="exemple.html">Page d'exemple</a></li>
+    </ul>
+  
   </div><!--//END content -->
 
 
-
+	
 
 {% endblock %}
 <!-- //END page Content -->

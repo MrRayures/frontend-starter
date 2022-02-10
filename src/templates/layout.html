@@ -1,39 +1,42 @@
-<!doctype html>
+<!doctype html> 
 <html lang="fr">
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta charset="utf-8">
-		<title>{{ page_title }}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="{{ page_desc }}">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8"> 
+  <title>{{ page_title }}</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{{ page_desc }}">
+	
+	
+	<!-- Load CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/app{% if css_min %}.min{% endif %}.css?v=1">
+  {% block custom_css %}
+	{% endblock %}
 
-		<!-- Load CSS -->
-		{% if css_name %}
-			<link rel="stylesheet" type="text/css" href="assets/css/{{ css_name }}{% if css_min %}.min{% endif %}.css?v=1">
-		{% endif %}
 
-	</head>
 
-	<body class="{{ body_class }}">
-		
-		<a class="u-show-on-focus" href="#content">Skip to Content</a>
+</head>
 
-		{% include "templates/components/header.html" %}
+<body class="{{ body_class }}">
+	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	
+	{% include "templates/components/header.html" %}
+	<!-- //END Header -->
 
-		<div id="content" class="" role="main">
-			{% block page_content %}{% endblock %}
-		</div><!-- //END Main -->
+	{% block page_content %}{% endblock %}
+	
 
-		{% include "templates/components/footer.html" %}
+	{% include "templates/components/footer.html" %}
+	<!-- //END Footer -->
+	
 
-		{% if js_base %}
-			<script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js?v=1"></script>
-			<script type="text/javascript" src="assets/js/vendor{% if js_min %}.min{% endif %}.js?v=1"></script>
-		{% endif %}
+  
+  <script type="text/javascript" src="assets/js/vendor{% if js_min %}.min{% endif %}.js?v=1"></script>
+  <script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js?v=1"></script>
 
-		{% if js_page %}
-			<script type="text/javascript" src="assets/js/{{ js_page }}{% if js_min %}.min{% endif %}.js?v=1"></script>
-		{% endif %}
+  {% block custom_js %}
+	{% endblock %}
 
-	</body>
+	
+</body>
 </html>

@@ -1,0 +1,19 @@
+// Variables radius.
+
+$radius: (
+  "md"    : 1.6rem,
+  "full"  : 100rem,
+)!default;
+
+
+@function radius($key) {
+  @if map-has-key($radius, $key) {
+    @return map-get($radius, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $radius.";
+  @return null;
+}
+
+
+

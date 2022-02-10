@@ -1,0 +1,15 @@
+// Variables liées aux layout.
+
+$layout: (
+  "lg" : 120rem
+);
+
+
+@function layout($key) {
+  @if map-has-key($layout, $key) {
+    @return map-get($layout, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $layout.";
+  @return null;
+}

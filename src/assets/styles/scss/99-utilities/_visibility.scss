@@ -1,0 +1,34 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:visibility]
+-------------------------------------------------------------------------------------------------------*/
+
+/*
+* Visibility
+*/
+.u-block { display: block!important;}
+.u-none {display: none!important;}
+.u-inline {display: inline!important;}
+.u-inline-block {display: inline-block!important;vertical-align: top!important;}
+.u-flex { display: flex!important;}
+.u-inline-flex { display: inline-flex!important;}
+.u-visible {visibility: visible!important;}
+.u-hidden {visibility: hidden!important;}
+
+@each $bp , $bp_value in $breakpoints {
+  @include mq(#{$bp_value}) {
+    .u-block\@#{$bp} { display: block!important;}
+    .u-none\@#{$bp} {display: none!important;}
+    .u-inline\@#{$bp} {display: inline!important;}
+    .u-inline-block\@#{$bp} {display: inline-block!important;vertical-align: top!important;}
+    .u-flex\@#{$bp} { display: flex!important;}
+    .u-inline-flex\@#{$bp} { display: inline-flex!important;}
+    .u-visible\@#{$bp} {visibility: visible!important;}
+    .u-hidden\@#{$bp} {visibility: hidden!important;}
+  }
+}
+
+
+
+
+
+
