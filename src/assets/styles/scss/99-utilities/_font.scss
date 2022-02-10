@@ -1,21 +1,14 @@
 /*-----------------------------------------------------------------------------------------------------
-    [utilities:font]
+  [utilities:font]
 -------------------------------------------------------------------------------------------------------*/
 
+// Family
 @each $font_name , $font_value in $font-families {
 	.u-font-#{$font_name} {font-family: font(#{$font_name}); } 
 }
 
-@each $bp , $bp_value in $breakpoints {
-  @include mq(#{$bp_value}) {
-  	@each $font_name , $font_value in $font-families {
-			.u-font-#{$font_name}\@#{$bp}  {font-family: font(#{$font_name}); } 
-  	}
-  }
-}
 
-
-
+// Size
 @each $size , $size_value in $font-sizes {
 	.u-font-#{$size} { font-size: $size_value; }
 }
@@ -28,15 +21,7 @@
 	}
 }
 
-
+// Weight
 @each $size , $size_value in $font-weight {
 	.u-font-#{$size} { font-weight: $size_value; }
-}
-
-@each $bp , $bp_value in $breakpoints {
-  @include mq(#{$bp_value}) {
-		@each $size , $size_value in $font-weight {
-			.u-font-#{$size}\@#{$bp} { font-weight: $size_value; }
-		}
-	}
 }

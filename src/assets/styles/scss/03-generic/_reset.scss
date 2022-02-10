@@ -1,7 +1,6 @@
-/*-----------------------------------------------------------------------------------------------------
-  [generic:Reset]
-  Based on : https://github.com/hankchizljaw/modern-css-reset
--------------------------------------------------------------------------------------------------------*/
+// generic:Reset
+// Based on : https://github.com/hankchizljaw/modern-css-reset
+
 /* Box sizing rules */
 *,
 *::before,
@@ -76,15 +75,5 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+  font: font(primary);
 }

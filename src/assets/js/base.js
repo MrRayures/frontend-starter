@@ -92,16 +92,6 @@ var lazy = function lazy() {
 lazy();
 
 
-/*
-* SVG polyfill for IE 9-11
-* Doc : https://github.com/jonathantneal/svg4everybody
-*/
-svg4everybody(); // run it now or whenever you are ready
-
-
-
-
-
 
 
 

@@ -19,10 +19,7 @@ $font-families: (
 
 
 $font-sizes: (
-  "12"   : 1.2rem,
-  "14"   : 1.4rem,
-  "18"   : 1.8rem,
-  "24"   : 2.4rem
+  "14"   : 1.4rem
 );
 
 @function fontSize($key) {

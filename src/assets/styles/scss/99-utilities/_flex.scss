@@ -1,31 +1,45 @@
 /*-----------------------------------------------------------------------------------------------------
-    [utilities:flex]
+  [utilities:flex]
 -------------------------------------------------------------------------------------------------------*/
 
 .u-flex {display: flex;} 
 .u-inline-flex {display: inline-flex } 
+
 .u-flex-nowrap {flex-wrap: nowrap } 
 .u-flex-wrap {flex-wrap: wrap } 
-.u-flex-wrap-reverse {flex-wrap: wrap-reverse } 
+.u-flex-wrap-reverse {flex-wrap: wrap-reverse }
+
 .u-flex-row {flex-direction: row } 
 .u-flex-row-reverse {flex-direction: row-reverse } 
+
 .u-flex-column {flex-direction: column } 
 .u-flex-column-reverse {flex-direction: column-reverse } 
+
 .u-flex-justify-start {justify-content: flex-start } 
 .u-flex-justify-end {justify-content: flex-end } 
 .u-flex-justify-center {justify-content: center } 
 .u-flex-justify-between {justify-content: space-between } 
 .u-flex-justify-around {justify-content: space-around } 
+
 .u-flex-align-start {align-items: flex-start } 
 .u-flex-align-end {align-items: flex-end } 
 .u-flex-align-center {align-items: center } 
-.u-flex-align-baseline {align-items: baseline } 
-.u-flex-align-stretch {align-items: stretch } 
+
 .u-flex-self-start {align-self: flex-start } 
 .u-flex-self-end {align-self: flex-end } 
 .u-flex-self-center {align-self: center } 
+
+
+.u-flex-shrink-none {flex-shrink: 0 }
+.u-flex-grow {flex-grow: 1 }
+
+/* Autres classes disponible :
+.u-flex-align-baseline {align-items: baseline } 
+.u-flex-align-stretch {align-items: stretch } 
+
 .u-flex-self-baseline {align-self: baseline } 
 .u-flex-self-stretch {align-self: stretch } 
+
 .u-flex-item-fluid {flex: 1 } 
 .u-flex-item-auto {flex: auto } 
 .u-flex-item-initial {flex: initial } 
@@ -33,44 +47,56 @@
 .u-flex-item-first {order: -1 } 
 .u-flex-item-medium {order: 0 } 
 .u-flex-item-last {order: 1 }
-.u-flex-shrink-none {flex-shrink: 0 }
-.u-flex-grow {flex-grow: 1 }
+*/
 
 @each $bp , $bp_value in $breakpoints {
   @include mq(#{$bp_value}) {
+
 	  .u-flex\@#{$bp} {display: flex;} 
 		.u-inline-flex\@#{$bp} {display: inline-flex } 
+
 		.u-flex-nowrap\@#{$bp} {flex-wrap: nowrap } 
 		.u-flex-wrap\@#{$bp} {flex-wrap: wrap } 
 		.u-flex-wrap-reverse\@#{$bp} {flex-wrap: wrap-reverse } 
+
 		.u-flex-row\@#{$bp} {flex-direction: row } 
 		.u-flex-row-reverse\@#{$bp} {flex-direction: row-reverse } 
+
 		.u-flex-column\@#{$bp} {flex-direction: column } 
 		.u-flex-column-reverse\@#{$bp} {flex-direction: column-reverse } 
+
 		.u-flex-justify-start\@#{$bp} {justify-content: flex-start } 
 		.u-flex-justify-end\@#{$bp} {justify-content: flex-end } 
 		.u-flex-justify-center\@#{$bp} {justify-content: center } 
 		.u-flex-justify-between\@#{$bp} {justify-content: space-between } 
 		.u-flex-justify-around\@#{$bp} {justify-content: space-around } 
+
 		.u-flex-align-start\@#{$bp} {align-items: flex-start } 
 		.u-flex-align-end\@#{$bp} {align-items: flex-end } 
 		.u-flex-align-center\@#{$bp} {align-items: center } 
-		.u-flex-align-baseline\@#{$bp} {align-items: baseline } 
-		.u-flex-align-stretch\@#{$bp} {align-items: stretch } 
+		
 		.u-flex-self-start\@#{$bp} {align-self: flex-start } 
 		.u-flex-self-end\@#{$bp} {align-self: flex-end } 
 		.u-flex-self-center\@#{$bp} {align-self: center } 
-		.u-flex-self-baseline\@#{$bp} {align-self: baseline } 
+
+    .u-flex-shrink-none\@#{$bp} {flex-shrink: 0 }
+		.u-flex-grow\@#{$bp} {flex-grow: 1 }
+
+    /* Autres classes disponible :
+    .u-flex-align-baseline\@#{$bp} {align-items: baseline } 
+		.u-flex-align-stretch\@#{$bp} {align-items: stretch } 
+
+    .u-flex-self-baseline\@#{$bp} {align-self: baseline } 
 		.u-flex-self-stretch\@#{$bp} {align-self: stretch } 
-		.u-flex-item-fluid\@#{$bp} {flex: 1 } 
+
+    .u-flex-item-fluid\@#{$bp} {flex: 1 } 
 		.u-flex-item-auto\@#{$bp} {flex: auto } 
 		.u-flex-item-initial\@#{$bp} {flex: initial } 
 		.u-flex-item-none\@#{$bp} {flex: none } 
 		.u-flex-item-first\@#{$bp} {order: -1 } 
 		.u-flex-item-medium\@#{$bp} {order: 0 } 
 		.u-flex-item-last\@#{$bp} {order: 1 }
-		.u-flex-shrink-none\@#{$bp} {flex-shrink: 0 }
-		.u-flex-grow\@#{$bp} {flex-grow: 1 }
+    */
 	}
 }
 

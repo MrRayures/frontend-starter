@@ -1,17 +1,11 @@
-/*-----------------------------------------------------------------------------------------------------
-    [generic:accessibility]
--------------------------------------------------------------------------------------------------------*/
-/*
-* Focus style for accessibility
-*/
+// generic:accessibility
+
+/* Focus style for accessibility */
 :focus-visible {
   @include accessible_outline;
 }
 
-
-/*
-* prefers-reduced-motion
-*/
+/* prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-delay: -1ms !important;

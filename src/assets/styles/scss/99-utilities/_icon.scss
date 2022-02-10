@@ -1,10 +1,12 @@
 /*-----------------------------------------------------------------------------------------------------
-    [utilities:icon]
+  [utilities:icon]
 -------------------------------------------------------------------------------------------------------*/
 
+// Size
 @each $size , $size_value in $icon-size {
   .u-icon-#{$size} { width: $size_value!important; height: $size_value!important; }
 }
+
 
 @each $bp , $bp_value in $breakpoints {
   @include mq(#{$bp_value}) {
@@ -15,17 +17,12 @@
 }
 
 
+
+// color
 @each $color_name , $color_value in $colors {
   .u-icon-#{$color_name} { fill: $color_value; }
 }
 
-@each $bp , $bp_value in $breakpoints {
-  @include mq(#{$bp_value}) {
-    @each $color_name , $color_value in $colors {
-      .u-icon-#{$color_name}\@#{$bp} { fill: $color_value; }
-    }
-  }
-}
 
 
 

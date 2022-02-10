@@ -1,6 +1,7 @@
 /*-----------------------------------------------------------------------------------------------------
-    [utilities:spacing]
+  [utilities:spacing]
 -------------------------------------------------------------------------------------------------------*/
+
 @each $size , $size_value in $spacing {
   .u-mt-#{$size} { margin-top: $size_value; }
   .u-mr-#{$size} { margin-right: $size_value; }
@@ -18,7 +19,6 @@
   .u-py-#{$size} { padding-top: $size_value; padding-bottom: $size_value; }
   .u-p-#{$size}  { padding: $size_value; }
 }
-
 
 
 @each $bp , $bp_value in $breakpoints {
