@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "recursive-delete dist",
     "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
-    "less": "lessc src/assets/styles/less/app.less > dist/assets/css/app.css",
+    "less": "lessc src/assets/styles/less/app.less dist/assets/css/app.css",
     "img": "mkdirp -p dist/assets/img && recursive-copy src/assets/img dist/assets/img",
     "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
     "sprite": "svg-sprite --symbol --symbol-sprite=sprite/icons.svg --symbol-dest=dist/assets/icons/ src/assets/icons/*.svg",
@@ -49,12 +49,9 @@
     "recursive-fs": "^2.1.0",
     "rollup": "^2.6.1",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.26.5",
     "svgo": "^1.3.2",
     "uglify-js": "^3.14.2",
-    "svg-sprite": "^1.5.3"
-  },
-  "dependencies": {
+    "svg-sprite": "^1.5.3",
     "less": "^4.1.2"
   }
 }
