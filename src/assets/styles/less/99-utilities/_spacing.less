@@ -1,0 +1,50 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:spacing]
+-------------------------------------------------------------------------------------------------------*/
+
+each(@spacing, .(@v, @k, @i){
+  .u-mt-@{k} { margin-top: @v; }
+  .u-mr-@{k} { margin-right: @v; }
+  .u-mb-@{k} { margin-bottom: @v; }
+  .u-ml-@{k} { margin-left: @v; }
+  .u-mx-@{k} { margin-left: @v; margin-right: @v; }
+  .u-my-@{k} { margin-top: @v; margin-bottom: @v; }
+  .u-m-@{k}  { margin: @v; }
+
+  .u-pt-@{k} { padding-top: @v; }
+  .u-pr-@{k} { padding-right: @v; }
+  .u-pb-@{k} { padding-bottom: @v; }
+  .u-pl-@{k} { padding-left: @v; }
+  .u-px-@{k} { padding-left: @v; padding-right: @v; }
+  .u-py-@{k} { padding-top: @v; padding-bottom: @v; }
+  .u-p-@{k}  { padding: @v; }
+});
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    each(@spacing, .(@fv, @fk, @fi){
+      .u-mt-@{fk}\@@{k} { margin-top: @fv; }
+      .u-mr-@{fk}\@@{k} { margin-right: @fv; }
+      .u-mb-@{fk}\@@{k} { margin-bottom: @fv; }
+      .u-ml-@{fk}\@@{k} { margin-left: @fv; }
+      .u-mx-@{fk}\@@{k} { margin-left: @fv; margin-right: @fv; }
+      .u-my-@{fk}\@@{k} { margin-top: @fv; margin-bottom: @fv; }
+      .u-m-@{fk}\@@{k} { margin: @fv; }
+
+      .u-pt-@{fk}\@@{k} { padding-top: @fv; }
+      .u-pr-@{fk}\@@{k} { padding-right: @fv; }
+      .u-pb-@{fk}\@@{k} { padding-bottom: @fv; }
+      .u-pl-@{fk}\@@{k} { padding-left: @fv; }
+      .u-px-@{fk}\@@{k} { padding-left: @fv; padding-right: @fv; }
+      .u-py-@{fk}\@@{k} { padding-top: @fv; padding-bottom: @fv; }
+      .u-p-@{fk}\@@{k} { padding: @fv; }
+    });
+  }
+});
+
+
+
+
+
+
+

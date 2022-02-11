@@ -1,0 +1,36 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:icon]
+-------------------------------------------------------------------------------------------------------*/
+
+// Size
+each(@icon-size, .(@v, @k, @i){
+  .u-icon-@{k} {
+    width: @v!important; 
+    height: @v!important;
+  }
+});
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    each(@icon-size, .(@fv, @fk, @fi){
+      .u-icon-@{fk}\@@{k} {
+        width: @fv!important; 
+        height: @fv!important;
+      }
+    });
+  }
+});
+
+
+
+// color
+each(@colors, .(@v, @k, @i){
+  .u-icon-@{k} {
+    fill: @v;
+  }
+});
+
+
+
+
+

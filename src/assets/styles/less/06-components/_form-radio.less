@@ -1,0 +1,87 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:form-radio]
+  Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
+-------------------------------------------------------------------------------------------------------*/
+
+.c-form-radio {
+	position: relative;
+}
+
+.c-form-radio__input  {
+	opacity: 0;
+  position: absolute;
+}
+
+.c-form-radio__label  {
+	position: relative;
+  display: inline-flex;
+  padding-left: (@radioSize[md] + 1);
+  font-size: 1.6rem;
+  font-family: font[primary];
+  color: @colors[text];
+}
+
+
+.c-form-radio__label:before,
+.c-form-radio__label:after {
+  content: "";
+  position: absolute;
+}
+
+
+.c-form-radio__label:before{
+  height: @radioSize[md];
+  width: @radioSize[md];
+  border: 1px solid @colors[grey-base];
+  border-radius: @radioSize[md];
+  left: 0px;
+  top: 0px;
+}
+
+
+.c-form-radio__label:after {
+  height: (@radioSize[md] - 1);
+  width: (@radioSize[md] - 1);
+  border-radius: @radioSize[md];
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.c-form-radio__input + .c-form-radio__label:after {
+  content: none;
+}
+
+.c-form-radio__input:checked + .c-form-radio__label {
+  color: @colors[primary];
+}
+
+.c-form-radio__input:checked + .c-form-radio__label:after {
+  content: "";
+  background-color: @colors[primary];
+}
+
+.c-form-radio__input:checked + .c-form-radio__label:before {
+  border-color: @colors[primary];
+}
+
+.c-form-radio__input:focus + .c-form-radio__label::before {
+  outline: 3px dotted @colors[primary];
+  outline-offset: 2px;
+}
+
+
+/*
+* Disabled
+*/
+.c-form-radio__input:disabled + .c-form-radio__label {
+  opacity: 0.6;
+}
+
+/*
+* Focus
+*/
+.c-form-radio__input:focus-visible + .c-form-radio__label:before {
+  .accessible_outline();
+}
+
+

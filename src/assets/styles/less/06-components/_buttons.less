@@ -1,0 +1,89 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:buttons]
+-------------------------------------------------------------------------------------------------------*/
+.c-button {
+	background: none;
+	border: 1px solid transparent;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	&:not(disabled) {
+  	cursor: pointer;
+  }
+}
+
+
+/*
+* Primary
+*/
+.c-button--primary {
+	background-color: @colors[primary];
+	color: #FFF;
+
+	.c-button__icon {
+		fill: #FFF;
+	}
+
+	&:focus,
+	&:hover {
+		color: #FFF;
+		background-color: darken(@colors[primary], 20%);
+	}
+
+	&:active {}
+
+}
+
+
+/*
+* Secondary
+*/
+.c-button--secondary {
+	background-color: @colors[secondary];
+	color: #FFF;
+
+	.c-button__icon {
+		fill: #FFF;
+	}
+
+	&:focus,
+	&:hover {
+		color: #FFF;
+		background-color: darken(@colors[secondary], 20%);
+	}
+	&:active {}
+}
+
+
+
+/*
+* With icon
+*/
+.c-button--icon {
+
+  // Left
+  .c-button--icon-left {
+    .c-button__icon {
+		  margin-right: 1rem;
+	  }
+  }
+
+  //Right
+  .c-button--icon-right {
+    .c-button__icon {
+		  margin-left: 1rem;
+	  }
+  }
+
+}
+
+
+
+/*
+* With icon only
+*/
+.c-button--icon-only {
+
+}
+
+

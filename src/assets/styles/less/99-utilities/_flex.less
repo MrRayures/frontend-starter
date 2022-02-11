@@ -1,0 +1,105 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:flex]
+-------------------------------------------------------------------------------------------------------*/
+
+.u-flex {display: flex;} 
+.u-inline-flex {display: inline-flex } 
+
+.u-flex-nowrap {flex-wrap: nowrap } 
+.u-flex-wrap {flex-wrap: wrap } 
+.u-flex-wrap-reverse {flex-wrap: wrap-reverse }
+
+.u-flex-row {flex-direction: row } 
+.u-flex-row-reverse {flex-direction: row-reverse } 
+
+.u-flex-column {flex-direction: column } 
+.u-flex-column-reverse {flex-direction: column-reverse } 
+
+.u-flex-justify-start {justify-content: flex-start } 
+.u-flex-justify-end {justify-content: flex-end } 
+.u-flex-justify-center {justify-content: center } 
+.u-flex-justify-between {justify-content: space-between } 
+.u-flex-justify-around {justify-content: space-around } 
+
+.u-flex-align-start {align-items: flex-start } 
+.u-flex-align-end {align-items: flex-end } 
+.u-flex-align-center {align-items: center } 
+
+.u-flex-self-start {align-self: flex-start } 
+.u-flex-self-end {align-self: flex-end } 
+.u-flex-self-center {align-self: center } 
+
+
+.u-flex-shrink-none {flex-shrink: 0 }
+.u-flex-grow {flex-grow: 1 }
+
+/* Autres classes disponible :
+.u-flex-align-baseline {align-items: baseline } 
+.u-flex-align-stretch {align-items: stretch } 
+
+.u-flex-self-baseline {align-self: baseline } 
+.u-flex-self-stretch {align-self: stretch } 
+
+.u-flex-item-fluid {flex: 1 } 
+.u-flex-item-auto {flex: auto } 
+.u-flex-item-initial {flex: initial } 
+.u-flex-item-none {flex: none } 
+.u-flex-item-first {order: -1 } 
+.u-flex-item-medium {order: 0 } 
+.u-flex-item-last {order: 1 }
+*/
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    .u-flex\@@{k} {display: flex;} 
+		.u-inline-flex\@@{k} {display: inline-flex } 
+
+		.u-flex-nowrap\@@{k} {flex-wrap: nowrap } 
+		.u-flex-wrap\@@{k} {flex-wrap: wrap } 
+		.u-flex-wrap-reverse\@@{k} {flex-wrap: wrap-reverse } 
+
+		.u-flex-row\@@{k} {flex-direction: row } 
+		.u-flex-row-reverse\@@{k} {flex-direction: row-reverse } 
+
+		.u-flex-column\@@{k} {flex-direction: column } 
+		.u-flex-column-reverse\@@{k} {flex-direction: column-reverse } 
+
+		.u-flex-justify-start\@@{k} {justify-content: flex-start } 
+		.u-flex-justify-end\@@{k} {justify-content: flex-end } 
+		.u-flex-justify-center\@@{k} {justify-content: center } 
+		.u-flex-justify-between\@@{k} {justify-content: space-between } 
+		.u-flex-justify-around\@@{k} {justify-content: space-around } 
+
+		.u-flex-align-start\@@{k} {align-items: flex-start } 
+		.u-flex-align-end\@@{k} {align-items: flex-end } 
+		.u-flex-align-center\@@{k} {align-items: center } 
+		
+		.u-flex-self-start\@@{k} {align-self: flex-start } 
+		.u-flex-self-end\@@{k} {align-self: flex-end } 
+		.u-flex-self-center\@@{k} {align-self: center } 
+
+    .u-flex-shrink-none\@@{k} {flex-shrink: 0 }
+		.u-flex-grow\@@{k} {flex-grow: 1 }
+
+    /* Autres classes disponible :
+    .u-flex-align-baseline\@@{k} {align-items: baseline } 
+		.u-flex-align-stretch\@@{k} {align-items: stretch } 
+
+    .u-flex-self-baseline\@@{k} {align-self: baseline } 
+		.u-flex-self-stretch\@@{k} {align-self: stretch } 
+
+    .u-flex-item-fluid\@@{k} {flex: 1 } 
+		.u-flex-item-auto\@@{k} {flex: auto } 
+		.u-flex-item-initial\@@{k} {flex: initial } 
+		.u-flex-item-none\@@{k} {flex: none } 
+		.u-flex-item-first\@@{k} {order: -1 } 
+		.u-flex-item-medium\@@{k} {order: 0 } 
+		.u-flex-item-last\@@{k} {order: 1 }
+    */
+
+
+  }
+});
+
+
+

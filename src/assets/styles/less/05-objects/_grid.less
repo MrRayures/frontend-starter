@@ -1,0 +1,70 @@
+// objects:grid
+
+@grid: {
+  col        : 12;
+  gutter-y   : 2.4rem;
+  gutter-x   : 2.4rem;
+};
+
+
+.o-row {
+  display: flex;
+  flex-wrap: wrap;
+  //margin-left: calc(@grid[gutter-x] * -1);
+}
+
+.o-row--no-gutter {
+  margin-left: 0;
+}
+
+.o-col {
+  //padding-bottom: grid(gutter-y);
+  //padding-left: @grid[gutter-x];
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.o-col--no-gutter {
+  padding-left: 0;
+}
+
+// o-col
+each(range(@grid[col]), {
+  .o-col--@{value} {
+    width: percentage((@value / @grid[col]));
+    flex: 0 0 percentage((@value / @grid[col]));
+  }
+});
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    each(range(@grid[col]), {
+      .o-col--@{value}\@@{k} {
+        width: percentage((@value / @grid[col]));
+        flex: 0 0 percentage((@value / @grid[col]));
+      }
+    });
+  }
+});
+
+
+
+
+// o-col--offset
+each(range(@grid[col]), {
+  .o-col--offset-@{value} {
+    margin-left: percentage((@value / @grid[col]));
+  }
+});
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    each(range(0, @grid[col]), {
+      .o-col--offset-@{value}\@@{k} {
+        margin-left: percentage((@value / @grid[col]));
+      }
+    });
+  }
+});
+

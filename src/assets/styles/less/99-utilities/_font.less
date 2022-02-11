@@ -1,0 +1,36 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:font]
+-------------------------------------------------------------------------------------------------------*/
+
+// Family
+each(@fonts, .(@v, @k, @i){
+  .u-font-@{k} {
+    font-family: @v; 
+  }
+});
+
+
+// Size
+each(@fonts-sizes, .(@v, @k, @i){
+  .u-font-@{k} {
+    font-size: @v; 
+  }
+});
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    each(@fonts-sizes, .(@fv, @fk, @fi){
+      .u-font-@{fk}\@@{k} {
+        font-size: @fv;
+      }
+    });
+  }
+});
+
+
+// Weight
+each(@fonts-weight, .(@v, @k, @i){
+  .u-font-@{k} {
+    font-weight: @v; 
+  }
+});

@@ -1,0 +1,81 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:form-checkox]
+  Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
+-------------------------------------------------------------------------------------------------------*/
+
+.c-form-checkbox {
+	position: relative;
+}
+
+.c-form-checkbox__input  {
+	opacity: 0;
+  position: absolute;
+}
+
+.c-form-checkbox__label  {
+	position: relative;
+  display: inline-flex;
+  padding-left: (@checkboxSize[md] + 1);
+  font-size: 1.6rem;
+  font-family: @fonts[primary];
+  color: @colors[text];
+}
+
+
+.c-form-checkbox__label:before,
+.c-form-checkbox__label:after {
+  content: "";
+  position: absolute;
+}
+
+
+.c-form-checkbox__label:before{
+  height: @checkboxSize[md];
+  width: @checkboxSize[md];
+  border: 1px solid @colors[grey-base];
+  left: 0px;
+  top: 0px;
+}
+
+
+.c-form-checkbox__label:after {
+  background-image: url('../img/checkbox-check.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70% auto;
+  height: @checkboxSize[md];
+  width: @checkboxSize[md];
+  left: 0;
+  top: 0;
+}
+
+.c-form-checkbox__input + .c-form-checkbox__label:after {
+  content: none;
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__label {
+  color: color[primary];
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__label:after {
+  content: "";
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__label:before {
+  border-color: color[primary];
+}
+
+
+/*
+* Disabled
+*/
+.c-form-checkbox__input:disabled + .c-form-checkbox__label {
+  opacity: 0.6;
+}
+
+/*
+* Focus
+*/
+.c-form-checkbox__input:focus + .c-form-checkbox__label::before {
+  .accessible_outline();
+}

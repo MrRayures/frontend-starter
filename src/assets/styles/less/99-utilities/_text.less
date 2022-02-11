@@ -1,0 +1,21 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:text]
+-------------------------------------------------------------------------------------------------------*/
+
+.u-text-ellipsis {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } 
+.u-text-left {text-align: left; } 
+.u-text-right {text-align: right; } 
+.u-text-center {text-align: center; } 
+.u-text-uppercase {text-transform: uppercase; } 
+.u-text-decoration-none { text-decoration: none;}
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    .u-text-ellipsis\@@{k}  {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } 
+		.u-text-left\@@{k}  {text-align: left; } 
+		.u-text-right\@@{k}  {text-align: right; } 
+		.u-text-center\@@{k}  {text-align: center; } 
+    .u-text-uppercase\@@{k} {text-transform: uppercase; } 
+		.u-text-decoration-none\@@{k} { text-decoration: none; }
+  }
+});

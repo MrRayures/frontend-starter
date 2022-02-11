@@ -1,0 +1,193 @@
+/*-----------------------------------------------------------------------------------------------------
+  [Styleguide Stylesheet]
+  by : mr-rayures.com
+  Version : 1.0
+-----------------------------------------------------------------------------------------------------*/
+
+
+/*
+* Let's import ALL stuff
+*/
+// Settings
+@import '01-settings/_settings';
+
+// Tools
+@import '02-tools/_tools';
+
+// Generic
+@import '03-generic/_accessibility';
+@import '03-generic/_reset';
+
+// Elements
+@import '04-elements/_fonts';
+@import '04-elements/_form';
+@import '04-elements/_page';
+
+
+// Body
+.sg-body {
+  overflow: visible;
+  height: auto;
+  background-color: #FFF;
+  @include mq(bp(lg)) {
+    padding-top: 5rem;
+  }
+  .sg-h1 {
+    color: @colors[primary);
+    font-size: 4.8rem;
+    font-weight: 400;
+    font-family: font[primary);
+    margin-bottom: 2rem;
+  }
+  .sg-h2 {
+    color: @colors[primary);
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    font-family: font[primary);
+    ~.sg-h2 {
+      margin-top: 8rem;
+    }
+  }
+  .sg-h3 {
+    color: #222222;
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    font-family: font[primary);
+    ~.sg-h3 {
+      margin-top: 4rem;
+    }
+  }
+  .sg-h4 {
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    color: @colors[primary);
+  }
+  .sg-text {
+    color: @colors[text)-light;
+    margin-bottom: 2rem;
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.5rem;
+      display: inline-block;
+      color: @colors[text);
+      border-radius: radius(md);
+      font-size: 1.4rem;
+    }
+  }
+  a:not([class]) {
+    text-decoration: underline;
+    color: #000;
+    &:hover {
+      color: #FFF;
+      background-color: #000;
+    }
+  }
+  // Header
+  .sg-header {
+    background: #efefef;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    @include mq(bp(lg)) {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+  }
+  .sg-header__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    span {
+      display: block;
+      color: @colors[text-light);
+      font-size: 1.4rem;
+      font-weight: 400;
+      @include mq(bp(lg)) {
+        margin-left: 0rem;
+      }
+    }
+  }
+  a.sg-header__title {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color:@colors[primary);
+      span {
+        color:@colors[primary);
+      }
+    }
+  }
+  
+
+  /*
+	* Content
+	*/
+  .sg-content {
+    padding: 2rem 6rem;
+    margin-bottom: 6rem;
+    max-width: 120rem;
+    border-bottom: 2px solid @colors[border);
+    &:last-child {
+      border: none;
+    }
+    @include mq(bp(sm)) {
+      padding: 2rem;
+    }
+  }
+  .sg-content--centered {
+    margin: 0 auto;
+  }
+
+  /*
+	* list
+	*/
+  .sg-list {
+    list-style: none;
+    margin-bottom: 3rem;
+    padding: 0;
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.5rem;
+      display: inline-block;
+      color: @colors[text);
+      border-radius: radius(sm);
+      font-size: 1.4rem;
+    }
+  }
+
+  .sg-list--border {
+    padding-left: 1rem;
+    border-left: 4px solid #E9E9E9;
+    margin-bottom: 3rem;
+    li {
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .sg-list--link {
+    a {
+      background: #eeeeee;
+      border-radius: radius(sm);
+      color: #333333;
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      padding: 1rem 2rem;
+      position: relative;
+      text-decoration: none;
+      transition: 200ms;
+      &:hover {
+        background: #cfcfcf;
+        color: #333333;
+        text-decoration: underline;
+      }
+    }
+    &.sg-list--sm {
+      a {
+        padding: 0.6rem 2rem;
+      }
+    }
+  }
+}
+

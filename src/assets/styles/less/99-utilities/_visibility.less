@@ -1,0 +1,35 @@
+/*-----------------------------------------------------------------------------------------------------
+  [utilities:visibility]
+-------------------------------------------------------------------------------------------------------*/
+
+/*
+* Visibility
+*/
+.u-block { display: block!important;}
+.u-none {display: none!important;}
+.u-inline {display: inline!important;}
+.u-inline-block {display: inline-block!important;vertical-align: top!important;}
+.u-flex { display: flex!important;}
+.u-inline-flex { display: inline-flex!important;}
+.u-visible {visibility: visible!important;}
+.u-hidden {visibility: hidden!important;}
+
+each(@bp, .(@v, @k, @i) {
+  @media (max-width: @v) {
+    .u-block\@@{k} { display: block!important;}
+    .u-none\@@{k} {display: none!important;}
+    .u-inline\@@{k} {display: inline!important;}
+    .u-inline-block@{k} {display: inline-block!important;vertical-align: top!important;}
+    .u-flex\@@{k} { display: flex!important;}
+    .u-inline-flex\@@{k} { display: inline-flex!important;}
+    .u-visible\@@{k} {visibility: visible!important;}
+    .u-hidden\@@{k} {visibility: hidden!important;}
+  }
+});
+
+
+
+
+
+
+
