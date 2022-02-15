@@ -60,7 +60,7 @@
       </ul>
 
       <br><br>
-      <h3>Boucle for avec data et include</h3>
+      <h3>Boucle for avec data et template include</h3>
       {% set products = [
         {name:"Tomate", price:"1,20€", new:false},
         {name:"Potiron", price:"2,50€", new:false},
@@ -81,6 +81,66 @@
       <code>{% raw %}{{ project_name }}{% endraw %} = {{ project_name }}</code><br>
       <code>{% raw %}{{ img_path }}{% endraw %} = {{ img_path }}</code> 
       </p>
+
+      
+
+      <br><br>
+      <h2>Composant</h2>
+      <a href="#" class="c-button c-button--primary">Bouton primaire</a>
+      <a href="#" class="c-button c-button--secondary">Bouton secondaire</a>
+      <br><br>
+      <input class="c-form-input" type="text">
+      <br>
+      <select class="c-form-select" name="" id="">
+        <option value="">01</option>
+        <option value="">02</option>
+      </select>
+
+      <div class="c-fom-radio">
+        <input class="c-form-radio__input" id="radio" type="radio">
+        <label class="c-form-radio__label" for="radio">Mon label</label>
+      </div>
+
+      <div class="c-fom-checkbox">
+        <input class="c-form-checkbox__input" type="checkbox" id="checkbox">
+        <label class="c-form-checkbox__label" for="checkbox">Mon label</label>
+      </div>
+
+      <br><br>
+      <h2>Grid</h2>
+      <style>
+        .o-col,
+        [class*="o-col--"] {
+          border:1px solid #efefef;
+        }
+      </style>
+
+      <div class="o-row">
+        <div class="o-col">1</div>
+        <div class="o-col">1</div>
+      </div>
+      <br>
+      <div class="o-row">
+        <div class="o-col--8">8</div>
+        <div class="o-col--4">4</div>
+      </div>
+      <br>
+      <div class="o-row">
+        <div class="o-col--offset-6 o-col--2">2</div>
+        <div class="o-col--4">4</div>
+        <div class="o-col--offset-2 o-col--4">4</div>
+        <div class="o-col--offset-2 o-col--4">4</div>
+      </div>
+      <br>
+      <div class="o-row">
+        <div class="o-col--8 o-col--4@md o-col--6@sm o-col--12@xs">8</div>
+        <div class="o-col--4 o-col--8@md o-col--6@sm o-col--12@xs">4</div>
+      </div>
+      <br>
+      <div class="o-row">
+        <div class="o-col--offset-6 o-col--offset-8@lg o-col--offset-3@sm o-col--offset-0@xs o-col--6 o-col--4@lg o-col--9@sm o-col--12@xs">8</div>
+      </div>
+
     </div>
 
   
