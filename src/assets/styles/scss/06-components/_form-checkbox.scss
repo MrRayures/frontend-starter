@@ -3,6 +3,8 @@
   Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
 -------------------------------------------------------------------------------------------------------*/
 
+$checkboxSize: 2rem;
+
 .c-form-checkbox {
 	position: relative;
 }
@@ -15,7 +17,7 @@
 .c-form-checkbox__label  {
 	position: relative;
   display: inline-flex;
-  padding-left: (checkboxSize(md) + 1);
+  padding-left: ($checkboxSize + 1);
   font-size: 1.6rem;
   font-family: font(primary);
   color: color(text);
@@ -30,9 +32,9 @@
 
 
 .c-form-checkbox__label:before{
-  height: checkboxSize(md);
-  width: checkboxSize(md);
-  border: 1px solid color(grey-base);
+  height: $checkboxSize;
+  width: $checkboxSize;
+  border: 1px solid color(grey-1);
   left: 0px;
   top: 0px;
 }
@@ -43,8 +45,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 70% auto;
-  height: checkboxSize(md);
-  width: checkboxSize(md);
+  height: $checkboxSize;
+  width: $checkboxSize;
   left: 0;
   top: 0;
 }

@@ -2,6 +2,7 @@
   [component:form-radio]
   Source : https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3;
 -------------------------------------------------------------------------------------------------------*/
+$radioSize: 2rem;
 
 .c-form-radio {
 	position: relative;
@@ -15,7 +16,7 @@
 .c-form-radio__label  {
 	position: relative;
   display: inline-flex;
-  padding-left: (radioSize(md) + 1);
+  padding-left: ($radioSize + 1);
   font-size: 1.6rem;
   font-family: font(primary);
   color: color(text);
@@ -30,19 +31,19 @@
 
 
 .c-form-radio__label:before{
-  height: radioSize(md);
-  width: radioSize(md);
-  border: 1px solid color(grey-base);
-  border-radius: radioSize(md);
+  height: $radioSize;
+  width: $radioSize;
+  border: 1px solid color(grey-1);
+  border-radius: $radioSize;
   left: 0px;
   top: 0px;
 }
 
 
 .c-form-radio__label:after {
-  height: (radioSize(md) - 1);
-  width: (radioSize(md) - 1);
-  border-radius: radioSize(md);
+  height: ($radioSize - 1);
+  width: ($radioSize - 1);
+  border-radius: $radioSize;
   left: 0.5rem;
   top: 0.5rem;
 }
