@@ -13,7 +13,7 @@
   },
   "scripts": {
     "clean": "recursive-delete dist",
-    "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
+    "copy": "mkdirp -p dist/assets && mkdirp -p dist/assets/fonts && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
     "less": "lessc src/assets/styles/less/app.less dist/assets/css/app.css",
     "img": "mkdirp -p dist/assets/img && recursive-copy src/assets/img dist/assets/img",
     "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
