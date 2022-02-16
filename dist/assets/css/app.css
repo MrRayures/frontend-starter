@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*-----------------------------------------------------------------------------------------------------
   [Master Stylesheet]
 	by : Francois Leproust
@@ -9,7 +8,7 @@
 /* Accessibility outline */
 /* Focus style for accessibility */
 :focus-visible {
-  outline: 2px dotted #000000;
+  outline: 2px dotted #333333;
   outline-offset: 0.2rem;
 }
 
@@ -63,7 +62,7 @@ dd {
 */
 html {
   font-size: 62.5%;
-  font-size: calc(1em * 0.625);
+  font-size: 0.625em;
 }
 
 /* Set core body defaults */
@@ -172,7 +171,7 @@ a {
   color: #000000;
 }
 a:hover {
-  color: #000000;
+  color: #333333;
   text-decoration: underline;
 }
 ul,
@@ -190,79 +189,8 @@ img {
   font-style: italic;
 }
 
-blockquote {
-  color: #676767;
-  font-style: italic;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.8rem;
-  position: relative;
-  padding: 2rem 0 0 8rem;
-}
-@media (max-width: 768px) {
-  blockquote {
-    font-size: 1.8rem;
-    padding: 0 0 0 4rem;
-  }
-}
-blockquote p:before {
-  content: " « ";
-  color: #000000;
-  font-size: 11rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  line-height: 30%;
-}
-@media (max-width: 768px) {
-  blockquote p:before {
-    font-size: 6rem;
-  }
-}
-blockquote p:after {
-  content: " » ";
-  color: #000000;
-  font-size: 6rem;
-  line-height: 20%;
-  position: relative;
-  top: 0.6rem;
-}
-@media (max-width: 768px) {
-  blockquote p:after {
-    font-size: 3rem;
-  }
-}
-blockquote cite {
-  font-weight: 700;
-  color: #666666;
-  display: block;
-  font-size: 1.7rem;
-  font-family: Arial, sans-serif;
-  font-style: normal;
-  position: relative;
-  padding-left: 5rem;
-}
-@media (max-width: 768px) {
-  blockquote cite {
-    font-size: 1.6rem;
-  }
-}
-blockquote cite span {
-  color: #676767;
-}
-blockquote cite:before {
-  content: "";
-  display: block;
-  width: 4rem;
-  height: 2px;
-  background-color: #000000;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 hr {
-  background: #dddddd;
+  background: #888888;
   border: none;
   height: 1px;
 }
@@ -291,7 +219,7 @@ table td {
   margin-left: 0;
 }
 
-.o-col {
+[class^=o-col] {
   padding-left: 2.4rem;
   flex-basis: 0;
   flex-grow: 1;
@@ -1000,7 +928,7 @@ table td {
 * Primary
 */
 .c-button--primary {
-  background-color: #000000;
+  background-color: #333333;
   color: #FFF;
 }
 .c-button--primary .c-button__icon {
@@ -1042,12 +970,12 @@ table td {
 -------------------------------------------------------------------------------------------------------*/
 .c-container {
   padding: 0 1rem;
-  max-width: 120rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .c-container--lg {
-  max-width: 120rem;
+  max-width: 1200px;
 }
 
 /*-----------------------------------------------------------------------------------------------------
@@ -1084,7 +1012,7 @@ table td {
 .c-form-checkbox__label:before {
   height: 2rem;
   width: 2rem;
-  border: 1px solid #cccccc;
+  border: 1px solid #888888;
   left: 0px;
   top: 0px;
 }
@@ -1105,7 +1033,7 @@ table td {
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__label {
-  color: #000000;
+  color: #333333;
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__label:after {
@@ -1113,7 +1041,7 @@ table td {
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__label:before {
-  border-color: #000000;
+  border-color: #333333;
 }
 
 /*
@@ -1127,7 +1055,7 @@ table td {
 * Focus
 */
 .c-form-checkbox__input:focus + .c-form-checkbox__label::before {
-  outline: 2px dotted #000000;
+  outline: 2px dotted #333333;
   outline-offset: 0.2rem;
 }
 
@@ -1162,7 +1090,7 @@ table td {
 .c-form-radio__label:before {
   height: 2rem;
   width: 2rem;
-  border: 1px solid #cccccc;
+  border: 1px solid #888888;
   border-radius: 2rem;
   left: 0px;
   top: 0px;
@@ -1181,20 +1109,20 @@ table td {
 }
 
 .c-form-radio__input:checked + .c-form-radio__label {
-  color: #000000;
+  color: #333333;
 }
 
 .c-form-radio__input:checked + .c-form-radio__label:after {
   content: "";
-  background-color: #000000;
+  background-color: #333333;
 }
 
 .c-form-radio__input:checked + .c-form-radio__label:before {
-  border-color: #000000;
+  border-color: #333333;
 }
 
 .c-form-radio__input:focus + .c-form-radio__label::before {
-  outline: 3px dotted #000000;
+  outline: 3px dotted #333333;
   outline-offset: 2px;
 }
 
@@ -1209,7 +1137,7 @@ table td {
 * Focus
 */
 .c-form-radio__input:focus-visible + .c-form-radio__label:before {
-  outline: 2px dotted #000000;
+  outline: 2px dotted #333333;
   outline-offset: 0.2rem;
 }
 
@@ -1230,7 +1158,7 @@ table td {
   max-width: 480px;
   box-sizing: border-box;
   margin: 0;
-  border: 1px solid #cccccc;
+  border: 1px solid #888888;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -1248,14 +1176,14 @@ table td {
 
 /* Hover style */
 .c-form-select:hover {
-  border-color: #000000;
+  border-color: #333333;
 }
 
 /* Focus style */
 .c-form-select:focus {
-  border-color: #000000;
+  border-color: #333333;
   /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
-  color: #000000;
+  color: #333333;
 }
 
 /* Set options to normal weight */
@@ -1329,16 +1257,6 @@ table td {
   color: #FFF;
 }
 
-.u-visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-
 /*-----------------------------------------------------------------------------------------------------
   [utilities:box-shadow]
 -------------------------------------------------------------------------------------------------------*/
@@ -1368,118 +1286,38 @@ table td {
 * Color
 */
 .u-color-primary {
-  color: #000000;
+  color: #333333;
 }
 
 .u-color-secondary {
   color: #666666;
 }
 
-.u-color-bg {
-  color: #F6F6F6;
-}
-
-.u-color-border {
-  color: #dddddd;
-}
-
 .u-color-text {
   color: #000000;
 }
 
-.u-color-text-light {
-  color: #676767;
-}
-
-.u-color-title {
-  color: #000000;
-}
-
-.u-color-grey-light {
-  color: #efefef;
-}
-
-.u-color-grey-base {
-  color: #cccccc;
-}
-
-.u-color-grey-dark {
-  color: #333333;
-}
-
-.u-color-alert {
-  color: #D90000;
-}
-
-.u-color-success {
-  color: #04AA04;
-}
-
-.u-color-white {
-  color: #ffffff;
-}
-
-.u-color-black {
-  color: #000000;
+.u-color-grey-1 {
+  color: #888888;
 }
 
 /*
 * Background
 */
 .u-bgcolor-primary {
-  background-color: #000000;
+  background-color: #333333;
 }
 
 .u-bgcolor-secondary {
   background-color: #666666;
 }
 
-.u-bgcolor-bg {
-  background-color: #F6F6F6;
-}
-
-.u-bgcolor-border {
-  background-color: #dddddd;
-}
-
 .u-bgcolor-text {
   background-color: #000000;
 }
 
-.u-bgcolor-text-light {
-  background-color: #676767;
-}
-
-.u-bgcolor-title {
-  background-color: #000000;
-}
-
-.u-bgcolor-grey-light {
-  background-color: #efefef;
-}
-
-.u-bgcolor-grey-base {
-  background-color: #cccccc;
-}
-
-.u-bgcolor-grey-dark {
-  background-color: #333333;
-}
-
-.u-bgcolor-alert {
-  background-color: #D90000;
-}
-
-.u-bgcolor-success {
-  background-color: #04AA04;
-}
-
-.u-bgcolor-white {
-  background-color: #ffffff;
-}
-
-.u-bgcolor-black {
-  background-color: #000000;
+.u-bgcolor-grey-1 {
+  background-color: #888888;
 }
 
 /*-----------------------------------------------------------------------------------------------------
@@ -1573,441 +1411,6 @@ table td {
   flex-grow: 1;
 }
 
-/* Autres classes disponible :
-.u-flex-align-baseline {align-items: baseline } 
-.u-flex-align-stretch {align-items: stretch } 
-
-.u-flex-self-baseline {align-self: baseline } 
-.u-flex-self-stretch {align-self: stretch } 
-
-.u-flex-item-fluid {flex: 1 } 
-.u-flex-item-auto {flex: auto } 
-.u-flex-item-initial {flex: initial } 
-.u-flex-item-none {flex: none } 
-.u-flex-item-first {order: -1 } 
-.u-flex-item-medium {order: 0 } 
-.u-flex-item-last {order: 1 }
-*/
-@media (max-width: 1200px) {
-  .u-flex\@lg {
-    display: flex;
-  }
-
-  .u-inline-flex\@lg {
-    display: inline-flex;
-  }
-
-  .u-flex-nowrap\@lg {
-    flex-wrap: nowrap;
-  }
-
-  .u-flex-wrap\@lg {
-    flex-wrap: wrap;
-  }
-
-  .u-flex-wrap-reverse\@lg {
-    flex-wrap: wrap-reverse;
-  }
-
-  .u-flex-row\@lg {
-    flex-direction: row;
-  }
-
-  .u-flex-row-reverse\@lg {
-    flex-direction: row-reverse;
-  }
-
-  .u-flex-column\@lg {
-    flex-direction: column;
-  }
-
-  .u-flex-column-reverse\@lg {
-    flex-direction: column-reverse;
-  }
-
-  .u-flex-justify-start\@lg {
-    justify-content: flex-start;
-  }
-
-  .u-flex-justify-end\@lg {
-    justify-content: flex-end;
-  }
-
-  .u-flex-justify-center\@lg {
-    justify-content: center;
-  }
-
-  .u-flex-justify-between\@lg {
-    justify-content: space-between;
-  }
-
-  .u-flex-justify-around\@lg {
-    justify-content: space-around;
-  }
-
-  .u-flex-align-start\@lg {
-    align-items: flex-start;
-  }
-
-  .u-flex-align-end\@lg {
-    align-items: flex-end;
-  }
-
-  .u-flex-align-center\@lg {
-    align-items: center;
-  }
-
-  .u-flex-self-start\@lg {
-    align-self: flex-start;
-  }
-
-  .u-flex-self-end\@lg {
-    align-self: flex-end;
-  }
-
-  .u-flex-self-center\@lg {
-    align-self: center;
-  }
-
-  .u-flex-shrink-none\@lg {
-    flex-shrink: 0;
-  }
-
-  .u-flex-grow\@lg {
-    flex-grow: 1;
-  }
-
-  /* Autres classes disponible :
-    .u-flex-align-baseline\@lg {align-items: baseline } 
-  .u-flex-align-stretch\@lg {align-items: stretch } 
-
-    .u-flex-self-baseline\@lg {align-self: baseline } 
-  .u-flex-self-stretch\@lg {align-self: stretch } 
-
-    .u-flex-item-fluid\@lg {flex: 1 } 
-  .u-flex-item-auto\@lg {flex: auto } 
-  .u-flex-item-initial\@lg {flex: initial } 
-  .u-flex-item-none\@lg {flex: none } 
-  .u-flex-item-first\@lg {order: -1 } 
-  .u-flex-item-medium\@lg {order: 0 } 
-  .u-flex-item-last\@lg {order: 1 }
-    */
-}
-@media (max-width: 960px) {
-  .u-flex\@md {
-    display: flex;
-  }
-
-  .u-inline-flex\@md {
-    display: inline-flex;
-  }
-
-  .u-flex-nowrap\@md {
-    flex-wrap: nowrap;
-  }
-
-  .u-flex-wrap\@md {
-    flex-wrap: wrap;
-  }
-
-  .u-flex-wrap-reverse\@md {
-    flex-wrap: wrap-reverse;
-  }
-
-  .u-flex-row\@md {
-    flex-direction: row;
-  }
-
-  .u-flex-row-reverse\@md {
-    flex-direction: row-reverse;
-  }
-
-  .u-flex-column\@md {
-    flex-direction: column;
-  }
-
-  .u-flex-column-reverse\@md {
-    flex-direction: column-reverse;
-  }
-
-  .u-flex-justify-start\@md {
-    justify-content: flex-start;
-  }
-
-  .u-flex-justify-end\@md {
-    justify-content: flex-end;
-  }
-
-  .u-flex-justify-center\@md {
-    justify-content: center;
-  }
-
-  .u-flex-justify-between\@md {
-    justify-content: space-between;
-  }
-
-  .u-flex-justify-around\@md {
-    justify-content: space-around;
-  }
-
-  .u-flex-align-start\@md {
-    align-items: flex-start;
-  }
-
-  .u-flex-align-end\@md {
-    align-items: flex-end;
-  }
-
-  .u-flex-align-center\@md {
-    align-items: center;
-  }
-
-  .u-flex-self-start\@md {
-    align-self: flex-start;
-  }
-
-  .u-flex-self-end\@md {
-    align-self: flex-end;
-  }
-
-  .u-flex-self-center\@md {
-    align-self: center;
-  }
-
-  .u-flex-shrink-none\@md {
-    flex-shrink: 0;
-  }
-
-  .u-flex-grow\@md {
-    flex-grow: 1;
-  }
-
-  /* Autres classes disponible :
-    .u-flex-align-baseline\@md {align-items: baseline } 
-  .u-flex-align-stretch\@md {align-items: stretch } 
-
-    .u-flex-self-baseline\@md {align-self: baseline } 
-  .u-flex-self-stretch\@md {align-self: stretch } 
-
-    .u-flex-item-fluid\@md {flex: 1 } 
-  .u-flex-item-auto\@md {flex: auto } 
-  .u-flex-item-initial\@md {flex: initial } 
-  .u-flex-item-none\@md {flex: none } 
-  .u-flex-item-first\@md {order: -1 } 
-  .u-flex-item-medium\@md {order: 0 } 
-  .u-flex-item-last\@md {order: 1 }
-    */
-}
-@media (max-width: 768px) {
-  .u-flex\@sm {
-    display: flex;
-  }
-
-  .u-inline-flex\@sm {
-    display: inline-flex;
-  }
-
-  .u-flex-nowrap\@sm {
-    flex-wrap: nowrap;
-  }
-
-  .u-flex-wrap\@sm {
-    flex-wrap: wrap;
-  }
-
-  .u-flex-wrap-reverse\@sm {
-    flex-wrap: wrap-reverse;
-  }
-
-  .u-flex-row\@sm {
-    flex-direction: row;
-  }
-
-  .u-flex-row-reverse\@sm {
-    flex-direction: row-reverse;
-  }
-
-  .u-flex-column\@sm {
-    flex-direction: column;
-  }
-
-  .u-flex-column-reverse\@sm {
-    flex-direction: column-reverse;
-  }
-
-  .u-flex-justify-start\@sm {
-    justify-content: flex-start;
-  }
-
-  .u-flex-justify-end\@sm {
-    justify-content: flex-end;
-  }
-
-  .u-flex-justify-center\@sm {
-    justify-content: center;
-  }
-
-  .u-flex-justify-between\@sm {
-    justify-content: space-between;
-  }
-
-  .u-flex-justify-around\@sm {
-    justify-content: space-around;
-  }
-
-  .u-flex-align-start\@sm {
-    align-items: flex-start;
-  }
-
-  .u-flex-align-end\@sm {
-    align-items: flex-end;
-  }
-
-  .u-flex-align-center\@sm {
-    align-items: center;
-  }
-
-  .u-flex-self-start\@sm {
-    align-self: flex-start;
-  }
-
-  .u-flex-self-end\@sm {
-    align-self: flex-end;
-  }
-
-  .u-flex-self-center\@sm {
-    align-self: center;
-  }
-
-  .u-flex-shrink-none\@sm {
-    flex-shrink: 0;
-  }
-
-  .u-flex-grow\@sm {
-    flex-grow: 1;
-  }
-
-  /* Autres classes disponible :
-    .u-flex-align-baseline\@sm {align-items: baseline } 
-  .u-flex-align-stretch\@sm {align-items: stretch } 
-
-    .u-flex-self-baseline\@sm {align-self: baseline } 
-  .u-flex-self-stretch\@sm {align-self: stretch } 
-
-    .u-flex-item-fluid\@sm {flex: 1 } 
-  .u-flex-item-auto\@sm {flex: auto } 
-  .u-flex-item-initial\@sm {flex: initial } 
-  .u-flex-item-none\@sm {flex: none } 
-  .u-flex-item-first\@sm {order: -1 } 
-  .u-flex-item-medium\@sm {order: 0 } 
-  .u-flex-item-last\@sm {order: 1 }
-    */
-}
-@media (max-width: 400px) {
-  .u-flex\@xs {
-    display: flex;
-  }
-
-  .u-inline-flex\@xs {
-    display: inline-flex;
-  }
-
-  .u-flex-nowrap\@xs {
-    flex-wrap: nowrap;
-  }
-
-  .u-flex-wrap\@xs {
-    flex-wrap: wrap;
-  }
-
-  .u-flex-wrap-reverse\@xs {
-    flex-wrap: wrap-reverse;
-  }
-
-  .u-flex-row\@xs {
-    flex-direction: row;
-  }
-
-  .u-flex-row-reverse\@xs {
-    flex-direction: row-reverse;
-  }
-
-  .u-flex-column\@xs {
-    flex-direction: column;
-  }
-
-  .u-flex-column-reverse\@xs {
-    flex-direction: column-reverse;
-  }
-
-  .u-flex-justify-start\@xs {
-    justify-content: flex-start;
-  }
-
-  .u-flex-justify-end\@xs {
-    justify-content: flex-end;
-  }
-
-  .u-flex-justify-center\@xs {
-    justify-content: center;
-  }
-
-  .u-flex-justify-between\@xs {
-    justify-content: space-between;
-  }
-
-  .u-flex-justify-around\@xs {
-    justify-content: space-around;
-  }
-
-  .u-flex-align-start\@xs {
-    align-items: flex-start;
-  }
-
-  .u-flex-align-end\@xs {
-    align-items: flex-end;
-  }
-
-  .u-flex-align-center\@xs {
-    align-items: center;
-  }
-
-  .u-flex-self-start\@xs {
-    align-self: flex-start;
-  }
-
-  .u-flex-self-end\@xs {
-    align-self: flex-end;
-  }
-
-  .u-flex-self-center\@xs {
-    align-self: center;
-  }
-
-  .u-flex-shrink-none\@xs {
-    flex-shrink: 0;
-  }
-
-  .u-flex-grow\@xs {
-    flex-grow: 1;
-  }
-
-  /* Autres classes disponible :
-    .u-flex-align-baseline\@xs {align-items: baseline } 
-  .u-flex-align-stretch\@xs {align-items: stretch } 
-
-    .u-flex-self-baseline\@xs {align-self: baseline } 
-  .u-flex-self-stretch\@xs {align-self: stretch } 
-
-    .u-flex-item-fluid\@xs {flex: 1 } 
-  .u-flex-item-auto\@xs {flex: auto } 
-  .u-flex-item-initial\@xs {flex: initial } 
-  .u-flex-item-none\@xs {flex: none } 
-  .u-flex-item-first\@xs {order: -1 } 
-  .u-flex-item-medium\@xs {order: 0 } 
-  .u-flex-item-last\@xs {order: 1 }
-    */
-}
 /*-----------------------------------------------------------------------------------------------------
   [utilities:font]
 -------------------------------------------------------------------------------------------------------*/
@@ -2023,26 +1426,6 @@ table td {
   font-size: 1.4rem;
 }
 
-@media (max-width: 1200px) {
-  .u-font-14\@lg {
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 960px) {
-  .u-font-14\@md {
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 768px) {
-  .u-font-14\@sm {
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 400px) {
-  .u-font-14\@xs {
-    font-size: 1.4rem;
-  }
-}
 .u-font-400 {
   font-weight: 400;
 }
@@ -2054,89 +1437,13 @@ table td {
 /*-----------------------------------------------------------------------------------------------------
   [utilities:icon]
 -------------------------------------------------------------------------------------------------------*/
-.u-icon-md {
+.u-icon-16 {
   width: 1.6rem !important;
   height: 1.6rem !important;
 }
 
-@media (max-width: 1200px) {
-  .u-icon-md\@lg {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
-  }
-}
-@media (max-width: 960px) {
-  .u-icon-md\@md {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
-  }
-}
-@media (max-width: 768px) {
-  .u-icon-md\@sm {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
-  }
-}
-@media (max-width: 400px) {
-  .u-icon-md\@xs {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
-  }
-}
 .u-icon-primary {
-  fill: #000000;
-}
-
-.u-icon-secondary {
-  fill: #666666;
-}
-
-.u-icon-bg {
-  fill: #F6F6F6;
-}
-
-.u-icon-border {
-  fill: #dddddd;
-}
-
-.u-icon-text {
-  fill: #000000;
-}
-
-.u-icon-text-light {
-  fill: #676767;
-}
-
-.u-icon-title {
-  fill: #000000;
-}
-
-.u-icon-grey-light {
-  fill: #efefef;
-}
-
-.u-icon-grey-base {
-  fill: #cccccc;
-}
-
-.u-icon-grey-dark {
   fill: #333333;
-}
-
-.u-icon-alert {
-  fill: #D90000;
-}
-
-.u-icon-success {
-  fill: #04AA04;
-}
-
-.u-icon-white {
-  fill: #ffffff;
-}
-
-.u-icon-black {
-  fill: #000000;
 }
 
 /*-----------------------------------------------------------------------------------------------------
@@ -2171,7 +1478,7 @@ table td {
   [utilities:radius]
 -------------------------------------------------------------------------------------------------------*/
 .u-radius-md {
-  border-radius: 1.6rem;
+  border-radius: 0.4rem;
 }
 
 .u-radius-full {
@@ -2181,63 +1488,63 @@ table td {
 /*-----------------------------------------------------------------------------------------------------
   [utilities:spacing]
 -------------------------------------------------------------------------------------------------------*/
-.u-mt-md {
+.u-mt-20 {
   margin-top: 2rem;
 }
 
-.u-mr-md {
+.u-mr-20 {
   margin-right: 2rem;
 }
 
-.u-mb-md {
+.u-mb-20 {
   margin-bottom: 2rem;
 }
 
-.u-ml-md {
+.u-ml-20 {
   margin-left: 2rem;
 }
 
-.u-mx-md {
+.u-mx-20 {
   margin-left: 2rem;
   margin-right: 2rem;
 }
 
-.u-my-md {
+.u-my-20 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.u-m-md {
+.u-m-20 {
   margin: 2rem;
 }
 
-.u-pt-md {
+.u-pt-20 {
   padding-top: 2rem;
 }
 
-.u-pr-md {
+.u-pr-20 {
   padding-right: 2rem;
 }
 
-.u-pb-md {
+.u-pb-20 {
   padding-bottom: 2rem;
 }
 
-.u-pl-md {
+.u-pl-20 {
   padding-left: 2rem;
 }
 
-.u-px-md {
+.u-px-20 {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-.u-py-md {
+.u-py-20 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
 
-.u-p-md {
+.u-p-20 {
   padding: 2rem;
 }
 
@@ -2362,63 +1669,63 @@ table td {
 }
 
 @media (max-width: 1200px) {
-  .u-mt-md\@lg {
+  .u-mt-20\@lg {
     margin-top: 2rem;
   }
 
-  .u-mr-md\@lg {
+  .u-mr-20\@lg {
     margin-right: 2rem;
   }
 
-  .u-mb-md\@lg {
+  .u-mb-20\@lg {
     margin-bottom: 2rem;
   }
 
-  .u-ml-md\@lg {
+  .u-ml-20\@lg {
     margin-left: 2rem;
   }
 
-  .u-mx-md\@lg {
+  .u-mx-20\@lg {
     margin-left: 2rem;
     margin-right: 2rem;
   }
 
-  .u-my-md\@lg {
+  .u-my-20\@lg {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .u-m-md\@lg {
+  .u-m-20\@lg {
     margin: 2rem;
   }
 
-  .u-pt-md\@lg {
+  .u-pt-20\@lg {
     padding-top: 2rem;
   }
 
-  .u-pr-md\@lg {
+  .u-pr-20\@lg {
     padding-right: 2rem;
   }
 
-  .u-pb-md\@lg {
+  .u-pb-20\@lg {
     padding-bottom: 2rem;
   }
 
-  .u-pl-md\@lg {
+  .u-pl-20\@lg {
     padding-left: 2rem;
   }
 
-  .u-px-md\@lg {
+  .u-px-20\@lg {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .u-py-md\@lg {
+  .u-py-20\@lg {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .u-p-md\@lg {
+  .u-p-20\@lg {
     padding: 2rem;
   }
 
@@ -2543,63 +1850,63 @@ table td {
   }
 }
 @media (max-width: 960px) {
-  .u-mt-md\@md {
+  .u-mt-20\@md {
     margin-top: 2rem;
   }
 
-  .u-mr-md\@md {
+  .u-mr-20\@md {
     margin-right: 2rem;
   }
 
-  .u-mb-md\@md {
+  .u-mb-20\@md {
     margin-bottom: 2rem;
   }
 
-  .u-ml-md\@md {
+  .u-ml-20\@md {
     margin-left: 2rem;
   }
 
-  .u-mx-md\@md {
+  .u-mx-20\@md {
     margin-left: 2rem;
     margin-right: 2rem;
   }
 
-  .u-my-md\@md {
+  .u-my-20\@md {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .u-m-md\@md {
+  .u-m-20\@md {
     margin: 2rem;
   }
 
-  .u-pt-md\@md {
+  .u-pt-20\@md {
     padding-top: 2rem;
   }
 
-  .u-pr-md\@md {
+  .u-pr-20\@md {
     padding-right: 2rem;
   }
 
-  .u-pb-md\@md {
+  .u-pb-20\@md {
     padding-bottom: 2rem;
   }
 
-  .u-pl-md\@md {
+  .u-pl-20\@md {
     padding-left: 2rem;
   }
 
-  .u-px-md\@md {
+  .u-px-20\@md {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .u-py-md\@md {
+  .u-py-20\@md {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .u-p-md\@md {
+  .u-p-20\@md {
     padding: 2rem;
   }
 
@@ -2724,63 +2031,63 @@ table td {
   }
 }
 @media (max-width: 768px) {
-  .u-mt-md\@sm {
+  .u-mt-20\@sm {
     margin-top: 2rem;
   }
 
-  .u-mr-md\@sm {
+  .u-mr-20\@sm {
     margin-right: 2rem;
   }
 
-  .u-mb-md\@sm {
+  .u-mb-20\@sm {
     margin-bottom: 2rem;
   }
 
-  .u-ml-md\@sm {
+  .u-ml-20\@sm {
     margin-left: 2rem;
   }
 
-  .u-mx-md\@sm {
+  .u-mx-20\@sm {
     margin-left: 2rem;
     margin-right: 2rem;
   }
 
-  .u-my-md\@sm {
+  .u-my-20\@sm {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .u-m-md\@sm {
+  .u-m-20\@sm {
     margin: 2rem;
   }
 
-  .u-pt-md\@sm {
+  .u-pt-20\@sm {
     padding-top: 2rem;
   }
 
-  .u-pr-md\@sm {
+  .u-pr-20\@sm {
     padding-right: 2rem;
   }
 
-  .u-pb-md\@sm {
+  .u-pb-20\@sm {
     padding-bottom: 2rem;
   }
 
-  .u-pl-md\@sm {
+  .u-pl-20\@sm {
     padding-left: 2rem;
   }
 
-  .u-px-md\@sm {
+  .u-px-20\@sm {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .u-py-md\@sm {
+  .u-py-20\@sm {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .u-p-md\@sm {
+  .u-p-20\@sm {
     padding: 2rem;
   }
 
@@ -2905,63 +2212,63 @@ table td {
   }
 }
 @media (max-width: 400px) {
-  .u-mt-md\@xs {
+  .u-mt-20\@xs {
     margin-top: 2rem;
   }
 
-  .u-mr-md\@xs {
+  .u-mr-20\@xs {
     margin-right: 2rem;
   }
 
-  .u-mb-md\@xs {
+  .u-mb-20\@xs {
     margin-bottom: 2rem;
   }
 
-  .u-ml-md\@xs {
+  .u-ml-20\@xs {
     margin-left: 2rem;
   }
 
-  .u-mx-md\@xs {
+  .u-mx-20\@xs {
     margin-left: 2rem;
     margin-right: 2rem;
   }
 
-  .u-my-md\@xs {
+  .u-my-20\@xs {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  .u-m-md\@xs {
+  .u-m-20\@xs {
     margin: 2rem;
   }
 
-  .u-pt-md\@xs {
+  .u-pt-20\@xs {
     padding-top: 2rem;
   }
 
-  .u-pr-md\@xs {
+  .u-pr-20\@xs {
     padding-right: 2rem;
   }
 
-  .u-pb-md\@xs {
+  .u-pb-20\@xs {
     padding-bottom: 2rem;
   }
 
-  .u-pl-md\@xs {
+  .u-pl-20\@xs {
     padding-left: 2rem;
   }
 
-  .u-px-md\@xs {
+  .u-px-20\@xs {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .u-py-md\@xs {
+  .u-py-20\@xs {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .u-p-md\@xs {
+  .u-p-20\@xs {
     padding: 2rem;
   }
 
@@ -3114,114 +2421,6 @@ table td {
   text-decoration: none;
 }
 
-@media (max-width: 1200px) {
-  .u-text-ellipsis\@lg {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .u-text-left\@lg {
-    text-align: left;
-  }
-
-  .u-text-right\@lg {
-    text-align: right;
-  }
-
-  .u-text-center\@lg {
-    text-align: center;
-  }
-
-  .u-text-uppercase\@lg {
-    text-transform: uppercase;
-  }
-
-  .u-text-decoration-none\@lg {
-    text-decoration: none;
-  }
-}
-@media (max-width: 960px) {
-  .u-text-ellipsis\@md {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .u-text-left\@md {
-    text-align: left;
-  }
-
-  .u-text-right\@md {
-    text-align: right;
-  }
-
-  .u-text-center\@md {
-    text-align: center;
-  }
-
-  .u-text-uppercase\@md {
-    text-transform: uppercase;
-  }
-
-  .u-text-decoration-none\@md {
-    text-decoration: none;
-  }
-}
-@media (max-width: 768px) {
-  .u-text-ellipsis\@sm {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .u-text-left\@sm {
-    text-align: left;
-  }
-
-  .u-text-right\@sm {
-    text-align: right;
-  }
-
-  .u-text-center\@sm {
-    text-align: center;
-  }
-
-  .u-text-uppercase\@sm {
-    text-transform: uppercase;
-  }
-
-  .u-text-decoration-none\@sm {
-    text-decoration: none;
-  }
-}
-@media (max-width: 400px) {
-  .u-text-ellipsis\@xs {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .u-text-left\@xs {
-    text-align: left;
-  }
-
-  .u-text-right\@xs {
-    text-align: right;
-  }
-
-  .u-text-center\@xs {
-    text-align: center;
-  }
-
-  .u-text-uppercase\@xs {
-    text-transform: uppercase;
-  }
-
-  .u-text-decoration-none\@xs {
-    text-decoration: none;
-  }
-}
 /*-----------------------------------------------------------------------------------------------------
   [utilities:visibility]
 -------------------------------------------------------------------------------------------------------*/
@@ -3253,14 +2452,6 @@ table td {
   display: inline-flex !important;
 }
 
-.u-visible {
-  visibility: visible !important;
-}
-
-.u-hidden {
-  visibility: hidden !important;
-}
-
 @media (max-width: 1200px) {
   .u-block\@lg {
     display: block !important;
@@ -3285,14 +2476,6 @@ table td {
 
   .u-inline-flex\@lg {
     display: inline-flex !important;
-  }
-
-  .u-visible\@lg {
-    visibility: visible !important;
-  }
-
-  .u-hidden\@lg {
-    visibility: hidden !important;
   }
 }
 @media (max-width: 960px) {
@@ -3320,14 +2503,6 @@ table td {
   .u-inline-flex\@md {
     display: inline-flex !important;
   }
-
-  .u-visible\@md {
-    visibility: visible !important;
-  }
-
-  .u-hidden\@md {
-    visibility: hidden !important;
-  }
 }
 @media (max-width: 768px) {
   .u-block\@sm {
@@ -3353,14 +2528,6 @@ table td {
 
   .u-inline-flex\@sm {
     display: inline-flex !important;
-  }
-
-  .u-visible\@sm {
-    visibility: visible !important;
-  }
-
-  .u-hidden\@sm {
-    visibility: hidden !important;
   }
 }
 @media (max-width: 400px) {
@@ -3388,12 +2555,6 @@ table td {
   .u-inline-flex\@xs {
     display: inline-flex !important;
   }
-
-  .u-visible\@xs {
-    visibility: visible !important;
-  }
-
-  .u-hidden\@xs {
-    visibility: hidden !important;
-  }
 }
+
+/*# sourceMappingURL=app.css.map */
