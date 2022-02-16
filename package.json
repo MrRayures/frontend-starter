@@ -14,7 +14,7 @@
   "scripts": {
     "styleguide": "sass src/assets/styles/scss/styleguide.scss dist/assets/css/styleguide.css",
     "clean": "recursive-delete dist",
-    "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
+    "copy": "mkdirp -p dist/assets && mkdirp -p dist/assets/fonts && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
     "scss": "node config.sass.js",
     "img": "mkdirp -p dist/assets/img && recursive-copy src/assets/img dist/assets/img",
     "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
@@ -54,9 +54,5 @@
     "svgo": "^1.3.2",
     "uglify-js": "^3.14.2",
     "svg-sprite": "^1.5.3"
-  },
-  "dependencies": {
-    "@frctl/fractal": "^1.5.13",
-    "@frctl/nunjucks": "^2.0.14"
   }
 }
