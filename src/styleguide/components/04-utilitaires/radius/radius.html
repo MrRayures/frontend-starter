@@ -1,0 +1,31 @@
+
+{% set radius = [
+  {name:"md", value:""}
+]%}
+
+<p class="sg-text">Pour ajouter un radius à un élement il suffit d'y ajouter la classe suivante : <code>u-radius-{size}</code>.</p>
+
+<h3 class="sg-h3">Tailles disponibles :</h3>
+<p class="sg-text">Remplacer <code>{size}</code> par les valeurs suivantes : </p>
+<ul class="sg-list sg-list--border">
+  {% for radiusVal in radius  %}
+    <li><code>{{radiusVal.name}}</code></li>
+  {% endfor %}
+</ul>
+
+<h3 class="sg-h3">Exemple :</h3>
+<div class="sg-columns sg-columns--bordered">
+  {% for radiusVal in radius  %}
+    <div class="sg-box sg-box--border u-radius-{{radiusVal.name}}">u-radius-{{radiusVal.name}}</div>
+  {% endfor %}
+</div>
+
+
+<h2 class="sg-h2">Utilisation en scss :</h2>
+<p class="sg-text">Pour ajouter un radius à un élement en <code>scss</code> il suffit d'utiliser la fonction suivante : <code>radius({size})</code>.</p>
+<code class="sg-code">
+  .component { <br>
+  &nbsp;&nbsp;border-radius: radius(md);<br>
+  }
+</code>
+

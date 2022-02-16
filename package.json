@@ -12,6 +12,7 @@
     "url": "https://github.com/MrRayures/frontend-starter/issues"
   },
   "scripts": {
+    "styleguide": "sass src/assets/styles/scss/styleguide.scss dist/assets/css/styleguide.css",
     "clean": "recursive-delete dist",
     "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
     "scss": "node config.sass.js",
@@ -53,5 +54,9 @@
     "svgo": "^1.3.2",
     "uglify-js": "^3.14.2",
     "svg-sprite": "^1.5.3"
+  },
+  "dependencies": {
+    "@frctl/fractal": "^1.5.13",
+    "@frctl/nunjucks": "^2.0.14"
   }
 }

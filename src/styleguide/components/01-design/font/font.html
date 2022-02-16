@@ -1,0 +1,22 @@
+{% set fonts = [
+  {name:"Primaire", value:"primary"},
+  {name:"Secondaire", value:"secondary"}
+]%}
+
+{% for font in fonts  %}
+  <ul class="sg-list">
+    <li class="sg-font--{{font.value}}">
+      <span class="sg-subtitle">{{font.value}}</span>
+      <div class="sg-font sg-font--{{font.value}}">
+        <p class="sg-font-first">Aa</p>
+        <p class="sg-font-letter">
+          A À B C Ç D E É È Ë F G H I J K L M N O Ô Ö P Q R S T U V W X Y Z <br> 
+          a à b c ç d e é è ê ë f g h i j k l m n o ô ö p q r s t u ù v w x y z <br> 
+          0 1 2 3 4 5 6 7 8 9 . ; : ! ? ‘ “ &amp; ( [ { - _ # } ] ) % £ € $ &lt; - + / *=&gt;
+        </p>
+      </div>
+    </li>
+  </ul>
+{% endfor %}
+
+

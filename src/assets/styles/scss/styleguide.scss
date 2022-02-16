@@ -24,57 +24,91 @@
 @import '04-elements/_page';
 
 
+$sg-bgcolor : #F3F9FE;
+$sg-color : #173D6C;
+$sg-radius : 4px;
+
+
 // Body
 .sg-body {
   overflow: visible;
   height: auto;
   background-color: #FFF;
-  @include mq(bp(lg)) {
-    padding-top: 5rem;
+
+  .sg-title {
+    background-color: $sg-bgcolor;
+    padding: 1rem 2rem;
+    color: $sg-color;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
   }
+
+  .sg-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    span {
+      display: inline-block;
+      background-color: $sg-bgcolor;
+      color: $sg-color;
+      border-radius: 2rem;
+      padding: 0.6rem 2rem;
+    }
+    ~ .sg-subtitle {
+      margin-top: 4rem;
+    }
+  }
+
   .sg-h1 {
-    color: color(primary);
+    color: #000;
     font-size: 4.8rem;
     font-weight: 400;
     font-family: font(primary);
     margin-bottom: 2rem;
   }
+
   .sg-h2 {
-    color: color(primary);
+    color: #000;
     font-size: 3.2rem;
     margin-bottom: 2rem;
     font-family: font(primary);
     ~.sg-h2 {
-      margin-top: 8rem;
+     //margin-top: 4rem;
     }
   }
+
   .sg-h3 {
     color: #222222;
     margin: 2rem 0 1rem 0;
     font-size: 2rem;
     font-family: font(primary);
     ~.sg-h3 {
-      margin-top: 4rem;
+      //margin-top: 4rem;
     }
   }
+
   .sg-h4 {
     margin: 2rem 0 1rem 0;
     font-size: 2rem;
     font-weight: 400;
-    color: color(primary);
+    color: #000;
   }
+
   .sg-text {
-    color: color(text)-light;
+    color: #000000;
     margin-bottom: 2rem;
     code {
       background: #f5f5f5;
       padding: 0.2rem 0.5rem;
       display: inline-block;
-      color: color(text);
-      border-radius: radius(md);
+      color: #000000;
+      border-radius: $sg-radius;
       font-size: 1.4rem;
     }
   }
+
   a:not([class]) {
     text-decoration: underline;
     color: #000;
@@ -83,61 +117,57 @@
       background-color: #000;
     }
   }
-  // Header
-  .sg-header {
-    background: #efefef;
-    padding: 2rem;
-    margin-bottom: 1rem;
-    @include mq(bp(lg)) {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-  }
-  .sg-header__title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    display: block;
-    span {
-      display: block;
-      color: color(text-light);
-      font-size: 1.4rem;
-      font-weight: 400;
-      @include mq(bp(lg)) {
-        margin-left: 0rem;
-      }
-    }
-  }
-  a.sg-header__title {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-      color:color(primary);
-      span {
-        color:color(primary);
-      }
-    }
-  }
-  
+
 
   /*
 	* Content
 	*/
   .sg-content {
-    padding: 2rem 6rem;
+    padding: 2rem;
     margin-bottom: 6rem;
-    max-width: 120rem;
-    border-bottom: 2px solid color(border);
-    &:last-child {
-      border: none;
-    }
-    @include mq(bp(sm)) {
-      padding: 2rem;
+  }
+
+  .sg-alert,
+  .sg-warning,
+  .sg-success {
+    padding: 1rem;
+    border-radius: $sg-radius;
+    border: 1px solid rgba($sg-color, 0.4);
+    background-color: rgba($sg-bgcolor, 0.1);
+    display: inline-block;
+    margin-bottom: 2rem;
+    &::before {
+      margin-right: 1rem;
     }
   }
-  .sg-content--centered {
-    margin: 0 auto;
+
+  .sg-alert {
+    color: #DF0021;
+    border-color: rgba(#DF0021, 0.4);
+    background-color: rgba(#DF0021, 0.1);
+    &:before {
+      content: "❌ ";
+    }
   }
+
+  .sg-warning {
+    color: #FFA800;
+    border-color: rgba(#FFA800, 0.4);
+    background-color: rgba(#FFA800, 0.1);
+    &:before {
+      content: "⚠️";
+    }
+  }
+
+  .sg-success {
+    color: #39A033;
+    border-color: rgba(#39A033, 0.4);
+    background-color: rgba(#39A033, 0.1);
+    &:before {
+      content: "✅";
+    }
+  }
+
 
   /*
 	* list
@@ -150,9 +180,18 @@
       background: #f5f5f5;
       padding: 0.2rem 0.5rem;
       display: inline-block;
-      color: color(text);
-      border-radius: radius(sm);
+      color: #000000;
+      border-radius: $sg-radius;
       font-size: 1.4rem;
+    }
+  }
+
+  .sg-list--color {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin-right: 2rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -165,10 +204,22 @@
     }
   }
 
+  .sg-list--icon {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      margin: 0 1rem 1rem 1rem;
+      .c-icon {
+        width: 6.2rem;
+        height: 6.2rem;
+      }
+    }
+  }
+
   .sg-list--link {
     a {
       background: #eeeeee;
-      border-radius: radius(sm);
+      border-radius: $sg-radius;
       color: #333333;
       display: block;
       font-size: 1.6rem;
@@ -190,4 +241,229 @@
     }
   }
 }
+
+
+/*
+* BRAND
+*/
+
+//Font
+.sg-font {
+  display: flex;
+  align-items: center;
+}
+
+.sg-font-first {
+  font-size: 12rem;
+  margin-right: 2rem;
+}
+
+.sg-font-letter {
+  &:before {
+    font-size: 4rem;
+    display: block;
+  }
+}
+
+@each $font_name , $font_value in $font-families {
+  .sg-font--#{$font_name} {
+    font-family: #{$font_value};
+    .sg-font-letter  {
+      &:before {
+        content: "#{$font_value}";
+      }
+    }
+  }
+}
+
+// Color
+.sg-color {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  border-radius: $sg-radius;
+  background-color: #FFF;
+  overflow: hidden;
+	span {
+		font-size: 1.6rem;
+		color: #000000;
+    padding: 1rem;
+    display: block;
+    &:after {
+      display: block;
+      font-size: 1.2rem;
+      color: #000000;
+      margin-top: 1rem;
+    }
+	}
+	&:before {
+		content: "";
+		display: block;
+		width: 16rem;
+		height: 10rem;
+	}
+	@each $color_name , $color_value in $colors {
+    &.sg-color--#{$color_name} {
+			&:before {
+				background-color: #{$color_value};
+			}
+      span {
+        &:after {
+          content: "HEX : #{$color_value}";
+        }
+      }
+		}
+  }
+  
+}
+
+
+
+/*
+* Layout
+*/
+// container
+@each $layout_key , $layout_key_value in $layout {
+  .sg-container p {
+    &:after {
+      content: "#{$layout_key_value}"
+    }
+  }
+}
+
+// grid
+.sg-grid {
+  [class*="o-col"] > div {
+    background-color: $sg-bgcolor;
+    border: 1px solid rgba($sg-color, 0.1);
+    padding: 1rem 2rem;
+    color: $sg-color;
+  }
+}
+
+
+
+/*
+* Utilitaires
+*/
+.sg-code {
+  border-radius: $sg-radius;
+  border: 1px solid rgba($sg-color, 0.1);
+  background: rgba($sg-bgcolor, 0.5);
+  padding: 2rem;
+  margin-bottom: 4rem;
+  display: block;
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+.sg-columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+}
+
+.sg-columns > :not(.sg-column):not(.o-row) {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.sg-columns--bordered {
+  border: 1px solid rgba($sg-color, 0.1);
+  border-radius: 0.4rem 0.4rem 0 0;
+  padding: 2rem;
+}
+
+.sg-box {
+  padding: 2rem;
+}
+
+.sg-box--border {
+  border: 1px solid rgba($sg-color, 0.6);
+}
+
+.sg-box--icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .c-icon {
+    background: rgba($sg-bgcolor, 1);
+  }
+}
+
+
+// breakpoints
+@each $bp_key , $bp_key_value in $breakpoints {
+  .sg-bp--#{$bp_key} span {
+    &:after {
+      content: " #{$bp_key_value}"
+    }
+  }
+}
+
+// Font
+@each $font_key , $font_key_value in $font-families {
+  .sg-font--#{$font_key} span {
+    &:after {
+      content: " #{$font_key_value}"
+    }
+  }
+}
+
+// icons
+@each $icon_key , $icon_key_value in $icon-size {
+  .sg-icon--#{$icon_key} span {
+    &:after {
+      content: " #{$icon_key_value}"
+    }
+  }
+}
+
+
+// Spacing
+.sg-space {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  color: #000;
+  code {
+    text-align: center;
+    display: block;
+    font-size: 1.4rem;
+  }
+  &:before {
+    content: "";
+    margin: 0 auto;
+    display: block;
+    width: 10rem;
+    border: 1px solid rgba($sg-color, 0.1);
+    background: rgba($sg-bgcolor, 0.5);
+  }
+}
+
+@each $spacing_key , $spacing_key_value in $spacing {
+  .sg-spacing--#{$spacing_key} span {
+    &:after {
+      content: " #{$spacing_key_value}"
+    }
+  }
+  .sg-space--#{$spacing_key} {
+    &:before {
+      height: $spacing_key_value;
+      width: $spacing_key_value;
+    }
+  }
+}
+
+
+// Z-index
+@each $zindex_key , $zindex_key_value in $z-index {
+  .sg-zindex--#{$zindex_key} {
+    &:before {
+      content: "#{$zindex_key} :";
+    }
+    &:after {
+      content: "#{$zindex_key_value}"
+    }
+  }
+}
+
+
 
