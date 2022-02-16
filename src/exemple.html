@@ -5,10 +5,14 @@
 {% set page_title = "Exemple" %}
 {% set page_desc = "" %}
 {% set body_class = "u-bgcolor-bg" %}
-{% set css_min = true %}
-{% set js_min = true %}
+{% set css_min = false %}
+{% set js_min = false %}
 <!-- //END page variables -->
 
+
+{% block custom_css %}
+  <!-- Charger les Fichier CSS spécifiques a cette page ici -->
+{% endblock %}
 
 <!-- //START page Content -->
 {% block page_content %}
@@ -16,22 +20,21 @@
 	<div id="content" class="" role="main">
 		
     <div class="c-container c-container--md u-bgcolor-white u-p-md u-my-lg">
-
+      
       <h2>Icônes</h2>
 
       <br><br>
       <h3>Sprite SVG</h3>
-      <svg class="c-icon">
+      <svg role="img" class="c-icon" aria-hidden="true" focusable="false">
         <use xlink:href="assets/icons/sprite/icons.svg#cross" />
       </svg>
-      <svg class="c-icon">
+      <svg role="img" class="c-icon" aria-hidden="true" focusable="false">
         <use xlink:href="assets/icons/sprite/icons.svg#menu" />
       </svg>
 
-      
       <br><br>
       <h3>Include SVG</h3>
-      {% set svg = {width:"50", height:"50"} %}
+      {% set svg = {class:"hello", width:"16", height:"16"} %}
       {% include 'assets/icons/cross.svg' %}
 
       <br><br><br>
@@ -60,7 +63,7 @@
       </ul>
 
       <br><br>
-      <h3>Boucle for avec data et include</h3>
+      <h3>Boucle for avec data et template include</h3>
       {% set products = [
         {name:"Tomate", price:"1,20€", new:false},
         {name:"Potiron", price:"2,50€", new:false},
@@ -81,6 +84,7 @@
       <code>{% raw %}{{ project_name }}{% endraw %} = {{ project_name }}</code><br>
       <code>{% raw %}{{ img_path }}{% endraw %} = {{ img_path }}</code> 
       </p>
+
     </div>
 
   
@@ -89,3 +93,9 @@
 	
 {% endblock %}
 <!-- //END page Content -->
+
+
+
+{% block custom_js %}
+  <!-- Charger les Fichier JS spécifiques a cette page ici -->
+{% endblock %}

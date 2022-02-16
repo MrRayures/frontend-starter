@@ -29,7 +29,7 @@ $grid: (
   margin-left: 0;
 }
 
-.o-col {
+[class^="o-col"] {
   //padding-bottom: grid(gutter-y);
   padding-left: grid(gutter-x);
   flex-basis: 0;

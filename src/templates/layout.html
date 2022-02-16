@@ -8,8 +8,9 @@
 	<meta name="description" content="{{ page_desc }}">
 	
 	
-	<!-- Load CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/app{% if css_min %}.min{% endif %}.css?v=1">
+	<!-- Charger les fichiers CSS globaux ici -->
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+
   {% block custom_css %}
 	{% endblock %}
 
@@ -30,9 +31,9 @@
 	<!-- //END Footer -->
 	
 
-  
-  <script type="text/javascript" src="assets/js/vendor{% if js_min %}.min{% endif %}.js?v=1"></script>
-  <script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js?v=1"></script>
+  <!-- Charger les fichiers JS globaux ici -->
+  <script type="text/javascript" src="assets/js/vendor/lazysizes.min.js"></script>
+  <script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js"></script>
 
   {% block custom_js %}
 	{% endblock %}

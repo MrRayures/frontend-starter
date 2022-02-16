@@ -5,9 +5,9 @@
 .c-form-textarea {
 	padding: 1rem;
 	width: 100%;
-	border: 1px solid color(grey-base);
+	border: 1px solid color(grey-1);
 	&:focus {
-		border: 1px solid color(grey-dark);
+		border: 1px solid color(primary);
 	}
 }
 

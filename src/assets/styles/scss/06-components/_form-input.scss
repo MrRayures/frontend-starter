@@ -5,9 +5,9 @@
 .c-form-input {
 	min-height: 4rem;
 	padding: 0 1rem;
-	border: 1px solid color(grey-base);
+	border: 1px solid color(grey-1);
 	&:focus {
-		border: 1px solid color(grey-dark);
+		border: 1px solid color(primary);
 	}
 }
 

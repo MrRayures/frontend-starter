@@ -12,19 +12,21 @@
     "url": "https://github.com/MrRayures/frontend-starter/issues"
   },
   "scripts": {
+    "test": "sass --functions=node_modules/node-sass-svg/svg-function",
+    "styleguide": "sass src/assets/styles/scss/styleguide.scss dist/assets/css/styleguide.css",
     "clean": "recursive-delete dist",
-    "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
+    "copy": "mkdirp -p dist/assets && mkdirp -p dist/assets/fonts && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
     "scss": "node config.sass.js",
     "img": "mkdirp -p dist/assets/img && recursive-copy src/assets/img dist/assets/img",
     "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
-    "sprite": "svg-sprite --symbol --symbol-sprite=sprite/icons.svg --symbol-dest=dist/assets/icons/ src/assets/icons/*.svg",
+    "sprite": "svg-sprite --symbol --log --symbol-sprite=sprite/icons.svg --symbol-dest=dist/assets/icons/ src/assets/icons/*.svg",
     "sassInlineSvg": "node config.svgsprite.js",
     "js": "mkdirp -p dist/assets/js && concat-glob-cli -f src/assets/js/*.js -o dist/assets/js/app.js",
-    "js_min": "uglifyjs dist/assets/js/app.js -o dist/assets/js/app.min.js",
+    "jsMin": "uglifyjs dist/assets/js/app.js -o dist/assets/js/app.min.js",
     "vendor": "mkdirp -p dist/assets/js && mkdirp -p dist/assets/css && recursive-copy src/assets/js/vendor/ dist/assets/js/vendor/ && recursive-copy src/assets/styles/vendor/ dist/assets/css/vendor/",
     "build:css": "npm run scss",
     "build:img": "npm run img",
-    "build:js": "npm run js && npm run js_min",
+    "build:js": "npm run js && npm run jsMin",
     "build:html": "npm run html",
     "build:sprite": "npm run sprite",
     "watch:css": "onchange src/assets/styles/scss/**/*.scss -- npm run build:css",
@@ -42,6 +44,7 @@
     "chokidar-cli": "^2.1.0",
     "concat-glob-cli": "^0.1.0",
     "mkdirp": "^1.0.4",
+    "node-sass-svg": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
     "nunjucks-to-html": "^1.0.1",
@@ -50,8 +53,8 @@
     "rollup": "^2.6.1",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.26.5",
+    "svg-sprite": "^1.5.3",
     "svgo": "^1.3.2",
-    "uglify-js": "^3.14.2",
-    "svg-sprite": "^1.5.3"
+    "uglify-js": "^3.14.2"
   }
 }
