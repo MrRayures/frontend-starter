@@ -9,7 +9,7 @@ npm install
 npm run watch
 ```
 
-### Liste des taches disponible :
+### Liste des taches disponibles :
 
 ```bash
 npm run clean # Supression de dist/
