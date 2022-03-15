@@ -1,26 +1,14 @@
 {
   "title": "Couleurs",
   "label": "Couleurs",
-  "figma": "",
   "status": null,
   "context": {
-    "items": [
-      {
-        "name": "primary",
-        "value": "#000000"
-      },
-      {
-        "name": "secondary",
-        "value": "#666666"
-      },
-      {
-        "name": "text",
-        "value": "#000000"
-      },
-      {
-        "name": "grey-1",
-        "value": "#888888"
-      }
+    "figma": "https://www.figma.com/file/EGCWsLip7v5u5f8kmywvpt/Test?node-id=0%3A1",
+    "colors": [
+      "primary",
+      "secondary",
+      "text",
+      "grey-1"
     ]
   }
 }

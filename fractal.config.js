@@ -9,19 +9,6 @@ const nunj = require("@frctl/nunjucks")({
   },
   filters: {
     // filter-name: function filterFunc(){}
-    hexToRgbA: function(hex) {
-      var c;
-      if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
-          c= hex.substring(1).split('');
-          if(c.length== 3){
-              c= [c[0], c[0], c[1], c[1], c[2], c[2]];
-          }
-          c= '0x'+c.join('');
-          return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',1)';
-      }
-      throw new Error('Bad Hex');
-    }
-
   },
   globals: {
     // global-name: global-val
@@ -46,11 +33,10 @@ fractal.set('project.author', 'DIG');
 fractal.components.engine(nunj);
 fractal.components.set('path', path.join(__dirname, 'src/styleguide/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
-fractal.components.set('default.collated', false); // default is false
 fractal.components.set('ext', '.html');
 
 fractal.components.set('default.context', {
-	'figma': ''
+	'figma': null
 });
 
 

@@ -1,6 +1,13 @@
 {
   "title": "Spacing",
   "label":"Spacing",
-  "status": null
+  "status": null,
+  "context": {
+    "spacing": [
+      "20",
+      "0",
+      "auto"
+    ]
+  }
 }
     

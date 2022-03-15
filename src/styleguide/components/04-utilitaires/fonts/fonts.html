@@ -1,17 +1,3 @@
-{% set fonts = [
-  {name:"primary", value:""},
-  {name:"secondary", value:""}
-]%}
-
-{% set fontsSizes = [
-  {name:"14", value:""}
-]%}
-
-{% set fontsWeights = [
-  {name:"400", value:""},
-  {name:"700", value:""}
-]%}
-
 <h2 class="sg-h2">font-family</h2>
 <p class="sg-text">
   Pour utiliser une <code>font-family</code> sur un élement il suffit d'y ajouter la classe suivante : <code>u-font-{font}</code>.
@@ -22,14 +8,14 @@
 
 <ul class="sg-list sg-list--font">
   {% for font in fonts  %}
-    <li class="sg-font--{{font.name}}"><span><code>{{font.name}}</code> :</span></li>
+    <li class="sg-font--{{font}}"><span><code>{{font}}</code> :</span></li>
   {% endfor %}
 </ul>
 
 <h3 class="sg-h3">Exemple :</h3>
 <div class="sg-columns sg-columns--bordered">
   {% for font in fonts  %}
-    <div class="u-p-sm u-font-{{font.name}} sg-font--{{font.name}}"><span>Hello</span></div>
+    <div class="u-p-sm u-font-{{font}} sg-font--{{font}}"><span>Hello</span></div>
   {% endfor %}
 </div>
 
@@ -39,8 +25,8 @@
   Remplacer <code>{size}</code> par les valeurs disponibles :
 </p>
 <ul class="sg-list sg-list--border">
-  {% for fontsSize in fontsSizes  %}
-    <li><code>{{fontsSize.name}}</code></li>
+  {% for size in sizes  %}
+    <li><code>{{size}}</code></li>
   {% endfor %}
 </ul>
 
@@ -50,8 +36,8 @@
   Remplacer <code>{weight}</code> Les valeurs disponibles :
 </p>
 <ul class="sg-list sg-list--border">
-  {% for fontsWeight in fontsWeights  %}
-    <li><code>{{fontsWeight.name}}</code></li>
+  {% for weight in weights  %}
+    <li><code>{{weight}}</code></li>
   {% endfor %}
 </ul>
 

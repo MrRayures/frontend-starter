@@ -32,12 +32,11 @@
     "watch:js": "onchange src/assets/js/*.js -- npm run build:js",
     "watch:html": "onchange src/*.html src/templates/**/*.html -- npm run build:html",
     "serve": "browser-sync start --server dist/ --files dist/assets/css/*.css, dist/assets/img/**/*.{jpg,jpeg,png,svg}, dist/assets/js/*.js, dist/*.html",
-    "build": "npm-run-all clean copy build:* && npm run vendor",
+    "build": "npm-run-all clean copy build:* && npm run vendor && npm run fractal-style",
     "watch": "npm-run-all --parallel serve watch:*",
     "postinstall": "npm run build",
-    "fractal-var": "node config.sass-var.js",
     "fractal-style": "sass src/assets/styles/scss/styleguide.scss dist/assets/css/styleguide.css",
-    "fractal-start": "fractal start --watch --port 4000",
+    "fractal": "fractal start --watch --port 4000",
     "fractal-build": "npm run fractal-var && npm run fractal-style && fractal build"
   },
   "devDependencies": {

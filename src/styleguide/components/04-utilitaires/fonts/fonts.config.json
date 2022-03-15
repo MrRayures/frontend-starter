@@ -1,6 +1,19 @@
 {
   "title": "Font",
   "label":"Font",
-  "status": null
+  "status": null,
+  "context": {
+    "fonts": [
+      "primary",
+      "secondary"
+    ],
+    "sizes": [
+      "14"
+    ],
+    "weights": [
+      "700",
+      "400"
+    ]
+  }
 }
     

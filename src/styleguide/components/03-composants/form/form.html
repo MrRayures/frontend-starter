@@ -30,7 +30,7 @@
 <p class="sg-subtitle"><span>Radio</span></p>
 {% for i in range(1, 4) -%}
   <div class="c-fom-radio">
-    <input class="c-form-radio__input" name="radio" id="radio_{{ i }}" type="radio" {% if i == "3"%}disabled{% endif %}>
+    <input class="c-form-radio__input" name="radio" id="radio_{{ i }}" type="radio" {% if i == "3"%}disabled{% endif %} {% if i == "1"%}checked{% endif %}>
     <label class="c-form-radio__label" for="radio_{{ i }}">Mon label {{ i }} {% if i == "3"%}disabled{% endif %}</label>
   </div><br>
 {%- endfor %}

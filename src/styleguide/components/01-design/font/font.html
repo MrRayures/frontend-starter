@@ -1,13 +1,9 @@
-{% set fonts = [
-  {name:"Primaire", value:"primary"},
-  {name:"Secondaire", value:"secondary"}
-]%}
 
 {% for font in fonts  %}
   <ul class="sg-list">
-    <li class="sg-font--{{font.value}}">
-      <span class="sg-subtitle">{{font.value}}</span>
-      <div class="sg-font sg-font--{{font.value}}">
+    <li class="sg-font--{{font}}">
+      <span class="sg-subtitle">{{font}} : </span>
+      <div class="sg-font sg-font--{{font}}">
         <p class="sg-font-first">Aa</p>
         <p class="sg-font-letter">
           A À B C Ç D E É È Ë F G H I J K L M N O Ô Ö P Q R S T U V W X Y Z <br> 

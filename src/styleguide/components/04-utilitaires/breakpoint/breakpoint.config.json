@@ -1,6 +1,14 @@
 {
   "title": "Breakpoints",
   "label":"Breakpoints",
-  "status": null
+  "status": null,
+  "context": {
+    "bps": [
+      "lg",
+      "md",
+      "sm",
+      "xs"
+    ]
+  }
 }
     

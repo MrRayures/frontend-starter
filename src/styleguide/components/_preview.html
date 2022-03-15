@@ -8,16 +8,11 @@
   <title>Preview Layout</title>
 </head>
 <body class="sg-body">
-  <!--
-  <pre>
-  {{ _target | dump  }}
-  </pre>
-  -->
-  
+
   <h1 class="sg-title">{{ _target.component.label  }}</h1>
 
   <div class="sg-content {% if _target.alias == 'grid' %} sg-grid {% endif %} {% if _target.alias == 'container' %} sg-container {% endif %}">
-  {{ yield | safe}}
+    {{ yield | safe}}
   </div>
 
 </body>

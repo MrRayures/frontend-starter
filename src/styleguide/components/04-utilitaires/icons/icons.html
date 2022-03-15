@@ -1,52 +1,44 @@
 
-{% set iconsSizes = [
-  {name:"16", value:""}
-]%}
-
-{% set iconsColors = [
-  {name:"primary", value:""}
-]%}
-
 <h2 class="sg-h2">Width & Height</h2>
 <p class="sg-text">Pour ajouter une taille à une icône il suffit d'y ajouter la classe suivante : <code>u-icon-{size}.</code></p>
 
 <h3 class="sg-h3">Tailles disponibles :</h3>
 <p class="sg-text">Remplacer <code>{size}</code> par les tailles suivantes :</p>
 <ul class="sg-list sg-list--border">
-  {% for iconsSize in iconsSizes  %}
-    <li class="sg-icon--{{iconsSize.name}}"><span><code>{{iconsSize.name}}</code> :</span></li>
+  {% for size in sizes  %}
+    <li class="sg-icon--{{size}}"><span><code>{{size}}</code> :</span></li>
   {% endfor %}
 </ul>
 
 <div class="sg-columns sg-columns--bordered">
-  {% for iconsSize in iconsSizes  %}
+  {% for size in sizes  %}
     <div class="sg-box--icon">
-      <svg class="c-icon u-icon-{{iconsSize.name}}" role="img" class="c-icon" focusable="false" aria-hidden="true">
+      <svg class="c-icon u-icon-{{size}}" role="img" class="c-icon" focusable="false" aria-hidden="true">
         <use xlink:href="{{ '/icons/sprite/icons.svg#menu' | path }}" />
       </svg>
-      <code>{{iconsSize.name}}</code>
+      <code>{{size}}</code>
     </div>
   {% endfor %}
 </div>
 
 <h2 class="sg-h2">Couleurs</h2>
-<p class="sg-text">Pour ajouter une taille à une icône il suffit d'y ajouter la classe suivante : <code>u-icon-{size}.</code></p>
+<p class="sg-text">Pour ajouter une taille à une icône il suffit d'y ajouter la classe suivante : <code>u-icon-{color}.</code></p>
 
 <h3 class="sg-h3">Couleurs disponibles :</h3>
-<p class="sg-text">Remplacer <code>{size}</code> par les tailles suivantes :</p>
+<p class="sg-text">Remplacer <code>{color}</code> par les couleurs suivantes :</p>
 <ul class="sg-list sg-list--border">
-  {% for iconsColor in iconsColors  %}
-    <li><code>{{iconsColor.name}}</code></li>
+  {% for color in colors  %}
+    <li><code>{{color}}</code></li>
   {% endfor %}
 </ul>
 
 <div class="sg-columns sg-columns--bordered">
-  {% for iconsColor in iconsColors  %}
+  {% for color in colors  %}
     <div class="sg-box--icon">
       <svg class="c-icon u-icon-{{iconsColor.name}}" role="img" class="c-icon" focusable="false" aria-hidden="true">
         <use xlink:href="{{ '/icons/sprite/icons.svg#menu' | path }}" />
       </svg>
-      <code>{{iconsColor.name}}</code>
+      <code>{{color}}</code>
     </div>
   {% endfor %}
 </div>

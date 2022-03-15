@@ -1,13 +1,6 @@
-
-{% set bps = [
-  {name:"lg", value:""},
-  {name:"md", value:""},
-  {name:"sm", value:""},
-  {name:"xs", value:""}
-]%}
-
 <h1 class="sg-h1">Breakpoints</h1>
 <p class="sg-text">Pour ajouter un breakpoint à une classe utilitaire il suffit d'y ajouter le suffix suivant <code>@{bp}</code> ce qui nous donne : <code>u-ma-classe-utilitaire@{bp}</code>.</p>
+
 <p class="sg-warning">Attention, pour des raisons de performance CSS les classes utilitaires responsive sont à activer aux besoins !</p>
 
 <h3 class="sg-h3">Breakpoints disponible :</h3>
@@ -15,7 +8,7 @@
 
 <ul class="sg-list sg-list--border sg-list--bp">
   {% for bp in bps  %}
-    <li class="sg-bp--{{bp.name}}"><span><code>{{bp.name}}</code> :</span></li>
+    <li class="sg-bp--{{bp}}"><span><code>{{bp}}</code> :</span></li>
   {% endfor %}
 </ul>
 

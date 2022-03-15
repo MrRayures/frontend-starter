@@ -2,22 +2,20 @@
   "title": "Boutons",
   "label":"Boutons",
   "status": "wip",
-  
   "context": {
-    "text": "Je suis un bouton",
-    "figma": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F1HuVvM9twJvyjV1lVlkarV%2FBureau-Vall%25C3%25A9e-UI-Design%3Fnode-id%3D349%253A8663"
+    "text": "Je suis un bouton"
   },
   "variants":[
     {
 			"name": "primary",
-        "context": {
+      "context": {
         "modifier": "primary",
         "text": "Je suis un bouton primaire"
       }
 		},
     {
 			"name": "secondary",
-        "context": {
+      "context": {
         "modifier": "secondary",
         "text": "Je suis un bouton secondaire"
       }

@@ -4,19 +4,15 @@
 /*
 * Color
 */
-@each $color_name , $color_value in $colors {
-  .u-color-#{$color_name} {
-    color: #{$color_value};
-  }
+.u-color-primary {
+  color: color(primary)
 }
 
 
 /*
 * Background
 */
-@each $color_name , $color_value in $colors {
-  .u-bgcolor-#{$color_name} {
-    background-color: #{$color_value}
-  }
+.u-bgcolor-primary {
+  background-color: color(primary);
 }
 

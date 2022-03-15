@@ -1,4 +1,9 @@
-<div class="c-container">
-  <p>Je suis un conteneur centré avec un largeur maximum de : </p>
-</div>
+
+{% for size in layout  %}
+  <div class="c-container c-container--{{layout}}">
+    <p>Je suis un conteneur centré avec un largeur maximum de : </p>
+  </div>
+{% endfor %}
+  
+
 

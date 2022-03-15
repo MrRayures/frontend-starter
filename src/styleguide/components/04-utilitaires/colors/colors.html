@@ -1,11 +1,3 @@
-{% set colors = [
-  {name:"primary", value:""}
-]%}
-
-{% set bgcolors = [
-  {name:"primary", value:""}
-]%}
-
 <h2 class="sg-h2">Couleur de texte</h2>
 <p class="sg-text">
   Pour ajouter une couleur à un élement il suffit d'y ajouter la classe suivante : <code>u-color-{color}</code>.
@@ -16,13 +8,15 @@
 
 <ul class="sg-list sg-list--border sg-list--bp">
   {% for color in colors  %}
-    <li><code>u-color-{{color.name}}</code></li>
+    <li><code>u-color-{{color}}</code></li>
   {% endfor %}
 </ul>
 
 <h3 class="sg-h3">Démo :</h3>
 <div class="sg-columns sg-columns--bordered">
-  <p class="u-color-primary">u-color-primary</p>
+  {% for color in colors  %}
+   <p class="u-color-{{color}}">u-color-{{color}}</p>
+  {% endfor %}
 </div>
 
 <h2 class="sg-h2">Couleur de fond</h2>
@@ -31,14 +25,14 @@
 <h3 class="sg-h3">Couleurs disponibles :</h3>
 <ul class="sg-list sg-list--border sg-list--bp">
   {% for bgcolor in bgcolors  %}
-    <li><code>u-color-{{bgcolor.name}}</code></li>
+    <li><code>u-color-{{bgcolor}}</code></li>
   {% endfor %}
 </ul>
 
 <h3 class="sg-h3">Démo :</h3>
 <div class="sg-columns sg-columns--bordered">
   {% for bgcolor in bgcolors  %}
-    <div class="sg-box u-bgcolor-{{bgcolor.name}}"><span class="u-color-white">u-bgcolor-{{bgcolor.name}}</span></div>
+    <div class="sg-box u-bgcolor-{{bgcolor}}"><span class="u-color-white">u-bgcolor-{{bgcolor}}</span></div>
   {% endfor %}
 </div>
 
