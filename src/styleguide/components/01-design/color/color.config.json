@@ -1,6 +1,26 @@
 {
   "title": "Couleurs",
-  "label":"Couleurs",
-  "status": null
+  "label": "Couleurs",
+  "figma": "",
+  "status": null,
+  "context": {
+    "items": [
+      {
+        "name": "primary",
+        "value": "#000000"
+      },
+      {
+        "name": "secondary",
+        "value": "#666666"
+      },
+      {
+        "name": "text",
+        "value": "#000000"
+      },
+      {
+        "name": "grey-1",
+        "value": "#888888"
+      }
+    ]
+  }
 }
-    

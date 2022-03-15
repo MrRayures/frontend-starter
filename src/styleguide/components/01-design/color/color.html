@@ -1,14 +1,10 @@
-{% set colors = [
-  {name:"primary", value:""},
-  {name:"secondary", value:""}
-]%}
 
 <ul class="sg-list sg-list--color">
-{% for color in colors  %}
-  <li class="sg-color sg-color--{{color.name}}">
-    <span>{{color.name}}</span>
-  </li>
-{% endfor %}
+  {% for color in items %}
+    <li class="sg-color sg-color--{{color.name}}">
+      <span><code>{{color.name}}</code></span>
+      <span>Hex : {{color.value}}</span>
+      <span>RGBA : {{color.value | hexToRgbA }}</span>
+    </li>
+  {% endfor %}
 </ul>
-
-

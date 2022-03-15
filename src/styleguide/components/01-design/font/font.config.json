@@ -1,6 +1,21 @@
 {
   "title": "Typographie",
-  "label":"Typographie",
-  "status": null
+  "label": "Typographie",
+  "status": null,
+  "context": {
+    "items": [
+      {
+        "name": "14",
+        "value": "1.4rem"
+      },
+      {
+        "name": "400",
+        "value": 400
+      },
+      {
+        "name": "700",
+        "value": 700
+      }
+    ]
+  }
 }
-    

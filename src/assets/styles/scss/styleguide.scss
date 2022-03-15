@@ -287,12 +287,6 @@ $sg-radius : 4px;
 		color: #000000;
     padding: 1rem;
     display: block;
-    &:after {
-      display: block;
-      font-size: 1.2rem;
-      color: #000000;
-      margin-top: 1rem;
-    }
 	}
 	&:before {
 		content: "";
@@ -305,11 +299,6 @@ $sg-radius : 4px;
 			&:before {
 				background-color: #{$color_value};
 			}
-      span {
-        &:after {
-          content: "HEX : #{$color_value}";
-        }
-      }
 		}
   }
   

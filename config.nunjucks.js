@@ -5,7 +5,7 @@ module.exports = {
      * A path to the file containing data for the template.
      * If you want to pass an object, use "render.context" instead.
      */
-    "data": {},
+     "data": {}
   },
 
   /**
