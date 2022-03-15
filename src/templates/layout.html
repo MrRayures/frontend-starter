@@ -1,16 +1,16 @@
 <!doctype html> 
 <html lang="fr">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta charset="utf-8"> 
   <title>{{ page_title }}</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="{{ page_desc }}">
 	
 	
-	<!-- Charger les fichiers CSS globaux ici -->
+	<!-- Load CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/app.css">
 
+  <!-- Custom CSS -->
   {% block custom_css %}
 	{% endblock %}
 
@@ -19,10 +19,12 @@
 </head>
 
 <body class="{{ body_class }}">
-	<a class="u-show-on-focus" href="#content">Skip to Content</a>
+	<a class="u-show-on-focus" href="#content">Aller au contenu</a>
 	
+
 	{% include "templates/components/header.html" %}
 	<!-- //END Header -->
+  
 
 	{% block page_content %}{% endblock %}
 	
@@ -31,10 +33,9 @@
 	<!-- //END Footer -->
 	
 
-  <!-- Charger les fichiers JS globaux ici -->
-  <script type="text/javascript" src="assets/js/vendor/lazysizes.min.js"></script>
-  <script type="text/javascript" src="assets/js/app{% if js_min %}.min{% endif %}.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
 
+  <!-- Custom JS -->
   {% block custom_js %}
 	{% endblock %}
 

@@ -1,7 +1,7 @@
 /*
 * Javascript base variables & functions
 * Auteur : MrRayures - www.mr-rayures.com		
-* Copyright (C) 2018
+* Copyright (C) 2022
 */
 
 
@@ -15,8 +15,6 @@ var small   = "768";
 var medium  = "960";
 var large   = "1200";
 var xlarge  = "1600";
-
-console.log('hello')
 
 
 /*
@@ -77,19 +75,6 @@ console.log('hello')
 })(jQuery,'smartresize');
 */
 
-
-
-/*
-* lazysizes for lazy IMG
-* Infos : https://github.com/aFarkas/lazysizes
-*/
-var lazy = function lazy() {
-  document.addEventListener('lazyloaded', function (e)  {
-    e.target.parentNode.classList.add('image-loaded');
-    e.target.parentNode.classList.remove('loading');
-  });
-}
-lazy();
 
 
 

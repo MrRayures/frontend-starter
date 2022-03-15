@@ -5,7 +5,7 @@ module.exports = {
      * A path to the file containing data for the template.
      * If you want to pass an object, use "render.context" instead.
      */
-    "data": {},
+     "data": {}
   },
 
   /**
@@ -33,7 +33,7 @@ module.exports = {
      * If you decide to use "options.data" too, this property will be assigned to it.
      */
     "context": {
-      project_name:  'Hello world',
+      project_name:  'Nom du projet',
       img_path:  'assets/img/'
     },
     "callback": () => {} // Not modificable.

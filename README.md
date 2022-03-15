@@ -31,11 +31,7 @@ npm run build # Build du projet : clean et lance toute les taches nécessaire à
 ## Installation du styleguide (*optionnel*)
 
 Installation de [Fractal](https://fractal.build/) et de [nunjucks pour Fractal](https://github.com/frctl/fractal/tree/main/packages/nunjucks).
-
-### Récupération du projet
-Télécharger l'archive du projet à ladresse suivante : https://github.com/MrRayures/frontend-starter-styleguide et copier/coller  les fichiers suivants à la racine du projet :
-- src/*
-- fractal.config.js
+Les fichiers du styleguide sont dans `src/styleguide/`
 
 ### Installation des dépendances
 ```bash
@@ -51,11 +47,20 @@ npm run styleguide # src/assets/styles/scss/styleguide.scss
 ### Lancement pour travail
 
 ```bash
-fractal start --sync
+npm run fractal
+```
+### installation et mise à jour des styles pour le styleguide
+```bash
+npm run styleguide # src/assets/styles/scss/styleguide.scss
+```
+
+### Mise à jour des styles du styleguide (preview et index des templates)
+```bash
+npm run fractal-style
 ```
 
 ### Export HTML dans le dossier dist
 ```bash
-fractal build
+npm run fractal-build
 ```
 

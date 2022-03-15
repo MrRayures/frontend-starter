@@ -1,8 +1,8 @@
 // Variables liées aux font.
 
-$arial                : Arial, sans-serif;
-$verdana              : Verdana, Geneva, sans-serif;
-$georgia              : Georgia, "Times New Roman", serif;
+$arial     : Arial, sans-serif;
+$verdana   : Verdana, Geneva, sans-serif;
+$georgia   : Georgia, "Times New Roman", serif;
 
 $font-families: (
   "primary"   : $arial,
@@ -19,7 +19,7 @@ $font-families: (
 
 
 $font-sizes: (
-  "14"   : 1.4rem
+  "14"   : "1.4rem"
 );
 
 @function fontSize($key) {
