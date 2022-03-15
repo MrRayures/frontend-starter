@@ -29,15 +29,14 @@
       <svg class="c-icon">
         <use xlink:href="assets/icons/sprite/icons.svg#cross" />
       </svg>
-      <svg class="c-icon">
+      <svg role="img" class="c-icon" aria-hidden="true" focusable="false">
         <use xlink:href="assets/icons/sprite/icons.svg#menu" />
       </svg>
   
 
-      
       <br><br>
       <h3>Include SVG</h3>
-      {% set svg = {width:"50", height:"50"} %}
+      {% set svg = {class:"hello", width:"16", height:"16"} %}
       {% include 'assets/icons/cross.svg' %}
 
       <br><br><br>

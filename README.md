@@ -49,6 +49,10 @@ npm run styleguide # src/assets/styles/scss/styleguide.scss
 ```bash
 npm run fractal
 ```
+### installation et mise à jour des styles pour le styleguide
+```bash
+npm run styleguide # src/assets/styles/scss/styleguide.scss
+```
 
 ### Mise à jour des styles du styleguide (preview et index des templates)
 ```bash
