@@ -46,7 +46,7 @@ npm install --save @frctl/nunjucks
 npm run fractal
 ```
 
-### Mise à jour des styles du styleguide (preview des composants et index des templates)
+### Mise à jour des styles du styleguide (*preview des composants et index des templates*)
 ```bash
 npm run fractal-style
 ```
