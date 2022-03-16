@@ -39,22 +39,14 @@ npm install -g @frctl/fractal
 npm install --save @frctl/fractal
 npm install --save @frctl/nunjucks
 ```
-### installation et mise à jour des styles pour le styleguide
-```bash
-npm run styleguide # src/assets/styles/scss/styleguide.scss
-```
 
 ### Lancement pour travail
 
 ```bash
 npm run fractal
 ```
-### installation et mise à jour des styles pour le styleguide
-```bash
-npm run styleguide # src/assets/styles/scss/styleguide.scss
-```
 
-### Mise à jour des styles du styleguide (preview et index des templates)
+### Mise à jour des styles du styleguide (preview des composants et index des templates)
 ```bash
 npm run fractal-style
 ```
