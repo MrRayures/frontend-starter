@@ -18,7 +18,6 @@
     "img": "mkdirp -p dist/assets/img && recursive-copy src/assets/img dist/assets/img",
     "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
     "sprite": "svg-sprite --symbol --log --symbol-sprite=sprite/icons.svg --symbol-dest=dist/assets/icons/ src/assets/icons/*.svg",
-    "sassInlineSvg": "node config.svgsprite.js",
     "js": "mkdirp -p dist/assets/js && concat-glob-cli -f src/assets/js/*.js -o dist/assets/js/app.js",
     "jsMin": "uglifyjs dist/assets/js/app.js -o dist/assets/js/app.min.js",
     "vendor": "mkdirp -p dist/assets/js && mkdirp -p dist/assets/css && recursive-copy src/assets/js/vendor/ dist/assets/js/vendor/ && recursive-copy src/assets/styles/vendor/ dist/assets/css/vendor/",
