@@ -1,0 +1,14 @@
+{
+  "title": "Couleurs",
+  "label":"Couleurs",
+  "status": null,
+  "context": {
+    "colors": [
+      "primary"
+    ],
+    "bgcolors": [
+      "primary"
+    ]
+  }
+}
+    

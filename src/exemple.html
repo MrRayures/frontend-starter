@@ -4,14 +4,12 @@
 <!-- //START page variables -->
 {% set page_title = "Exemple" %}
 {% set page_desc = "" %}
-{% set body_class = "u-bgcolor-bg" %}
-{% set css_min = false %}
-{% set js_min = false %}
+{% set body_class = "" %}
 <!-- //END page variables -->
 
 
 {% block custom_css %}
-  <!-- Charger les Fichier CSS spécifiques a cette page ici -->
+  <!-- Ajoutez ici les appels CSS uniquement pour cette page -->
 {% endblock %}
 
 <!-- //START page Content -->
@@ -21,16 +19,20 @@
 		
     <div class="c-container c-container--md u-bgcolor-white u-p-md u-my-lg">
       
+
+
       <h2>Icônes</h2>
 
       <br><br>
       <h3>Sprite SVG</h3>
-      <svg role="img" class="c-icon" aria-hidden="true" focusable="false">
+
+      <svg class="c-icon">
         <use xlink:href="assets/icons/sprite/icons.svg#cross" />
       </svg>
       <svg role="img" class="c-icon" aria-hidden="true" focusable="false">
         <use xlink:href="assets/icons/sprite/icons.svg#menu" />
       </svg>
+  
 
       <br><br>
       <h3>Include SVG</h3>
@@ -84,7 +86,6 @@
       <code>{% raw %}{{ project_name }}{% endraw %} = {{ project_name }}</code><br>
       <code>{% raw %}{{ img_path }}{% endraw %} = {{ img_path }}</code> 
       </p>
-
     </div>
 
   
@@ -97,5 +98,5 @@
 
 
 {% block custom_js %}
-  <!-- Charger les Fichier JS spécifiques a cette page ici -->
+  <!-- Ajoutez ici les appels JS uniquement pour cette page -->
 {% endblock %}

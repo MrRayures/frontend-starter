@@ -1,0 +1,25 @@
+{
+  "title": "Boutons",
+  "label":"Boutons",
+  "status": "wip",
+  "context": {
+    "text": "Je suis un bouton"
+  },
+  "variants":[
+    {
+			"name": "primary",
+      "context": {
+        "modifier": "primary",
+        "text": "Je suis un bouton primaire"
+      }
+		},
+    {
+			"name": "secondary",
+      "context": {
+        "modifier": "secondary",
+        "text": "Je suis un bouton secondaire"
+      }
+		}
+  ]
+}
+    

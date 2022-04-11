@@ -24,8 +24,10 @@
 @import '04-elements/_page';
 
 
-$sg-bgcolor : #F3F9FE;
+$sg-bgcolor : #FFFFFF;
 $sg-color : #173D6C;
+$sg-header-bgcolor: #F3F9FE;
+$sg-list-bgcolor: #F3F9FE;
 $sg-radius : 4px;
 
 
@@ -33,10 +35,55 @@ $sg-radius : 4px;
 .sg-body {
   overflow: visible;
   height: auto;
-  background-color: #FFF;
+  background-color: $sg-bgcolor;
+
+  :focus-visible {
+    outline: 2px dotted $sg-color;
+    outline-offset: 4px;
+    transition: none;
+  }
+
+  // header
+  // Header
+  .sg-header {
+    display: flex;
+    align-items: center;
+    background: $sg-header-bgcolor;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .sg-header__logo {
+    max-height: 5rem;
+    margin-right: 2rem;
+  }
+
+  .sg-header__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    color: $sg-color;
+    span {
+      display: block;	
+      color: $sg-color;
+      font-size: 1.4rem;
+      font-weight: 400;
+      @include mq(bp(lg)) {
+        margin-left: 2rem;
+      }
+    }
+  }
+  a.sg-header__title {
+    color: $sg-color;
+    &:hover {
+      text-decoration: underline;
+      color: $sg-color;
+    }
+  }
+
 
   .sg-title {
-    background-color: $sg-bgcolor;
+    background-color: $sg-header-bgcolor;
     padding: 1rem 2rem;
     color: $sg-color;
     font-size: 2rem;
@@ -51,7 +98,7 @@ $sg-radius : 4px;
     font-weight: 700;
     span {
       display: inline-block;
-      background-color: $sg-bgcolor;
+      background-color: $sg-header-bgcolor;
       color: $sg-color;
       border-radius: 2rem;
       padding: 0.6rem 2rem;
@@ -62,7 +109,7 @@ $sg-radius : 4px;
   }
 
   .sg-h1 {
-    color: #000;
+    color: $sg-color;
     font-size: 4.8rem;
     font-weight: 400;
     font-family: font(primary);
@@ -70,7 +117,7 @@ $sg-radius : 4px;
   }
 
   .sg-h2 {
-    color: #000;
+    color: $sg-color;
     font-size: 3.2rem;
     margin-bottom: 2rem;
     font-family: font(primary);
@@ -80,7 +127,7 @@ $sg-radius : 4px;
   }
 
   .sg-h3 {
-    color: #222222;
+    color: $sg-color;
     margin: 2rem 0 1rem 0;
     font-size: 2rem;
     font-family: font(primary);
@@ -118,10 +165,19 @@ $sg-radius : 4px;
     }
   }
 
+  
 
   /*
 	* Content
 	*/
+  .sg-main {
+    padding: 2rem 6rem;
+    margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120rem;
+  }
+
   .sg-content {
     padding: 2rem;
     margin-bottom: 6rem;
@@ -213,27 +269,34 @@ $sg-radius : 4px;
         width: 6.2rem;
         height: 6.2rem;
       }
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
   .sg-list--link {
     a {
-      background: #eeeeee;
+      background: $sg-list-bgcolor;
       border-radius: $sg-radius;
-      color: #333333;
+      color: $sg-color;
       display: block;
       font-size: 1.6rem;
       margin-bottom: 1rem;
       padding: 1rem 2rem;
       position: relative;
       text-decoration: none;
-      transition: 200ms;
       &:hover {
-        background: #cfcfcf;
-        color: #333333;
+        font-weight: 700;
+        color: $sg-color;
+        background: $sg-list-bgcolor;
         text-decoration: underline;
       }
     }
+
     &.sg-list--sm {
       a {
         padding: 0.6rem 2rem;
@@ -312,7 +375,6 @@ $sg-radius : 4px;
       }
 		}
   }
-  
 }
 
 
@@ -332,7 +394,7 @@ $sg-radius : 4px;
 // grid
 .sg-grid {
   [class*="o-col"] > div {
-    background-color: $sg-bgcolor;
+    background-color: $sg-header-bgcolor;
     border: 1px solid rgba($sg-color, 0.1);
     padding: 1rem 2rem;
     color: $sg-color;
@@ -347,7 +409,7 @@ $sg-radius : 4px;
 .sg-code {
   border-radius: $sg-radius;
   border: 1px solid rgba($sg-color, 0.1);
-  background: rgba($sg-bgcolor, 0.5);
+  background: rgba(#efefef, 0.5);
   padding: 2rem;
   margin-bottom: 4rem;
   display: block;
@@ -362,8 +424,8 @@ $sg-radius : 4px;
 }
 
 .sg-columns > :not(.sg-column):not(.o-row) {
-  margin-right: 2rem;
-  margin-left: 2rem;
+  //margin-right: 2rem;
+  //margin-left: 2rem;
 }
 
 .sg-columns--bordered {
@@ -385,7 +447,7 @@ $sg-radius : 4px;
   flex-direction: column;
   align-items: center;
   .c-icon {
-    background: rgba($sg-bgcolor, 1);
+    background: #efefef;
   }
 }
 
@@ -423,6 +485,7 @@ $sg-radius : 4px;
   margin-bottom: 2rem;
   font-size: 1.4rem;
   color: #000;
+  margin-right: 2rem;
   code {
     text-align: center;
     display: block;
@@ -434,7 +497,7 @@ $sg-radius : 4px;
     display: block;
     width: 10rem;
     border: 1px solid rgba($sg-color, 0.1);
-    background: rgba($sg-bgcolor, 0.5);
+    background: rgba($sg-header-bgcolor, 0.5);
   }
 }
 

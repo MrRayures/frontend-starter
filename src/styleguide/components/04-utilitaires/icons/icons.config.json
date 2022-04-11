@@ -1,0 +1,14 @@
+{
+  "title": "Icône",
+  "label":"Icône",
+  "status": null,
+  "context": {
+    "sizes": [
+      "16"
+    ],
+    "colors": [
+      "primary"
+    ]
+  }
+}
+    

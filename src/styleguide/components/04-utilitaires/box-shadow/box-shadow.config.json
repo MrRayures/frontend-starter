@@ -1,0 +1,11 @@
+{
+  "title": "Box shadow",
+  "label":"Box shadow",
+  "status": null,
+  "context": {
+    "shadow": [
+      "md"
+    ]
+  }
+}
+    

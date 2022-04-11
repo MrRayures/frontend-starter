@@ -1,0 +1,14 @@
+{
+  "title": "Couleurs",
+  "label": "Couleurs",
+  "status": null,
+  "context": {
+    "figma": "https://www.figma.com/file/EGCWsLip7v5u5f8kmywvpt/Test?node-id=0%3A1",
+    "colors": [
+      "primary",
+      "secondary",
+      "text",
+      "grey-1"
+    ]
+  }
+}
