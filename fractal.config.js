@@ -15,6 +15,10 @@ fractal.set('project.author', 'DIG');
 /*
  * Tell Fractal where to look for components.
  */
+const nunj = require("@frctl/nunjucks")({
+  paths: ["dist/"]
+});
+
 fractal.components.engine(nunj);
 fractal.components.set('path', path.join(__dirname, 'src/styleguide/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
