@@ -1,4 +1,7 @@
-# :doughnut: Frontend starter
+---
+title: Frontend starter
+---
+
 Testé avec la version **16.18.4** de nodeJS.
 
 ## Installation et lancement
@@ -41,16 +44,12 @@ npm install --save @frctl/nunjucks
 ### Lancement pour travail
 
 ```bash
-npm run fractal
+npm run watch
 ```
 
-### Mise à jour des styles du styleguide (*preview des composants et index des templates*)
-```bash
-npm run fractal-style
-```
 
 ### Export HTML dans le dossier dist
 ```bash
-npm run fractal-build
+npm run build
 ```
 

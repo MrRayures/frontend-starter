@@ -1,7 +1,8 @@
 'use strict';
 const path = require('path');
 const fractal = (module.exports = require('@frctl/fractal').create());
-const mandelbrot = require('@frctl/mandelbrot');
+//const subTheme = require('@frctl-themeDIG');
+//const mandelbrot = require('@frctl/mandelbrot');
 
 
 /*
@@ -16,11 +17,14 @@ fractal.set('project.author', 'DIG');
  * Tell Fractal where to look for components.
  */
 const nunj = require("@frctl/nunjucks")({
-  paths: ["dist/"]
+  paths: ["src/"],
+  globals: {
+    img_path:  '../../img/'
+  }
 });
 
 fractal.components.engine(nunj);
-fractal.components.set('path', path.join(__dirname, 'src/styleguide/components'));
+fractal.components.set('path', path.join(__dirname, 'src/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
 fractal.components.set('ext', '.html');
 
@@ -34,7 +38,7 @@ fractal.components.set('default.context', {
  * Tell Fractal where to look for documentation pages.
  */
 fractal.docs.engine(nunj);
-fractal.docs.set('path', path.join(__dirname, 'src/styleguide/docs'));
+fractal.docs.set('path', path.join(__dirname, 'src/docs'));
 fractal.docs.set('indexLabel', 'Documentation');
 
 
@@ -42,13 +46,14 @@ fractal.docs.set('indexLabel', 'Documentation');
 /*
  * Tell the Fractal web preview plugin where to look for static assets.
  */
+//fractal.web.set('static.path', path.join(__dirname, 'src/assets'));
 fractal.web.set('static.path', path.join(__dirname, 'dist/assets'));
 
 
 /*
  * Tell the Fractal where to output the build files.
  */
-fractal.web.set('builder.dest', path.join(__dirname, 'dist/styleguide/'));
+fractal.web.set('builder.dest', path.join(__dirname, 'dist/'));
 
 
 
@@ -66,14 +71,16 @@ fractal.web.set('server.watch', true);
  * Theme
  * Docs : https://fractal.build/guide/web/default-theme.html#configuration
  */
-const myCustomisedTheme = require('@frctl/mandelbrot')({
+const subTheme = require('@frctl/mandelbrot')({
   lang: 'fr',
+  favicon: '/_subtheme/favicon.ico',
   skin: {
     name: 'black',
     //accent: '#333333',
     //complement: '#FFFFFF',
     //links: '#000000',
   },
+  styles: ['default', '/_subtheme/theme.css'],
   information: [
     {
       label: 'Version',
@@ -97,8 +104,9 @@ const myCustomisedTheme = require('@frctl/mandelbrot')({
 });
 
 // specify a directory to hold the theme override templates
-myCustomisedTheme.addLoadPath(__dirname + '/src/styleguide/theme-overrides');
+subTheme.addLoadPath(__dirname + '/src/_subtheme/views/');
+subTheme.addStatic(__dirname + '/src/_subtheme', '_subtheme');
 
-fractal.web.theme(myCustomisedTheme);
+fractal.web.theme(subTheme);
 
 

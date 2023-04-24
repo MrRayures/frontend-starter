@@ -1,0 +1,30 @@
+:root {
+  --primary:#D6E5CC;
+  --primary-dark:#6B7366;
+  --grey:#F8F8F8;
+  --title:#5327CA;
+}
+
+/*
+* Interface générale
+*/
+.Header {
+  background-color: var(--primary);
+  border-bottom: var(--primary-dark);
+  color: #000;
+  box-shadow: none;
+}
+
+.Frame-panel--sidebar {
+  background-color: var(--grey);
+}
+
+.sg-title {
+  background-color: var(--grey);
+  color: var(--title);
+}
+
+
+/*
+* Présentation des composants
+*/

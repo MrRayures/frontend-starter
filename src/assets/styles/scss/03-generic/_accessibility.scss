@@ -1,6 +1,7 @@
-// generic:accessibility
+/*
+* Tout ce qui concerne les règles css d'accessibilité
+*/
 
-/* Focus style for accessibility */
 :focus-visible {
   @include accessible_outline;
 }

@@ -1,16 +1,32 @@
 /*-----------------------------------------------------------------------------------------------------
-  [utilities:color]
+  [component:form]
 -------------------------------------------------------------------------------------------------------*/
-/*
-* Color
-*/
-.u-color-primary {
-  color: color(primary)
-}
+
+.c-form {}
 
 
 /*
-* Background
+* Base style
 */
+.c-form__label {}
+
+
+/*
+* Group
+* Alignement & layout
+*/
+.c-form__group {}
+
+
+/*
+* Form Field
+*/
+.c-form__field {}
+
+
+
+
+
+
 
 
