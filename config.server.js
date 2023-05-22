@@ -10,9 +10,7 @@ var params = {
 	open: false, // When false, it won't load your browser by default.
 	watch: [["dist/assets/css/*.css", "dist/*.html", "dist/assets/js/*.js", "dist/assets/img/**/*.{jpg,jpeg,png,svg}"]],
 	ignore: '', // comma-separated string for paths to ignore
-	file: "index.html", // When set, serve this file (server root relative) for every 404 (useful for single-page applications)
 	wait: 0, // Waits for all changes, before reloading. Defaults to 0 sec.
-	mount: [['/components', './node_modules']], // Mount a directory to a route.
 	logLevel: 1, // 0 = errors only, 1 = some, 2 = lots
 };
 liveServer.start(params);
