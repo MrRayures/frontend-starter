@@ -18,3 +18,11 @@ $colors: (
   @warn "Unknown `#{$key}` in $colors.";
   @return null;
 }
+
+
+// Generate custom properties
+:root {
+    @each $key_name, $value in $colors {
+        --#{$key_name}: #{$value};
+    }
+}

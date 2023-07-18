@@ -2,10 +2,29 @@
   "title": "Typographie",
   "label": "Typographie",
   "status": null,
-  "context": {
-    "fonts": [
-      "primary",
-      "secondary"
-    ]
-  }
+  "context": {},
+  "variants":[
+    {
+        "name": "default",
+		"label": "Arial",
+        "root": true,
+        "context": {
+            "modifier": "primary",
+            "weights": [
+                "bold",
+                "extra bold"
+            ]
+        }
+    },
+    {
+        "name": "Verdana",
+        "context": {
+            "modifier": "secondary",
+            "weights": [
+                "regular",
+                "bold"
+            ]
+        }
+    }
+]
 }

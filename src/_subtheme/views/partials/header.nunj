@@ -7,7 +7,5 @@
         {% include 'icons/burger.svg' %}
       </div>
   </button>
-  <h1>Projet</h1>  
-  <img src="{{path('/_subtheme/assets/dig-logo.png')}}" alt="">
   <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
 </div>

@@ -2,101 +2,34 @@
 {% extends "components/_templates/layout.html" %}
 
 <!-- //START page variables -->
-{% set page_title = "Exemple" %}
-{% set page_desc = "" %}
+{% set page_title = "page d'exemple" %}
 {% set body_class = "" %}
 <!-- //END page variables -->
 
 
-{% block custom_css %}
-  <!-- Ajoutez ici les appels CSS uniquement pour cette page -->
-{% endblock %}
-
 <!-- //START page Content -->
 {% block page_content %}
 
-	<div id="content" class="" role="main">
-		
-    <div class="c-container c-container--md u-bgcolor-white u-p-md u-my-lg">
-      
 
+<h1>page d'exemple</h1>
 
-      <h2>Icônes</h2>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam sed ad commodi debitis expedita nobis cum mollitia, doloribus modi quidem provident dolore maiores totam nostrum eius eaque similique est voluptatum.</p>
 
-      <br><br>
-      <h3>Sprite SVG</h3>
+<button type="button" class="c-button c-button--primary">Mon bouton</button>
 
-      <svg class="c-icon">
-        <use xlink:href="assets/icons/sprite/icons.svg#cross" />
-      </svg>
-      <svg role="img" class="c-icon" aria-hidden="true" focusable="false">
-        <use xlink:href="assets/icons/sprite/icons.svg#menu" />
-      </svg>
-  
+<img src="{{ '/images/loader.svg' | path }}" alt="" >
 
-      <br><br>
-      <h3>Include SVG</h3>
-      {% set svg = {class:"hello", width:"16", height:"16"} %}
-      {% include 'assets/icons/cross.svg' %}
-
-      <br><br><br>
-      <h2>Nunjucks</h2>
-      <p>Documentation : <a href="https://mozilla.github.io/nunjucks/fr/templating.html">https://mozilla.github.io/nunjucks/fr/templating.html</a></p>
-      
-      <br><br>
-      <h3>Boucle for simple</h3>
-      <p><code>for i in range(0, 5)</code></p>
-      {% for i in range(0, 5) -%}
-        {{ i }},
-      {%- endfor %}
-
-      <br><br>
-      <h3>Boucle for avec data</h3>
-      {% set items = [
-        {name:"Tomate", price:"1,20€"},
-        {name:"Potiron", price:"2,50€"},
-        {name:"Carotte", price:"0,60€"}, 
-        {name:"Pomme de terre", price:"1,80€"}
-      ]%}
-      <ul>
-      {% for item in items  %}
-        <li>{{item.name}} - {{item.price}}</li>
-      {% endfor %}
-      </ul>
-
-      <br><br>
-      <h3>Boucle for avec data et template include</h3>
-      {% set products = [
-        {name:"Tomate", price:"1,20€", new:false},
-        {name:"Potiron", price:"2,50€", new:false},
-        {name:"Carotte", price:"0,60€", new:true}, 
-        {name:"Pomme de terre", price:"1,80€", new:false}
-      ]%}
-      <ul>
-      {% for product in products  %}
-        {% include "templates/components/demo-item.html" %}
-      {% endfor %}
-      </ul>
-
-      <br><br>
-      <h3>Data</h3>
-      <p>Il est possible d'utiliser des variables réutilisables dans tous les templates. <br>
-      Ces datas sont à renseigner dans <code>config.nunjucks.js</code></p>
-      <p>Exemple : <br>
-      <code>{% raw %}{{ project_name }}{% endraw %} = {{ project_name }}</code><br>
-      <code>{% raw %}{{ img_path }}{% endraw %} = {{ img_path }}</code> 
-      </p>
-    </div>
-
-  
-
-  </div><!--//END main -->
-	
+{% set products = [
+  {name:"Tomate", price:"1,20€", new:false},
+  {name:"Potiron", price:"2,50€", new:false},
+  {name:"Carotte", price:"0,60€", new:true}, 
+  {name:"Pomme de terre", price:"1,80€", new:false}
+]%}
+<ul>
+{% for product in products  %}
+  {% include "components/_templates/components/demo-item.html" %}
+{% endfor %}
+</ul>
 {% endblock %}
+
 <!-- //END page Content -->
-
-
-
-{% block custom_js %}
-  <!-- Ajoutez ici les appels JS uniquement pour cette page -->
-{% endblock %}

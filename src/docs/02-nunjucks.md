@@ -78,7 +78,7 @@ title: Exemple Nunjucks
 ]%}
 <ul>
 {% for product in products  %}
-  {% include "templates/components/demo-item.html" %}
+  {% include "components/_templates/components/demo-item.html" %}
 {% endfor %}
 </ul>
 
@@ -90,4 +90,5 @@ Ces datas sont à renseigner dans <code>config.nunjucks.js</code></p>
 <code>{% raw %}{{ project_name }}{% endraw %} = {{ project_name }}</code><br>
 <code>{% raw %}{{ img_path }}{% endraw %} = {{ img_path }}</code> 
 </p>
+
 ```

@@ -8,20 +8,8 @@
 /*
 * Let's import ALL stuff
 */
-// Settings
-@import '01-settings/_settings';
 
-// Tools
-@import '02-tools/_tools';
-
-// Generic
-@import '03-generic/_accessibility';
-@import '03-generic/_reset';
-
-// Elements
-@import '04-elements/_fonts';
-@import '04-elements/_form';
-@import '04-elements/_page';
+@import 'app';
 
 
 $sg-bgcolor : #FFFFFF;
@@ -43,7 +31,6 @@ $sg-radius : 4px;
     transition: none;
   }
 
-  // header
   // Header
   .sg-header {
     display: flex;
@@ -68,11 +55,12 @@ $sg-radius : 4px;
       color: $sg-color;
       font-size: 1.4rem;
       font-weight: 400;
-      @include mq(bp(lg)) {
+      @include mq(max, bp(lg)) {
         margin-left: 2rem;
       }
     }
   }
+
   a.sg-header__title {
     color: $sg-color;
     &:hover {
@@ -80,7 +68,6 @@ $sg-radius : 4px;
       color: $sg-color;
     }
   }
-
 
   .sg-title {
     background-color: $sg-header-bgcolor;
@@ -382,14 +369,6 @@ $sg-radius : 4px;
 /*
 * Layout
 */
-// container
-@each $layout_key , $layout_key_value in $layout {
-  .sg-container p {
-    &:after {
-      content: "#{$layout_key_value}"
-    }
-  }
-}
 
 // grid
 .sg-grid {
@@ -466,15 +445,6 @@ $sg-radius : 4px;
   .sg-font--#{$font_key} span {
     &:after {
       content: " #{$font_key_value}"
-    }
-  }
-}
-
-// icons
-@each $icon_key , $icon_key_value in $icon-size {
-  .sg-icon--#{$icon_key} span {
-    &:after {
-      content: " #{$icon_key_value}"
     }
   }
 }

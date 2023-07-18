@@ -8,7 +8,7 @@ const fractal = (module.exports = require('@frctl/fractal').create());
 /*
  * Give your project a title.
  */
-fractal.set('project.title', 'Librairie de composants');
+fractal.set('project.title', 'Styleguide');
 fractal.set('project.version', 'v1.0');
 fractal.set('project.author', 'DIG');
 
@@ -18,8 +18,17 @@ fractal.set('project.author', 'DIG');
  */
 const nunj = require("@frctl/nunjucks")({
   paths: ["src/"],
+  env: {
+    // Nunjucks environment opts: https://mozilla.github.io/nunjucks/api.html#configure
+  },
+  filters: {
+    // filter-name: function filterFunc(){}
+  },
   globals: {
-    img_path:  '../../img/'
+    img_path:  '../../images/'
+  },
+  extensions: {
+    // extension-name: function extensionFunc(){}
   }
 });
 
@@ -27,11 +36,6 @@ fractal.components.engine(nunj);
 fractal.components.set('path', path.join(__dirname, 'src/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
 fractal.components.set('ext', '.html');
-
-fractal.components.set('default.context', {
-	'figma': null
-});
-
 
 
 /*
@@ -46,22 +50,21 @@ fractal.docs.set('indexLabel', 'Documentation');
 /*
  * Tell the Fractal web preview plugin where to look for static assets.
  */
-//fractal.web.set('static.path', path.join(__dirname, 'src/assets'));
-fractal.web.set('static.path', path.join(__dirname, 'dist/assets'));
+fractal.web.set('static.path', path.resolve(__dirname, 'src/assets'));
 
 
 /*
  * Tell the Fractal where to output the build files.
  */
-fractal.web.set('builder.dest', path.join(__dirname, 'dist/'));
+fractal.web.set('builder.dest', path.resolve(__dirname, 'dist/'));
 
 
 
 fractal.web.set('server.sync', true);
 fractal.web.set('server.syncOptions', {
-  open: true,
+  open: false,
   browser: ['firefox'],
-  notify: true
+  notify: false
 });
 fractal.web.set('server.watch', true);
 
@@ -75,10 +78,7 @@ const subTheme = require('@frctl/mandelbrot')({
   lang: 'fr',
   favicon: '/_subtheme/favicon.ico',
   skin: {
-    name: 'black',
-    //accent: '#333333',
-    //complement: '#FFFFFF',
-    //links: '#000000',
+    name: 'black'
   },
   styles: ['default', '/_subtheme/theme.css'],
   information: [
@@ -87,15 +87,15 @@ const subTheme = require('@frctl/mandelbrot')({
       value: require('./package.json').version,
     },
     {
-      label: 'Built on',
+      label: 'Compilé le ',
       value: new Date(),
       type: 'time',
       format: (value) => {
-        return value.toLocaleDateString('en');
+        return value.toLocaleDateString('fr');
       },
     },
   ],
-  panels: ["html", "view", "context", "resources", "info", "notes", "figma"], //html, view, context, resources, info, notes
+  panels: ["html", "view", "context", "resources"], //html, view, context, resources, info, notes
   labels: {
     search: {
       placeholder: 'Rechercher…',

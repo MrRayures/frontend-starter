@@ -1,10 +1,10 @@
 /*
 * Javascript base variables & functions
 * Auteur : MrRayures - www.mr-rayures.com		
-* Copyright (C) 2022
+* Copyright (C) 2023
 */
 
-console.log('Hello world')
+console.log('Hello world');
 
 /*  
 * Breackpoint 
