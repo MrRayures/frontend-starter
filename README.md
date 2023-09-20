@@ -1,4 +1,4 @@
-# :doughnut: Jacadi Frontend
+# :doughnut: Frontend Starter
 Testé avec la version **16.13.2** de nodeJS.
 
 ## Installation et lancement
