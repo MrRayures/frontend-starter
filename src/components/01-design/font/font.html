@@ -1,20 +1,25 @@
-<div class="sg-list">
-    <div class="sg-font--{{modifier}}">
-        <span class="sg-subtitle">{{modifier}} : </span>
-        <div class="sg-font sg-font--{{modifier}}">
-            <p class="sg-font-first">Aa</p>
-            <p class="sg-font-letter">
-                A À B C Ç D E É È Ë F G H I J K L M N O Ô Ö P Q R S T U V W X Y Z <br> 
-                a à b c ç d e é è ê ë f g h i j k l m n o ô ö p q r s t u ù v w x y z <br> 
-                0 1 2 3 4 5 6 7 8 9 . ; : ! ? ‘ “ &amp; ( [ { - _ # } ] ) % £ € $ &lt; - + / *=&gt;
-            </p>
-            
+{% for font in fonts %}
+    
+{% endfor %}
+<div class="sg-font" style="font-family: {{family}}">
+    <div class="sg-font__infos">
+        <div class="sg-font__letter">aA</div>
+        <div class="sg-font__info">
+            <p class="sg-font__name">{{title}}</p>
+            <ul role="list" class="sg-font__weight-list">
+                {% for weight in weights %}
+                    <li>{{weight.name}} {{weight.value}}</li>
+                {% endfor %}
+            </ul>
         </div>
-        <p>
-            {% for weight in weights  %}  
-                {{weight}}
-            {% endfor %}
-        </p>
+    </div>
+    <div class="sg-font__demo">
+        {% for weight in weights %}
+            <p class="sg-font__weight">{{weight.name}} ({{weight.value}})</p>
+            <p style="font-weight: {{weight.value}};">ABCDEFGHIJKLMNOPQRSTUVWYZ<br>
+            abcefghijklmnopqrstuvwxyz<br>
+            0123456789</p>
+        {% endfor %}
     </div>
 </div>
 

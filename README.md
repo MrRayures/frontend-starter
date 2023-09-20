@@ -14,6 +14,6 @@ npm run watch
 
 ```bash
 fractal start # Tache de travail : lance Fractal
-npm run watch # Tache de travail : watch / build & refresh scss
+npm run watch # Tache de travail : watch / build les assets css / js / sprite svg
 npm run build # Build du projet : export du projet statique
 ```

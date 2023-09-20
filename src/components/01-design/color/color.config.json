@@ -1,12 +1,12 @@
 {
-  "title": "Couleurs",
-  "label": "Couleurs",
-  "status": null,
-  "context": {
-    "colors": [
-      "primary",
-      "secondary",
-      "text"
-    ]
-  }
+    "title": "Couleurs",
+    "label": "Couleurs",
+    "status": null,
+    "context": {
+        "colors": [
+            {"name": "primary", "hex": "#333333"},
+            {"name": "secondary", "hex": "#666666"},
+            {"name": "text", "hex": "#000000"}
+        ]
+    }
 }

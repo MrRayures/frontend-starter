@@ -12,22 +12,33 @@
 * Fonctionne avec la map $breakpoints
 *
 * Utilisation :
+* bp(md) == 960px
+* bp(lg) == 1280px
 * @include mq(max, bp(lg)) {}
-* > @media only screen and (max-width: 992px) {}
+* > @media only screen and (max-width: 1280px) {}
 *
 * @include mq(min, bp(lg)) {}
-* > @media only screen and (min-width: 991px) {}
+* > @media only screen and (min-width: 1280.2px) {}
+*
+* @include mq(minmax, bp(md), bp(lg)) {}
+* > @media only screen and (min-width: 960.2px) and (max-width: 1280px) {}
 */
 
-@mixin mq($scope, $breakpoint) {
+@mixin mq($scope, $breakpoint, $breakpointMax: "") {
   @if $scope==max {
-    @media only screen and (max-width: ($breakpoint - 0.0625)) { // 1px = 0.0625em
+    @media only screen and (max-width: ($breakpoint)) { 
       @content;
     }
   }
 
   @if $scope==min {
-    @media only screen and (min-width: $breakpoint) {
+    @media only screen and (min-width: ($breakpoint + 0.2px)) { 
+      @content;
+    }
+  }
+
+  @if $scope==minmax {
+    @media only screen and (min-width: ($breakpoint + 0.2px)) and (max-width: $breakpointMax){ 
       @content;
     }
   }

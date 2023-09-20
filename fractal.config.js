@@ -23,8 +23,13 @@ const nunj = require("@frctl/nunjucks")({
   },
   filters: {
     // filter-name: function filterFunc(){}
+
+    hexToRgb: function filterFunc(hex){
+      return ['0x' + hex[1] + hex[2] | 0, '0x' + hex[3] + hex[4] | 0, '0x' + hex[5] + hex[6] | 0];
+    },
   },
   globals: {
+    project_name :  'Styleguide',
     img_path:  '../../images/'
   },
   extensions: {
