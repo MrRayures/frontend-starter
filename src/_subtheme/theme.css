@@ -1,16 +1,19 @@
 :root {
-  --sg-primary:#D6E5CC;
-  --sg-primary-dark:#6B7366;
+  --sg-primary:#111111;
+  --sg-secondary:#efefef;
+
   --sg-grey:#F8F8F8;
-  --sg-border: #E6E6E6;
+  
   --sg-title:#111111;
   --sg-text:#3a3a3a;
   --sg-textLight:#9E9E9E;
-  --sg-radius: 4px;
 
-  --sg-alert: black;
-  --sg-warning: black;
-  --sg-success: black;
+  --sg-link:#333333;
+  --sg-linkHover:#111111;
+
+  --sg-radius: 4px;
+  --sg-border: #E6E6E6;
+
 }
 
 /*
@@ -18,14 +21,31 @@
 */
 .Header {
   background-color: var(--sg-primary);
-  border-bottom: var(--sg-primary-dark);
-  color: #000;
+  border-bottom: var(--sg-border);
+  color: white;
   box-shadow: none;
 }
 
 .Frame-panel--sg-sidebar {
   background-color: var(--sg-grey);
 }
+
+.Tree-title {
+    color: var(--sg-title);
+    font-size: 1rem;
+}
+
+.Tree-collectionLabel,
+.Tree-entityLink {
+    color: var(--sg-link);
+    &:hover {
+        color: var(--sg-linkHover);
+        text-decoration: underline;
+    }
+}
+
+
+
 
 
 /*
