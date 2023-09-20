@@ -1,0 +1,44 @@
+<!doctype html> 
+<html lang="fr">
+<head>
+    <meta charset="utf-8"> 
+    <title>{{ page_title }}</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page_desc }}">
+
+    <!-- Load CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ '/app.css' | path }}">
+
+    <!-- Custom CSS -->
+    {% block custom_css %}
+    {% endblock %}
+
+
+
+</head>
+
+<body class="{{ body_class }}">
+
+    <a class="u-show-on-focus" href="#content">Aller au contenu</a>
+
+
+    {% include "components/_templates/components/header.html" %}
+    <!-- //END Header -->
+
+
+    {% block page_content %}{% endblock %}
+
+
+    {% include "components/_templates/components/footer.html" %}
+    <!-- //END Footer -->
+
+
+    <script type="text/javascript" src="{{ '/app.js' | path }}"></script>
+
+    <!-- Custom JS -->
+    {% block custom_js %}
+    {% endblock %}
+
+	
+</body>
+</html>

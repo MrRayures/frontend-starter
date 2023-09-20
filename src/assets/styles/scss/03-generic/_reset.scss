@@ -1,11 +1,28 @@
-// generic:Reset
-// Based on : https://github.com/hankchizljaw/modern-css-reset
+/*
+* Reset
+* Based on : https://andy-bell.co.uk/a-more-modern-css-reset/
+*/
+
 
 /* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-size: 62.5%; // Font scaling to use REM 1.6rem = 16px
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
 }
 
 /* Remove default padding */
@@ -15,65 +32,60 @@ ol {
   margin: 0;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
-
-/*
-* Font scaling to use REM
-* 1.6rem = 16px
-*/
-html {
-  font-size: 62.5%;
-  font-size: calc(1em * 0.625);  // IE9-IE11 math fixing
-}
-
 
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  scroll-behavior: smooth;
+  line-height: 1.5;
+  
+  //scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.2;
+
   font-size: 1.6rem;
 }
 
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-  list-style: none;
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+  color: currentColor;
 }
 
 /* Make images easier to work with */
-img {
+img,
+picture {
   max-width: 100%;
   display: block;
 }
 
-
 /* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: font(primary);
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
 }

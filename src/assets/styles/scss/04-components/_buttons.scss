@@ -1,0 +1,45 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:buttons]
+-------------------------------------------------------------------------------------------------------*/
+.c-button {
+	background: none;
+	border: 1px solid transparent;
+	padding: 0;
+
+	&:not([disabled]) {
+        cursor: pointer;
+    }
+  
+  // Fixe les survoles en mobile
+  @media(hover: hover) and (pointer: fine) {
+    &:hover:not([disabled]) {}
+  }
+
+}
+
+/*
+* Variantes
+*/
+.c-button--primary {
+    background-color: var(--primary);
+    color: #FFF;
+}
+
+.c-button--secondary {
+    background-color: var(--secondary);
+    color: #FFF;
+}
+
+
+.sg-bp-test {
+    --bg: black;
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--bg);
+    @include mq(max, bp(md)) {
+        --bg: green;
+    }
+    @include mq(minmax, bp(md), bp(lg)) {
+        --bg: red;
+    }
+}

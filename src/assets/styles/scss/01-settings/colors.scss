@@ -1,10 +1,12 @@
-// Variables Couleurs
+/*
+* Variables concernant les couleurs
+* > utilisation : color($key)
+*/
 
 $colors: (
   "primary"    : #333333,
   "secondary"  : #666666,
-  "text"       : #000000,
-  "grey-1"     : #888888
+  "text"       : #000000
 );
 
 
@@ -15,4 +17,12 @@ $colors: (
 
   @warn "Unknown `#{$key}` in $colors.";
   @return null;
+}
+
+
+// Generate custom properties
+:root {
+    @each $key_name, $value in $colors {
+        --#{$key_name}: #{$value};
+    }
 }

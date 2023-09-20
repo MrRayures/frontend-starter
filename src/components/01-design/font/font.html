@@ -1,0 +1,28 @@
+{% for font in fonts %}
+    
+{% endfor %}
+<div class="sg-font" style="font-family: {{family}}">
+    <div class="sg-font__infos">
+        <div class="sg-font__letter">aA</div>
+        <div class="sg-font__info">
+            <p class="sg-font__name">{{title}}</p>
+            <ul role="list" class="sg-font__weight-list">
+                {% for weight in weights %}
+                    <li>{{weight.name}} {{weight.value}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="sg-font__demo">
+        {% for weight in weights %}
+            <p class="sg-font__weight">{{weight.name}} ({{weight.value}})</p>
+            <p style="font-weight: {{weight.value}};">ABCDEFGHIJKLMNOPQRSTUVWYZ<br>
+            abcefghijklmnopqrstuvwxyz<br>
+            0123456789</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+

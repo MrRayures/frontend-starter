@@ -1,4 +1,7 @@
-// Variables liées aux z-index afin de garder ça propre.
+/*
+* Organisation des Z-index
+* > utilisation : zIndex($key)
+*/
 
 $z-index: (
   "below"           : -1,

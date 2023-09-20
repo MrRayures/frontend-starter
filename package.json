@@ -1,7 +1,7 @@
 {
   "name": "frontend-starter",
   "version": "1.0.0",
-  "description": "A framework html/scss",
+  "description": "html/scss framework powered by @frctl",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrRayures/frontend-starter.git"
@@ -13,38 +13,28 @@
   },
   "scripts": {
     "clean": "recursive-delete dist",
-    "copy": "mkdirp -p dist/assets && recursive-copy src/assets/icons dist/assets/icons && recursive-copy src/assets/fonts dist/assets/fonts",
-    "scss": "sass --style=compressed --error-css --update src/assets/styles/scss/app.scss dist/assets/css/app.css",
-    "img": "mkdirp -p dist/assets/img && recursive-copy src/assets/img dist/assets/img",
-    "html": "nunjucks-to-html src/*.{njk,html} --config config.nunjucks.js  --dest dist/ --flatten true",
-    "sprite": "svg-sprite --symbol --log --symbol-sprite=sprite/icons.svg --symbol-dest=dist/assets/icons/ src/assets/icons/*.svg",
-    "js": "mkdirp -p dist/assets/js && concat-glob-cli -f src/assets/js/*.js -o dist/assets/js/app.js",
-    "jsMin": "uglifyjs dist/assets/js/app.js -o dist/assets/js/app.min.js",
-    "vendor": "mkdirp -p dist/assets/js && mkdirp -p dist/assets/css && recursive-copy src/assets/js/vendor/ dist/assets/js/vendor/ && recursive-copy src/assets/styles/vendor/ dist/assets/css/vendor/",
+    "scss": "sass --style=compressed --error-css --update src/assets/styles/scss/app.scss src/assets/app.css",
+    "sprite": "svg-sprite --symbol --log --symbol-sprite=sprite/icons.svg --symbol-dest=src/assets/icons/ src/assets/icons/*.svg",
+    "js": "concat-glob-cli -f src/assets/js/*.js -o src/assets/app.js",
     "build:css": "npm run scss",
-    "build:img": "npm run img",
-    "build:js": "npm run js && npm run jsMin",
-    "build:html": "npm run html",
+    "build:js": "npm run js",
     "build:sprite": "npm run sprite",
     "watch:css": "onchange src/assets/styles/scss/**/*.scss -- npm run build:css",
-    "watch:img": "onchange src/assets/img/**/*.{jpg,jpeg,png,svg} -- npm run build:img",
     "watch:js": "onchange src/assets/js/*.js -- npm run build:js",
-    "watch:html": "onchange src/*.html src/templates/**/*.html -- npm run build:html",
-    "serve": "browser-sync start --server dist/ --files dist/assets/css/*.css, dist/assets/img/**/*.{jpg,jpeg,png,svg}, dist/assets/js/*.js, dist/*.html",
-    "build": "npm-run-all clean copy build:* && npm run vendor && npm run fractal-style",
-    "watch": "npm-run-all --parallel serve watch:*",
-    "postinstall": "npm run build",
-    "fractal-style": "sass src/assets/styles/scss/styleguide.scss dist/assets/css/styleguide.css",
-    "fractal": "fractal start --watch --port 4000",
-    "fractal-build": "npm run fractal-var && npm run fractal-style && fractal build"
+    "build": "npm-run-all clean copy build:* && fractal build",
+    "watch": "npm-run-all --parallel watch:*",
+    "fractal": "fractal start --watch --port 3000",
+    "fractal-build": "npm run fractal build",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
+    "@frctl/fractal": "^1.5.14",
+    "@frctl/nunjucks": "^2.0.14",
     "browser-sync": "^2.27.5",
     "chokidar": "^3.5.2",
     "chokidar-cli": "^2.1.0",
     "concat-glob-cli": "^0.1.0",
     "mkdirp": "^1.0.4",
-    "node-sass-svg": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
     "nunjucks-to-html": "^1.0.1",
@@ -55,12 +45,6 @@
     "sass": "^1.26.5",
     "svg-sprite": "^1.5.3",
     "svgo": "^1.3.2",
-    "uglify-js": "^3.14.2",
-    "svg-sprite": "^1.5.3"
-  },
-  "dependencies": {
-    "@frctl/fractal": "^1.5.13",
-    "@frctl/nunjucks": "^2.0.14",
-    "patternlab-scssvariables": "^1.3.5"
+    "uglify-js": "^3.14.2"
   }
 }
