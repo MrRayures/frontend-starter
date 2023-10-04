@@ -40,6 +40,7 @@ const nunj = require("@frctl/nunjucks")({
 fractal.components.engine(nunj);
 fractal.components.set('path', path.join(__dirname, 'src/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
+fractal.components.set('default.status', null);
 fractal.components.set('ext', '.html');
 
 

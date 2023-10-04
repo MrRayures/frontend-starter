@@ -4,7 +4,8 @@ label: Nunjucks
 ---
 
 # Documentation
-[https://mozilla.github.io/nunjucks/fr/templating.html](https://mozilla.github.io/nunjucks/fr/templating.html)
+- [Documentation officielle](https://mozilla.github.io/nunjucks/fr/templating.html)
+- [Nunjucks advanced loops](https://giuliachiola.dev/posts/nunjucks-advanced-loops/)
 
 # Data
 Il est possible d'utiliser des variables réutilisables dans tous les templates.
@@ -62,45 +63,5 @@ Ces datas sont à renseigner dans la configuration nunjucks dans `fractal.config
   {name:"Pomme de terre", price:"1,80€"}
 ]%}{% for item in items  %}{{item.name}} - {{item.price}}
 {% endfor %}
-```
-
----
-
-## Boucle avec data et include
-demo-item.html
-```html
-{% raw %}<li class="{{product.class}}">
-  {% if product.new %}[NEW] {% endif %}{{product.name}} - {{product.price}}
-</li>{% endraw %}
-```
-Data
-```js
-{% raw %}{% set products = [
-  {name:"Tomate", price:"1,20€", new:false},
-  {name:"Potiron", price:"2,50€", new:false},
-  {name:"Carotte", price:"0,60€", new:true, class:"product--new"}, 
-  {name:"Pomme de terre", price:"1,80€", new:false}
-]%}{% endraw %}
-```
-```js
-{% raw %}<ul>
-{% for product in products  %}
-  {% include "components/_templates/components/demo-item.html" %}
-{% endfor %}
-</ul>{% endraw %}
-```
-
-### Résultat :
-{% set products = [
-  {name:"Tomate", price:"1,20€", new:false},
-  {name:"Potiron", price:"2,50€", new:false},
-  {name:"Carotte", price:"0,60€", new:true, class:"product--new"}, 
-  {name:"Pomme de terre", price:"1,80€", new:false}
-]%}
-```html
-<ul>
-{% for product in products  %}{% include "components/_templates/components/demo-item.html" %}
-{% endfor %}</ul>
-
 ```
 

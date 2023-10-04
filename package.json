@@ -21,7 +21,7 @@
     "build:sprite": "npm run sprite",
     "watch:css": "onchange src/assets/styles/scss/**/*.scss -- npm run build:css",
     "watch:js": "onchange src/assets/js/*.js -- npm run build:js",
-    "build": "npm-run-all clean copy build:* && fractal build",
+    "build": "npm-run-all clean build:* && fractal build",
     "watch": "npm-run-all --parallel watch:*",
     "fractal": "fractal start --watch --port 3000",
     "fractal-build": "npm run fractal build",

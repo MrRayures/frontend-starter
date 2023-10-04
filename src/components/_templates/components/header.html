@@ -1,10 +1,26 @@
-<header class="c-header" role="banner">
-  <div class="c-container">
-    <div class="c-header__content">
-      <a href="#" class="c-header__logo" aria-label="Retour à l'accueil">
-        Logo
-      </a>
-      {% include "components/_templates/components/nav.html" %}
+{#
+Template :
+    {% set header = { "id": "", "class": ""} %}
+    {% include "components/_templates/components/header.html" %}
+
+Options : 
+    id: text
+    class: text
+#}
+
+
+{# Set var #}
+
+
+
+{# Component #}
+<header id="{{header.id}}" class="c-header {{header.class}}" role="banner">
+    <div class="c-container">
+        <div class="c-header__content">
+            <a href="#" class="c-header__logo" aria-label="Retour à l'accueil">
+                <img src="{{ '/images/logo.svg' | path }}" alt="">
+            </a>
+            {% include "components/_templates/components/nav.html" %}
+        </div>
     </div>
-  </div>
 </header><!-- //END Header  -->
