@@ -1,23 +1,27 @@
 {
-    "title": "Boutons",
-    "label":"Boutons",
-    "status": "wip",
+    "label":"Bouton",
     "context": {
-        "text": "Je suis un bouton"
+        "text": "Bouton",
+        "sizes": [
+            "sm", 
+            "md", 
+            "lg"
+        ]
     },
     "variants":[
         {
-            "name": "primary",
+            "name": "default",
+            "label": "Primaire",
             "context": {
                 "modifier": "primary",
-                "text": "Je suis un bouton primaire"
+                "class": ""
             }
         },
         {
-            "name": "secondary",
+            "name": "Secondaire",
             "context": {
                 "modifier": "secondary",
-                "text": "Je suis un bouton secondaire"
+                "class": ""
             }
         }
     ]

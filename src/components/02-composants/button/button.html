@@ -2,7 +2,44 @@
   {% set class = "c-button--"+modifier %}
 {% endif %}
 
-<button type="button" class="c-button {{class}}">{{text}}</button>
+
+<h3 class="sg-h3">Type: </h3>
+<p class="sg-text"><code>href="#"</code></p>
+<div class="sg-columns sg-columns--bordered">
+    {% set button = { "id": "", "type": "link", "href": "#", "class": class, "text": text+"&nbsp;<code>"+modifier+"</code>" } %}
+    {% include "components/_templates/components/button.html" %}
+</div>
 
 
+<p class="sg-text"><code>button</code></p>
+<div class="sg-columns sg-columns--bordered">
+    {% set button = { "id": "", "type": "button", "class": class, "text": text+"&nbsp;<code>"+modifier+"</code>", "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
+
+    {% set button = { "id": "", "type": "button", "class": class, "text": text+"&nbsp;<code>disabled</code>", "disabled": true} %}
+    {% include "components/_templates/components/button.html" %}
+</div>
+
+<p class="sg-h3">Avec icône</p>
+<div class="sg-columns sg-columns--bordered">
+    {% set button = { "id": "", "type": "button", "class": class+" c-button--icon-left c-icon-chevron-gauche", "text": text, "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
+
+    {% set button = { "id": "", "type": "button", "class": class+" c-button--icon-right c-icon-chevron-droite", "text": text, "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
+
+    {% set button = { "id": "", "type": "button", "class": class+" c-icon-chevron-droite", "text": text, "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
+</div>
+
+
+<p class="sg-text">Taille</p>
+<div class="sg-columns sg-columns--bordered">
+    {% for size in sizes %}
+        {% set button = { "id": "", "type": "button", "class": class+" c-button--"+size, "text": text+"&nbsp;<code>"+size+"</code>", "disabled": false} %}
+        {% include "components/_templates/components/button.html" %}
+        {% set button = { "id": "", "type": "button", "class": class+" c-button--"+size+" c-icon-chevron-droite", "text": text+"&nbsp;<code>"+size+"</code>", "disabled": false} %}
+        {% include "components/_templates/components/button.html" %}
+    {% endfor %}
+</div>
 

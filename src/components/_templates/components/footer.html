@@ -1,4 +1,20 @@
-<footer class="c-footer" role="contentinfo">
+{#
+Template :
+    {% set footer = { "id": "", "class": ""} %}
+    {% include "components/_templates/components/footer.html" %}
+
+Options : 
+    id: text
+    class: text
+#}
+
+
+{# Set var #}
+
+
+
+{# Component #}
+<footer id="{{footer.id}}" class="c-footer {{footer.class}}" role="contentinfo">
   <div class="c-container">
     <div class="c-footer__content">Footer</div>
   </div>

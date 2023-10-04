@@ -10,26 +10,19 @@
 <!-- //START page Content -->
 {% block page_content %}
 
+    <h1>page d'exemple</h1>
 
-<h1>page d'exemple</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam sed ad commodi debitis expedita nobis cum mollitia, doloribus modi quidem provident dolore maiores totam nostrum eius eaque similique est voluptatum.</p>
 
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam sed ad commodi debitis expedita nobis cum mollitia, doloribus modi quidem provident dolore maiores totam nostrum eius eaque similique est voluptatum.</p>
+    <img src="{{ '/images/loader.svg' | path }}" alt="" >
 
-<button type="button" class="c-button c-button--primary">Mon bouton</button>
+    {% set button = { "id": "", "type": "link", "href": "#", "class": "c-button--primary", "text": "Mon bouton", "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
 
-<img src="{{ '/images/loader.svg' | path }}" alt="" >
+    <p class="c-icon-chevron-droite c-icon--left">lorem ipsum</p>
 
-{% set products = [
-  {name:"Tomate", price:"1,20€", new:false},
-  {name:"Potiron", price:"2,50€", new:false},
-  {name:"Carotte", price:"0,60€", new:true}, 
-  {name:"Pomme de terre", price:"1,80€", new:false}
-]%}
-<ul>
-{% for product in products  %}
-  {% include "components/_templates/components/demo-item.html" %}
-{% endfor %}
-</ul>
+
+
 {% endblock %}
 
 

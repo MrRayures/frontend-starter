@@ -1,0 +1,35 @@
+
+{#
+Template :
+    {% set button = { "id": "", "type": "link", "href": "#", "class": "", "text": "", "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
+
+Options : 
+    id: text
+    type : link | button | submit
+    href: text
+    class: text
+    text: text
+    icon: text
+    disabled: true / false
+#}
+
+
+{# Set var #}
+{% if button.disabled %}
+  {% set disabled = "disabled" %}
+{% endif %}
+
+
+{# Component #}
+{% if button.type === "link" %}
+    <a href="{{button.href}}" class="c-button {{button.class}}" title="{{button.text}}">
+        {{button.text | safe}}
+    </a>
+{% endif %}
+
+{% if button.type === "button" or button.type === "submit"  %}
+    <button type="{{button.type}}" class="c-button {{button.class}}" {{disabled}} title="{{button.text}}">
+        {{button.text | safe}}
+    </button>
+{% endif %}
