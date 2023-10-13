@@ -1,8 +1,8 @@
 'use strict';
 const path = require('path');
 const fractal = (module.exports = require('@frctl/fractal').create());
-//const subTheme = require('@frctl-themeDIG');
-//const mandelbrot = require('@frctl/mandelbrot');
+//const mySubTheme = require('@frctl-themeDIG');
+
 
 
 /*
@@ -79,6 +79,7 @@ fractal.web.set('server.watch', true);
  * Theme
  * Docs : https://fractal.build/guide/web/default-theme.html#configuration
  */
+
 const subTheme = require('@frctl/mandelbrot')({
   lang: 'fr',
   favicon: '/_subtheme/favicon.ico',
@@ -114,5 +115,8 @@ subTheme.addLoadPath(__dirname + '/src/_subtheme/views/');
 subTheme.addStatic(__dirname + '/src/_subtheme', '_subtheme');
 
 fractal.web.theme(subTheme);
+
+
+//fractal.web.theme(mySubTheme); // use the sub-classed theme
 
 

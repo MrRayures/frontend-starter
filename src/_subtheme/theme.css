@@ -1,57 +1,120 @@
 :root {
-    --sg-bg: #ffffff;
-    --sg-primary:#111111;
-    --sg-secondary:#efefef;
+    
 
-    --sg-grey:#F8F8F8;
+    --sg-radius: 4px;
+
+    /* Global */
+    --sg-bg: #ffffff;
 
     --sg-title:#111111;
     --sg-text:#3a3a3a;
     --sg-textLight:#9E9E9E;
 
+    --sg-border: var(--grey);
+
     --sg-link:#333333;
     --sg-linkHover:#111111;
 
-    --sg-radius: 4px;
-    --sg-border: #E6E6E6;
+    --sg-codeBgColor: #efefef;
+    --sg-codeColor: #222222;
+    
+    /* Header */
+    --sg-headerBg: #efefef;
+
+    /* Sidebar */
+    --sg-sidebarBg: black;
+
+
+    /* Tree */
+
+
+    /* Components view */
+
+
+    /* Documents view */
+
+
+
+    
+
+    /* Dracula UI */
+    --black: #21222c;
+    --blackSecondary: #414558;
+    --blackTernary: #a7abbe;
+    --blackLight: rgba(33,34,44,0.05);
+    --grey: #414558;
+    --greySecondary: #626784;
+    --greyTernary: #b6b9c9;
+    --greyLight: rgba(65,69,88,0.05);
+    --white: #f8f8f2;
+    --whiteSecondary: #fff;
+    --whiteLight: hsla(60,30%,96%,0.05);
+    --cyan: #80ffea;
+    --cyanSecondary: #ccfff6;
+    --cyanLight: rgba(128,255,234,0.05);
+    --green: #8aff80;
+    --greenSecondary: #d0ffcc;
+    --greenLight: rgba(138,255,128,0.05);
+    --orange: #ffca80;
+    --orangeSecondary: #ffeacc;
+    --orangeLight: rgba(255,202,128,0.05);
+    --pink: #ff80bf;
+    --pinkSecondary: #ffcce6;
+    --pinkLight: rgba(255,128,191,0.05);
+    --purple: #9580ff;
+    --purpleSecondary: #d4ccff;
+    --purpleLight: rgba(149,128,255,0.05);
+    --red: #ff9580;
+    --redSecondary: #ffd4cc;
+    --redLight: rgba(255,149,128,0.05);
+    --yellow: #ffff80;
+    --yellowSecondary: #ffc;
+
+    
+
+
+    
 
 }
 
 [data-theme="dark"] {
-    //--sg-bg: #222222;
+
+
 }
-
-
-.u-sr-only {
-    clip: rect(0 0 0 0);
-    clip: path(inset 100%);
-    height: 1px; 
-    width: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-  }
 
 /*
 * Interface générale
 */
+
 body {
     background-color: var(--sg-bg);
 }
+
+
+/* header */
 .Header {
-  background-color: var(--sg-primary);
-  border-bottom: var(--sg-border);
-  color: white;
-  box-shadow: none;
+    background-color: var(--sg-headerBg);
+    border-bottom: var(--sg-border);
+    color: var(--sg-text);
+    box-shadow: none;
 }
 
+
+/* Sidebar */
+.Frame-panel--sidebar,
 .Frame-panel--sg-sidebar {
   background-color: var(--sg-grey);
 }
 
+
+/* Tree */
 .Tree-title {
     color: var(--sg-title);
     font-size: 1rem;
+}
+
+.Tree-collapse svg {
+    fill: var(--sg-link);
 }
 
 .Tree-collectionLabel,
@@ -64,11 +127,62 @@ body {
 }
 
 
+.Tree-collection .Tree-collectionLabel:before {
+    mask-image: url('assets/icon-navigation-opened.svg');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    background: none;
+    background-color: var(--sg-link);
+}
+
+[dir="ltr"] .Tree-collection.is-closed .Tree-collectionLabel::before {
+    background: none;
+    mask-image: url('assets/icon-navigation-closed-ltr.svg');
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    background: none;
+    background-color: var(--sg-link);
+}
+
+
+
+/* Components view */
+
+
+/* Document view */
+.Document {
+    h1, h2, h3, h4, h5, h6, p {
+        color: var(--sg-text);
+    }
+    a {
+        color: var(--sg-link);
+        &:hover {
+            color: var(--sg-linkHover);  
+        }
+    }
+    .hljs {
+        background-color: var(--sg-codeBgColor);
+        color: var(--sg-codeColor);
+    }
+}
+
+/*
+* Utilitaires
+*/
+.u-sr-only {
+    clip: rect(0 0 0 0);
+    clip: path(inset 100%);
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
 
 /*
 * Dark / light switch
 */
-
 .sg-themeToggle {
     --toggleWidth: 3rem;
     --toggleHeight: 1.5rem;
@@ -101,11 +215,12 @@ body {
         border-radius: var(--toggleHeight);
         transition: left 250ms;
     }
+
     &:hover {
         cursor: pointer;
     }
     &:focus-visible {
-        outline-offest: 2px;
+        outline-offset: 2px;
         outline: 2px dotted var(--outlineColor)
     }
 
