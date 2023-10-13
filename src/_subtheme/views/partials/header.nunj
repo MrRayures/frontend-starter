@@ -1,11 +1,17 @@
 <div class="Header">
-  <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-      <div class="Header-navToggleIcon Header-navToggleIcon--open">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <div class="Header-navToggleIcon Header-navToggleIcon--open">
         {% include 'icons/close.svg' %}
-      </div>
-      <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+        </div>
+        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
         {% include 'icons/burger.svg' %}
-      </div>
-  </button>
-  <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+        </div>
+    </button>
+    <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+    <button class="sg-themeToggle" id="theme-toggle" aria-pressed="false" title="Chagement de thème: light & dark" aria-label="auto" aria-live="polite">
+        <span class="u-sr-only">Changer de thème</span>
+    </button>
 </div>
+
+
+

@@ -75,7 +75,6 @@ fractal.web.set('server.syncOptions', {
 fractal.web.set('server.watch', true);
 
 
-
 /*
  * Theme
  * Docs : https://fractal.build/guide/web/default-theme.html#configuration
@@ -87,6 +86,7 @@ const subTheme = require('@frctl/mandelbrot')({
     name: 'black'
   },
   styles: ['default', '/_subtheme/theme.css'],
+  scripts: ['default','/_subtheme/theme.js'],
   information: [
     {
       label: 'Version',

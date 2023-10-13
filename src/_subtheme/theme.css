@@ -1,24 +1,43 @@
 :root {
-  --sg-primary:#111111;
-  --sg-secondary:#efefef;
+    --sg-bg: #ffffff;
+    --sg-primary:#111111;
+    --sg-secondary:#efefef;
 
-  --sg-grey:#F8F8F8;
-  
-  --sg-title:#111111;
-  --sg-text:#3a3a3a;
-  --sg-textLight:#9E9E9E;
+    --sg-grey:#F8F8F8;
 
-  --sg-link:#333333;
-  --sg-linkHover:#111111;
+    --sg-title:#111111;
+    --sg-text:#3a3a3a;
+    --sg-textLight:#9E9E9E;
 
-  --sg-radius: 4px;
-  --sg-border: #E6E6E6;
+    --sg-link:#333333;
+    --sg-linkHover:#111111;
+
+    --sg-radius: 4px;
+    --sg-border: #E6E6E6;
 
 }
+
+[data-theme="dark"] {
+    //--sg-bg: #222222;
+}
+
+
+.u-sr-only {
+    clip: rect(0 0 0 0);
+    clip: path(inset 100%);
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
 
 /*
 * Interface générale
 */
+body {
+    background-color: var(--sg-bg);
+}
 .Header {
   background-color: var(--sg-primary);
   border-bottom: var(--sg-border);
@@ -45,6 +64,58 @@
 }
 
 
+
+/*
+* Dark / light switch
+*/
+
+.sg-themeToggle {
+    --toggleWidth: 3rem;
+    --toggleHeight: 1.5rem;
+    
+    margin-left: auto;
+    margin-right: 1rem;
+    border: transparent;
+    background-color: var(--primary);
+    color: var(--colorInvert);
+    display: block;
+    position: relative;
+
+    border-radius: 5rem;
+    width: var(--toggleWidth);
+    height: var(--toggleHeight);
+    background-color: #666;
+
+    &:after {
+        content: "☀️";
+        font-size: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--toggleHeight);
+        height: var(--toggleHeight);
+        border-radius: var(--toggleHeight);
+        transition: left 250ms;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus-visible {
+        outline-offest: 2px;
+        outline: 2px dotted var(--outlineColor)
+    }
+
+    [data-theme="dark"] & {
+        &:after {
+            content: "🌙";
+            left: calc(var(--toggleWidth) / 2);
+        }
+    }
+}
 
 
 
