@@ -1,0 +1,36 @@
+<div class="Pen-panel Pen-header">
+    <h1 class="Pen-title">
+        <a class="Pen-previewLink" href="{{ previewUrl }}" title="{{ frctl.theme.get('labels.components.preview.label') }}">
+
+            {% set title = entity.title %}
+            
+            {% set rootCollections = frctl.components.rootCollections().filter('isHidden', false) %}
+            {% for collection in rootCollections %}
+                {% for page in collection.context.list %}
+                    {% if page.folder %}
+                        {% for page in page.list %}
+                            {% if entity.name === page.name %}
+                                {% set title = page.label %}
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        {% if entity.name === page.name %}
+                            {% set title = page.label %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+
+            {{title}}
+            {% include "icons/open-in-browser.svg" %}
+            
+
+            
+        </a>
+    </h1>
+
+    <span class="Pen-preview-size" data-role="preview-size"></span>
+
+    {{ status.tag(entity.status) }}
+</div>
