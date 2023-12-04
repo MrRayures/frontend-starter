@@ -21,16 +21,66 @@
                 {% endfor %}
             {% endfor %}
 
-
             {{title}}
-            {% include "icons/open-in-browser.svg" %}
-            
 
-            
+            {% include "icons/open-in-browser.svg" %}
+              
         </a>
     </h1>
 
-    <span class="Pen-preview-size" data-role="preview-size"></span>
+    <div class="Pen-actions">
+        {#
+        {{ frctl.theme.get('information') | dump }}
+        #}
+        <button id="" class="sg-btn" type="button" onclick="changePenWidth('1400')">Desktop (1400px)</button>
+        <button id="" class="sg-btn" type="button" onclick="changePenWidth('1024')">Tablette (1024px)</button>
+        <button id="" class="sg-btn" type="button" onclick="changePenWidth('375')">Mobile (375px)</button>
+    </div>
 
+    <span class="Pen-preview-size" data-role="preview-size"></span>
+    
     {{ status.tag(entity.status) }}
+
+
+    <script>
+
+        /*
+        * Toogle collections
+        */
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const toggleButtons = document.querySelectorAll(".Tree-collection-button");
+
+            toggleButtons.forEach(function (button) {
+                button.addEventListener("click", function (e) {
+                    let toggleContentId = e.currentTarget.getAttribute("aria-controls");
+                    let toggleContent = document.getElementById(toggleContentId);
+                    const expanded = button.getAttribute("aria-expanded") === "true";
+                    if (expanded) {
+                        toggleContent.style.display = "none";
+                        button.setAttribute("aria-expanded", "false");
+                        
+                    } else {
+                        toggleContent.style.display = "block";
+                        button.setAttribute("aria-expanded", "true");
+                    }
+                });
+            });
+
+        });
+
+
+        /*
+        * Button for quick change pen width
+        */
+        function changePenWidth(width) {
+            var pen = document.querySelector('.Preview-wrapper.resizable');
+            var resizeBarWidth = 9; // set the new width + offset
+            var newWidth = parseInt(width) + parseInt(resizeBarWidth); // set the new width + offset
+            console.log(newWidth)
+            // Set the new width for the div
+            pen.style.width = newWidth + 'px';
+        }
+    </script>
+
 </div>

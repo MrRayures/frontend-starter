@@ -1,15 +1,10 @@
 'use strict';
 const path = require('path');
 const fractal = (module.exports = require('@frctl/fractal').create());
+
 //const subTheme = require('@frctl-themeDIG');
 //const mandelbrot = require('@frctl/mandelbrot');
 
-
-const fs = require('fs');
-const data = fs.readFileSync('./src/data/pages.json', 'utf8');
-const jsonData = JSON.parse(data);
-
-console.log(jsonData);
 
 /*
  * Give your project a title.
@@ -17,6 +12,7 @@ console.log(jsonData);
 fractal.set('project.title', 'Styleguide');
 fractal.set('project.version', 'v1.0');
 fractal.set('project.author', 'DIG');
+fractal.set('project.context', 'test');
 
 
 /*
@@ -48,7 +44,14 @@ fractal.components.set('path', path.join(__dirname, 'src/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
 fractal.components.set('default.status', null);
 fractal.components.set('ext', '.html');
-
+fractal.components.set('test_mob', '375');
+/*
+fractal.components.set('default.context', {
+	'resDesktop': '1400',
+	'resTablet': '960',
+	'resMobile': '375'
+});
+*/
 
 /*
  * Tell Fractal where to look for documentation pages.
@@ -103,11 +106,11 @@ const subTheme = require('@frctl/mandelbrot')({
       value: new Date(),
       type: 'time',
       format: (value) => {
-        return value.toLocaleDateString('fr');
+        return value.toLocaleDateString('en-GB');
       },
-    },
+    }
   ],
-  panels: ["html", "view", "context", "resources"], //html, view, context, resources, info, notes
+  panels: ["html", "resources"], //html, view, context, resources, info, notes
   labels: {
     search: {
       placeholder: 'Rechercher…',
