@@ -1,0 +1,27 @@
+{
+    "label": "Pages",
+    "path": "",
+    "list": [
+        {
+            "name": "00 exemple",
+            "folder": false,
+            "file": "exemple"
+        },
+        {
+            "name": "Homepage",
+            "folder": true,
+            "list": [
+                {"name": "01.a homepage", "file": "homepage"},
+                {"name": "01.b homepage", "file": "homepage-test"}
+            ]
+        },
+        {
+            "name": "Catalogue",
+            "foldera": true,
+            "list": [
+                {"name": "02.a DP", "file": "DP"},
+                {"name": "02.b DP", "file": "DP-test"}
+            ]
+        }
+    ]
+}

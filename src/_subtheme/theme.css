@@ -30,9 +30,55 @@
   background-color: var(--sg-grey);
 }
 
+
+.Navigation-group ~ .Navigation-group  {
+    border-top: 1px solid var(--sg-border);
+    padding: 1rem 0;
+    margin: 0;
+}
+
 .Tree-title {
     color: var(--sg-title);
     font-size: 1rem;
+}
+
+.Tree-header {
+    padding: 0;
+    margin: 0;
+}
+
+.Tree-collection-button {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: .25rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: .75rem;
+        height: .75rem;
+        background-image: url('assets/img/icon-navigation-closed-ltr.svg');
+        background-size: .5rem;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        opacity: .5;  
+    }
+    &[aria-expanded="true"] {
+        &:before {
+            background-image: url('assets/img/icon-navigation-opened.svg');
+        }
+    }
+}
+
+.Tree-items {
+    margin-left: 1rem;
+}
+
+.Tree-collectionItems {
+
 }
 
 .Tree-collectionLabel,
@@ -41,6 +87,13 @@
     &:hover {
         color: var(--sg-linkHover);
         text-decoration: underline;
+    }
+}
+
+.Pen-actions {
+    margin-left: auto;
+    @media screen and (max-width: 768px) {
+        display: none;
     }
 }
 

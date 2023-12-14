@@ -16,6 +16,8 @@
     "scss": "sass --style=compressed --error-css --update src/assets/styles/scss/app.scss src/assets/app.css",
     "sprite": "svg-sprite --symbol --log --symbol-sprite=sprite/icons.svg --symbol-dest=src/assets/icons/ src/assets/icons/*.svg",
     "js": "concat-glob-cli -f src/assets/js/*.js -o src/assets/app.js",
+    "g:design": "hygen component new --type 01-design",
+    "g:component": "hygen component new --type 02-composants",
     "build:css": "npm run scss",
     "build:js": "npm run js",
     "build:sprite": "npm run sprite",
@@ -45,6 +47,7 @@
     "sass": "^1.26.5",
     "svg-sprite": "^1.5.3",
     "svgo": "^1.3.2",
-    "uglify-js": "^3.14.2"
+    "uglify-js": "^3.14.2",
+    "hygen": "^6.2.11"
   }
 }
