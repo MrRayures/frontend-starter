@@ -1,0 +1,32 @@
+<!-- index.html -->
+{% extends "components/_templates/layout.html" %}
+
+<!-- //START page variables -->
+{% set page_title = "page d'exemple" %}
+{% set body_class = "" %}
+<!-- //END page variables -->
+
+
+<!-- //START page Content -->
+{% block page_content %}
+
+    <h1>page d'exemple</h1>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam sed ad commodi debitis expedita nobis cum mollitia, doloribus modi quidem provident dolore maiores totam nostrum eius eaque similique est voluptatum.</p>
+
+    <img src="{{ '/images/loader.svg' | path }}" alt="" >
+
+    {% set button = { "id": "", "type": "link", "href": "#", "class": "c-button--primary", "text": "Mon bouton", "disabled": false} %}
+    {% include "components/_templates/components/button.html" %}
+
+    <p class="c-icon-chevron-droite c-icon--left">lorem ipsum</p>
+
+
+
+{% endblock %}
+
+
+
+
+
+<!-- //END page Content -->

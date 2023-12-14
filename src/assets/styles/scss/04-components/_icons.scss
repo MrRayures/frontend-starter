@@ -1,0 +1,69 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:icons]
+-------------------------------------------------------------------------------------------------------*/
+/*
+* Svg icons
+*/
+[class*="c-icon-svg"]{
+    --iconSize: 24px;
+    fill: currentColor;
+    width: var(--iconSize);
+    height: var(--iconSize);
+}
+ 
+
+
+/*
+* inline icons width CSS
+*/
+[class*="c-icon-"] {
+    position: relative;
+    --iconSize: 24px;
+    &:before,
+    &:after {
+        background-color: currentColor;
+        width: var(--iconSize);
+        height: var(--iconSize);
+        -webkit-mask-size: 100%;
+        mask-size: 100%;
+        pointer-events: none;
+        display: inline-block;
+        vertical-align: calc((0.75em - var(--iconSize))*.5);
+    }
+}
+
+// Icons list
+$icons: "chevron-bas", 
+        "chevron-droite",
+        "chevron-gauche",
+        "chevron-haut";
+
+@each $icon in $icons {
+    .c-icon-#{$icon} {
+        &:before,
+        &:after {
+            //-webkit-mask-image: url("../../icons/#{$icon}.svg");
+            mask-image: url("../icons/#{$icon}.svg");
+        }
+    }
+}
+
+
+// Position
+.c-icon--left {
+    &:before {
+        content: "";
+    }
+}
+.c-icon--right {
+    &:after {
+        content: "";
+    }
+}
+
+
+
+// Size
+.c-icon--16 {--iconSize: 16px;}
+.c-icon--32 {--iconSize: 32px;}
+

@@ -1,0 +1,28 @@
+
+<table class="sg-bp-table">
+    <thead>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Largeur max</th>
+    </thead>
+    <tbody>
+        {% for bp in breakpoint  %}
+            <tr>
+                <td>{{bp.name}}</th>
+                <td>{{bp.desc}}</td>
+                <td>≥&nbsp;{{bp.value}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br><br>
+
+<ul role="list" class="sg-bp-view">
+    {% for bp in breakpoint  %}
+        <li class="sg-bp-view__item" style="width:calc( {{bp.value}} / 4 )">
+            {{bp.desc}}
+            <code>(≥&nbsp;{{bp.value}})</code>
+        </li>
+    {% endfor %}
+</ul>
+

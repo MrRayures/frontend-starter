@@ -1,0 +1,32 @@
+{
+  "name": "pages",
+  "label": "Pages",
+  "preview": "@preview-page",
+  "status": null,
+  "root": true,
+  "context": {
+    "list": [
+        {
+            "label": "Exemple",
+            "folder": false,
+            "fileName": "exemple"
+        },
+        {
+            "label": "Homepage",
+            "folder": true,
+            "list": [
+                {"label": "01.a Homepage", "fileName": "01a_homepage"},
+                {"label": "01.b Homepage - connecté", "fileName": "01b_homepage"}
+            ]
+        },
+        {
+            "label": "Catalogue",
+            "folder": true,
+            "list": [
+                {"label": "02.a Descente produit", "fileName": "02a_dp"},
+                {"label": "02.b Descente produit - filtre", "fileName": "02b_dp"}
+            ]
+        }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{#
+Template :
+    {% set nav = { "id": "", "class": ""} %}
+    {% include "components/_templates/components/nav.html" %}
+
+Options : 
+    id: text
+    class: text
+#}
+
+
+{# Set var #}
+{% set items = ['Menu item', 'Menu item', 'Menu item', 'Menu item']%}
+
+
+{# Component #}
+<nav id="{{nav.id}}" class="c-nav {{nav.class}}" role="navigation" aria-label="Navigation primaire">
+  <ul class="c-nav__list">
+    {% for item in items %}
+        <li class="c-nav__item"><a class="m-nav__link" href="#">{{item}} {{loop.index}}</a></li>
+    {% endfor %}
+  </ul>
+</nav><!-- //END Header navigation -->

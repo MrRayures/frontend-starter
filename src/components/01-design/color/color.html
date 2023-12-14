@@ -1,0 +1,15 @@
+<ul role="list" class="sg-color__list">
+    {% for color in colors %}
+        <li>
+            <div class="sg-color">
+                <div class="sg-color__color" style="background-color: {{color.hex}};"></div>
+                <div class="sg-color__infos">
+                <p class="sg-color__name">{{color.name}}</p>
+
+                    <p class="sg-color__info">HEX : <span>{{color.hex}}</span></p>
+                    <p class="sg-color__info">RVB : <span>{{color.hex | hexToRgb}}</span></p>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

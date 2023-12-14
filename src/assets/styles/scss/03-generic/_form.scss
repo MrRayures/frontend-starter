@@ -1,0 +1,59 @@
+/*
+* Style de base des éléments de formulaire
+*/
+button {
+  appearance: none;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+input, button, select, textarea {
+  font-family: font(primary);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"] {
+  color: color(text);
+  font-family: font(primary);
+}
+
+
+
+
+/*
+* Input reset
+* uncomment if needed
+*/
+/* 
+input[type="password"]::-ms-clear, 
+input[type="password"]::-ms-reveal {
+    display: none;
+} 
+*/
+/*
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+*/
+
+
+
+
+
+
+
+
+

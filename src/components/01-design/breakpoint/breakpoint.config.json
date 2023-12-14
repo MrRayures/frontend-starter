@@ -1,0 +1,14 @@
+{
+  "title": "Breakpoints",
+  "label":"Breakpoint",
+  "status": null,
+  "context": {
+    "breakpoint": [
+      {"name": "lg", "value": "1280px", "desc": "Large"},
+      {"name": "md", "value": "960px", "desc": "Medium"},
+      {"name": "sm", "value": "768px", "desc": "Small"},
+      {"name": "xs", "value": "400px", "desc": "Extra small"}
+    ]
+  }
+}
+    

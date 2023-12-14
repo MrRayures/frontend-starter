@@ -1,0 +1,115 @@
+/*-----------------------------------------------------------------------------------------------------
+  [component:buttons]
+-------------------------------------------------------------------------------------------------------*/
+.c-button {
+    --btnHeight: 4rem;
+    --btnBgColor: none;
+    --btnBorderColor: transparent;
+    --btnColor: black;
+
+    min-height: var(--btnHeight);
+	background: var(--btnBgColor);
+	border: 1px solid var(--btnBorderColor);
+	padding: 0;
+    color: var(--btnColor);
+
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2rem;
+    text-decoration: none;
+
+	&:not([disabled]) {
+        cursor: pointer;
+    }
+  
+    // desactive les survoles en mobile
+    @media(hover: hover) and (pointer: fine) {
+        &:hover:not([disabled]) {}
+    }
+
+    &:disabled {
+        cursor: default;   
+    }
+
+}
+
+
+/*
+* Variantes
+*/
+.c-button--primary {
+    --btnBgColor: var(--primary);
+    --btnColor: white;
+
+    @media(hover: hover) and (pointer: fine) {
+        &:hover:not([disabled]) {
+            color: white;
+            opacity: 0.8;
+        }
+    }
+}
+
+.c-button--secondary {
+    --btnBgColor: var(--secondary);
+    --btnColor: white;
+
+    @media(hover: hover) and (pointer: fine) {
+        &:hover:not([disabled]) {
+            color: white;
+            opacity: 0.8;
+        }
+    }
+}
+
+
+/*
+* Taille
+*/
+.c-button--sm {
+    --btnHeight: 3.2rem;
+}
+.c-button--md {
+    --btnHeight: 4rem;
+}
+.c-button--lg {
+    --btnHeight: 5.4rem;
+}
+
+
+
+
+/*
+* Avec icone
+*/
+.c-button--icon-left {
+    padding-left: 1rem;
+    &:before {
+        content: "";
+        margin-right: 0.4rem;
+        display: block;
+    }
+}
+
+.c-button--icon-right {
+    padding-right: 1rem;
+    &:after {
+        content: "";
+        margin-left: 0.4rem;
+        display: block;
+    }
+}
+
+.c-button[class*="c-icon-"]:not([class*="c-button--icon-"]) {
+    max-height: var(--btnHeight);
+    max-width: var(--btnHeight);
+    overflow: hidden;
+    padding-left: calc((var(--btnHeight) - var(--iconSize)) / 2 );
+    padding-right: calc((var(--btnHeight) - var(--iconSize)) / 2 );
+    white-space: nowrap;
+    &:before {
+        content: "";
+        margin-left: 0;
+        margin-right: calc((var(--btnHeight) - var(--iconSize)) / 2 );
+        flex-shrink: 0;
+    }
+}

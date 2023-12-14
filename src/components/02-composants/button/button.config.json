@@ -1,0 +1,28 @@
+{
+    "label":"Bouton",
+    "context": {
+        "text": "Bouton",
+        "sizes": [
+            "sm", 
+            "md", 
+            "lg"
+        ]
+    },
+    "variants":[
+        {
+            "name": "default",
+            "label": "Primaire",
+            "context": {
+                "modifier": "primary",
+                "class": ""
+            }
+        },
+        {
+            "name": "Secondaire",
+            "context": {
+                "modifier": "secondary",
+                "class": ""
+            }
+        }
+    ]
+}

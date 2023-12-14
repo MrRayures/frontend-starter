@@ -12,32 +12,22 @@
 // Tools
 @import '02-tools/_tools';
 
-
 // Generic
-@import '03-generic/_accessibility';
-@import '03-generic/_reset';
+@import '03-generic/_generic';
 
-
-// Elements
-@import '04-elements/_fonts';
-@import '04-elements/_form';
-@import '04-elements/_page';
-
-
-// Objects
-@import '05-objects/_grid';
 
 
 // Components
-@import '06-components/_buttons';
-@import '06-components/_container';
-@import '06-components/_footer';
-@import '06-components/_form-checkbox';
-@import '06-components/_form-radio';
-@import '06-components/_form-select';
-@import '06-components/_form';
-@import '06-components/_header';
-@import '06-components/_icons';
+@import '04-components/_buttons';
+@import '04-components/_footer';
+@import '04-components/_form-checkbox';
+@import '04-components/_form-input';
+@import '04-components/_form-radio';
+@import '04-components/_form-select';
+@import '04-components/_form-textarea';
+@import '04-components/_form';
+@import '04-components/_header';
+@import '04-components/_icons';
 
 
 
