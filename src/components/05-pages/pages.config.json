@@ -7,27 +7,24 @@
   "context": {
     "list": [
         {
-            "name": "exemple",
             "label": "Exemple",
             "folder": false,
             "fileName": "exemple"
         },
         {
-            "name": "hp",
             "label": "Homepage",
             "folder": true,
             "list": [
-                {"label": "01.a Homepage", "name": "01a_homepage"},
-                {"label": "01.b Homepage - connecté", "name": "01b_homepage"}
+                {"label": "01.a Homepage", "fileName": "01a_homepage"},
+                {"label": "01.b Homepage - connecté", "fileName": "01b_homepage"}
             ]
         },
         {
-            "name": "dp",
             "label": "Catalogue",
             "folder": true,
             "list": [
-                {"label": "02.a Descente produit", "name": "02a_dp"},
-                {"label": "02.b Descente produit - filtre", "name": "02b_dp"}
+                {"label": "02.a Descente produit", "fileName": "02a_dp"},
+                {"label": "02.b Descente produit - filtre", "fileName": "02b_dp"}
             ]
         }
     ]

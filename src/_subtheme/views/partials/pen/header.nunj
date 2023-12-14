@@ -9,12 +9,12 @@
                 {% for page in collection.context.list %}
                     {% if page.folder %}
                         {% for page in page.list %}
-                            {% if entity.name === page.name %}
+                            {% if entity.name === page.fileName %}
                                 {% set title = page.label %}
                             {% endif %}
                         {% endfor %}
                     {% else %}
-                        {% if entity.name === page.name %}
+                        {% if entity.name === page.fileName %}
                             {% set title = page.label %}
                         {% endif %}
                     {% endif %}
