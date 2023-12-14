@@ -28,6 +28,7 @@
         </a>
     </h1>
 
+    <!--
     <div class="Pen-actions">
         {#
         {{ frctl.theme.get('information') | dump }}
@@ -36,7 +37,8 @@
         <button id="" class="sg-btn" type="button" onclick="changePenWidth('1024')">Tablette (1024px)</button>
         <button id="" class="sg-btn" type="button" onclick="changePenWidth('375')">Mobile (375px)</button>
     </div>
-
+    -->
+    
     <span class="Pen-preview-size" data-role="preview-size"></span>
     
     {{ status.tag(entity.status) }}
