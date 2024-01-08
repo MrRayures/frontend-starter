@@ -8,7 +8,12 @@
 
   <title>{{ _target.title }}</title>
 </head>
-<body class="sg-body">
+
+{% if not _target.context.fullPage %}
+    {% set bodyClass = "sg-body--presentation"%}
+{% endif %}
+
+<body class="sg-body {{bodyClass}}">
 
   <div class="sg-content">
     {{ yield | safe}}
