@@ -30,6 +30,9 @@
   background-color: var(--sg-grey);
 }
 
+.Navigation-search {
+    padding-bottom: 1rem;
+}
 
 .Navigation-group ~ .Navigation-group  {
     border-top: 1px solid var(--sg-border);
@@ -37,19 +40,20 @@
     margin: 0;
 }
 
-.Tree-title {
-    color: var(--sg-title);
-    font-size: 1rem;
-}
-
 .Tree-header {
     padding: 0;
     margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.Tree-title {
+    color: var(--sg-title);
+    font-size: 1rem; 
 }
 
 .Tree-collection-button {
     position: relative;
-    padding-left: 1rem;
     padding-right: 1rem;
     &:before {
         content: "";
@@ -57,7 +61,7 @@
         position: absolute;
         left: .25rem;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) translateX(-150%);
         width: .75rem;
         height: .75rem;
         background-image: url('assets/img/icon-navigation-closed-ltr.svg');
@@ -77,9 +81,7 @@
     margin-left: 1rem;
 }
 
-.Tree-collectionItems {
-
-}
+.Tree-collectionItems {}
 
 .Tree-collectionLabel,
 .Tree-entityLink {
@@ -104,7 +106,9 @@
 /*
 * Présentation des composants
 */
-.sg-body {
+.sg-body {}
+
+.sg-body--presentation {
     padding: 2rem;
 }
 
