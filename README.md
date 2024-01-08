@@ -6,6 +6,7 @@ Testé avec la version **16.13.2** de nodeJS.
 ```bash
 git clone https://github.com/MrRayures/frontend-starter.git mon_projet
 npm install
+npm i -g @frctl/fractal
 fractal start
 npm run watch
 ```
