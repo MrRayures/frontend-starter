@@ -4,7 +4,13 @@
     {# collection must have either entities (non-collection items) or non-root collections #}
 
     {% if collection.entities().size > 0 or collection.collections().filterAll('isRoot', false).size > 0  %}
-        {# Pages custom navigation #}
+    <div class="Navigation-group">
+        {{ nav.tree(collection, entity, request) }}
+    </div>
+    {% endif %}
+    {#
+    {% if collection.entities().size > 0 or collection.collections().filterAll('isRoot', false).size > 0  %}
+        {# Pages custom navigation 
         {% if collection.name === "pages" %}
             <div class="Navigation-group">
                 <div class="Tree" data-behaviour="tree" id="tree-pages">
@@ -41,13 +47,12 @@
                 </div>
             </div>
         {% else %}
-            {# regular navigation #}
             <div class="Navigation-group">
                 {{ nav.tree(collection, entity, request) }}
             </div>
         {% endif %}
     {% endif %}
-
+    #}
 {% endfor %}
 
 
