@@ -12,7 +12,6 @@ const fractal = (module.exports = require('@frctl/fractal').create());
 fractal.set('project.title', 'Styleguide');
 fractal.set('project.version', 'v1.0');
 fractal.set('project.author', 'DIG');
-fractal.set('project.context', 'test');
 
 
 /*
@@ -42,16 +41,11 @@ const nunj = require("@frctl/nunjucks")({
 fractal.components.engine(nunj);
 fractal.components.set('path', path.join(__dirname, 'src/components'));
 fractal.components.set('label', 'Styleguide'); // default is 'Components'
-fractal.components.set('default.status', null);
+fractal.components.set('default.status', 'wip');
 fractal.components.set('ext', '.html');
-fractal.components.set('test_mob', '375');
-/*
-fractal.components.set('default.context', {
-	'resDesktop': '1400',
-	'resTablet': '960',
-	'resMobile': '375'
+fractal.components.set('default.display', {
+  'min-width': '320px'
 });
-*/
 
 /*
  * Tell Fractal where to look for documentation pages.
