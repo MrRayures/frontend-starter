@@ -28,24 +28,12 @@
         </a>
     </h1>
 
-    <!--
-    <div class="Pen-actions">
-        {#
-        {{ frctl.theme.get('information') | dump }}
-        #}
-        <button id="" class="sg-btn" type="button" onclick="changePenWidth('1400')">Desktop (1400px)</button>
-        <button id="" class="sg-btn" type="button" onclick="changePenWidth('1024')">Tablette (1024px)</button>
-        <button id="" class="sg-btn" type="button" onclick="changePenWidth('375')">Mobile (375px)</button>
-    </div>
-    -->
-    
     <span class="Pen-preview-size" data-role="preview-size"></span>
     
     {{ status.tag(entity.status) }}
 
 
     <script>
-
         /*
         * Toogle collections
         */
@@ -71,18 +59,6 @@
 
         });
 
-
-        /*
-        * Button for quick change pen width
-        */
-        function changePenWidth(width) {
-            var pen = document.querySelector('.Preview-wrapper.resizable');
-            var resizeBarWidth = 9; // set the new width + offset
-            var newWidth = parseInt(width) + parseInt(resizeBarWidth); // set the new width + offset
-            console.log(newWidth)
-            // Set the new width for the div
-            pen.style.width = newWidth + 'px';
-        }
     </script>
 
 </div>

@@ -50,6 +50,7 @@
                     </ul>
                 </li>
             {% else %}
+            
                 {# Single page #}
                 {% set isCurrent = true if (current and (current.handle == page.fileName)) else false %}
                 <li class="Tree-item Tree-entity {% if isCurrent %}is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
