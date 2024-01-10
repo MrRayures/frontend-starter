@@ -5,6 +5,7 @@
   "status": null,
   "root": true,
   "context": {
+    "filePath": "/components/detail/",
     "list": [
         {
             "label": "Exemple",

@@ -23,8 +23,6 @@
     {% if root.name === "pages" %}
         {# Pages custom navigation #}
         {% for page in root.context.list %}
-            
-           
             {# Multi page #}
             {% if page.folder %}
                 <li class="Tree-item Tree-collection Tree-depth-2 is-closed" data-behaviour="collection" id="tree-pages-collection-{{page.fileName}}">
@@ -37,7 +35,7 @@
                             <li class="Tree-item Tree-entity {% if isCurrent %}is-current{% endif %}" {% if isCurrent %}data-state="current"{% endif %} data-role="item">
                                 <a
                                     class="Tree-entityLink"
-                                    href="{{ path(page.fileName) }}"
+                                    href="{{ path( (root.context.filePath+page.fileName), request) }}"
                                     data-role="tree-link"
                                     data-pjax="" 
                                     data-test="{{page.fileName}}" 
@@ -56,7 +54,7 @@
                 <li class="Tree-item Tree-entity {% if isCurrent %}is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">
                     <a
                         class="Tree-entityLink"
-                        href="{{ path(page.fileName) }}"
+                        href="{{ path( (root.context.filePath+page.fileName), request) }}"
                         data-role="tree-link"
                         data-pjax="" 
                         data-test="{{page.fileName}}" 
@@ -90,7 +88,6 @@
                 </li>
                 {% endif %}
             {% else %}
-
                 {% set urlItem = item.variants().filter('isHidden', false).first() if (isNotCollated and frctl.theme.get('navigation') == 'split') else item %}
                 {% set isCurrent = true if (current and (current.id == item.id) or (current.parent.id == item.id and frctl.theme.get('navigation') == 'split')) else false %}
                 <li class="Tree-item Tree-entity{% if isCurrent %} is-current{% endif %}"{% if isCurrent %} data-state="current"{% endif %} data-role="item">

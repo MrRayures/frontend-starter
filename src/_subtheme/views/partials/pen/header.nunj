@@ -32,33 +32,4 @@
     
     {{ status.tag(entity.status) }}
 
-
-    <script>
-        /*
-        * Toogle collections
-        */
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const toggleButtons = document.querySelectorAll(".Tree-collection-button");
-
-            toggleButtons.forEach(function (button) {
-                button.addEventListener("click", function (e) {
-                    let toggleContentId = e.currentTarget.getAttribute("aria-controls");
-                    let toggleContent = document.getElementById(toggleContentId);
-                    const expanded = button.getAttribute("aria-expanded") === "true";
-                    if (expanded) {
-                        toggleContent.style.display = "none";
-                        button.setAttribute("aria-expanded", "false");
-                        
-                    } else {
-                        toggleContent.style.display = "block";
-                        button.setAttribute("aria-expanded", "true");
-                    }
-                });
-            });
-
-        });
-
-    </script>
-
 </div>
