@@ -24,7 +24,7 @@
         {# Pages custom navigation #}
         {% for page in root.context.list %}
             {# Multi page #}
-            {% if page.folder %}
+            {% if page.folder and not page.hidden %}
                 <li class="Tree-item Tree-collection Tree-depth-2 is-closed" data-behaviour="collection" id="tree-pages-collection-{{page.fileName}}">
                     <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="false" aria-controls="tree-pages-collection-{{ page.fileName }}-items">
                         {{page.label}}
@@ -47,7 +47,7 @@
                         {% endfor %}
                     </ul>
                 </li>
-            {% else %}
+            {% elif not page.hidden %}
             
                 {# Single page #}
                 {% set isCurrent = true if (current and (current.handle == page.fileName)) else false %}
