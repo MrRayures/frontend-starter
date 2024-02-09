@@ -23,13 +23,46 @@
     {% if root.name === "pages" %}
         {# Pages custom navigation #}
         {% for page in root.context.list %}
+
             {# Multi page #}
-            {% if page.folder and not page.hidden %}
-                <li class="Tree-item Tree-collection Tree-depth-2 is-closed" data-behaviour="collection" id="tree-pages-collection-{{page.fileName}}">
-                    <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="false" aria-controls="tree-pages-collection-{{ page.fileName }}-items">
+            {% if page.subfolder and not page.hidden %}
+                <li class="Tree-item Tree-collection Tree-depth-2 is-closed" data-behaviour="collection" id="tree-pages-collection-{{page.id}}">
+                    <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="false" aria-controls="tree-pages-collection-{{page.id}}-items">
                         {{page.label}}
                     </button>
                     <ul class="Tree-collectionItems" data-role="items" id="tree-pages-collection-{{ page.fileName }}-items">
+                        {% for page in page.list %}
+                            <li class="Tree-item Tree-collection Tree-depth-3 is-closed" data-behaviour="collection" id="tree-pages-collection-{{page.id}}">
+                                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="false" aria-controls="tree-pages-collection-{{ page.id }}-items">
+                                    {{page.label}}
+                                </button>
+                                <ul class="Tree-collectionItems" data-role="items" id="tree-pages-collection-{{ page.id }}-items">
+                                {% for page in page.list %}
+                                    {% set isCurrent = true if (current and (current.handle == page.fileName)) else false %}
+                                    <li class="Tree-item Tree-entity {% if isCurrent %}is-current{% endif %}" {% if isCurrent %}data-state="current"{% endif %} data-role="item">
+                                        <a
+                                            class="Tree-entityLink"
+                                            href="{{ path( (root.context.filePath+page.fileName), request) }}"
+                                            data-role="tree-link"
+                                            data-pjax="" 
+                                            data-test="{{page.fileName}}" 
+                                            data-handle="{{page.fileName}}"
+                                        >
+                                            <span>{{page.label}}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% elif page.folder and not page.hidden %}
+                <li class="Tree-item Tree-collection Tree-depth-2 is-closed" data-behaviour="collection" id="tree-pages-collection-{{page.id | escape}}">
+                    <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="false" aria-controls="tree-pages-collection-{{page.id | escape}}-items">
+                        {{page.label}}
+                    </button>
+                    <ul class="Tree-collectionItems" data-role="items" id="tree-pages-collection-{{ page.id }}-items">
                         {% for page in page.list %}
                             {% set isCurrent = true if (current and (current.handle == page.fileName)) else false %}
                             <li class="Tree-item Tree-entity {% if isCurrent %}is-current{% endif %}" {% if isCurrent %}data-state="current"{% endif %} data-role="item">
