@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link media="all" rel="stylesheet" href="{{ '/app.css' | path }}">
+    <link media="all" rel="stylesheet" href="{{ '/_subtheme/theme.css' | path }}">
 
-  <link media="all" rel="stylesheet" href="{{ '/app.css' | path }}">
-  <link media="all" rel="stylesheet" href="{{ '/_subtheme/theme.css' | path }}">
-
-  <title>{{ _target.title }}</title>
+    <title>{{ _target.title }}</title>
 </head>
 
 {% if not _target.context.fullPage %}
@@ -15,9 +15,9 @@
 
 <body class="sg-body {{bodyClass}}">
 
-  <div class="sg-content">
-    {{ yield | safe}}
-  </div>
+    <div class="sg-content">
+        {{ yield | safe}}
+    </div>
 
 </body>
 </html>
