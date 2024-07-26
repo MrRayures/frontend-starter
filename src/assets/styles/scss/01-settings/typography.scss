@@ -1,22 +1,37 @@
 /*
 * Variables concernant les fonts
-* > utilisation : font($key)
+* 
 */
+:root {
+    --font-primary: Arial, sans-serif;
+    --font-secondary: Verdana, Geneva, sans-serif;
 
-$arial     : Arial, sans-serif;
-$verdana   : Verdana, Geneva, sans-serif;
+    --text-xl: 2rem; 
+    --text-lg: 1.8rem; 
+    --text-md: 1.6rem; 
+    --text-sm: 1.4rem; 
+    --text-xs: 1.2rem; 
 
-// font-family
-$font-families: (
-  "primary"   : $arial,
-  "secondary" : $verdana
-);
+    --text-weight-1: 400; 
+    --text-weight-2: 500; 
+    --text-weight-3: 800; 
+    --text-weight-4: 900;
+    
+    --title-1: 4.8rem;
+    --title-2: 4rem;
+    --title-3: 3.2rem;
+    --title-4: 2.8rem;
+    --title-5: 2.4rem;
+    --title-6: 2rem;
 
-@function font($key) {
-  @if map-has-key($font-families, $key) {
-    @return map-get($font-families, $key);
-  }
-  @warn "Unknown `#{$key}` in $font-families.";
-  @return null;
+    @include mq(max, bp(md)) {
+        --title-1: 4rem;
+        --title-2: 3.2rem;
+        --title-3: 2.8rem;
+        --title-4: 2.4rem;
+        --title-5: 2.2rem;
+        --title-6: 1.8rem;
+    }
 }
+
 

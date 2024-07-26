@@ -11,16 +11,16 @@
 
 .c-form-radio__input  {
 	opacity: 0;
-  position: absolute;
+    position: absolute;
 }
 
 .c-form-radio__label  {
 	position: relative;
-  display: inline-flex;
-  padding-left: calc(var(--radioSize) + 1);
-  font-size: 1.6rem;
-  font-family: font(primary);
-  color: color(text);
+    display: inline-flex;
+    padding-left: calc(var(--radioSize) + 1);
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+    color: var(--text);
 }
 
 
@@ -32,21 +32,21 @@
 
 
 .c-form-radio__label:before{
-  height: var(--radioSize);
-  width: var(--radioSize);
-  border: 1px solid grey;
-  border-radius: var(--radioSize);
-  left: 0px;
-  top: 0px;
+    height: var(--radioSize);
+    width: var(--radioSize);
+    border: 1px solid grey;
+    border-radius: var(--radioSize);
+    left: 0px;
+    top: 0px;
 }
 
 
 .c-form-radio__label:after {
-  height: (var(--radioSize) - 1);
-  width: (var(--radioSize) - 1);
-  border-radius: var(--radioSize);
-  left: 0.5rem;
-  top: 0.5rem;
+    height: (var(--radioSize) - 1);
+    width: (var(--radioSize) - 1);
+    border-radius: var(--radioSize);
+    left: 0.5rem;
+    top: 0.5rem;
 }
 
 .c-form-radio__input + .c-form-radio__label:after {
@@ -57,20 +57,20 @@
 * Checked
 */
 .c-form-radio__input:checked + .c-form-radio__label {
-  color: color(primary);
+  color: var(--primary);
 }
 
 .c-form-radio__input:checked + .c-form-radio__label:after {
   content: "";
-  background-color: color(primary);
+  background-color: var(--primary);
 }
 
 .c-form-radio__input:checked + .c-form-radio__label:before {
-  border-color: color(primary);
+  border-color: var(--primary);
 }
 
 .c-form-radio__input:focus + .c-form-radio__label::before {
-  outline: 3px dotted color(primary);
+  outline: 3px dotted var(--primary);
   outline-offset: 2px;
 }
 

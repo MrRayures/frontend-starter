@@ -19,8 +19,8 @@
     display: inline-flex;
     padding-left: calc(var(--checkboxSize) + 1);
     font-size: 1.6rem;
-    font-family: font(primary);
-    color: color(text);
+    font-family: var(--font-primary);
+    color: var(--text);
 }
 
 
@@ -59,7 +59,7 @@
 * Checked
 */
 .c-form-checkbox__input:checked + .c-form-checkbox__label {
-    color: color(primary);
+    color: var(--primary);
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__label:after {
@@ -67,7 +67,7 @@
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__label:before {
-    border-color: color(primary);
+    border-color: var(--primary);
 }
 
 

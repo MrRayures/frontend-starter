@@ -2,7 +2,7 @@
 * Outline pour focus-visible
 */
 @mixin accessible_outline {
-  outline: 2px dotted color(primary);
+  outline: 2px dotted var(--primary);
   outline-offset: 0.2rem;
 }
 

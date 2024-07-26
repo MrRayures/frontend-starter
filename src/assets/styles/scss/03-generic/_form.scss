@@ -9,15 +9,15 @@ button {
 }
 
 input, button, select, textarea {
-  font-family: font(primary);
+  font-family: var(--font-primary);
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="date"] {
-  color: color(text);
-  font-family: font(primary);
+  color: var(--text);
+  font-family: var(--font-primary);
 }
 
 

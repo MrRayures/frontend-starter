@@ -7,7 +7,7 @@
 	width: 100%;
 	border: 1px solid grey;
 	&:focus {
-		border: 1px solid color(primary);
+		border: 1px solid var(--primary);
 	}
 }
 

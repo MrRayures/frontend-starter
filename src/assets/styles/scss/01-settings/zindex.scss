@@ -1,24 +1,15 @@
 /*
 * Organisation des Z-index
-* > utilisation : zIndex($key)
 */
 
-$z-index: (
-  "below"           : -1,
-  "default"         : auto,
-  "above"           : 1,
-  "absolute"        : 10,
-  "fixed"           : 100,
-  "overlay"         : 5000,
-  "popin"           : 6000,
-  "skyrocket"       : 9999
-);
-
-@function zIndex($key) {
-  @if map-has-key($z-index, $key) {
-    @return map-get($z-index, $key);
-  }
-
-  @warn "Unknown `#{$key}` in $z-index.";
-  @return null;
+:root {
+    --zindex-below: -1;
+    --zindex-default: auto;
+    --zindex-above: 1;
+    --zindex-absolute: 10;
+    --zindex-sticky: 50;
+    --zindex-fixed: 100;
+    --zindex-overlay: 5000;
+    --zindex-popin: 6000;
+    --zindex-skyrocket: 9999;
 }

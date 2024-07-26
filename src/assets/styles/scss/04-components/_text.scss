@@ -1,0 +1,14 @@
+/*
+* Text
+*/
+
+[class*="c-text-"] {
+    font-family: var(--font-primary);
+    font-size: var(--textSize);
+}
+
+.c-text-xl {--textSize: 2rem; } 
+.c-text-lg { --textSize: 1.8rem; } 
+.c-text-md { --textSize: 1.6rem; } 
+.c-text-sm { --textSize: 1.4rem; } 
+.c-text-xs { --textSize: 1.2rem; }

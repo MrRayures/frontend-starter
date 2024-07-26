@@ -1,0 +1,26 @@
+/*
+* Title
+*/
+[class*="c-title-"] {
+    font-family: var(--font-secondary);
+    font-size: var(--titleSize);
+    font-weight: var(--text-weight-1);
+    text-transform: uppercase;
+}
+
+.c-title-1 {--titleSize: 4.8rem;}
+.c-title-2 {--titleSize: 4rem;}
+.c-title-3 {--titleSize: 3.2rem;}
+.c-title-4 {--titleSize: 2.8rem;}
+.c-title-5 {--titleSize: 2.4rem;}
+.c-title-6 {--titleSize: 2rem;}
+
+@include mq(max, bp(md)) {
+    .c-title-1 { --titleSize: 4rem;}
+    .c-title-2 { --titleSize: 3.2rem;}
+    .c-title-3 { --titleSize: 2.8rem;}
+    .c-title-4 { --titleSize: 2.4rem;}
+    .c-title-5 { --titleSize: 2.2rem;}
+    .c-title-6 { --titleSize: 1.8rem;}
+}
+

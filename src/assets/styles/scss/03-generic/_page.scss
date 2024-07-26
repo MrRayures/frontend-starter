@@ -6,16 +6,16 @@ html {
 }
 
 body {
-  font-family: font(primary);
-  color: color(text);
+  font-family: var(--font-primary);
+  color: var(--text);
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: font(secondary);
-  color: color(text);
+  font-family: var(--font-secondary);
+  color: var(--text);
 }
 
 p {
@@ -23,9 +23,9 @@ p {
 }
 
 a {
-  color: color(text);
+  color: var(--text);
   &:hover {
-    color: color(primary);
+    color: var(--primary);
     text-decoration: underline;
   }
   &:active {}

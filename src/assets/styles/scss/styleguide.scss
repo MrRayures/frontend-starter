@@ -99,7 +99,7 @@ $sg-radius : 4px;
     color: $sg-color;
     font-size: 4.8rem;
     font-weight: 400;
-    font-family: font(primary);
+    font-family: var(--font-primary);
     margin-bottom: 2rem;
   }
 
@@ -107,7 +107,7 @@ $sg-radius : 4px;
     color: $sg-color;
     font-size: 3.2rem;
     margin-bottom: 2rem;
-    font-family: font(primary);
+    font-family: var(--font-primary);
     ~.sg-h2 {
      //margin-top: 4rem;
     }
@@ -117,7 +117,7 @@ $sg-radius : 4px;
     color: $sg-color;
     margin: 2rem 0 1rem 0;
     font-size: 2rem;
-    font-family: font(primary);
+    font-family: var(--font-primary);
     ~.sg-h3 {
       //margin-top: 4rem;
     }
