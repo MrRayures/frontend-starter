@@ -1,20 +1,14 @@
 /*-----------------------------------------------------------------------------------------------------
-  [Master Stylesheet]
+    [Master Stylesheet]
 	by : Francois Leproust
-  Version : 1.0
+    Version : 1.0
 
-  Projet : Front End starter
+    Projet : Front End starter
 -----------------------------------------------------------------------------------------------------*/
 
-// Tools
 @import '02-tools/_tools';
-
-// Settings
 @import '01-settings/_settings';
-
-// Generic
 @import '03-generic/_generic';
-
 
 // Components
 @import '04-components/_buttons';
@@ -29,7 +23,6 @@
 @import '04-components/_icons';
 @import '04-components/_text';
 @import '04-components/_title';
-
 
 
 // Utilities

@@ -1,24 +1,62 @@
-/*-----------------------------------------------------------------------------------------------------
-  [utilities Stylesheet]
-	by : Francois Leproust
-  Version : 1.0
+/*
+* Debug layout
+* Info : https://dev.to/gajus/my-favorite-css-hack-32g3
+*/
 
-  Projet : Front End starter
--------------------------------------------------------------------------------------------------------*/
+/*
+* { background-color: rgba(255,0,0,.2); }
+* * { background-color: rgba(0,255,0,.2); }
+* * * { background-color: rgba(0,0,255,.2); }
+* * * * { background-color: rgba(255,0,255,.2); }
+* * * * * { background-color: rgba(0,255,255,.2); }
+* * * * * * { background-color: rgba(255,255,0,.2); }
+* * * * * * * { background-color: rgba(255,0,0,.2); }
+* * * * * * * * { background-color: rgba(0,255,0,.2); }
+* * * * * * * * * { background-color: rgba(0,0,255,.2); }
+*/
 
-// Settings
-@import '../01-settings/_settings';
+//Show only on focus
+.u-show-on-focus {
+  position: absolute;
+  top: -100%;
+  z-index: 1000;
+  &:focus {
+    top: 0;
+    background-color: #222;
+    color: #FFF;
+  }
+}
 
-// Tools
-@import '../02-tools/_tools';
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
 
-@import '_accessibility';
-@import '_color';
-//@import 'debug';
-@import '_flex';
-@import '_font';
-@import '_layout';
-@import '_spacing';
-@import '_text';
-@import '_visibility';
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.block {
+  display: block;
+}
+
+.table {
+  display: table;
+}
+
+.font-primary {
+  font-family: Arial, sans-serif;
+}
+
+.text-xl {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .md\:font-secondary {
+    font-family: Verdana, Geneva, sans-serif;
+  }
+}
