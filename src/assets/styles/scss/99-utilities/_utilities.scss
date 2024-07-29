@@ -1,30 +1,5 @@
-/*
-* Debug layout
-* Info : https://dev.to/gajus/my-favorite-css-hack-32g3
-*/
-
-/*
-* { background-color: rgba(255,0,0,.2); }
-* * { background-color: rgba(0,255,0,.2); }
-* * * { background-color: rgba(0,0,255,.2); }
-* * * * { background-color: rgba(255,0,255,.2); }
-* * * * * { background-color: rgba(0,255,255,.2); }
-* * * * * * { background-color: rgba(255,255,0,.2); }
-* * * * * * * { background-color: rgba(255,0,0,.2); }
-* * * * * * * * { background-color: rgba(0,255,0,.2); }
-* * * * * * * * * { background-color: rgba(0,0,255,.2); }
-*/
-
-//Show only on focus
-.u-show-on-focus {
-  position: absolute;
-  top: -100%;
-  z-index: 1000;
-  &:focus {
-    top: 0;
-    background-color: #222;
-    color: #FFF;
-  }
+.collapse {
+  visibility: collapse;
 }
 
 .mb-10 {
@@ -47,6 +22,10 @@
   display: table;
 }
 
+.hidden {
+  display: none;
+}
+
 .font-primary {
   font-family: Arial, sans-serif;
 }
@@ -55,8 +34,49 @@
   font-size: 2rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+/*
+    * Debug layout
+    * Info : https://dev.to/gajus/my-favorite-css-hack-32g3
+    */
+
+/*
+    * { background-color: rgba(255,0,0,.2); }
+    * * { background-color: rgba(0,255,0,.2); }
+    * * * { background-color: rgba(0,0,255,.2); }
+    * * * * { background-color: rgba(255,0,255,.2); }
+    * * * * * { background-color: rgba(0,255,255,.2); }
+    * * * * * * { background-color: rgba(255,255,0,.2); }
+    * * * * * * * { background-color: rgba(255,0,0,.2); }
+    * * * * * * * * { background-color: rgba(0,255,0,.2); }
+    * * * * * * * * * { background-color: rgba(0,0,255,.2); }
+    */
+
+/* 
+    *Show only on focus 
+    */
+
+.u-show-on-focus {
+  position: absolute;
+  top: -100%;
+  z-index: 1000;
+  &:focus {
+    top: 0;
+    background-color: #222;
+    color: #FFF;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:font-secondary {
     font-family: Verdana, Geneva, sans-serif;
   }
 }
+
