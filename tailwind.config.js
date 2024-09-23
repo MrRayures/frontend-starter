@@ -4,6 +4,7 @@ module.exports = {
         relative: true,
         files: [
             'src/components/**/*.html',
+            'src/_subtheme/views/**/*.nunj',
         ],
     },
     theme: {

@@ -29,7 +29,8 @@
     "tailwind": "npx tailwindcss -i src/assets/styles/scss/99-utilities/tailwind.scss -o src/assets/styles/scss/99-utilities/_utilities.scss --watch",
     "fractal": "fractal start --watch --port 3000",
     "fractal-build": "npm run fractal build",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "dev": "npm-run-all --parallel fractal watch"
   },
   "devDependencies": {
     "@frctl/fractal": "^1.5.14",
