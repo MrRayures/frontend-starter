@@ -1,62 +1,40 @@
-/*
-* Debug layout
-* Info : https://dev.to/gajus/my-favorite-css-hack-32g3
-*/
-
-/*
-* { background-color: rgba(255,0,0,.2); }
-* * { background-color: rgba(0,255,0,.2); }
-* * * { background-color: rgba(0,0,255,.2); }
-* * * * { background-color: rgba(255,0,255,.2); }
-* * * * * { background-color: rgba(0,255,255,.2); }
-* * * * * * { background-color: rgba(255,255,0,.2); }
-* * * * * * * { background-color: rgba(255,0,0,.2); }
-* * * * * * * * { background-color: rgba(0,255,0,.2); }
-* * * * * * * * * { background-color: rgba(0,0,255,.2); }
-*/
-
-//Show only on focus
-.u-show-on-focus {
-  position: absolute;
-  top: -100%;
-  z-index: 1000;
-  &:focus {
-    top: 0;
-    background-color: #222;
-    color: #FFF;
-  }
-}
-
 .mb-10 {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem
 }
 
 .mb-2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem
 }
 
 .mt-12 {
-  margin-top: 3rem;
+  margin-top: 3rem
+}
+
+.mb-8 {
+  margin-bottom: 2rem
 }
 
 .block {
-  display: block;
+  display: block
 }
 
 .table {
-  display: table;
+  display: table
 }
 
 .font-primary {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif
 }
 
 .text-xl {
-  font-size: 2rem;
+  font-size: 2rem
 }
 
 @media (min-width: 768px) {
   .md\:font-secondary {
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: Verdana, Geneva, sans-serif
   }
 }
+
+
+
