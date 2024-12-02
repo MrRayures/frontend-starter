@@ -12,94 +12,105 @@
   --sg-linkHover:#111111;
 
   --sg-radius: 4px;
-  --sg-border: #E6E6E6;
-
+  --sg-border: #E0E0E0;
 }
 
-/*
-* Interface générale
-*/
+/* Interface générale */
 .Header {
   background-color: var(--sg-primary);
-  border-bottom: var(--sg-border);
+  border-bottom: 1px solid var(--sg-border);
   color: white;
-  box-shadow: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-.Frame-panel--sg-sidebar {
+.Frame-panel--sidebar {
   background-color: var(--sg-grey);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .Navigation-search {
     padding-bottom: 1rem;
 }
 
-.Navigation-group ~ .Navigation-group  {
+.Navigation-group ~ .Navigation-group {
     border-top: 1px solid var(--sg-border);
     padding: 1rem 0;
     margin: 0;
 }
 
 .Tree-header {
-    padding: 0;
-    margin: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
 }
 
 .Tree-title {
     color: var(--sg-title);
-    font-size: 1rem; 
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .Tree-collection-button {
     position: relative;
-    padding-right: 1rem;
-    &:before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        left: .25rem;
-        top: 50%;
-        transform: translateY(-50%) translateX(-150%);
-        width: .75rem;
-        height: .75rem;
-        background-image: url('assets/img/icon-navigation-closed-ltr.svg');
-        background-size: .5rem;
-        background-repeat: no-repeat;
-        background-position: 50%;
-        opacity: .5;  
-    }
-    &[aria-expanded="true"] {
-        &:before {
-            background-image: url('assets/img/icon-navigation-opened.svg');
-        }
-    }
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.Tree-collection-button:hover {
+    opacity: 0.7;
+}
+
+.Tree-collection-button:before {
+    content: "";
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-image: url('assets/img/icon-navigation-closed-ltr.svg');
+    background-size: 0.5rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    opacity: 0.5;
+    margin-right: 0.5rem;
+}
+
+.Tree-collection-button[aria-expanded="true"]:before {
+    background-image: url('assets/img/icon-navigation-opened.svg');
 }
 
 .Tree-items {
     margin-left: 1rem;
+    transition: max-height 0.3s ease;
 }
-
-.Tree-collectionItems {}
 
 .Tree-collectionLabel,
 .Tree-entityLink {
     color: var(--sg-link);
-    &:hover {
-        color: var(--sg-linkHover);
-        text-decoration: underline;
-    }
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.Tree-collectionLabel:hover,
+.Tree-entityLink:hover {
+    color: var(--sg-linkHover);
+    text-decoration: underline;
 }
 
 .Pen-actions {
     margin-left: auto;
-    @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
+    .Pen-actions {
         display: none;
     }
 }
-
-
 
 
 
