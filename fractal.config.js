@@ -9,7 +9,7 @@ const fractal = (module.exports = require('@frctl/fractal').create());
 /*
  * Give your project a title.
  */
-fractal.set('project.title', 'Styleguide');
+fractal.set('project.title', 'Design System');
 fractal.set('project.version', 'v1.0');
 fractal.set('project.author', 'DIG');
 
@@ -30,7 +30,7 @@ const nunj = require("@frctl/nunjucks")({
 
   },
   globals: {
-    project_name :  'Styleguide',
+    project_name :  'Design System',
     img_path:  '../../images/'
   },
   extensions: {
@@ -40,7 +40,7 @@ const nunj = require("@frctl/nunjucks")({
 
 fractal.components.engine(nunj);
 fractal.components.set('path', path.join(__dirname, 'src/components'));
-fractal.components.set('label', 'Styleguide'); // default is 'Components'
+fractal.components.set('label', 'Design System'); // default is 'Components'
 fractal.components.set('default.status', 'wip');
 fractal.components.set('ext', '.html');
 fractal.components.set('default.display', {

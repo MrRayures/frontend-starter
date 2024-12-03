@@ -1,6 +1,6 @@
 :root {
   --sg-primary:#111111;
-  --sg-secondary:#efefef;
+  --sg-secondary:#f6f6f6;
 
   --sg-grey:#F8F8F8;
   
@@ -24,9 +24,17 @@
   transition: all 0.3s ease;
 }
 
+.Header-button {
+    height: 2rem;
+    margin-left: 3px;
+}
+
+.Header-title {
+    padding: 0.5rem 0.5rem;
+}
+
 .Frame-panel--sidebar {
   background-color: var(--sg-grey);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .Navigation-search {
@@ -35,7 +43,7 @@
 
 .Navigation-group ~ .Navigation-group {
     border-top: 1px solid var(--sg-border);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin: 0;
 }
 
@@ -110,6 +118,10 @@
     .Pen-actions {
         display: none;
     }
+}
+
+[dir=ltr] .Navigation-panel {
+    border-right: unset;
 }
 
 

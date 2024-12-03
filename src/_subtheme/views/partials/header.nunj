@@ -1,41 +1,47 @@
 <div class="Header">
-    
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
-        <div class="Header-navToggleIcon Header-navToggleIcon--open">
+    <button 
+        class="Header-button Header-navToggle" 
+        data-action="toggle-sidebar" 
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+    >
+        <span class="Header-navToggleIcon Header-navToggleIcon--open" aria-hidden="true">
             {% include 'icons/close.svg' %}
-        </div>
-        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+        </span>
+        <span class="Header-navToggleIcon Header-navToggleIcon--closed" aria-hidden="true">
             {% include 'icons/burger.svg' %}
-        </div>
+        </span>
     </button>
-    <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+    
+    <a href="{{ path('/') }}" class="Header-title" data-pjax>
+        {{ frctl.get('project.title') | default('Component Library') }}
+    </a>
 </div>
 
-
 <script>
-    /*
-    * Toogle collections
-    */
-    document.addEventListener("DOMContentLoaded", function () {
-
+    // Gestion du toggle des collections et du bouton de navigation
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleSidebarButton = document.querySelector(".Header-navToggle");
         const toggleButtons = document.querySelectorAll(".Tree-collection-button");
 
-        toggleButtons.forEach(function (button) {
-            button.addEventListener("click", function (e) {
-                let toggleContentId = e.currentTarget.getAttribute("aria-controls");
-                let toggleContent = document.getElementById(toggleContentId);
-                const expanded = button.getAttribute("aria-expanded") === "true";
-                if (expanded) {
-                    toggleContent.style.display = "none";
-                    button.setAttribute("aria-expanded", "false");
-                    
-                } else {
-                    toggleContent.style.display = "block";
-                    button.setAttribute("aria-expanded", "true");
-                }
+        // Fonction pour basculer l'affichage des collections
+        toggleButtons.forEach(button => {
+            button.addEventListener("click", (e) => {
+                const toggleContentId = e.currentTarget.getAttribute("aria-controls");
+                const toggleContent = document.getElementById(toggleContentId);
+                const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+                button.setAttribute("aria-expanded", !isExpanded);
+                toggleContent.style.display = isExpanded ? "none" : "block";
             });
         });
 
-    });
+        // Fonction pour basculer le menu latéral
+        toggleSidebarButton.addEventListener("click", () => {
+            const isExpanded = toggleSidebarButton.getAttribute("aria-expanded") === "true";
 
+            toggleSidebarButton.setAttribute("aria-expanded", !isExpanded);
+            document.body.classList.toggle("Sidebar-open", !isExpanded); // Exemple pour gérer l'état avec une classe CSS
+        });
+    });
 </script>
