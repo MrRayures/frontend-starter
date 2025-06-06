@@ -1,7 +1,7 @@
 {
   "name": "frontend-starter",
   "version": "1.0.0",
-  "description": "html/scss framework powered by @frctl",
+  "description": "html/scss framework powered by @frctl & Nunjucks",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MrRayures/frontend-starter.git"
@@ -13,21 +13,25 @@
   },
   "scripts": {
     "clean": "recursive-delete dist",
+    "scss_theme": "sass --style=compressed --error-css --update src/_subtheme/assets/scss/theme.scss src/_subtheme/assets/theme.css",
     "scss": "sass --style=compressed --error-css --update src/assets/styles/scss/app.scss src/assets/app.css",
     "sprite": "svg-sprite --symbol --log --symbol-sprite=sprite/icons.svg --symbol-dest=src/assets/icons/ src/assets/icons/*.svg",
     "js": "concat-glob-cli -f src/assets/js/*.js -o src/assets/app.js",
     "g:design": "hygen component new --type 01-design",
     "g:component": "hygen component new --type 02-composants",
+    "build:css_theme": "npm run scss_theme",
     "build:css": "npm run scss",
     "build:js": "npm run js",
     "build:sprite": "npm run sprite",
+    "watch:css_theme": "onchange src/_subtheme/assets/scss/*.scss -- npm run build:css_theme",
     "watch:css": "onchange src/assets/styles/scss/**/*.scss -- npm run build:css",
     "watch:js": "onchange src/assets/js/*.js -- npm run build:js",
     "build": "npm-run-all clean build:* && fractal build",
     "watch": "npm-run-all --parallel watch:*",
-    "fractal": "fractal start --watch --port 3000",
-    "fractal-build": "npm run fractal build",
-    "postinstall": "npm run build"
+    "fractal:start": "fractal start --watch --port 3000",
+    "fractal:build": "fractal build",
+    "postinstall": "npm run build",
+    "dev": "npm-run-all --parallel fractal:start watch"
   },
   "devDependencies": {
     "@frctl/fractal": "^1.5.14",
@@ -49,5 +53,8 @@
     "svgo": "^1.3.2",
     "uglify-js": "^3.14.2",
     "hygen": "^6.2.11"
+  },
+  "volta": {
+    "node": "22.13.0"
   }
 }

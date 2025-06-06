@@ -1,0 +1,338 @@
+/*
+* Style : présentation des composants
+* 
+*/
+
+
+.sg-body {}
+
+.sg-body--presentation {
+    padding: 2rem;
+}
+
+.sg-title {
+    background-color: var(--sg-grey);
+    color: var(--sg-title);
+    font-family: var(--sg-font-primary);
+}
+
+.sg-subtitle {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--sg-title);
+    font-family: var(--sg-font-primary);
+
+    ~ .sg-subtitle {
+        margin-top: 2rem;
+    }
+}
+
+.sg-h1 {
+    color: var(--sg-title);
+    font-size: 4.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    font-family: var(--sg-font-primary);
+}
+
+.sg-h2 {
+    color: var(--sg-title);
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-family: var(--sg-font-primary);
+}
+
+.sg-h3 {
+    color: var(--sg-title);
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: var(--sg-font-primary);
+}
+
+.sg-h4 {
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 400;
+    color: black;
+    font-family: var(--sg-font-primary);
+}
+
+.sg-text {
+    color: black;
+    margin-bottom: 2rem;
+    font-family: var(--sg-font-primary);
+    
+    code {
+        @extend .sg-text-code;
+    }
+}
+
+.sg-text-code {
+    background: var(--sg-bgColor-code);
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    color: var(--sg-color-code);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: var(--sg-radius);
+}
+
+.sg-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    gap: 2.4rem;
+}
+
+.sg-columns--bordered {
+    border: 1px solid var(--sg-border);
+    border-radius: var(--sg-radius);
+    padding: 2rem;
+
+    &:has(+ .sg-block-code) {
+        border-radius: var(--sg-radius) var(--sg-radius) 0 0;
+        margin-bottom: 0;
+    }
+
+    + .sg-block-code {
+        border-radius: 0 0 var(--sg-radius) var(--sg-radius);
+        border-top: none;
+        margin-bottom: 4rem;
+    }
+}
+
+.sg-block-code {
+    font-family: var(--sg-font-primary);
+    background-color: var(--sg-grey);
+    border: 1px solid var(--sg-border);
+    padding: 2rem;
+    margin-bottom: 4rem;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 160%;
+    border-radius: var(--sg-radius);
+}
+
+
+/*
+* Color
+*/
+.sg-color__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    font-family: var(--sg-font-primary);
+
+    code {
+        font-weight: 400;
+    }
+}
+
+.sg-color__item {
+    &.sg-color__title {
+        width: 100%;
+        max-width: none;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+
+        ~ .sg-color__title {
+            margin-top: 4rem;
+        }
+    }
+}
+
+.sg-color {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8rem;
+    width: 21rem;
+    height: 12rem;
+    font-family: "Fira Code", serif;
+}
+
+.sg-color__infos {
+    padding: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sg-color__name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: auto;
+    color: black;
+}
+
+.sg-color__info {
+    color: #9E9E9E;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: right;
+}
+
+
+.sg-color--light {}
+
+.sg-color--dark {
+    .sg-color__name,
+    .sg-color__info {
+        color: white;
+    }
+}
+
+
+
+/*
+* Font
+*/
+.sg-font {
+    display: grid;
+    grid-template-columns: minmax(23rem, 33rem) 1fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.sg-font__infos {
+    border: 1px solid var(--sg-border);
+}
+
+.sg-font__letter {
+    font-size: 18rem;
+    text-align: center;
+    border-bottom: 1px solid var(--sg-border);
+}
+
+.sg-font__info {
+    padding: 1.6rem;
+}
+
+.sg-font__name {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.sg-font__weight-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    li {
+        background-color: #F4F4F4;
+        padding: 0.6rem 1.2rem;
+        border-radius: 4rem;
+        color: black;
+        font-size: 1.2rem;
+    }
+}
+
+.sg-font__weight {
+    background-color: black;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4rem;
+    color: white;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    + p {
+        margin-bottom: 3rem;
+        font-size: 2.4rem;
+    }
+}
+
+
+/*
+* Icons
+*/
+.sg-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 14rem);
+    gap: 1rem;
+    font-family: var(--sg-font-primary);
+}
+
+.sg-icons__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--sg-border);
+    border-radius: var(--sg-radius);
+    
+    svg {
+        margin: 2rem 0;
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+    span {
+        color: var(--sg-text);
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: var(--sg-grey);
+        flex-grow: 1;
+    }
+}
+
+
+/*
+* Breakpoint
+*/
+.sg-bpTable {
+    border-collapse: collapse;
+    border: none;
+    margin-bottom: 3.2rem;
+    width: 100%;
+    max-width: 80rem;
+    font-family: var(--sg-font-primary);
+
+    th, td {
+        padding: 1rem;
+        border: none;
+    }
+
+    thead {
+        th {
+            border-bottom: 1px solid black;
+            font-size: 1.4rem;
+        }
+    }
+
+    td {
+        border-bottom: 1px solid var(--sg-border);
+        font-size: 1.4rem;
+    }
+}
+
+.sg-bpView {
+    display: flex;
+    gap: 1rem;
+}
+
+.sg-bpView__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--sg-grey);
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 10rem;
+    font-size: 1.2rem;
+    text-align: center;
+
+    code {
+        display: block;
+        font-size: 1.2rem;
+    }
+}

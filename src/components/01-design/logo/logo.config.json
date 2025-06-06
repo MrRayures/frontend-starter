@@ -1,0 +1,11 @@
+{
+    "label":"Logo",
+    "status": null,
+    "context": {
+        "logos": [
+            { "name": "Principal", "path": "/images/logo.svg" },
+            { "name": "Secondaire", "path": "/images/logo.svg" }
+        ]
+    }
+}
+    

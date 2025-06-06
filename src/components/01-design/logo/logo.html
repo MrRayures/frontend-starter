@@ -1,0 +1,6 @@
+{% for logo in logos  %}
+    <h3 class="sg-h3">{{ logo.name }}</h3>
+    <div class="sg-columns sg-columns--bordered">
+        <img src="{{ logo.path | path }}" alt="" >
+    </div>
+{% endfor %}

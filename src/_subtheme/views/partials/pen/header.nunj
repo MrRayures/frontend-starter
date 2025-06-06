@@ -28,6 +28,24 @@
         </a>
     </h1>
 
+    <div class="Pen-actions">
+        {#
+        {{ frctl.theme.get('information') | dump }}
+        #}
+        <button class="sg-btn" type="button" onclick="changePenWidth('375')" title="Mobile (375px)">
+            {% include "icons/mobile.svg" %}
+        </button>
+        
+        <button class="sg-btn" type="button" onclick="changePenWidth('1024')" title="Tablette (1024px)">
+            {% include "icons/tablet.svg" %}
+        </button>
+
+        <button class="sg-btn" type="button" onclick="changePenWidth('1400')" title="Desktop (1400px)">
+            {% include "icons/desktop.svg" %}
+        </button>
+        
+    </div>
+
     <span class="Pen-preview-size" data-role="preview-size"></span>
     
     {{ status.tag(entity.status) }}

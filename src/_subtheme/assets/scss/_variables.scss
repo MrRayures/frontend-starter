@@ -1,0 +1,124 @@
+/*
+* Color
+*/
+:root {
+
+    --sg-font-primary: 'Fira Code', sans-serif;
+
+
+    --sg-color-code: #4F12C5;
+    --sg-bgColor-code: #EBE7FF;
+
+    /*
+    * Dracula PRO Theme color
+    * https://draculatheme.com/
+    */
+    --Background :#F5F5F5;
+    --Comment    :#635D97;
+    --Selection  :#CFCFDE;
+    --Foreground :#1F1F1F;
+    --Cyan       :#036A96;
+    --Green      :#14710A;
+    --Orange     :#A34D14;
+    --Pink       :#A3144D;
+    --Purple     :#644AC9;
+    --Red        :#CB3A2A;
+    --Yellow     :#846E15;
+    
+
+    
+
+    /*Primitives*/
+    --sg-primary:#125BD9;
+    --sg-secondary:#efefef;
+
+    --sg-grey:#F8F8F8;
+    
+    --sg-title:#111111;
+    --sg-text:#3a3a3a;
+    --sg-textLight:#9E9E9E;
+
+    --sg-link:#333333;
+    --sg-linkHover:#111111;
+
+    --sg-radius: 4px;
+    --sg-border: #E6E6E6;
+    
+    /* UI Dark */
+    --sg-headerColor: var(--Selection);
+    --sg-headerBgColor: var(--Background);
+    --sg-headerNavToggleBgColor: var(--Comment);
+    --sg-headerNavToggleBgColorHover: var(--Selection);
+
+    --sg-sidebarBgColor: var(--sg-secondary);
+
+}
+
+/*
+* Dark theme
+*/
+[data-theme="dark"] {
+    --Background :#282A36;
+    --Comment    :#7970A9;
+    --Selection  :#454158;
+    --Foreground :#F8F8F2;
+    --Cyan       :#80FFEA;
+    --Green      :#8AFF80;
+    --Orange     :#FFCA80;
+    --Pink       :#FF80BF;
+    --Purple     :#9580FF;
+    --Red        :#FF9580;
+    --Yellow     :#FFFF80;
+}
+
+
+
+/*
+* Fonts
+*/
+
+/* fira-code-300 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/fira-code-v22-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* fira-code-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/fira-code-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* fira-code-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/fira-code-v22-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* fira-code-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 600;
+    src: url('fonts/fira-code-v22-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  
+  /* fira-code-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/fira-code-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  

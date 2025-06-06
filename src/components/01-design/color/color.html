@@ -1,13 +1,13 @@
 <ul role="list" class="sg-color__list">
     {% for color in colors %}
         <li>
-            <div class="sg-color">
-                <div class="sg-color__color" style="background-color: {{color.hex}};"></div>
+            <div class="sg-color sg-color--{{color.hex | lightOrDark}}" style="background-color: {{color.hex}};">
                 <div class="sg-color__infos">
-                <p class="sg-color__name">{{color.name}}</p>
-
-                    <p class="sg-color__info">HEX : <span>{{color.hex}}</span></p>
-                    <p class="sg-color__info">RVB : <span>{{color.hex | hexToRgb}}</span></p>
+                    <p class="sg-color__name">--{{color.name}}</p>
+                    <div>
+                        <p class="sg-color__info"><span>{{color.hex}}</span></p>
+                        <p class="sg-color__info"><span>rgba({{color.hex | hexToRgb}}, 1)</span></p>
+                    </div>
                 </div>
             </div>
         </li>

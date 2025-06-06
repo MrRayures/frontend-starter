@@ -5,37 +5,14 @@
             {% include 'icons/close.svg' %}
         </div>
         <div class="Header-navToggleIcon Header-navToggleIcon--closed">
-            {% include 'icons/burger.svg' %}
+            {% include 'icons/menu.svg' %}
         </div>
     </button>
-    <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+    <a href="{{ path('/') }}" class="Header-title" data-pjax>
+        {% include 'icons/file-code.svg' %}
+        {{ frctl.get('project.title') | default('Component Library') }}
+    </a>
+    <button class="sg-themeToggle" id="theme-toggle" aria-pressed="false" title="Chagement de thème: light & dark" aria-label="auto" aria-live="polite">
+        <span class="u-sr-only">Changer de thème</span>
+    </button>
 </div>
-
-
-<script>
-    /*
-    * Toogle collections
-    */
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const toggleButtons = document.querySelectorAll(".Tree-collection-button");
-
-        toggleButtons.forEach(function (button) {
-            button.addEventListener("click", function (e) {
-                let toggleContentId = e.currentTarget.getAttribute("aria-controls");
-                let toggleContent = document.getElementById(toggleContentId);
-                const expanded = button.getAttribute("aria-expanded") === "true";
-                if (expanded) {
-                    toggleContent.style.display = "none";
-                    button.setAttribute("aria-expanded", "false");
-                    
-                } else {
-                    toggleContent.style.display = "block";
-                    button.setAttribute("aria-expanded", "true");
-                }
-            });
-        });
-
-    });
-
-</script>

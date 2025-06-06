@@ -1,5 +1,10 @@
-# :doughnut: Frontend Starter
-Testé avec la version **16.13.2** de nodeJS.
+---
+title: Installation du framework
+label: Installation
+---
+
+## Node
+Testé avec la version **22.13.0** de nodeJS.
 
 ## Installation et lancement
 
@@ -13,8 +18,11 @@ npm run dev
 ### Liste des taches disponibles :
 
 ```bash
-npm run dev # Tache de travail : lance Fractal & le watch
+npm run dev # Tache de travail : lance Fractal + watch
+fractal start # Tache de travail : lance Fractal
+npm run watch # Tache de travail : watch / build les assets css / js / sprite svg
 npm run build # Build du projet : export du projet statique
 npm run g:component nom_du_composant # création du composant "nom_du_composant" dans la partie "Composants"
 npm run g:design nom_du_composant # création du composant "nom_du_composant" dans la partie "Fondamentaux"
 ```
+
